@@ -85,7 +85,6 @@ const HeroCampaign = styled.section`
   padding-inline: 4rem;
   margin-top: 5rem;
   position: relative;
-  border: 1px solid red;
   padding-bottom: 10px;
 `;
 
