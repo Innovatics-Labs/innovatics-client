@@ -35,7 +35,7 @@ const NavContainer = styled.nav`
   justify-content: space-between;
   padding-block: 15px;
   /* align-items: center; */
-  padding-inline: 5rem;
+  padding-inline: 4rem;
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(12px);
