@@ -10,20 +10,22 @@ const Navbar = () => {
   return (
     <NavContainer pathName={route.pathname}>
       <Logo>
-        <Image src={logo} alt="innovatics logo" />
+        <Link href={"/"}>
+          <Image src={logo} alt="innovatics logo" />
+        </Link>
       </Logo>
       <NavItems>
         <li>
-          <Link href={"/"}>Academy</Link>
+          <Link href={"/academy"}>Academy</Link>
         </li>
         <li>
-          <Link href={"/"}>Resources</Link>
+          <Link href={"/resources"}>Resources</Link>
         </li>
         <li>
           <Link href={"/"}>Pricing</Link>
         </li>
         <SignInButton>
-          <Link href={"/"}>Sign In</Link>
+          <Link href={"/signIn"}>Sign In</Link>
         </SignInButton>
       </NavItems>
     </NavContainer>

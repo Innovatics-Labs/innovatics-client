@@ -31,6 +31,11 @@ const signIn = () => {
             title={"Continue with Google"}
             color={"#8691A6"}
           />
+          <NoAccountContainer>
+            <p>
+              Don’t Have an account? <span>Signup for free</span>
+            </p>
+          </NoAccountContainer>
         </FormActions>
       </FormContainer>
     </Container>
@@ -39,12 +44,13 @@ const signIn = () => {
 
 export default signIn;
 
-const Container = styled.section`
+export const Container = styled.section`
   background: linear-gradient(90deg, rgba(13, 17, 23, 0.3) 0%, #0d1117 47.99%),
     url("/galaxy.png");
   display: grid;
   place-items: center;
   padding: 3rem;
+  height: 100%;
 `;
 
 const FormContainer = styled.div`
@@ -95,4 +101,13 @@ const FormButton = styled(Button)`
   border-color: #8691a6;
   padding: 10px 128px;
   width: 100%;
+`;
+
+const NoAccountContainer = styled.div`
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  span {
+    color: #8b90ff;
+  }
 `;

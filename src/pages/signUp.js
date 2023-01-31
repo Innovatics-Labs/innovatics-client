@@ -1,5 +1,7 @@
+import { Container } from "./signIn";
+
 const signUp = () => {
-  return <div>signUp</div>;
+  return <Container>signUp</Container>;
 };
 
 export default signUp;

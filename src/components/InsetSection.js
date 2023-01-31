@@ -25,7 +25,6 @@ const Container = styled.section`
   height: 500px;
   background-repeat: no-repeat;
   background-size: 100%;
-  padding: 10px;
 `;
 
 const ImageBg = styled.div`

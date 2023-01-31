@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import logo from "../assets/images/logo 1.png";
+import Copyright from "./Copyright";
 
 const Footer = () => {
   return (
@@ -87,10 +88,7 @@ const Footer = () => {
           </LinksSection>
         </LinksContainer>
       </FooterTopSection>
-      <Copyright>
-        <hr />
-        <p>Copyright &copy; Innovatics 2022 All right reserved</p>
-      </Copyright>
+      <Copyright showHr />
     </FooterContainer>
   );
 };
@@ -132,14 +130,4 @@ const LinkList = styled.ul`
 const LinkListItem = styled.li`
   margin-block: 10px;
   font-size: 18px;
-`;
-
-const Copyright = styled.div`
-  text-align: center;
-  color: #8691a6;
-
-  hr {
-    margin-bottom: 1.5rem;
-    border: 1px solid #8691a6;
-  }
 `;
