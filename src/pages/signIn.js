@@ -5,7 +5,7 @@ const signIn = () => {
   return (
     <Container>
       <FormContainer>
-        <Title>Sign up to start learning</Title>
+        <Title>Sign in to continue</Title>
         <Form>
           <Input type="email" name="email" id="" placeholder="Email" />
           <Input type="password" name="password" id="" placeholder="Password" />
@@ -109,5 +109,7 @@ const NoAccountContainer = styled.div`
   color: white;
   span {
     color: #8b90ff;
+    display: inline-block;
+    padding-inline: 1rem;
   }
 `;
