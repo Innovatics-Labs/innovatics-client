@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import logo from "../assets/images/logo 1.png";
 
 const Navbar = () => {
+  const route = useRouter();
   return (
-    <NavContainer>
+    <NavContainer pathName={route.pathname}>
       <Logo>
         <Image src={logo} alt="innovatics logo" />
       </Logo>
@@ -36,10 +38,16 @@ const NavContainer = styled.nav`
   padding-block: 15px;
   /* align-items: center; */
   padding-inline: 4rem;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: black;
+
+  ${({ pathName }) =>
+    pathName === "/" &&
+    css`
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.05);
+    `}
 `;
 
 const Logo = styled.div`

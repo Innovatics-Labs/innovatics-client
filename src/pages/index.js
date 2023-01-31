@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Hero from "../components/Hero";
+import InsetSection from "../components/InsetSection";
 import JoinCohort from "../components/JoinCohort";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <Hero />
       <JoinCohort />
+      <InsetSection />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 import logo from "../assets/images/logo 1.png";
 
@@ -14,27 +15,27 @@ const Footer = () => {
             <LinksSectionTitle>About</LinksSectionTitle>
             <LinkList>
               <LinkListItem>
-                <a class="Link--secondary" href="/features">
+                <Link class="Link--secondary" href="/features">
                   About Us
-                </a>
+                </Link>
               </LinkListItem>
               <LinkListItem>
-                <a href="/careers">Careers</a>
+                <Link href="/careers">Careers</Link>
               </LinkListItem>
               <LinkListItem class="lh-condensed mb-3">
-                <a href="/our-platform">Our Platform</a>
+                <Link href="/our-platform">Our Platform</Link>
               </LinkListItem>
               <LinkListItem class="lh-condensed mb-3">
-                <a href="/community">Community</a>
+                <Link href="/community">Community</Link>
               </LinkListItem>
               <LinkListItem>
-                <a href="/newsroom">Newsroom</a>
-              </LinkListItem>
-              <LinkListItem class="lh-condensed mb-3">
-                <a href="/blog">Blog</a>
+                <Link href="/newsroom">Newsroom</Link>
               </LinkListItem>
               <LinkListItem>
-                <a href="/instructors">Instructors</a>
+                <Link href="/blog">Blog</Link>
+              </LinkListItem>
+              <LinkListItem>
+                <Link href="/instructors">Instructors</Link>
               </LinkListItem>
             </LinkList>
           </LinksSection>
@@ -42,24 +43,22 @@ const Footer = () => {
             <LinksSectionTitle>Academy</LinksSectionTitle>
             <LinkList>
               <LinkListItem>
-                <a class="Link--secondary" href="/data-science">
-                  Data Science
-                </a>
+                <Link href="/data-science">Data Science</Link>
               </LinkListItem>
               <LinkListItem>
-                <a href="/software">Software</a>
+                <Link href="/software">Software</Link>
               </LinkListItem>
               <LinkListItem class="lh-condensed mb-3">
-                <a href="/security">Security</a>
+                <Link href="/security">Security</Link>
               </LinkListItem>
               <LinkListItem class="lh-condensed mb-3">
-                <a href="/cloud">Cloud</a>
+                <Link href="/cloud">Cloud</Link>
               </LinkListItem>
               <LinkListItem>
-                <a href="/courses">Courses</a>
+                <Link href="/courses">Courses</Link>
               </LinkListItem>
               <LinkListItem class="lh-condensed mb-3">
-                <a href="/bootcamps">Bootcamps</a>
+                <Link href="/bootcamps">Bootcamps</Link>
               </LinkListItem>
             </LinkList>
           </LinksSection>
@@ -67,12 +66,12 @@ const Footer = () => {
             <LinksSectionTitle>Plans</LinksSectionTitle>
             <LinkList>
               <LinkListItem>
-                <a class="Link--secondary" href="/features">
+                <Link class="Link--secondary" href="/features">
                   Pricing & Plans
-                </a>
+                </Link>
               </LinkListItem>
               <LinkListItem>
-                <a href="/careers">Enterprise Plan</a>
+                <Link href="/careers">Enterprise Plan</Link>
               </LinkListItem>
             </LinkList>
           </LinksSection>
@@ -80,9 +79,9 @@ const Footer = () => {
             <LinksSectionTitle>Support</LinksSectionTitle>
             <LinkList>
               <LinkListItem>
-                <a class="Link--secondary" href="/features">
+                <Link class="Link--secondary" href="/features">
                   Help Center
-                </a>
+                </Link>
               </LinkListItem>
             </LinkList>
           </LinksSection>

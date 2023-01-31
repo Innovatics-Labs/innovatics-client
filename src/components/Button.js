@@ -13,7 +13,7 @@ const variantStyles = (
     `,
     outline: css`
       background: transparent;
-      color: white;
+      color: ${color};
       border: 1px solid white;
     `,
   }[variant]);
