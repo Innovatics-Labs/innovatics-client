@@ -9,6 +9,8 @@ import mercedes from "../assets/images/mercedes.png";
 import pinterest from "../assets/images/pinterest.png";
 import { GiStarsStack } from "react-icons/gi";
 import Button from "./Button";
+import GradientIcon from "./GradientIcon";
+import LineGradient from "./LineGradient";
 
 const Hero = () => {
   return (
@@ -24,11 +26,11 @@ const Hero = () => {
               <LineImage>
                 <Image src={campaigLines} alt={"campaign lines"} />
               </LineImage>
-              <GradientIcon>
-                <GiStarsStack size={40} color={"#fff"} />
-                <span></span>
-              </GradientIcon>
-              <LineGradient />
+              <GradientIcon
+                IconComponent={<GiStarsStack size={40} color={"#fff"} />}
+                bgColor="#dd7df7"
+              />
+              <LineGradient colorFrom={"#dd7df7"} colorTo={"#10c759"} />
             </LineContainer>
             <HeroDetails>
               <Heading>Hands-On Virtual Labs</Heading>
@@ -62,6 +64,7 @@ const Hero = () => {
 export default Hero;
 
 const HeroContainer = styled.header`
+  max-width: 100vw;
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.1) 20%,
     rgba(0, 0, 0, 0.51) 35%,
@@ -82,7 +85,7 @@ const ImageContainer = styled.div`
 `;
 
 const HeroCampaign = styled.section`
-  padding-inline: 4rem;
+  padding-inline: var(--container-padding);
   margin-top: 5rem;
   position: relative;
   padding-bottom: 10px;
@@ -95,7 +98,8 @@ const HeroContentContainer = styled.div`
 const HeroDrone = styled(Image)`
   position: absolute;
   right: 0;
-  padding-right: 5rem;
+  padding-right: 3rem;
+  /* object-fit: contain; */
 `;
 
 const LineContainer = styled.div`
@@ -113,30 +117,6 @@ const LineImage = styled.div`
   margin: 0 auto;
   align-self: flex-end;
   transform: translateX(1rem);
-`;
-
-const LineGradient = styled.div`
-  background: linear-gradient(#dd7df7, #10c759);
-  width: 5px;
-  border-radius: 6px;
-  height: 250px;
-  transform: translateX(1rem);
-  /* margin: 0 auto; */
-`;
-
-const GradientIcon = styled.div`
-  /* margin: 0 auto; */
-  position: relative;
-  text-align: center;
-  span {
-    background-color: #dd7df7;
-    filter: blur(20px);
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-  }
 `;
 
 const HeroDetails = styled.div`
