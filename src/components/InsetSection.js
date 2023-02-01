@@ -1,10 +1,11 @@
-import Image from "next/image";
-import React from "react";
+import Image from "next/legacy/image";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import styled from "styled-components";
-import galaxy from "../assets/images/galaxy.png";
+
 import Button from "./Button";
 import LineGradient from "./LineGradient";
 import { TextWithColor } from "./Practicality";
+import labRunning from "../assets/images/labRunningLarg.png";
 
 const InsetSection = ({ children }) => {
   return (
@@ -12,17 +13,27 @@ const InsetSection = ({ children }) => {
       <div>
         <LineGradient
           colorFrom={`#10C75900 0%, #10C759CF 81.25%, #10C759 100%`}
-          colorTo={`#10C759D2 81.25%, #10C75900 0%`}
+          colorTo={`#10C759D2 83.25%, #10C75900 0%`}
         />
       </div>
-      <div>
-        <Title>
-          <TextWithColor color="#44E986">Python Lab</TextWithColor> for you to
-          exercise what you learnt from our expert instructor-led video
-          trainings.
-        </Title>
-        <Button title={"Start learning"} />
-      </div>
+      <Content>
+        <TopContent>
+          <TextContent>
+            <Title>
+              <TextWithColor color="#44E986">Python Lab</TextWithColor> for you
+              to exercise what you learnt from our expert instructor-led video
+              trainings.
+            </Title>
+            <Start>
+              <span>Start learning</span>
+              <MdKeyboardArrowRight color={"#8691A6"} size={24} />
+            </Start>
+          </TextContent>
+          <div>
+            <Image src={labRunning} alt={""} responsive />
+          </div>
+        </TopContent>
+      </Content>
     </Container>
   );
 };
@@ -61,7 +72,29 @@ const Container = styled.section`
   }
 `;
 
+const Content = styled.div``;
+
+const TopContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-inline: 2rem;
+`;
+
+const TextContent = styled.div`
+  /* width: 60%; */
+`;
+
 const Title = styled.h3`
   font-weight: 600;
-  font-size: 25px;
+  font-size: 27px;
+  line-height: 35px;
+`;
+
+const Start = styled.p`
+  font-size: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 `;

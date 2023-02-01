@@ -16,17 +16,15 @@ const Footer = () => {
             <LinksSectionTitle>About</LinksSectionTitle>
             <LinkList>
               <LinkListItem>
-                <Link class="Link--secondary" href="/features">
-                  About Us
-                </Link>
+                <Link href="/features">About Us</Link>
               </LinkListItem>
               <LinkListItem>
                 <Link href="/careers">Careers</Link>
               </LinkListItem>
-              <LinkListItem class="lh-condensed mb-3">
+              <LinkListItem>
                 <Link href="/our-platform">Our Platform</Link>
               </LinkListItem>
-              <LinkListItem class="lh-condensed mb-3">
+              <LinkListItem>
                 <Link href="/community">Community</Link>
               </LinkListItem>
               <LinkListItem>
@@ -49,16 +47,16 @@ const Footer = () => {
               <LinkListItem>
                 <Link href="/software">Software</Link>
               </LinkListItem>
-              <LinkListItem class="lh-condensed mb-3">
+              <LinkListItem>
                 <Link href="/security">Security</Link>
               </LinkListItem>
-              <LinkListItem class="lh-condensed mb-3">
+              <LinkListItem>
                 <Link href="/cloud">Cloud</Link>
               </LinkListItem>
               <LinkListItem>
                 <Link href="/courses">Courses</Link>
               </LinkListItem>
-              <LinkListItem class="lh-condensed mb-3">
+              <LinkListItem>
                 <Link href="/bootcamps">Bootcamps</Link>
               </LinkListItem>
             </LinkList>
@@ -67,9 +65,7 @@ const Footer = () => {
             <LinksSectionTitle>Plans</LinksSectionTitle>
             <LinkList>
               <LinkListItem>
-                <Link class="Link--secondary" href="/features">
-                  Pricing & Plans
-                </Link>
+                <Link href="/features">Pricing & Plans</Link>
               </LinkListItem>
               <LinkListItem>
                 <Link href="/careers">Enterprise Plan</Link>
@@ -80,9 +76,7 @@ const Footer = () => {
             <LinksSectionTitle>Support</LinksSectionTitle>
             <LinkList>
               <LinkListItem>
-                <Link class="Link--secondary" href="/features">
-                  Help Center
-                </Link>
+                <Link href="/features">Help Center</Link>
               </LinkListItem>
             </LinkList>
           </LinksSection>
