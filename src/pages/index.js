@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Hero from "../components/Hero";
-import InsetSection from "../components/InsetSection";
+import WhyInnovatics from "../components/WhyInnovatics";
 import JoinCohort from "../components/JoinCohort";
 import Practicality from "../components/Practicality";
 
@@ -15,7 +15,7 @@ export default function Home() {
       <Hero />
       <JoinCohort />
       <Practicality />
-      <InsetSection />
+      <WhyInnovatics />
     </div>
   );
 }
