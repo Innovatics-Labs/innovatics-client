@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import WhyInnovatics from "../components/WhyInnovatics";
 import JoinCohort from "../components/JoinCohort";
 import Practicality from "../components/Practicality";
+import FeaturedSection from "../components/FeaturedSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <JoinCohort />
       <Practicality />
       <WhyInnovatics />
+      <FeaturedSection />
     </div>
   );
 }

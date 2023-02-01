@@ -6,16 +6,16 @@ import Button from "./Button";
 import LineGradient from "./LineGradient";
 import { TextWithColor } from "./Practicality";
 import labRunning from "../assets/images/labRunningLarg.png";
-import GreenCurve from "../assets/images/Group 6.png";
+import GreenCurve from "../assets/images/curve-gradient-green.png";
 import InsetSection from "./InsetSection";
 
 const WhyInnovatics = () => {
   return (
-    <InsetSection>
+    <InsetSection bgImage={"/galaxy.png"}>
       <GradientContainer>
         <LineGradient
-          colorFrom={`#10C75900 0%, #10C759CF 81.25%, #10C759 100%`}
-          colorTo={`#10C75952 83.25%, #10C75900 0%`}
+          colorFrom={`#10C75900, #10C759CF, #10C759`}
+          colorTo={`#10C759D2 83.25%, #10C75900`}
         />
         <CurveContainer>
           <Image src={GreenCurve} alt="" />
