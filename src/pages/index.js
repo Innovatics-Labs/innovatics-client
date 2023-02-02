@@ -4,6 +4,7 @@ import WhyInnovatics from "../components/WhyInnovatics";
 import JoinCohort from "../components/JoinCohort";
 import Practicality from "../components/Practicality";
 import FeaturedSection from "../components/FeaturedSection";
+import LearningsSections from "../components/LearningsSections";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <JoinCohort />
       <Practicality />
       <WhyInnovatics />
+      <LearningsSections />
       <FeaturedSection />
     </div>
   );

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { BsCodeSlash } from "react-icons/bs";
 
 import LineGradient from "./LineGradient";
 import GradientIcon from "./GradientIcon";
-import { BsCodeSlash } from "react-icons/bs";
 import jupyterLab from "../assets/images/JupyterLab.png";
 import codesnippet from "../assets/images/codesnippet.png";
 import labRunning from "../assets/images/labRunning.png";
@@ -47,6 +47,7 @@ export default Practicality;
 const Container = styled.section`
   background: rgba(13, 17, 22);
   padding: 2rem var(--container-padding);
+  padding-bottom: 1rem;
 `;
 
 const TopSection = styled.section`

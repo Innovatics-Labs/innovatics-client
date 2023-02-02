@@ -20,7 +20,7 @@ const FeaturedSection = () => {
           <Image src={RedCurve} alt="" />
         </CurveContainer>
       </GradientContainer>
-      <BottomContent>
+      <TextContent>
         <Button
           title={"Why Innovatics?"}
           variant={"outline"}
@@ -35,7 +35,7 @@ const FeaturedSection = () => {
         <SubQualityText>
           on all courses until August 29th 2023. Hurry Now!
         </SubQualityText>
-      </BottomContent>
+      </TextContent>
     </InsetSection>
   );
 };
@@ -56,7 +56,7 @@ const CurveContainer = styled.div`
   }
 `;
 
-const BottomContent = styled.div`
+const TextContent = styled.div`
   align-self: center;
   padding-top: 2rem;
   padding-bottom: 2rem;

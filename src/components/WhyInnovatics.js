@@ -15,7 +15,7 @@ const WhyInnovatics = () => {
       <GradientContainer>
         <LineGradient
           colorFrom={`#10C75900, #10C759CF, #10C759`}
-          colorTo={`#10C759D2 83.25%, #10C75900`}
+          colorTo={`#10C759D2, #10C75900`}
         />
         <CurveContainer>
           <Image src={GreenCurve} alt="" />
