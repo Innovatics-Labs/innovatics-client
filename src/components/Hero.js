@@ -76,6 +76,7 @@ const ImageContainer = styled.div`
   img {
     object-fit: cover;
     max-width: 100%;
+    /* max-height: auto; */
     height: auto;
     overflow: hidden;
     z-index: -1;

@@ -42,7 +42,6 @@ const WhyInnovatics = () => {
           <Button
             title={"Why Innovatics?"}
             variant={"outline"}
-            color={"#44E986"}
             borderColor={"#44E986"}
             size={`18px`}
             rounded

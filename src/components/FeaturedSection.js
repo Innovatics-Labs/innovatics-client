@@ -22,7 +22,7 @@ const FeaturedSection = () => {
       </GradientContainer>
       <TextContent>
         <Button
-          title={"Why Innovatics?"}
+          title={"Fealtured Courses"}
           variant={"outline"}
           color={"white"}
           borderColor={"#EA6045"}
@@ -30,7 +30,7 @@ const FeaturedSection = () => {
           rounded
         />
         <QualityText>
-          <TextWithColor color="#EA6045">99.9% Quality</TextWithColor>
+          <TextWithColor color="#EA6045">30.9% Discounts</TextWithColor>
         </QualityText>
         <SubQualityText>
           on all courses until August 29th 2023. Hurry Now!
@@ -72,4 +72,5 @@ const SubQualityText = styled.p`
   font-weight: 500;
   font-size: 20px;
   margin-top: 0;
+  width: 70%;
 `;

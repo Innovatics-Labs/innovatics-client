@@ -54,5 +54,6 @@ const StyledButton = styled.button`
   padding-inline: 35px;
   cursor: pointer;
 
-  ${({ variant, bgColor, color }) => variantStyles(variant, bgColor, color)}
+  ${({ variant, bgColor, color, borderColor }) =>
+    variantStyles(variant, bgColor, color, borderColor)}
 `;
