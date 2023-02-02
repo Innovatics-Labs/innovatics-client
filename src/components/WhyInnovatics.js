@@ -34,9 +34,9 @@ const WhyInnovatics = () => {
               <MdKeyboardArrowRight color={"#8691A6"} size={24} />
             </Start>
           </TextContent>
-          <div>
+          <ImageContent>
             <Image src={labRunning} alt={""} />
-          </div>
+          </ImageContent>
         </TopContent>
         <BottomContent>
           <Button
@@ -65,13 +65,14 @@ const GradientContainer = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  gap: 2px;
+  gap: 10px;
 `;
 
 const CurveContainer = styled.div`
-  margin-right: -2rem;
+  margin-right: -1.4rem;
   img {
     height: 300px;
+    width: auto;
     object-fit: contain;
     transform: translateY(7rem);
   }
@@ -85,14 +86,17 @@ const TopContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  /* margin-inline: 2rem; */
-  img {
-    width: 100%;
-    object-fit: contain;
-  }
 `;
 
 const TextContent = styled.div``;
+
+const ImageContent = styled.div`
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+`;
 
 const Title = styled.h3`
   font-weight: 600;

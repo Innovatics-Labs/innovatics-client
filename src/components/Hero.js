@@ -24,7 +24,7 @@ const Hero = () => {
           <HeroContentContainer>
             <LineContainer>
               <LineImage>
-                <Image src={campaigLines} alt={"campaign lines"} />
+                <Image src={campaigLines} alt={"campaign lines"} priority />
               </LineImage>
               <GradientIcon
                 IconComponent={<GiStarsStack size={40} color={"#fff"} />}
@@ -66,20 +66,20 @@ export default Hero;
 const HeroContainer = styled.header`
   max-width: 100vw;
   background-image: linear-gradient(
-    rgba(0, 0, 0, 0.1) 20%,
-    rgba(0, 0, 0, 0.51) 35%,
-    rgba(0, 0, 0, 0.7) 30%,
-    rgba(13, 17, 23, 0.9) 40%,
-    rgba(0, 0, 0) 50%
+    rgba(13, 17, 23, 0.1) 0%,
+    rgba(13, 17, 23, 0.9) 30%,
+    rgba(13, 17, 23) 45%
   );
 `;
 
 const ImageContainer = styled.div`
   img {
-    max-width: 100%;
     object-fit: cover;
-    position: absolute;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
     z-index: -1;
+    position: absolute;
     top: 0;
   }
 `;
@@ -99,7 +99,8 @@ const HeroDrone = styled(Image)`
   position: absolute;
   right: 0;
   padding-right: 3rem;
-  /* object-fit: contain; */
+  object-fit: contain;
+  height: auto;
 `;
 
 const LineContainer = styled.div`

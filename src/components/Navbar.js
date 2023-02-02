@@ -37,7 +37,7 @@ export default Navbar;
 const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
-  padding-block: 15px;
+  padding-block: 10px;
   /* align-items: center; */
   padding-inline: 4rem;
   background: black;

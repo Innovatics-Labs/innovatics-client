@@ -57,7 +57,6 @@ const TopSection = styled.section`
 `;
 
 const GradientStyleContainer = styled.div`
-  /* margin-bottom: 1rem; */
   display: grid;
   gap: 1.5rem;
   grid-template-rows: auto 1fr;
