@@ -63,7 +63,7 @@ export default WhyInnovatics;
 const GradientContainer = styled.div`
   display: flex;
   align-items: center;
-  position: relative;
+  /* position: relative; */
   gap: 10px;
 `;
 

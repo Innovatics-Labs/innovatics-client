@@ -26,10 +26,7 @@ const LearningsSections = () => {
             <TextWithColor color="#FFA28B">
               Put to practice what you learn immediately.{" "}
             </TextWithColor>
-            <span>
-              We provide you suitable learning environment. Put to practice what
-              you learn immediately.
-            </span>
+            <span>We provide you suitable learning environment.</span>
           </SubTitle>
         </TextContent>
       </TopSection>
@@ -117,12 +114,12 @@ const TextContent = styled.div`
 `;
 
 const Title = styled.h4`
-  font-size: 23px;
+  font-size: 25px;
   margin: 0;
 `;
 
 const SubTitle = styled.p`
-  font-size: 38px;
+  font-size: 40px;
   margin-block: 1.5rem;
   width: 70%;
 `;
