@@ -28,15 +28,18 @@ const Button = ({
   borderColor,
   size,
   rounded,
+  ...delegated
 }) => {
   return (
     <StyledButton
       variant={variant}
+      width={width}
       color={color}
       bgColor={bgColor}
       borderColor={borderColor}
       size={size}
       rounded={rounded}
+      {...delegated}
     >
       {title}
     </StyledButton>
@@ -48,6 +51,7 @@ export default Button;
 const StyledButton = styled.button`
   border: 1px solid transparent;
   border-radius: ${({ rounded }) => `${rounded ? "2em" : "10px"}`};
+  width: ${({ width }) => `${width && width}`};
   padding-block: 10px;
   font-weight: 400;
   font-size: ${({ size }) => `${size ? size : "24px"}`};
