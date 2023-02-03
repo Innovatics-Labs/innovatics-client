@@ -22,7 +22,7 @@ const FeaturedSection = () => {
       </GradientContainer>
       <TextContent>
         <Button
-          title={"Fealtured Courses"}
+          title={"Featured Courses"}
           variant={"outline"}
           color={"white"}
           borderColor={"#8B90FF"}

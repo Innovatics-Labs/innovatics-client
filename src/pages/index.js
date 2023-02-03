@@ -7,6 +7,7 @@ import FeaturedSection from "../components/FeaturedSection";
 import LearningsSections from "../components/LearningsSections";
 import LiveSection from "../components/LiveSection";
 import PricingSection from "../components/PricingSection";
+import CareerTalksSection from "../components/CareerTalksSection";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <FeaturedSection />
       <PricingSection />
       <LiveSection />
+      <CareerTalksSection />
     </div>
   );
 }

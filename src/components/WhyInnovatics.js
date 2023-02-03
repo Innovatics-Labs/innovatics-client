@@ -104,6 +104,7 @@ const Title = styled.h3`
 `;
 
 const Start = styled.p`
+  font-weight: 400;
   font-size: 20px;
   color: white;
   display: flex;
