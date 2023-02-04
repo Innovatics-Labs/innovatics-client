@@ -1,13 +1,17 @@
 import Head from "next/head";
+
 import Hero from "../components/Hero";
-import WhyInnovatics from "../components/WhyInnovatics";
 import JoinCohort from "../components/JoinCohort";
 import Practicality from "../components/Practicality";
-import FeaturedSection from "../components/FeaturedSection";
+import WhyInnovatics from "../components/WhyInnovatics";
+import OnDemandSection from "../components/OnDemandSection";
 import LearningsSections from "../components/LearningsSections";
-import LiveSection from "../components/LiveSection";
+import FeaturedSection from "../components/FeaturedSection";
+import CoursesSection from "../components/CoursesSection";
 import PricingSection from "../components/PricingSection";
+import LiveSection from "../components/LiveSection";
 import CareerTalksSection from "../components/CareerTalksSection";
+import JoinDiscord from "../components/JoinDiscord";
 
 export default function Home() {
   return (
@@ -21,11 +25,14 @@ export default function Home() {
       <JoinCohort />
       <Practicality />
       <WhyInnovatics />
+      <OnDemandSection />
       <LearningsSections />
       <FeaturedSection />
+      <CoursesSection />
       <PricingSection />
       <LiveSection />
       <CareerTalksSection />
+      <JoinDiscord />
     </div>
   );
 }

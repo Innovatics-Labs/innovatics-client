@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import Button from "../components/Button";
 import { Container } from "./signIn";
@@ -8,8 +9,13 @@ const signUp = () => {
       <FormContainer>
         <Title>Sign up to start learning</Title>
         <Form>
-          <Input type="email" name="email" id="" placeholder="Email" />
-          <Input type="password" name="password" id="" placeholder="Password" />
+          <Input type="email" name="email" id="email" placeholder="Email" />
+          <Input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
         </Form>
         <FormActions>
           <ForgotContainer>
@@ -35,7 +41,9 @@ const signUp = () => {
           <NoAccountContainer>
             <p>
               Already a member?
-              <span>Signin</span>
+              <span>
+                <Link href={"signIn"}>Signin</Link>
+              </span>
             </p>
           </NoAccountContainer>
         </FormActions>
@@ -47,7 +55,7 @@ const signUp = () => {
 export default signUp;
 
 const FormContainer = styled.div`
-  width: 40%;
+  /* width: 40%; */
 `;
 
 const Title = styled.h3`

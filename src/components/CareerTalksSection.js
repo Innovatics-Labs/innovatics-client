@@ -20,7 +20,7 @@ const CareerTalksSection = () => {
       <TextContent>
         <Title>Career Talks</Title>
         <SubTitle>
-          <TextWithColor color="#44e986">
+          <TextWithColor color="#FC69AF">
             Join our weekend career talks with intensive mentorship.{" "}
           </TextWithColor>
           Join the race to catch the ace.

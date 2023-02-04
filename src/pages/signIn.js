@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import Button from "../components/Button";
 
@@ -7,8 +8,13 @@ const signIn = () => {
       <FormContainer>
         <Title>Sign in to continue</Title>
         <Form>
-          <Input type="email" name="email" id="" placeholder="Email" />
-          <Input type="password" name="password" id="" placeholder="Password" />
+          <Input type="email" name="email" id="email" placeholder="Email" />
+          <Input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
         </Form>
         <FormActions>
           <ForgotContainer>
@@ -33,7 +39,10 @@ const signIn = () => {
           />
           <NoAccountContainer>
             <p>
-              Don’t Have an account? <span>Signup for free</span>
+              Don’t Have an account?
+              <span>
+                <Link href={"signUp"}>Signup for free</Link>
+              </span>
             </p>
           </NoAccountContainer>
         </FormActions>
@@ -50,7 +59,7 @@ export const Container = styled.section`
   display: grid;
   place-items: center;
   padding: 3rem;
-  height: 100%;
+  /* height: 100%; */
 `;
 
 const FormContainer = styled.div`

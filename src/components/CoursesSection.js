@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const CoursesSection = () => {
@@ -10,4 +9,5 @@ export default CoursesSection;
 const Container = styled.section`
   background-color: #fafcff;
   padding: 2rem var(--container-padding);
+  height: 300px;
 `;
