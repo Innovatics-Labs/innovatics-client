@@ -29,7 +29,12 @@ const PricingPlanCard = ({ planType, planPrice }) => {
           <li>Free bootcamp vouchers </li>
         </PlanFeature>
         <Actions>
-          <Button title={"Add to Cart"} variant="outline" width={"100%"} />
+          <Button
+            title={"Add to Cart"}
+            variant="outline"
+            width={"100%"}
+            size={"20px"}
+          />
           <Link href={"/"}>Learn More</Link>
         </Actions>
       </Bottom>

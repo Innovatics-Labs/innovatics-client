@@ -22,7 +22,7 @@ const CoursesSection = () => {
           <li>Security</li>
           <li>Cloud</li>
         </ul>
-        <Button title={"View All"} bgColor={"#D5DBE2"} />
+        <Button title={"View All"} bgColor={"#D5DBE2"} size={"18px"} />
       </TabsSection>
       <CourseList>
         <CourseCard>
@@ -242,7 +242,7 @@ const TabsSection = styled.div`
   ul {
     list-style-type: none;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     padding-left: 0;
   }
 
