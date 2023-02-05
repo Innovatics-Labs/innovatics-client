@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { BsSun } from "react-icons/bs";
-import { AiOutlineArrowRight } from "react-icons/ai";
 import Image from "next/image";
 
 import LineGradient from "./LineGradient";
@@ -95,7 +94,7 @@ const Container = styled.section`
   padding: 2rem var(--container-padding);
 `;
 
-const TopSection = styled.section`
+const TopSection = styled.div`
   display: flex;
   gap: 2.5rem;
   margin-top: 1rem;

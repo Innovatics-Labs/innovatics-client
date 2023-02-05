@@ -50,7 +50,7 @@ const Container = styled.section`
   padding-bottom: 1rem;
 `;
 
-const TopSection = styled.section`
+const TopSection = styled.div`
   display: flex;
   gap: 2.5rem;
   margin-top: 1rem;

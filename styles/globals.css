@@ -12,6 +12,7 @@ body {
 }
 
 #__next {
+  /* look for solution: // the grid is the cause of the overflow */
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
