@@ -15,15 +15,17 @@ const Container = styled.section`
   overflow: hidden;
   color: white;
   background-image: linear-gradient(
-    90deg,
-    rgba(13, 17, 23, 1) 40%,
-    rgba(13, 17, 23, 0.3) 45%
-  );
+      90deg,
+      rgba(13, 17, 23, 1) 40%,
+      rgba(13, 17, 23, 0.3) 45%
+    ),
+    url("/galaxy.png");
   background-repeat: no-repeat;
+  background-size: cover;
   box-shadow: inset 50px 0px 70px rgba(13, 17, 23, 0.9);
 
   ::before {
-    content: "";
+    /* content: "";
     position: absolute;
     width: 992px;
     height: 1486px;
@@ -33,6 +35,6 @@ const Container = styled.section`
     background-image: url("/galaxy.png");
     background-repeat: no-repeat;
     box-shadow: inset 50px 0px 70px rgba(13, 17, 23, 0.9);
-    transform: rotate(-90deg);
+    transform: rotate(-90deg); */
   }
 `;
