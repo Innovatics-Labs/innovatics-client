@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const InsetSection = ({ bgImage, children }) => {
+const InsetSection = ({ bgImage = "/galaxy.png", children }) => {
   return <Container bgImage={bgImage}>{children}</Container>;
 };
 
@@ -14,18 +14,21 @@ const Container = styled.section`
   padding: 2rem var(--container-padding);
   overflow: hidden;
   color: white;
-  //* look for solution: // fix the background image issue later, this is a temporary fix
-  background-image: linear-gradient(
+  //* FIXME:: // fix the background image issue later, this is a temporary fix
+  background-image: ${(props) => `linear-gradient(
       90deg,
       rgba(13, 17, 23, 1) 40%,
       rgba(13, 17, 23, 0.3) 45%
     ),
-    url("/galaxy.png");
+    url(${props.bgImage});`};
   background-repeat: no-repeat;
-  background-size: cover, 1840px;
+  /* background-size: cover, 1840px; */
+  background-size: cover, 100%;
+  /* TODO: add dynamic background positioning later */
+  background-position: center;
   box-shadow: inset 50px 0px 70px rgba(13, 17, 23, 0.9);
 
-  // fix the background image issue later, this is a temporary fix
+  // FIXME: the background image issue later, this is a temporary fix
   ::before {
     /* content: "";
     position: absolute;

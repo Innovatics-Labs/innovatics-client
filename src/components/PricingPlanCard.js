@@ -89,7 +89,7 @@ const Divider = styled.div`
 const Bottom = styled.div``;
 
 const PlanFeature = styled.ul`
-  list-style-image: url("/Group 64.png");
+  list-style-image: url("/checkmark.png");
   list-style-type: none;
   /* padding: 0; */
 

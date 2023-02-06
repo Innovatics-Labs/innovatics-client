@@ -2,8 +2,8 @@ import Image from "next/image";
 import { BsSun } from "react-icons/bs";
 import styled from "styled-components";
 
-import arrow from "../../assets/images/arrow.png";
-import GradientIcon from "../GradientIcon";
+import arrow from "../assets/images/arrow.png";
+import GradientIcon from "./GradientIcon";
 
 const TopicCard = ({ color, number, comingSoon, topic }) => {
   return (
@@ -61,9 +61,8 @@ const Number = styled.p`
 `;
 
 const Arrow = styled.div`
-  svg {
-    font-weight: 200;
-    stroke-width: 10px;
-    width: 100%;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8691a6;
 `;

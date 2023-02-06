@@ -10,7 +10,7 @@ import { TextWithColor } from "./Practicality";
 
 const FeaturedSection = () => {
   return (
-    <InsetSection>
+    <InsetSection bgImage="/galaxy-2.png">
       <GradientContainer>
         <LineGradient
           colorFrom={`#EA604500 , #EA6045CF, #EA6045`}
