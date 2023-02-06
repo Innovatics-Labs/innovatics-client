@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
-import InsetSection from "./InsetSection";
-import LineGradient from "./LineGradient";
-import RedCurve from "../assets/images/curve-gradient-red.png";
-import Button from "./Button";
+import InsetSection from "../InsetSection";
+import LineGradient from "../LineGradient";
+import RedCurve from "../../assets/images/curve-gradient-red.png";
+import Button from "../Button";
 import { TextWithColor } from "./Practicality";
 
 const FeaturedSection = () => {

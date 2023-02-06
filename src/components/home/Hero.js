@@ -1,16 +1,17 @@
 import Image from "next/image";
 import styled from "styled-components";
-import heroimage from "../assets/images/earth-gb512373bb_1280 1.png";
-import herodrone from "../assets/images/hero-drone 1.png";
-import campaigLines from "../assets/images/hero-campaig-lines.png";
-import downarrow from "../assets/images/Group 2.png";
-import kpmgLogo from "../assets/images/kpmg-logo.png";
-import mercedes from "../assets/images/mercedes.png";
-import pinterest from "../assets/images/pinterest.png";
 import { GiStarsStack } from "react-icons/gi";
-import Button from "./Button";
-import GradientIcon from "./GradientIcon";
-import LineGradient from "./LineGradient";
+
+import Button from "../Button";
+import GradientIcon from "../GradientIcon";
+import LineGradient from "../LineGradient";
+import heroimage from "../../assets/images/earth-gb512373bb_1280 1.png";
+import herodrone from "../../assets/images/hero-drone 1.png";
+import campaigLines from "../../assets/images/hero-campaig-lines.png";
+import downarrow from "../../assets/images/Group 2.png";
+import kpmgLogo from "../../assets/images/kpmg-logo.png";
+import mercedes from "../../assets/images/mercedes.png";
+import pinterest from "../../assets/images/pinterest.png";
 
 const Hero = () => {
   return (

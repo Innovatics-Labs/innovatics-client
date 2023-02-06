@@ -3,10 +3,10 @@ import Link from "next/link";
 import styled from "styled-components";
 import { BsSun } from "react-icons/bs";
 
-import Button from "./Button";
-import GradientIcon from "./GradientIcon";
-import arrow from "../assets/images/arrow.png";
-import courseimg from "../assets/images/james-yarema-E-CdfbrnnFs-unsplash 2.png";
+import Button from "../Button";
+import GradientIcon from "../GradientIcon";
+import arrow from "../../assets/images/arrow.png";
+import courseimg from "../../assets/images/james-yarema-E-CdfbrnnFs-unsplash 2.png";
 
 const CoursesSection = () => {
   return (

@@ -2,12 +2,12 @@ import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import styled from "styled-components";
 
-import Button from "./Button";
-import LineGradient from "./LineGradient";
+import Button from "../Button";
+import LineGradient from "../LineGradient";
+import InsetSection from "../InsetSection";
 import { TextWithColor } from "./Practicality";
-import labRunning from "../assets/images/labRunningLarg.png";
-import GreenCurve from "../assets/images/curve-gradient-green.png";
-import InsetSection from "./InsetSection";
+import labRunning from "../../assets/images/labRunningLarg.png";
+import GreenCurve from "../../assets/images/curve-gradient-green.png";
 
 const WhyInnovatics = () => {
   return (

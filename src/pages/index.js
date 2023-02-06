@@ -1,16 +1,16 @@
 import Head from "next/head";
 
-import Hero from "../components/Hero";
+import Hero from "../components/home/Hero";
 import JoinCohort from "../components/JoinCohort";
-import Practicality from "../components/Practicality";
-import WhyInnovatics from "../components/WhyInnovatics";
-import OnDemandSection from "../components/OnDemandSection";
-import LearningsSections from "../components/LearningsSections";
-import FeaturedSection from "../components/FeaturedSection";
-import CoursesSection from "../components/CoursesSection";
-import PricingSection from "../components/PricingSection";
-import LiveSection from "../components/LiveSection";
-import CareerTalksSection from "../components/CareerTalksSection";
+import Practicality from "../components/home/Practicality";
+import WhyInnovatics from "../components/home/WhyInnovatics";
+import OnDemandSection from "../components/home/OnDemandSection";
+import LearningsSections from "../components/home/LearningsSections";
+import FeaturedSection from "../components/home/FeaturedSection";
+import CoursesSection from "../components/home/CoursesSection";
+import PricingSection from "../components/home/PricingSection";
+import LiveSection from "../components/home/LiveSection";
+import CareerTalksSection from "../components/home/CareerTalksSection";
 import JoinDiscord from "../components/JoinDiscord";
 
 export default function Home() {

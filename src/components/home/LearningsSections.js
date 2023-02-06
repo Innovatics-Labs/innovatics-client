@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { BsSun } from "react-icons/bs";
 import Image from "next/image";
 
-import LineGradient from "./LineGradient";
-import GradientIcon from "./GradientIcon";
+import LineGradient from "../LineGradient";
+import GradientIcon from "../GradientIcon";
 import { TextWithColor } from "./Practicality";
-import arrow from "../assets/images/arrow.png";
+import arrow from "../../assets/images/arrow.png";
 
 const LearningsSections = () => {
   return (

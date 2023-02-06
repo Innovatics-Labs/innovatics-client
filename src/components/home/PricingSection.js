@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { BsCodeSlash } from "react-icons/bs";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-import LineGradient from "./LineGradient";
-import GradientIcon from "./GradientIcon";
+import LineGradient from "../LineGradient";
+import GradientIcon from "../GradientIcon";
 import { TextWithColor } from "./Practicality";
-import PricingPlanCard from "./PricingPlanCard";
+import PricingPlanCard from "../PricingPlanCard";
 
 const PricingSection = () => {
   return (

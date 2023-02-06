@@ -2,11 +2,11 @@ import Image from "next/image";
 import styled from "styled-components";
 import { BsCodeSlash } from "react-icons/bs";
 
-import LineGradient from "./LineGradient";
-import GradientIcon from "./GradientIcon";
-import jupyterLab from "../assets/images/JupyterLab.png";
-import codesnippet from "../assets/images/codesnippet.png";
-import labRunning from "../assets/images/labRunning.png";
+import LineGradient from "../LineGradient";
+import GradientIcon from "../GradientIcon";
+import jupyterLab from "../../assets/images/JupyterLab.png";
+import codesnippet from "../../assets/images/codesnippet.png";
+import labRunning from "../../assets/images/labRunning.png";
 
 const Practicality = () => {
   return (

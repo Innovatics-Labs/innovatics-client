@@ -14,6 +14,7 @@ const Container = styled.section`
   padding: 2rem var(--container-padding);
   overflow: hidden;
   color: white;
+  //* look for solution: // fix the background image issue later, this is a temporary fix
   background-image: linear-gradient(
       90deg,
       rgba(13, 17, 23, 1) 40%,
@@ -21,9 +22,10 @@ const Container = styled.section`
     ),
     url("/galaxy.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover, 1840px;
   box-shadow: inset 50px 0px 70px rgba(13, 17, 23, 0.9);
 
+  // fix the background image issue later, this is a temporary fix
   ::before {
     /* content: "";
     position: absolute;

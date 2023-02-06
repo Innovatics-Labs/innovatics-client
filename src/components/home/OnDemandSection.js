@@ -1,9 +1,10 @@
+import Image from "next/image";
 import styled from "styled-components";
 import { BsCollectionPlay } from "react-icons/bs";
-import Button from "./Button";
-import Image from "next/image";
-import rocket from "../assets/images/rocket.png";
-import LineGradient from "./LineGradient";
+
+import Button from "../Button";
+import LineGradient from "../LineGradient";
+import rocket from "../../assets/images/rocket.png";
 
 const OnDemandSection = () => {
   return (
