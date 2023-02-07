@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { FaReact } from "react-icons/fa";
+import { VscGraph } from "react-icons/vsc";
 import Link from "next/link";
 
 import GradientIcon from "../components/GradientIcon";
 import LineGradient from "../components/LineGradient";
+import JoinCohort from "../components/JoinCohort";
 import Button from "../components/Button";
 import InstructorCard from "../components/InstructorCard";
+import CourseCard from "../components/CourseCard";
 
 const Dashboardsc = () => {
   return (
@@ -66,7 +69,7 @@ const Dashboardsc = () => {
             height={"54px"}
           />
           <GradientIcon
-            IconComponent={<FaReact size={30} color="#44E986" />}
+            IconComponent={<VscGraph size={30} color="#44E986" />}
             bgColor={"#44E986"}
           />
           <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
@@ -100,6 +103,31 @@ const Dashboardsc = () => {
           </InstructorsContainer>
         </HighLightContent>
       </CourseHighlightSection>
+      <CourseListSection>
+        <GradientContainer>
+          <LineGradient
+            colorFrom={"#10C75900"}
+            colorTo={"#10C759"}
+            height={"54px"}
+          />
+          <GradientIcon
+            IconComponent={<VscGraph size={30} color="#44E986" />}
+            bgColor={"#44E986"}
+          />
+          <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
+        </GradientContainer>
+        <CourseListContainer>
+          <CourseListHeading>
+            Section 1 | Data Science Crash Course
+          </CourseListHeading>
+          <CourseList>
+            <CourseCard />
+            <CourseCard />
+            <CourseCard />
+          </CourseList>
+        </CourseListContainer>
+      </CourseListSection>
+      <JoinCohort />
     </div>
   );
 };
@@ -220,7 +248,7 @@ const HighlightTitle = styled.p`
   font-size: 32px;
 `;
 
-const GrayTitle = styled.span`
+export const GrayTitle = styled.span`
   display: inline-block;
   font-weight: 500;
   color: #8691a6;
@@ -250,4 +278,28 @@ const InstructorsList = styled.div`
   display: flex;
   align-items: start;
   gap: 30px;
+`;
+
+const CourseListSection = styled.div`
+  display: flex;
+  gap: 2.5rem;
+  padding: 2rem var(--container-padding);
+  background: #0d1117;
+`;
+
+const CourseListContainer = styled.div`
+  width: 100%;
+  margin-top: 2rem;
+`;
+
+const CourseList = styled.div`
+  display: grid;
+  gap: 2rem;
+`;
+
+const CourseListHeading = styled.p`
+  font-weight: 600;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 3rem;
 `;
