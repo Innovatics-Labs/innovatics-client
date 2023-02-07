@@ -18,7 +18,7 @@ const Container = styled.section`
   background-image: ${(props) => `linear-gradient(
       90deg,
       rgba(13, 17, 23, 1) 40%,
-      rgba(13, 17, 23, 0.3) 45%
+      rgba(13, 17, 23, 0.45) 45%
     ),
     url(${props.bgImage});`};
   background-repeat: no-repeat;

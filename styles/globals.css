@@ -11,6 +11,12 @@ body {
   box-sizing: border-box;
 }
 
+html,
+body,
+#__next {
+  height: 100%;
+}
+
 #__next {
   /* FIXME: // the grid is the cause of the overflow */
   display: grid;

@@ -29,7 +29,7 @@ export default TopicCard;
 const Card = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
-  padding: 2.5rem;
+  padding: 2.3rem;
   background: linear-gradient(rgba(13, 17, 22), rgba(13, 17, 22, 0.8));
   border-radius: 9px;
   gap: 4rem;

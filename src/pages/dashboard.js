@@ -34,8 +34,8 @@ const Dashboard = () => {
             height={"54px"}
           />
           <GradientIcon
-            IconComponent={<FaReact size={30} color="#10C759" />}
-            bgColor={"#10C759"}
+            IconComponent={<FaReact size={30} color="#44E986" />}
+            bgColor={"#44E986"}
           />
           <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
         </GradientContainer>
@@ -55,6 +55,8 @@ const Dashboard = () => {
               <li>Real World DS & ML Projects</li>
             </FeatureList>
             <Button
+              as={Link}
+              href="/dashboard-sc"
               title={"Start Learning"}
               bgColor="white"
               color={"#0D1117"}
@@ -134,16 +136,16 @@ const Start = styled.p`
 
 const Greeting = styled.h3`
   font-weight: 500;
-  font-size: 28px;
+  font-size: 1.17rem;
   color: #ffffff;
 `;
 
 const GreetingSub = styled.p`
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.12rem;
   color: #8691a6;
   width: 40ch;
-  line-height: 28px;
+  line-height: 1.75rem;
 
   a {
     color: white;
@@ -155,7 +157,7 @@ const GreetingSub = styled.p`
 const CourseDetailSection = styled.section`
   padding: 2rem var(--container-padding);
   display: flex;
-  gap: 3rem;
+  gap: 2.5rem;
   color: white;
   background-image: linear-gradient(
       90deg,
@@ -181,18 +183,22 @@ const DetailContainer = styled.div`
   margin-bottom: 4rem;
 `;
 
-const Detail = styled.p`
+const Detail = styled.div`
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.12rem;
+
+  a {
+    display: inline-block;
+  }
 `;
 
 const Title = styled.p`
   font-weight: 600;
-  font-size: 32px;
+  font-size: 2rem;
 `;
 
 const Description = styled.p`
-  line-height: 28px;
+  line-height: 1.75rem;
   width: 50ch;
 `;
 
@@ -203,14 +209,13 @@ const FeatureList = styled.ul`
   /* padding: 0; */
 
   li {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.12rem;
     margin-bottom: 15px;
   }
 `;
 
 const LearningPath = styled.div`
-  width: 400px;
+  width: 300px;
   height: 400px;
   margin-top: 2rem;
   background: linear-gradient(
@@ -221,15 +226,15 @@ const LearningPath = styled.div`
   border: 1px solid #ffffff;
   box-shadow: 0px 0px 106.452px rgba(62, 63, 73, 0.25);
   /* filter: blur(0.5px); */
-  border-radius: 17.7419px;
+  border-radius: 17px;
 
   p {
     margin: 0;
-    font-size: 18px;
+    font-size: 1.12rem;
     width: fit-content;
     color: black;
     background: #ffffff;
-    border-radius: 17.74px 0px;
+    border-radius: 17px 0px;
     padding: 15px 27px;
   }
 `;
@@ -247,7 +252,7 @@ const AcademicAreas = styled.div`
 
 const AreasTitle = styled.p`
   font-weight: 600;
-  font-size: 32px;
+  font-size: 2rem;
 `;
 
 const TopicsContainer = styled.div`
