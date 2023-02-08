@@ -46,10 +46,10 @@ const GradientContainer = styled.div`
 
 const Topic = styled.p`
   font-weight: 500;
-  font-size: 28px;
+  font-size: 1.7rem;
   color: white;
   margin: auto 0;
-  width: 50%;
+  /* width: 50%; */
   line-height: 40px;
 `;
 

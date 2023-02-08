@@ -74,15 +74,17 @@ const HeroContainer = styled.header`
 `;
 
 const ImageContainer = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
   img {
     object-fit: cover;
+    width: 100%;
     max-width: 100%;
-    /* max-height: auto; */
     height: auto;
-    overflow: hidden;
-    z-index: -1;
-    position: absolute;
-    top: 0;
   }
 `;
 

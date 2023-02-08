@@ -282,14 +282,14 @@ const InstructorsList = styled.div`
 
 const CourseListSection = styled.div`
   display: flex;
-  gap: 2.5rem;
+  gap: 3rem;
   padding: 2rem var(--container-padding);
   background: #0d1117;
 `;
 
 const CourseListContainer = styled.div`
   width: 100%;
-  margin-top: 2rem;
+  margin-block: 2rem;
 `;
 
 const CourseList = styled.div`
