@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const GradientIcon = ({ IconComponent, bgColor }) => {
+  const Component = IconComponent;
   return (
     <GradientIconStyle>
       {IconComponent && IconComponent}

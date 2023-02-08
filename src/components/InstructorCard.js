@@ -1,12 +1,10 @@
-import { FaGraduationCap } from "react-icons/fa";
 import styled from "styled-components";
+import InstructorCap from "./InstructorCap";
 
 const InstructorCard = ({ instructorName, isLeadInstructor }) => {
   return (
     <Instructor>
-      <Cap>
-        <FaGraduationCap color="white" size={50} />
-      </Cap>
+      <InstructorCap />
       <div>
         <InstructorName>{instructorName}</InstructorName>
         {isLeadInstructor && <LeadInstructor>Lead Instructor</LeadInstructor>}
@@ -37,15 +35,4 @@ const LeadInstructor = styled.p`
   margin-block: 5px;
   color: #44e986;
   font-size: 12px;
-`;
-
-const Cap = styled.div`
-  background: linear-gradient(90deg, #44e986 0%, #e94444 100%);
-  border: 5px solid #f6f6f6;
-  border-radius: 9999999px;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;

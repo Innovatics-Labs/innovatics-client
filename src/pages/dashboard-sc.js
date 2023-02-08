@@ -7,6 +7,7 @@ import Link from "next/link";
 import GradientIcon from "../components/GradientIcon";
 import LineGradient from "../components/LineGradient";
 import JoinCohort from "../components/JoinCohort";
+import JoinDiscord from "../components/JoinDiscord";
 import Button from "../components/Button";
 import InstructorCard from "../components/InstructorCard";
 import CourseCard from "../components/CourseCard";
@@ -114,7 +115,6 @@ const Dashboardsc = () => {
             IconComponent={<VscGraph size={30} color="#44E986" />}
             bgColor={"#44E986"}
           />
-          <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
         </GradientContainer>
         <CourseListContainer>
           <CourseListHeading>
@@ -127,7 +127,42 @@ const Dashboardsc = () => {
           </CourseList>
         </CourseListContainer>
       </CourseListSection>
+      <AcademicPaths>
+        <GradientContainer>
+          <LineGradient
+            colorFrom={"#10C75900"}
+            colorTo={"#10C759"}
+            height={"54px"}
+          />
+          <GradientIcon
+            IconComponent={<VscGraph size={30} color="#44E986" />}
+            bgColor={"#44E986"}
+          />
+        </GradientContainer>
+        <Content>
+          <p style={{ fontWeight: "600", fontSize: "2rem" }}>Academic Paths</p>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div>
+              <p>
+                <GrayTitle>RECOMMENDED PREV:</GrayTitle>
+              </p>
+              <RecommendedTitle>None</RecommendedTitle>
+            </div>
+            <div>
+              <p>
+                <GrayTitle>RECOMMENDED NEXT</GrayTitle>
+              </p>
+              <div>
+                <RecommendedTitle>
+                  Advance Python Data Scientist
+                </RecommendedTitle>
+              </div>
+            </div>
+          </div>
+        </Content>
+      </AcademicPaths>
       <JoinCohort />
+      <JoinDiscord />
     </div>
   );
 };
@@ -157,8 +192,8 @@ const GradientContainer = styled.div`
 `;
 
 const DetailContainer = styled.div`
-  display: flex;
-  gap: 4rem;
+  /* display: flex;
+  gap: 4rem; */
   margin-top: 1rem;
   margin-bottom: 4rem;
 `;
@@ -302,4 +337,22 @@ const CourseListHeading = styled.p`
   font-size: 2rem;
   color: white;
   margin-bottom: 3rem;
+`;
+
+const AcademicPaths = styled.section`
+  padding: 2rem var(--container-padding);
+  background: #0d1117;
+  color: white;
+  display: flex;
+  gap: 2.5rem;
+`;
+
+const Content = styled.section`
+  flex: 1;
+  margin-block: 2rem;
+`;
+
+const RecommendedTitle = styled.p`
+  font-weight: 500;
+  font-size: 1.7rem;
 `;
