@@ -11,6 +11,7 @@ import JoinDiscord from "../components/JoinDiscord";
 import Button from "../components/Button";
 import InstructorCard from "../components/InstructorCard";
 import CourseCard from "../components/CourseCard";
+import Pagination from "../components/pagination";
 
 const Dashboardsc = () => {
   return (
@@ -141,24 +142,7 @@ const Dashboardsc = () => {
         </GradientContainer>
         <Content>
           <p style={{ fontWeight: "600", fontSize: "2rem" }}>Academic Paths</p>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div>
-              <p>
-                <GrayTitle>RECOMMENDED PREV:</GrayTitle>
-              </p>
-              <RecommendedTitle>None</RecommendedTitle>
-            </div>
-            <div>
-              <p>
-                <GrayTitle>RECOMMENDED NEXT</GrayTitle>
-              </p>
-              <div>
-                <RecommendedTitle>
-                  Advance Python Data Scientist
-                </RecommendedTitle>
-              </div>
-            </div>
-          </div>
+          <Pagination />
         </Content>
       </AcademicPaths>
       <JoinCohort />
@@ -347,12 +331,7 @@ const AcademicPaths = styled.section`
   gap: 2.5rem;
 `;
 
-const Content = styled.section`
+const Content = styled.article`
   flex: 1;
   margin-block: 2rem;
-`;
-
-const RecommendedTitle = styled.p`
-  font-weight: 500;
-  font-size: 1.7rem;
 `;

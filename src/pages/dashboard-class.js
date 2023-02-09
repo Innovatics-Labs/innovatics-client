@@ -6,6 +6,7 @@ import GradientIcon from "../components/GradientIcon";
 import InstructorCap from "../components/InstructorCap";
 import JoinDiscord from "../components/JoinDiscord";
 import LineGradient from "../components/LineGradient";
+import Pagination from "../components/pagination";
 import { GrayTitle } from "./dashboard-sc";
 
 const DashboardClass = () => {
@@ -45,6 +46,9 @@ const DashboardClass = () => {
           </CourseContentWrapper>
         </Content>
       </CourseSection>
+      <section style={{ padding: "2rem 4rem", backgroundColor: "#0d1117" }}>
+        <Pagination />
+      </section>
       <JoinDiscord />
     </div>
   );

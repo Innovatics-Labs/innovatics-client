@@ -13,7 +13,7 @@ const CourseOverview = () => {
           IconComponent={<VscGraph size={30} color="#fff" />}
           bgColor={"#fff"}
         />
-        <LineGradient colorFrom={"#FFFFFF00"} colorTo={"#fff"} />
+        <LineGradient colorFrom={"#FFF"} colorTo={"#fffFFF00"} />
       </GradientContainer>
       <CourseDetail>
         <CourseCategory>Data Science</CourseCategory>
