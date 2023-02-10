@@ -30,6 +30,7 @@ const Button = ({
   rounded,
   IconRight,
   IconLeft,
+  onClick,
   ...delegated
 }) => {
   return (
@@ -43,10 +44,12 @@ const Button = ({
       rounded={rounded}
       IconRight
       IconLeft
+      onClick={onClick}
       {...delegated}
     >
       {IconLeft && <span>{IconLeft}</span>}
       {title}
+      {IconLeft && <span>{IconLeft}</span>}
     </StyledButton>
   );
 };

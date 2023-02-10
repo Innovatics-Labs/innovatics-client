@@ -3,6 +3,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import styled from "styled-components";
 
 import Button from "../Button";
+import UnstyledButton from "../UnstyledButton";
 import LineGradient from "../LineGradient";
 import InsetSection from "../InsetSection";
 import { TextWithColor } from "./Practicality";
@@ -30,7 +31,7 @@ const WhyInnovatics = () => {
               trainings.
             </Title>
             <Start>
-              <span>Start learning</span>
+              <UnstyledButton>Start learning</UnstyledButton>
               <MdKeyboardArrowRight color={"#8691A6"} size={24} />
             </Start>
           </TextContent>
