@@ -1,38 +1,46 @@
+import { useState } from "react";
 import styled from "styled-components";
 import TopicResourceCard from "./TopicResourceCard";
+import UnstyledButton from "../UnstyledButton";
 
 const TopicCard = ({ topicTitle, activityCount }) => {
+  const [showDetails, setShowDetails] = useState(true);
+
   return (
     <Container>
       <TopicDetails>
         <TopicTitle>{topicTitle}</TopicTitle>
         <TopicDetail>Activities: {activityCount}</TopicDetail>
-        <TopicToggle>Hide details</TopicToggle>
+        <TopicToggle onClick={() => setShowDetails(!showDetails)}>
+          {showDetails ? "Hide details" : "Show Details"}
+        </TopicToggle>
       </TopicDetails>
-      <TopicContentWrapper>
-        <TopicResourceList>
-          <TopicResourceCard
-            resourcetype={"video"}
-            resourceTitle={"Innovatics Walk around"}
-            resourceDuration={"15m 6s"}
-          />
-          <TopicResourceCard
-            resourcetype={"video"}
-            resourceTitle={"Python lab with Jupyter Notebook"}
-            resourceDuration={"15m 6s"}
-          />
-          <TopicResourceCard
-            resourcetype={"quiz"}
-            resourceTitle={"Python IDE test"}
-            resourceDuration={"15m 10s"}
-          />
-          <TopicResourceCard
-            resourcetype={"lab"}
-            resourceTitle={"Python Jupyter Lab"}
-            resourceDuration={"10m 10s"}
-          />
-        </TopicResourceList>
-      </TopicContentWrapper>
+      {showDetails && (
+        <TopicContentWrapper>
+          <TopicResourceList>
+            <TopicResourceCard
+              resourcetype={"video"}
+              resourceTitle={"Innovatics Walk around"}
+              resourceDuration={"15m 6s"}
+            />
+            <TopicResourceCard
+              resourcetype={"video"}
+              resourceTitle={"Python lab with Jupyter Notebook"}
+              resourceDuration={"15m 6s"}
+            />
+            <TopicResourceCard
+              resourcetype={"quiz"}
+              resourceTitle={"Python IDE test"}
+              resourceDuration={"15m 10s"}
+            />
+            <TopicResourceCard
+              resourcetype={"lab"}
+              resourceTitle={"Python Jupyter Lab"}
+              resourceDuration={"10m 10s"}
+            />
+          </TopicResourceList>
+        </TopicContentWrapper>
+      )}
     </Container>
   );
 };
@@ -71,7 +79,7 @@ const TopicDetail = styled.p`
   margin-bottom: 10px;
 `;
 
-const TopicToggle = styled.div`
+const TopicToggle = styled(UnstyledButton)`
   font-weight: 500;
   font-size: 18px;
   margin-top: 10px;
