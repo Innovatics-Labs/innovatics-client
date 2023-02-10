@@ -28,6 +28,8 @@ const Button = ({
   borderColor,
   size,
   rounded,
+  IconRight,
+  IconLeft,
   ...delegated
 }) => {
   return (
@@ -39,8 +41,11 @@ const Button = ({
       borderColor={borderColor}
       size={size}
       rounded={rounded}
+      IconRight
+      IconLeft
       {...delegated}
     >
+      {IconLeft && <span>{IconLeft}</span>}
       {title}
     </StyledButton>
   );

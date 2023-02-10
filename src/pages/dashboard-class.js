@@ -1,7 +1,7 @@
 import { VscGraph } from "react-icons/vsc";
 import styled from "styled-components";
 import CourseOverview from "../components/dashboardclass/CourseOverview";
-import VideoCard from "../components/dashboardclass/VideoCard";
+import TopicCard from "../components/dashboardclass/TopicCard";
 import GradientIcon from "../components/GradientIcon";
 import InstructorCap from "../components/InstructorCap";
 import JoinDiscord from "../components/JoinDiscord";
@@ -40,9 +40,11 @@ const DashboardClass = () => {
           </Instructordetails>
           <CourseContentWrapper>
             <CourseTitle>Introduction to Python</CourseTitle>
-            <VideoCard />
-            <VideoCard />
-            <VideoCard />
+            <TopicCard
+              topicTitle={"Python Lab & Innovatics platform"}
+              activityCount={2}
+            />
+            <TopicCard topicTitle={"Python Introduction"} activityCount={15} />
           </CourseContentWrapper>
         </Content>
       </CourseSection>

@@ -45,7 +45,7 @@ const Hero = () => {
               </ButtonGroup>
               <DataCompany>
                 <JoinCompany>
-                  Join the world leading data driven companies
+                  <span>Join the world leading data driven companies</span>
                   <Image src={downarrow} alt="" />
                 </JoinCompany>
                 <DataCompanyImages>
@@ -158,6 +158,8 @@ const DataCompany = styled.div`
 `;
 
 const JoinCompany = styled.p`
+  display: flex;
+  align-items: center;
   font-weight: 400;
   font-size: 24px;
   margin-block: 2rem;
