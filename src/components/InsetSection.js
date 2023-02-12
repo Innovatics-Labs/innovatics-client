@@ -23,7 +23,7 @@ const Container = styled.section`
     url(${props.bgImage});`};
   background-repeat: no-repeat;
   /* background-size: cover, 1840px; */
-  background-size: cover, 100%;
+  background-size: cover, cover;
   /* TODO: add dynamic background positioning later */
   background-position: center;
   box-shadow: inset 50px 0px 70px rgba(13, 17, 23, 0.9);

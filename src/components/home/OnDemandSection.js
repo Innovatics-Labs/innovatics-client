@@ -5,11 +5,12 @@ import { BsCollectionPlay } from "react-icons/bs";
 import Button from "../Button";
 import LineGradient from "../LineGradient";
 import rocket from "../../assets/images/rocket.png";
+import { QUERIES } from "../../constants";
 
 const OnDemandSection = () => {
   return (
     <Container>
-      <div style={{ display: "flex" }}>
+      <GradientContainer>
         <Gradient>
           <LineGradient
             colorFrom={"#FC69AF00"}
@@ -18,7 +19,7 @@ const OnDemandSection = () => {
           />
         </Gradient>
         <Image src={rocket} alt="" priority />
-      </div>
+      </GradientContainer>
       <CardsContainer>
         <Card>
           <Top>
@@ -80,16 +81,32 @@ const OnDemandSection = () => {
 export default OnDemandSection;
 
 const Container = styled.div`
+  /* max-width: 100vw; */
   background: #0d1117;
   padding: 3rem var(--container-padding);
   padding-bottom: 0px;
   display: flex;
   gap: 2rem;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    flex-wrap: wrap;
+  }
+`;
+
+const GradientContainer = styled.div`
+  display: flex;
+  @media ${QUERIES.tabletAndSmaller} {
+    order: 2;
+    flex: 1;
+  }
 `;
 
 const Gradient = styled.div`
   align-self: flex-end;
   margin-bottom: 1.5rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    display: none;
+  }
 `;
 
 const CardsContainer = styled.div`
@@ -97,7 +114,11 @@ const CardsContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-self: flex-start;
-  flex: 1;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    order: 1;
+  }
 `;
 
 const Card = styled.div`

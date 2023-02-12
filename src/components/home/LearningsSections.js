@@ -6,6 +6,7 @@ import LineGradient from "../LineGradient";
 import GradientIcon from "../GradientIcon";
 import { TextWithColor } from "./Practicality";
 import TopicCard from "../TopicCard";
+import { QUERIES } from "../../constants";
 
 const LearningsSections = () => {
   return (
@@ -45,6 +46,7 @@ const LearningsSections = () => {
 export default LearningsSections;
 
 const Container = styled.section`
+  /* max-width: 100vw; */
   background: #fafcff;
   padding: 2rem var(--container-padding);
 `;
@@ -82,4 +84,9 @@ const SubTitle = styled.p`
 const BottomSection = styled.div`
   margin-top: 2rem;
   display: flex;
+  @media ${QUERIES.tabletAndSmaller} {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
 `;
