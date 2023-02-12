@@ -64,13 +64,13 @@ const TextContent = styled.div`
 
 const QualityText = styled.p`
   font-weight: 600;
-  font-size: 50px;
+  font-size: clamp(1.5rem, 4.881vw + -0.33rem, 4.063rem);
   margin-block: 10px;
 `;
 
 const SubQualityText = styled.p`
   font-weight: 500;
-  font-size: 20px;
+  font-size: clamp(0.875rem, 1.667vw + 0.25rem, 1.75rem);
   margin-top: 0;
   width: 70%;
 `;

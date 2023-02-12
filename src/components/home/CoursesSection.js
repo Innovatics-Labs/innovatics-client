@@ -30,32 +30,17 @@ const CoursesSection = () => {
             <Image src={courseimg} alt="" />
           </CourseImage>
           <Content>
-            <div style={{ width: "fit-content" }}>
+            <Gradient>
               <GradientIcon
                 IconComponent={<BsSun size={30} color="#44E986" />}
                 bgColor={"#44E986"}
               />
-            </div>
+            </Gradient>
             <CourseTitle>Python Introduction</CourseTitle>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <p
-                style={{
-                  fontWeight: "500",
-                  fontSize: "18px",
-                  color: "#8691A6",
-                  marginBlock: 0,
-                }}
-              >
-                Beginner
-              </p>
+            <CourseLevel>
+              <p>Beginner</p>
               <Image src={arrow} alt={""} />
-            </div>
+            </CourseLevel>
           </Content>
         </CourseCard>
         <CourseCard>
@@ -63,32 +48,17 @@ const CoursesSection = () => {
             <Image src={courseimg} alt="" />
           </CourseImage>
           <Content>
-            <div style={{ width: "fit-content" }}>
+            <Gradient>
               <GradientIcon
                 IconComponent={<BsSun size={30} color="#44E986" />}
                 bgColor={"#44E986"}
               />
-            </div>
+            </Gradient>
             <CourseTitle>Python Introduction</CourseTitle>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <p
-                style={{
-                  fontWeight: "500",
-                  fontSize: "18px",
-                  color: "#8691A6",
-                  marginBlock: 0,
-                }}
-              >
-                Beginner
-              </p>
+            <CourseLevel>
+              <p>Beginner</p>
               <Image src={arrow} alt={""} />
-            </div>
+            </CourseLevel>
           </Content>
         </CourseCard>
         <CourseCard>
@@ -96,32 +66,17 @@ const CoursesSection = () => {
             <Image src={courseimg} alt="" />
           </CourseImage>
           <Content>
-            <div style={{ width: "fit-content" }}>
+            <Gradient>
               <GradientIcon
                 IconComponent={<BsSun size={30} color="#44E986" />}
                 bgColor={"#44E986"}
               />
-            </div>
+            </Gradient>
             <CourseTitle>Python Introduction</CourseTitle>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <p
-                style={{
-                  fontWeight: "500",
-                  fontSize: "18px",
-                  color: "#8691A6",
-                  marginBlock: 0,
-                }}
-              >
-                Beginner
-              </p>
+            <CourseLevel>
+              <p>Beginner</p>
               <Image src={arrow} alt={""} />
-            </div>
+            </CourseLevel>
           </Content>
         </CourseCard>
         <CourseCard>
@@ -129,32 +84,17 @@ const CoursesSection = () => {
             <Image src={courseimg} alt="" />
           </CourseImage>
           <Content>
-            <div style={{ width: "fit-content" }}>
+            <div>
               <GradientIcon
                 IconComponent={<BsSun size={30} color="#44E986" />}
                 bgColor={"#44E986"}
               />
             </div>
             <CourseTitle>Python Introduction</CourseTitle>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <p
-                style={{
-                  fontWeight: "500",
-                  fontSize: "18px",
-                  color: "#8691A6",
-                  marginBlock: 0,
-                }}
-              >
-                Beginner
-              </p>
+            <CourseLevel>
+              <p>Beginner</p>
               <Image src={arrow} alt={""} />
-            </div>
+            </CourseLevel>
           </Content>
         </CourseCard>
         <CourseCard>
@@ -162,32 +102,17 @@ const CoursesSection = () => {
             <Image src={courseimg} alt="" />
           </CourseImage>
           <Content>
-            <div style={{ width: "fit-content" }}>
+            <Gradient>
               <GradientIcon
                 IconComponent={<BsSun size={30} color="#44E986" />}
                 bgColor={"#44E986"}
               />
-            </div>
+            </Gradient>
             <CourseTitle>Python Introduction</CourseTitle>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <p
-                style={{
-                  fontWeight: "500",
-                  fontSize: "18px",
-                  color: "#8691A6",
-                  marginBlock: 0,
-                }}
-              >
-                Beginner
-              </p>
+            <CourseLevel>
+              <p>Beginner</p>
               <Image src={arrow} alt={""} />
-            </div>
+            </CourseLevel>
           </Content>
         </CourseCard>
         <CourseCard>
@@ -195,20 +120,14 @@ const CoursesSection = () => {
             <Image src={courseimg} alt="" />
           </CourseImage>
           <Content>
-            <div style={{ width: "fit-content" }}>
+            <Gradient>
               <GradientIcon
                 IconComponent={<BsSun size={30} color="#44E986" />}
                 bgColor={"#44E986"}
               />
-            </div>
+            </Gradient>
             <CourseTitle>Python Introduction</CourseTitle>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
+            <CourseLevel>
               <p
                 style={{
                   fontWeight: "500",
@@ -220,7 +139,7 @@ const CoursesSection = () => {
                 Beginner
               </p>
               <Image src={arrow} alt={""} />
-            </div>
+            </CourseLevel>
           </Content>
         </CourseCard>
       </CourseList>
@@ -291,4 +210,22 @@ const CourseTitle = styled.div`
   margin-block: 1rem;
   font-weight: 600;
   font-size: 18px;
+  color: black;
+`;
+
+const Gradient = styled.div`
+  width: fit-content;
+`;
+
+const CourseLevel = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    color: #8691a6;
+    margin-block: 0;
+  }
 `;
