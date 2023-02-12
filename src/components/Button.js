@@ -62,7 +62,8 @@ const StyledButton = styled.button`
   width: ${({ width }) => `${width && width}`};
   padding-block: 10px;
   font-weight: 400;
-  font-size: ${({ size }) => `${size ? size : "1.5rem"}`};
+  font-size: ${({ size }) =>
+    `${size ? size : "clamp(1rem, 0.952vw + 0.643rem, 1.5rem)"}`};
   padding-inline: 2rem;
   cursor: pointer;
 
