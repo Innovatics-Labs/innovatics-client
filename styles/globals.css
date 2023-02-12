@@ -2,6 +2,22 @@
 
 :root {
   --container-padding: 4rem;
+  /* 76px */
+  --font-size-4xl: clamp(2.625rem, 4.048vw + 1.107rem, 4.75rem);
+  /* 55px */
+  --font-size-3xl: clamp(1.75rem, 3.214vw + 0.545rem, 3.438rem);
+  /* 40px */
+  --font-size-2xl: clamp(1.25rem, 2.381vw + 0.357rem, 2.5rem);
+  /* 32px */
+  --font-size-xl: clamp(1.125rem, 1.667vw + 0.5rem, 2rem);
+  /* 28px */
+  --font-size-lg: clamp(1rem, 1.429vw + 0.464rem, 1.75rem);
+  /* 24px */
+  --font-size-2md: 1.5rem;
+  /* 18px */
+  --font-size-md: 1.12rem;
+  /* 16px */
+  --font-size-base: 1rem;
 }
 
 /*
@@ -21,7 +37,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 /*

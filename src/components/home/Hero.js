@@ -133,28 +133,29 @@ const HeroDetails = styled.div`
 
 const Heading = styled.h1`
   font-weight: 600;
-  font-size: 65px;
+  font-size: var(--font-size-4xl);
   color: white;
-  width: 80%;
+  /* width: 80%; */
 `;
 
 const SubHeading = styled.p`
   font-weight: 500;
-  font-size: 30px;
-  line-height: 55px;
+  font-size: var(--font-size-xl);
+  line-height: clamp(1.875rem, 5vw - 1rem, 3.438rem);
   color: #8b949e;
-  width: 80%;
+  max-width: 85%;
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
   gap: 1rem;
-  margin-block: 2.5rem;
+  margin-block: 2rem;
 `;
 
 const DataCompany = styled.div`
   color: #8b949e;
   padding-block: 2rem;
+  margin-bottom: 1rem;
 `;
 
 const JoinCompany = styled.p`

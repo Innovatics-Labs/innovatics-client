@@ -68,14 +68,14 @@ const TextContent = styled.div`
 `;
 
 const Title = styled.h4`
-  font-size: 25px;
+  font-size: var(--font-size-2xl);
   margin: 0;
 `;
 
 const SubTitle = styled.p`
-  font-size: 40px;
+  font-size: var(--font-size-3xl);
   margin-block: 1.5rem;
-  width: 70%;
+  width: 80%;
 `;
 
 export const TextWithColor = styled.span`

@@ -68,14 +68,14 @@ const TextContent = styled.div`
 
 const Title = styled.h4`
   font-weight: 600;
-  font-size: 27px;
-  line-height: 35px;
+  font-size: var(--font-size-2xl);
+  margin-block: 1.5rem;
 `;
 
 const SubTitle = styled.p`
-  font-size: 40px;
+  font-size: var(--font-size-3xl);
   margin-block: 1.5rem;
-  max-width: 754px;
+  max-width: 70%;
 `;
 
 const Start = styled.p`

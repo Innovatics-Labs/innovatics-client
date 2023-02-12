@@ -32,11 +32,13 @@ const Container = styled.section`
 
 const Title = styled.p`
   font-weight: 600;
-  font-size: 45px;
+  font-size: var(--font-size-3xl);
   margin-block: 10px;
 `;
+
 const SubTitle = styled.p`
   font-weight: 500;
-  font-size: 25px;
+  font-size: var(--font-size-lg);
+  line-height: clamp(1.5rem, 1.476vw + 0.946rem, 2.5rem);
   width: 80%;
 `;

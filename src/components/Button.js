@@ -58,12 +58,12 @@ export default Button;
 
 const StyledButton = styled.button`
   border: 1px solid transparent;
-  border-radius: ${({ rounded }) => `${rounded ? "2em" : "10px"}`};
+  border-radius: ${({ rounded }) => `${rounded ? "2rem" : "10px"}`};
   width: ${({ width }) => `${width && width}`};
   padding-block: 10px;
   font-weight: 400;
-  font-size: ${({ size }) => `${size ? size : "24px"}`};
-  padding-inline: 35px;
+  font-size: ${({ size }) => `${size ? size : "1.5rem"}`};
+  padding-inline: 2rem;
   cursor: pointer;
 
   ${({ variant, bgColor, color, borderColor }) =>

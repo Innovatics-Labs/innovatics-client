@@ -41,6 +41,7 @@ const NavContainer = styled.nav`
   /* align-items: center; */
   padding-inline: 4rem;
   background: black;
+  flex-wrap: wrap;
 
   ${({ pathName }) =>
     pathName === "/" &&
@@ -62,8 +63,7 @@ const NavItems = styled.ul`
   align-items: center;
   color: white;
   list-style: none;
-  font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size-md);
 `;
 
 const SignInButton = styled.li`

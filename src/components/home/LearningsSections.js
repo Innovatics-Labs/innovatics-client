@@ -68,21 +68,18 @@ const TextContent = styled.div`
 `;
 
 const Title = styled.h4`
-  font-size: 25px;
+  font-size: var(--font-size-2xl);
   margin: 0;
+  line-height: 35px;
 `;
 
 const SubTitle = styled.p`
-  font-size: 40px;
+  font-size: var(--font-size-3xl);
   margin-block: 1.5rem;
-  width: 70%;
+  max-width: 80%;
 `;
 
 const BottomSection = styled.div`
   margin-top: 2rem;
   display: flex;
-
-  /* :not(:first-child) {
-    margin-left: -50px;
-  } */
 `;
