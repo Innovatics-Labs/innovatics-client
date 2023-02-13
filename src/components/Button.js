@@ -31,10 +31,12 @@ const Button = ({
   IconRight,
   IconLeft,
   onClick,
+  className,
   ...delegated
 }) => {
   return (
     <StyledButton
+      className={className}
       variant={variant}
       width={width}
       color={color}
@@ -49,7 +51,7 @@ const Button = ({
     >
       {IconLeft && <span>{IconLeft}</span>}
       {title}
-      {IconLeft && <span>{IconLeft}</span>}
+      {IconRight && <span>{IconRight}</span>}
     </StyledButton>
   );
 };

@@ -23,7 +23,6 @@ const JoinCohort = () => {
 export default JoinCohort;
 
 const Container = styled.section`
-  /* max-width: 100vw; */
   color: white;
   padding: 3rem;
   text-align: center;
@@ -43,7 +42,7 @@ const SubTitle = styled.p`
   font-size: var(--font-size-lg);
   line-height: clamp(1.5rem, 1.476vw + 0.946rem, 2.5rem);
   width: 80%;
-  /* @media ${QUERIES.tabletAndSmaller} {
+  @media ${QUERIES.tabletAndSmaller} {
     width: revert;
-  } */
+  }
 `;
