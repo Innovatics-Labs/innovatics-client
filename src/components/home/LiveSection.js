@@ -7,6 +7,7 @@ import { TextWithColor } from "./Practicality";
 import InsetSection from "../InsetSection";
 import LineGradient from "../LineGradient";
 import BlueCurve from "../../assets/images/curve-gradient-blue.png";
+import { QUERIES } from "../../constants";
 
 const FeaturedSection = () => {
   return (
@@ -56,12 +57,18 @@ const CurveContainer = styled.div`
     /* width: auto; */
     object-fit: contain;
   }
+  @media ${QUERIES.phoneAndSmaller} {
+    display: none;
+  }
 `;
 
 const TextContent = styled.div`
   align-self: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    margin-left: 2rem;
+  }
 `;
 
 const QualityText = styled.p`
@@ -75,4 +82,8 @@ const SubQualityText = styled.p`
   font-size: clamp(0.875rem, 1.667vw + 0.25rem, 1.75rem);
   margin-top: 0;
   width: 70%;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    width: revert;
+  }
 `;

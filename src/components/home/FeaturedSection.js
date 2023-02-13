@@ -7,6 +7,7 @@ import LineGradient from "../LineGradient";
 import RedCurve from "../../assets/images/curve-gradient-red.png";
 import Button from "../Button";
 import { TextWithColor } from "./Practicality";
+import { QUERIES } from "../../constants";
 
 const FeaturedSection = () => {
   return (
@@ -54,12 +55,18 @@ const CurveContainer = styled.div`
     height: 100%;
     object-fit: contain;
   }
+  @media ${QUERIES.phoneAndSmaller} {
+    display: none;
+  }
 `;
 
 const TextContent = styled.div`
   align-self: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    margin-left: 2rem;
+  }
 `;
 
 const QualityText = styled.p`

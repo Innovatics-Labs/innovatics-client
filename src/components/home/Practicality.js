@@ -7,6 +7,7 @@ import GradientIcon from "../GradientIcon";
 import jupyterLab from "../../assets/images/JupyterLab.png";
 import codesnippet from "../../assets/images/codesnippet.png";
 import labRunning from "../../assets/images/labRunning.png";
+import { QUERIES } from "../../constants";
 
 const Practicality = () => {
   return (
@@ -30,12 +31,25 @@ const Practicality = () => {
         </TextContent>
       </TopSection>
       <BottomSection>
-        <Image src={jupyterLab} alt="" />
+        <Jupyter>
+          <Image
+            src={jupyterLab}
+            alt="jupyterLab"
+            placeholder="blur"
+            sizes="100vw"
+          />
+        </Jupyter>
+
         <Code>
-          <Image src={codesnippet} alt="" placeholder="blur" />
+          <Image
+            src={codesnippet}
+            alt="codesnippet"
+            placeholder="blur"
+            sizes="100vw"
+          />
         </Code>
         <Lab>
-          <Image src={labRunning} alt="" placeholder="blur" />
+          <Image src={labRunning} alt="" placeholder="blur" sizes="100vw" />
         </Lab>
       </BottomSection>
     </Container>
@@ -45,6 +59,7 @@ const Practicality = () => {
 export default Practicality;
 
 const Container = styled.section`
+  max-width: 100vw;
   background: rgba(13, 17, 22);
   padding: 2rem var(--container-padding);
   padding-bottom: 1rem;
@@ -76,6 +91,9 @@ const SubTitle = styled.p`
   font-size: var(--font-size-3xl);
   margin-block: 1.5rem;
   width: 80%;
+  @media ${QUERIES.tabletAndSmaller} {
+    width: revert;
+  }
 `;
 
 export const TextWithColor = styled.span`
@@ -87,14 +105,45 @@ const BottomSection = styled.div`
   position: relative;
 `;
 
+const Jupyter = styled.div`
+  @media ${QUERIES.tabletAndSmaller} {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+`;
 const Code = styled.div`
   position: absolute;
   top: 10%;
   right: 5%;
+  @media ${QUERIES.phoneAndSmaller} {
+    top: 60%;
+    right: 2%;
+    height: 75px;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
 `;
 
 const Lab = styled.div`
   position: absolute;
   top: 45%;
   right: 17%;
+  @media ${QUERIES.phoneAndSmaller} {
+    position: revert;
+    display: inline-block;
+    top: revert;
+    right: revert;
+    width: 40vw;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transform: translateX(-7px);
+    }
+  }
 `;

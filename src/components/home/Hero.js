@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { GiStarsStack } from "react-icons/gi";
 
+import { QUERIES } from "../../constants";
 import Button from "../Button";
 import GradientIcon from "../GradientIcon";
 import LineGradient from "../LineGradient";
@@ -25,7 +26,12 @@ const Hero = () => {
           <HeroContentContainer>
             <LineContainer>
               <LineImage>
-                <Image src={campaigLines} alt={"campaign lines"} priority />
+                <Image
+                  src={campaigLines}
+                  alt={"campaign lines"}
+                  priority
+                  sizes="100vw"
+                />
               </LineImage>
               <GradientIcon
                 IconComponent={<GiStarsStack size={40} color={"#fff"} />}
@@ -49,9 +55,9 @@ const Hero = () => {
                   <Image src={downarrow} alt="" />
                 </JoinCompany>
                 <DataCompanyImages>
-                  <Image src={kpmgLogo} alt="" />
-                  <Image src={mercedes} alt="" />
-                  <Image src={pinterest} alt="" />
+                  <Image src={kpmgLogo} alt="" sizes="100vw" />
+                  <Image src={mercedes} alt="" sizes="100vw" />
+                  <Image src={pinterest} alt="" sizes="100vw" />
                 </DataCompanyImages>
               </DataCompany>
             </HeroDetails>
@@ -65,7 +71,6 @@ const Hero = () => {
 export default Hero;
 
 const HeroContainer = styled.header`
-  max-width: 100vw;
   background-image: linear-gradient(
     rgba(13, 17, 23, 0.1) 0%,
     rgba(13, 17, 23, 0.9) 30%,
@@ -84,7 +89,7 @@ const ImageContainer = styled.div`
     object-fit: cover;
     width: 100%;
     max-width: 100%;
-    height: auto;
+    /* height: auto; */
   }
 `;
 
@@ -97,6 +102,9 @@ const HeroCampaign = styled.section`
 
 const HeroContentContainer = styled.div`
   display: flex;
+  @media ${QUERIES.tabletAndSmaller} {
+    gap: 1.5rem;
+  }
 `;
 
 const HeroDrone = styled(Image)`
@@ -105,6 +113,10 @@ const HeroDrone = styled(Image)`
   padding-right: 3rem;
   object-fit: contain;
   height: auto;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    display: none;
+  }
 `;
 
 const LineContainer = styled.div`
@@ -122,6 +134,14 @@ const LineImage = styled.div`
   margin: 0 auto;
   align-self: flex-end;
   transform: translateX(1rem);
+
+  @media ${QUERIES.tabletAndSmaller} {
+    width: 70vw;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 `;
 
 const HeroDetails = styled.div`
@@ -129,27 +149,41 @@ const HeroDetails = styled.div`
   margin-top: 10rem;
   padding-top: 2rem;
   isolation: isolate;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    margin-top: 5rem;
+  }
 `;
 
 const Heading = styled.h1`
   font-weight: 600;
   font-size: var(--font-size-4xl);
   color: white;
-  /* width: 80%; */
 `;
 
 const SubHeading = styled.p`
   font-weight: 500;
   font-size: var(--font-size-xl);
-  line-height: clamp(1.875rem, 5vw - 1rem, 3.438rem);
+  line-height: clamp(1.6rem, 5vw - 1rem, 3.438rem);
   color: #8b949e;
   max-width: 85%;
+  @media ${QUERIES.tabletAndSmaller} {
+    max-width: revert;
+    width: 70vw;
+  }
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
   gap: 1rem;
-  margin-block: 2rem;
+  margin-block: clamp(1rem, 1.19vw + 0.429rem, 2rem);
+  flex-wrap: wrap;
+  @media ${QUERIES.tabletAndSmaller} {
+    button {
+      width: 100%;
+      padding: 10px;
+    }
+  }
 `;
 
 const DataCompany = styled.div`
@@ -162,8 +196,8 @@ const JoinCompany = styled.p`
   display: flex;
   align-items: center;
   font-weight: 400;
-  font-size: 24px;
-  margin-block: 2rem;
+  font-size: clamp(0.875rem, 1.19vw + 0.429rem, 1.5rem);
+  margin-block: clamp(1rem, 1.19vw + 0.429rem, 2rem);
   img {
     margin-inline: 1rem;
   }
@@ -173,4 +207,5 @@ const DataCompanyImages = styled.div`
   display: flex;
   gap: 2rem;
   align-items: center;
+  flex-wrap: wrap;
 `;

@@ -79,6 +79,9 @@ const SubTitle = styled.p`
   font-size: var(--font-size-3xl);
   margin-block: 1.5rem;
   max-width: 80%;
+  @media ${QUERIES.phoneAndSmaller} {
+    max-width: revert;
+  }
 `;
 
 const BottomSection = styled.div`

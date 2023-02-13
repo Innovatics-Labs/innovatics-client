@@ -57,14 +57,14 @@ const TextContent = styled.div`
 
 const Title = styled.h4`
   font-weight: 600;
-  font-size: 27px;
+  font-size: var(--font-size-2xl);
   line-height: 35px;
 `;
 
 const SubTitle = styled.p`
-  font-size: 40px;
+  font-size: clamp(0.875rem, 2.143vw + 0.071rem, 2rem);
   margin-block: 1.5rem;
-  width: 80%;
+  width: min(40ch, 100%);
 `;
 
 const Start = styled.p`

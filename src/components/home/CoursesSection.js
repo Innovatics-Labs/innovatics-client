@@ -7,6 +7,7 @@ import Button from "../Button";
 import GradientIcon from "../GradientIcon";
 import arrow from "../../assets/images/arrow.png";
 import courseimg from "../../assets/images/james-yarema-E-CdfbrnnFs-unsplash 2.png";
+import { QUERIES } from "../../constants";
 
 const CoursesSection = () => {
   return (
@@ -84,12 +85,12 @@ const CoursesSection = () => {
             <Image src={courseimg} alt="" />
           </CourseImage>
           <Content>
-            <div>
+            <Gradient>
               <GradientIcon
                 IconComponent={<BsSun size={30} color="#44E986" />}
                 bgColor={"#44E986"}
               />
-            </div>
+            </Gradient>
             <CourseTitle>Python Introduction</CourseTitle>
             <CourseLevel>
               <p>Beginner</p>
@@ -157,12 +158,14 @@ const Container = styled.section`
 const TabsSection = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   ul {
     list-style-type: none;
     display: flex;
     gap: 2rem;
     padding-left: 0;
+    flex-wrap: wrap;
   }
 
   li {
@@ -172,8 +175,19 @@ const TabsSection = styled.div`
 
     :first-child {
       color: #0d1117;
+      padding-bottom: 0.5rem;
       border-bottom: 3px solid #44e986;
       border-radius: 20px 10px 0px 0px;
+    }
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    ul {
+      gap: 1.5rem;
+    }
+
+    li {
+      font-size: 14px;
     }
   }
 `;
@@ -183,7 +197,6 @@ const CourseList = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
-
   gap: 1rem;
 `;
 

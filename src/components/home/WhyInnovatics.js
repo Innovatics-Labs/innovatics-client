@@ -9,6 +9,7 @@ import InsetSection from "../InsetSection";
 import { TextWithColor } from "./Practicality";
 import labRunning from "../../assets/images/labRunningLarg.png";
 import GreenCurve from "../../assets/images/curve-gradient-green.png";
+import { QUERIES } from "../../constants";
 
 const WhyInnovatics = () => {
   return (
@@ -36,7 +37,7 @@ const WhyInnovatics = () => {
             </Start>
           </TextContent>
           <ImageContent>
-            <Image src={labRunning} alt={""} />
+            <Image src={labRunning} alt={""} sizes="100vw" />
           </ImageContent>
         </TopContent>
         <BottomContent>
@@ -76,16 +77,25 @@ const CurveContainer = styled.div`
     object-fit: contain;
     transform: translateY(7rem);
   }
+  @media ${QUERIES.phoneAndSmaller} {
+    display: none;
+  }
 `;
 
 const Content = styled.div`
   margin-bottom: 4rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    margin-left: 2rem;
+  }
 `;
 
 const TopContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const TextContent = styled.div``;
@@ -100,8 +110,11 @@ const ImageContent = styled.div`
 
 const Title = styled.h3`
   font-weight: 600;
-  font-size: 27px;
+  font-size: var(--font-size-xl);
   line-height: 35px;
+  @media ${QUERIES.phoneAndSmaller} {
+    line-height: 1.3;
+  }
 `;
 
 const Start = styled.p`
@@ -120,7 +133,7 @@ const BottomContent = styled.div`
 
 const QualityText = styled.p`
   font-weight: 600;
-  font-size: 50px;
+  font-size: var(--font-size-3xl);
   margin-block: 10px;
 `;
 
@@ -128,4 +141,7 @@ const SubQualityText = styled.p`
   font-weight: 500;
   font-size: 20px;
   margin-top: 0;
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: 14px;
+  }
 `;

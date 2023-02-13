@@ -6,6 +6,7 @@ import LineGradient from "../LineGradient";
 import GradientIcon from "../GradientIcon";
 import { TextWithColor } from "./Practicality";
 import PricingPlanCard from "../PricingPlanCard";
+import { QUERIES } from "../../constants";
 
 const PricingSection = () => {
   return (
@@ -45,6 +46,7 @@ const PricingSection = () => {
 export default PricingSection;
 
 const Container = styled.section`
+  max-width: 100vw;
   background: #0d1117;
   padding: 2rem var(--container-padding);
 `;
@@ -76,6 +78,9 @@ const SubTitle = styled.p`
   font-size: var(--font-size-3xl);
   margin-block: 1.5rem;
   max-width: 70%;
+  @media ${QUERIES.tabletAndSmaller} {
+    max-width: revert;
+  }
 `;
 
 const Start = styled.p`
@@ -91,4 +96,8 @@ const PricingContainer = styled.div`
   display: flex;
   gap: 35px;
   margin-block: 10px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    flex-direction: column;
+  }
 `;

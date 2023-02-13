@@ -18,7 +18,9 @@ const OnDemandSection = () => {
             height={"250px"}
           />
         </Gradient>
-        <Image src={rocket} alt="" priority />
+        <ImageContainer>
+          <Image src={rocket} alt="" sizes="100vw" />
+        </ImageContainer>
       </GradientContainer>
       <CardsContainer>
         <Card>
@@ -81,7 +83,7 @@ const OnDemandSection = () => {
 export default OnDemandSection;
 
 const Container = styled.div`
-  /* max-width: 100vw; */
+  max-width: 100vw;
   background: #0d1117;
   padding: 3rem var(--container-padding);
   padding-bottom: 0px;
@@ -136,6 +138,17 @@ const Top = styled.div`
   display: flex;
   gap: 1.5rem;
   align-items: center;
+`;
+
+const ImageContainer = styled.div`
+  @media ${QUERIES.tabletAndSmaller} {
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+      /* object-fit: cover; */
+    }
+  }
 `;
 
 const Icon = styled.div`
