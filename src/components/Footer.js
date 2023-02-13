@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import logo from "../assets/images/logo 1.png";
+import { QUERIES } from "../constants";
 import Copyright from "./Copyright";
 
 const Footer = () => {
@@ -93,29 +94,48 @@ const FooterContainer = styled.footer`
   background-color: #0d1117;
   color: white;
   padding-inline: 4rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    padding-inline: 2rem;
+  }
 `;
 
 const FooterTopSection = styled.div`
   display: flex;
   gap: 7rem;
   padding-block: 2rem;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
 `;
 
 const LinksContainer = styled.div`
   display: flex;
   gap: 3rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 `;
-const LinksSection = styled.div``;
+
+const LinksSection = styled.div`
+  font-size: var(--font-size-md);
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: 14px;
+  }
+`;
 
 const LinksSectionTitle = styled.h2`
   margin-top: 0;
   font-weight: 600;
-  font-size: 18px;
   color: #8691a6;
 `;
 
 const LinkList = styled.ul`
-  font-size: 18px;
   line-height: 22px;
   list-style: none;
   padding-left: 0;
@@ -123,5 +143,4 @@ const LinkList = styled.ul`
 
 const LinkListItem = styled.li`
   margin-block: 10px;
-  font-size: 18px;
 `;

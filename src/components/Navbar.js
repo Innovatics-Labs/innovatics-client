@@ -1,33 +1,49 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 import styled, { css } from "styled-components";
 import logo from "../assets/images/logo 1.png";
+import { QUERIES } from "../constants";
 
 const Navbar = () => {
   const route = useRouter();
+
+  const [showNav, setShowNav] = useState(false);
+
+  const handleShowNavbar = () => {
+    setShowNav(!showNav);
+  };
+
   return (
     <NavContainer pathName={route.pathname}>
-      <Logo>
-        <Link href={"/"}>
-          <Image src={logo} alt="innovatics logo" />
-        </Link>
-      </Logo>
-      <NavItems>
-        <li>
-          <Link href={"/academy"}>Academy</Link>
-        </li>
-        <li>
-          <Link href={"/resources"}>Resources</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Pricing</Link>
-        </li>
-        <SignInButton>
-          <Link href={"/signIn"}>Sign In</Link>
-        </SignInButton>
-      </NavItems>
+      <Container>
+        <Logo>
+          <Link href={"/"}>
+            <Image src={logo} alt="innovatics logo" />
+          </Link>
+        </Logo>
+        <MenuIcon onClick={handleShowNavbar}>
+          <GiHamburgerMenu size={26} />
+        </MenuIcon>
+        <NavElements active={showNav}>
+          <NavItems>
+            <li>
+              <Link href={"/academy"}>Academy</Link>
+            </li>
+            <li>
+              <Link href={"/resources"}>Resources</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Pricing</Link>
+            </li>
+            <SignInButton>
+              <Link href={"/signIn"}>Sign In</Link>
+            </SignInButton>
+          </NavItems>
+        </NavElements>
+      </Container>
     </NavContainer>
   );
 };
@@ -35,14 +51,8 @@ const Navbar = () => {
 export default Navbar;
 
 const NavContainer = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  padding-block: 10px;
-  /* align-items: center; */
-  padding-inline: 4rem;
+  position: relative;
   background: black;
-  flex-wrap: wrap;
-
   ${({ pathName }) =>
     pathName === "/" &&
     css`
@@ -51,6 +61,48 @@ const NavContainer = styled.nav`
       -webkit-backdrop-filter: blur(12px);
       background: rgba(255, 255, 255, 0.05);
     `}
+
+  @media ${QUERIES.tabletAndSmaller} {
+    z-index: 5;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding-block: 10px;
+  max-width: 1400px;
+  align-items: center;
+  padding-inline: 4rem;
+  flex-wrap: wrap;
+  @media ${QUERIES.tabletAndSmaller} {
+    padding-inline: 2rem;
+  }
+`;
+
+const NavElements = styled.div`
+  @media ${QUERIES.tabletAndSmaller} {
+    position: absolute;
+    right: 0;
+    top: 65px;
+    background-color: black;
+    width: 0;
+    height: calc(100vh - 65px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+
+    ${({ active }) => `${active && "width: 200px"}`}
+  }
+`;
+
+const MenuIcon = styled.div`
+  display: none;
+  color: white;
+  @media ${QUERIES.tabletAndSmaller} {
+    display: block;
+    cursor: pointer;
+  }
 `;
 
 const Logo = styled.div`
@@ -64,6 +116,9 @@ const NavItems = styled.ul`
   color: white;
   list-style: none;
   font-size: var(--font-size-md);
+  @media ${QUERIES.tabletAndSmaller} {
+    flex-direction: column;
+  }
 `;
 
 const SignInButton = styled.li`
