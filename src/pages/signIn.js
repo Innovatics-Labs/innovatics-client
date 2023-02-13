@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Button from "../components/Button";
+import { QUERIES } from "../constants";
 
 const signIn = () => {
   return (
@@ -19,31 +20,25 @@ const signIn = () => {
         <FormActions>
           <ForgotContainer>
             <ForgotText>Forgot password?</ForgotText>
-            <Button title={"Sign In"} bgColor={"#979797"} color={"#0D1117"} />
+            <SignInButton
+              // as={Link}
+              // href="/dashboard"
+              title={"Sign In"}
+              bgColor={"#979797"}
+              color={"#0D1117"}
+            />
           </ForgotContainer>
-          <p
-            style={{
-              textAlign: "center",
-              color: "white",
-              marginBlock: "2rem",
-              fontWeight: "500",
-              fontSize: "18px ",
-            }}
-          >
-            OR
-          </p>
+          <OR>OR</OR>
           <FormButton
             variant={"outline"}
             title={"Continue with Google"}
             color={"#8691A6"}
           />
           <NoAccountContainer>
-            <p>
-              Don’t Have an account?
-              <span>
-                <Link href={"signUp"}>Signup for free</Link>
-              </span>
-            </p>
+            Don’t Have an account?
+            <span>
+              <Link href={"signUp"}>Signup for free</Link>
+            </span>
           </NoAccountContainer>
         </FormActions>
       </FormContainer>
@@ -60,15 +55,24 @@ export const Container = styled.section`
   place-items: center;
   padding: 3rem;
   /* height: 100%; */
+  @media ${QUERIES.phoneAndSmaller} {
+    padding-inline: 2rem;
+  }
 `;
 
 const FormContainer = styled.div`
-  width: 40%;
+  /* width: 40%; */
+  /* @media ${QUERIES.tabletAndSmaller} {
+    width: 60%;
+  }
+  @media ${QUERIES.phoneAndSmaller} {
+    width: revert;
+  } */
 `;
 
 const Title = styled.h3`
   font-weight: 600;
-  font-size: 28px;
+  font-size: clamp(1.25rem, 1.429vw + 0.464rem, 1.75rem);
   color: white;
   text-align: center;
 `;
@@ -93,6 +97,11 @@ const FormActions = styled.div`
   place-items: center;
 `;
 
+const SignInButton = styled(Button)`
+  display: flex;
+  align-items: center;
+`;
+
 const ForgotContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -102,23 +111,41 @@ const ForgotContainer = styled.div`
 
 const ForgotText = styled.p`
   font-weight: 500;
-  font-size: 18px;
+  font-size: var(--font-size-md);
   color: white;
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: 14px;
+  }
+`;
+
+const OR = styled.p`
+  text-align: center;
+  color: white;
+  margin-block: 2rem;
+  font-weight: 500;
+  font-size: var(--font-size-md);
 `;
 
 const FormButton = styled(Button)`
   border-color: #8691a6;
-  padding: 10px 128px;
   width: 100%;
 `;
 
-const NoAccountContainer = styled.div`
+const NoAccountContainer = styled.p`
   font-weight: 500;
-  font-size: 18px;
+  font-size: var(--font-size-md);
   color: white;
+  text-align: center;
   span {
     color: #8b90ff;
     display: inline-block;
     padding-inline: 1rem;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: 14px;
+    span {
+      padding-inline: 1rem;
+    }
   }
 `;
