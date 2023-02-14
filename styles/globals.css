@@ -20,6 +20,12 @@
   --font-size-base: 1rem;
 }
 
+@media (max-width: 900px) {
+  :root {
+    --container-padding: 2rem;
+  }
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -98,6 +104,7 @@ h6 {
   /* FIXME: // the grid is the cause of the overflow */
   display: grid;
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr);
   min-height: 100vh;
   min-height: 100dvh;
 }

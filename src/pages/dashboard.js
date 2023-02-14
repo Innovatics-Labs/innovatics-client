@@ -10,6 +10,8 @@ import LineGradient from "../components/LineGradient";
 import Button from "../components/Button";
 import InsetSection from "../components/InsetSection";
 import TopicCard from "../components/TopicCard";
+import { QUERIES } from "../constants";
+import { GrayTitle } from "./dashboard-sc";
 
 const Dashboard = () => {
   return (
@@ -63,7 +65,33 @@ const Dashboard = () => {
             />
           </Detail>
           <LearningPath>
-            <p>Learning Path</p>
+            <Tag>Learning Path</Tag>
+            <Content>
+              <PathTitle>Getting Started in Data Science</PathTitle>
+              <ul>
+                <li>
+                  <GrayTitle>Difficulty:</GrayTitle> Beginner
+                </li>
+                <li>
+                  <GrayTitle>Duration:</GrayTitle> 7hrs 20min
+                </li>
+                <li>
+                  <GrayTitle>Sections:</GrayTitle> 1
+                </li>
+                <li>
+                  <GrayTitle>Courses:</GrayTitle> 3
+                </li>
+                <li>
+                  <GrayTitle>Videos:</GrayTitle> 7
+                </li>
+                <li>
+                  <GrayTitle> Quiz:</GrayTitle> 5
+                </li>
+                <li>
+                  <GrayTitle>Labs:</GrayTitle> 3
+                </li>
+              </ul>
+            </Content>
           </LearningPath>
         </DetailContainer>
       </CourseDetailSection>
@@ -136,21 +164,24 @@ const Start = styled.p`
 
 const Greeting = styled.h3`
   font-weight: 500;
-  font-size: 1.17rem;
+  font-size: clamp(1.3rem, 1.429vw + 0.464rem, 1.75rem);
   color: #ffffff;
 `;
 
 const GreetingSub = styled.p`
   font-weight: 500;
-  font-size: 1.12rem;
+  font-size: clamp(0.8rem, 1.429vw + 0.464rem, 1.12rem);
   color: #8691a6;
   width: 40ch;
-  line-height: 1.75rem;
+  line-height: 1.5;
 
   a {
     color: white;
     display: inline-block;
     padding-inline: 5px;
+  }
+  @media ${QUERIES.phoneAndSmaller} {
+    width: revert;
   }
 `;
 
@@ -174,10 +205,14 @@ const GradientContainer = styled.div`
   display: grid;
   gap: 1.5rem;
   grid-template-rows: 50px auto 1fr;
+  @media ${QUERIES.tabletAndSmaller} {
+    display: none;
+  }
 `;
 
 const DetailContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 4rem;
   margin-top: 1rem;
   margin-bottom: 4rem;
@@ -186,6 +221,7 @@ const DetailContainer = styled.div`
 const Detail = styled.div`
   font-weight: 500;
   font-size: 1.12rem;
+  flex: 1;
 
   a {
     display: inline-block;
@@ -194,29 +230,33 @@ const Detail = styled.div`
 
 const Title = styled.p`
   font-weight: 600;
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 1.667vw + 0.5rem, 2rem);
 `;
 
 const Description = styled.p`
-  line-height: 1.75rem;
-  width: 50ch;
+  font-size: clamp(0.8rem, 1.429vw + 0.464rem, 1.12rem);
+  line-height: 1.6;
+  width: min(50ch, 100%);
+  /* @media ${QUERIES.tabletAndSmaller} {
+    width: revert;
+  } */
 `;
 
 const FeatureList = styled.ul`
-  list-style-image: url("/checkmark.png");
   list-style-type: none;
+  list-style-image: url("/checkmark.png");
   margin-block: 2rem;
   /* padding: 0; */
 
   li {
-    font-size: 1.12rem;
+    font-size: clamp(0.8rem, 1.429vw + 0.464rem, 1.12rem);
     margin-bottom: 15px;
   }
 `;
 
 const LearningPath = styled.div`
-  width: 300px;
-  height: 400px;
+  /* width: min(300px, 100%); */
+  /* height: 400px; */
   margin-top: 2rem;
   background: linear-gradient(
     -286.85deg,
@@ -227,35 +267,70 @@ const LearningPath = styled.div`
   box-shadow: 0px 0px 106.452px rgba(62, 63, 73, 0.25);
   /* filter: blur(0.5px); */
   border-radius: 17px;
+`;
 
-  p {
-    margin: 0;
-    font-size: 1.12rem;
-    width: fit-content;
-    color: black;
-    background: #ffffff;
-    border-radius: 17px 0px;
-    padding: 15px 27px;
+const Tag = styled.p`
+  margin: 0;
+  font-size: 1.12rem;
+  width: fit-content;
+  color: black;
+  background: #ffffff;
+  border-radius: 17px 0px;
+  padding: 15px 27px;
+`;
+
+const Content = styled.div`
+  padding: 1rem;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
   }
+
+  li {
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid gray;
+  }
+`;
+const PathTitle = styled.p`
+  font-size: var(--font-size-md);
+  font-weight: 500;
 `;
 
 const GradientStyleContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    display: none;
+  }
 `;
 
 const AcademicAreas = styled.div`
   margin-left: 2rem;
   margin-block: 2.5rem;
+  width: 100%;
+  @media ${QUERIES.phoneAndSmaller} {
+    margin-left: 1rem;
+    margin-block: 1.8rem;
+  }
 `;
 
 const AreasTitle = styled.p`
   font-weight: 600;
   font-size: 2rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: clamp(1.5rem, 1.429vw + 0.464rem, 2rem);
+  }
 `;
 
 const TopicsContainer = styled.div`
   display: flex;
   margin-top: 3rem;
+  @media ${QUERIES.tabletAndSmaller} {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
 `;

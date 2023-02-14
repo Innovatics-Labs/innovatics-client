@@ -17,7 +17,7 @@ const TopicCard = ({ color, number, comingSoon, topic }) => {
       </GradientContainer>
       <Topic>{topic}</Topic>
       <Arrow>
-        <Image src={arrow} alt={""} />
+        <Image src={arrow} alt={""} sizes="100vw" />
         {comingSoon && <p>Coming Soon</p>}
       </Arrow>
     </Card>
@@ -46,7 +46,7 @@ const GradientContainer = styled.div`
 
 const Topic = styled.p`
   font-weight: 500;
-  font-size: 1.7rem;
+  font-size: clamp(1.2rem, 1.429vw + 0.464rem, 1.75rem);
   color: white;
   margin: auto 0;
   /* width: 50%; */
