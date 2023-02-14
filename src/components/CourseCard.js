@@ -2,14 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import thumbnail from "../assets/images/thumbnail.png";
+import { QUERIES } from "../constants";
 import { GrayTitle } from "../pages/dashboard-sc";
 import Button from "./Button";
 
 const CourseCard = () => {
   return (
     <Container>
-      <div style={{ display: "flex", gap: "2rem" }}>
-        <Image src={thumbnail} alt="video tumbnail" />
+      <DetailContainer>
+        <ThumbnailContainer>
+          <Image src={thumbnail} alt="video tumbnail" sizes="100vw" />
+        </ThumbnailContainer>
+
         <CourseDetail>
           <CourseTitle>Python Crash Course</CourseTitle>
           <CourseInstructor>
@@ -19,7 +23,7 @@ const CourseCard = () => {
             <GrayTitle>DURATION:</GrayTitle> 4h 15m
           </CourseDuration>
         </CourseDetail>
-      </div>
+      </DetailContainer>
       <div style={{ alignSelf: "center" }}>
         <Button
           as={Link}
@@ -42,15 +46,38 @@ const Container = styled.article`
   width: 100%;
   border-bottom: 1px solid #8691a6;
   padding-bottom: 2rem;
+  flex-wrap: wrap;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    /* justify-content: center; */
+    gap: 1rem;
+  }
 `;
 
+const DetailContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  @media ${QUERIES.phoneAndSmaller} {
+    /* justify-content: center; */
+    gap: 1rem;
+  }
+`;
+
+const ThumbnailContainer = styled.div`
+  /* width: 100%; */
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+`;
 const CourseDetail = styled.div`
   /* margin-right: auto; */
 `;
 
 const CourseTitle = styled.p`
   font-weight: 600;
-  font-size: 28px;
+  font-size: clamp(1.2rem, 1.667vw + 0.5rem, 1.8rem);
 `;
 
 const CourseInstructor = styled.p`

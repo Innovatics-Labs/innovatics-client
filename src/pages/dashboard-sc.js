@@ -12,6 +12,7 @@ import Button from "../components/Button";
 import InstructorCard from "../components/InstructorCard";
 import CourseCard from "../components/CourseCard";
 import Pagination from "../components/pagination";
+import { QUERIES } from "../constants";
 
 const Dashboardsc = () => {
   return (
@@ -128,7 +129,7 @@ const Dashboardsc = () => {
           </CourseList>
         </CourseListContainer>
       </CourseListSection>
-      <AcademicPaths>
+      {/* <AcademicPaths>
         <GradientContainer>
           <LineGradient
             colorFrom={"#10C75900"}
@@ -144,7 +145,7 @@ const Dashboardsc = () => {
           <p style={{ fontWeight: "600", fontSize: "2rem" }}>Academic Paths</p>
           <Pagination />
         </Content>
-      </AcademicPaths>
+      </AcademicPaths> */}
       <JoinCohort />
       <JoinDiscord />
     </div>
@@ -173,6 +174,9 @@ const GradientContainer = styled.div`
   display: grid;
   gap: 1.5rem;
   grid-template-rows: 50px auto 1fr;
+  @media ${QUERIES.tabletAndSmaller} {
+    display: none;
+  }
 `;
 
 const DetailContainer = styled.div`
@@ -194,13 +198,14 @@ const Detail = styled.div`
 
 const Title = styled.p`
   font-weight: 600;
-  font-size: 3.25rem;
+  font-size: var(--font-size-3xl);
   margin-block: 10px;
 `;
 
 const Description = styled.p`
-  line-height: 28px;
-  width: 70ch;
+  font-size: clamp(0.8rem, 1.667vw + 0.5rem, 2rem);
+  line-height: 1.5;
+  width: min(70ch, 100%);
 `;
 
 const ProgressContainer = styled.div`
@@ -264,7 +269,7 @@ const HighLightContent = styled.div`
 
 const HighlightTitle = styled.p`
   font-weight: 600;
-  font-size: 32px;
+  font-size: var(--font-size-xl);
 `;
 
 export const GrayTitle = styled.span`
@@ -277,6 +282,9 @@ export const GrayTitle = styled.span`
 const DurationLevel = styled.div`
   display: flex;
   gap: 2rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    gap: 1rem;
+  }
 `;
 
 const IntructorSectionTitle = styled.p``;
@@ -284,6 +292,9 @@ const IntructorSectionTitle = styled.p``;
 const Duration = styled.p`
   border-right: 2px solid gray;
   padding-right: 2rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    padding-right: rem;
+  }
 `;
 
 const Level = styled.p``;
@@ -296,7 +307,10 @@ const InstructorsContainer = styled.div`
 const InstructorsList = styled.div`
   display: flex;
   align-items: start;
-  gap: 30px;
+  gap: 1.8rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    flex-wrap: wrap;
+  }
 `;
 
 const CourseListSection = styled.div`
@@ -318,7 +332,7 @@ const CourseList = styled.div`
 
 const CourseListHeading = styled.p`
   font-weight: 600;
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 1.667vw + 0.5rem, 2rem);
   color: white;
   margin-bottom: 3rem;
 `;

@@ -281,7 +281,6 @@ const Tag = styled.p`
 
 const Content = styled.div`
   padding: 1rem;
-
   ul {
     list-style: none;
     padding-left: 0;
@@ -291,8 +290,11 @@ const Content = styled.div`
     margin-bottom: 0.7rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid gray;
+    display: flex;
+    justify-content: space-between;
   }
 `;
+
 const PathTitle = styled.p`
   font-size: var(--font-size-md);
   font-weight: 500;
