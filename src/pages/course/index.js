@@ -1,17 +1,18 @@
 import { VscGraph } from "react-icons/vsc";
 import styled from "styled-components";
-import CourseOverview from "../components/dashboardclass/CourseOverview";
-import TopicCard from "../components/dashboardclass/TopicCard";
-import GradientIcon from "../components/GradientIcon";
-import InstructorCap from "../components/InstructorCap";
-import JoinDiscord from "../components/JoinDiscord";
-import LineGradient from "../components/LineGradient";
-import Pagination from "../components/pagination";
-import { GrayTitle } from "./dashboard-sc";
+import CourseOverview from "../../components/course/CourseOverview";
+import TopicCard from "../../components/course/TopicCard";
+import GradientIcon from "../../components/GradientIcon";
+import InstructorCap from "../../components/InstructorCap";
+import JoinDiscord from "../../components/JoinDiscord";
+import LineGradient from "../../components/LineGradient";
+import Pagination from "../../components/Pagination";
+import { QUERIES } from "../../constants";
+import { GrayTitle } from "../course-work";
 
 const DashboardClass = () => {
   return (
-    <div>
+    <Container>
       <CourseOverview />
       <CourseSection>
         <GradientContainer>
@@ -23,9 +24,9 @@ const DashboardClass = () => {
         </GradientContainer>
         <Content>
           <Instructordetails>
-            <div style={{ transform: "translateY(-50%)" }}>
+            <CapContainer>
               <InstructorCap size={"140px"} iconsize={70} />
-            </div>
+            </CapContainer>
             <CourseStats>
               <InstructorName>
                 <GrayTitle>INSTRUCTOR:</GrayTitle> Muhammad Medwani
@@ -52,11 +53,13 @@ const DashboardClass = () => {
         <Pagination />
       </PaginationContainer>
       <JoinDiscord />
-    </div>
+    </Container>
   );
 };
 
 export default DashboardClass;
+
+const Container = styled.div``;
 
 const CourseSection = styled.section`
   padding: 2rem var(--container-padding);
@@ -70,6 +73,9 @@ const GradientContainer = styled.div`
   gap: 1.5rem;
   grid-template-rows: 170px auto 1fr;
   gap: 2rem;
+  @media ${QUERIES.tabletAndSmaller} {
+    display: none;
+  }
 `;
 
 const Content = styled.div`
@@ -80,6 +86,19 @@ const Instructordetails = styled.div`
   display: flex;
   gap: 3rem;
   align-items: flex-start;
+  @media ${QUERIES.phoneAndSmaller} {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+const CapContainer = styled.div`
+  transform: translateY(-50%);
+  @media ${QUERIES.phoneAndSmaller} {
+    transform: revert;
+  }
 `;
 
 const InstructorName = styled.p``;

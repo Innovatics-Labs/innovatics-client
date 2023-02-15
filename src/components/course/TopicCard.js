@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import TopicResourceCard from "./TopicResourceCard";
 import UnstyledButton from "../UnstyledButton";
+import { QUERIES } from "../../constants";
 
 const TopicCard = ({ topicTitle, activityCount }) => {
   const [showDetails, setShowDetails] = useState(true);
@@ -59,36 +60,39 @@ const Container = styled.article`
 `;
 
 const TopicDetails = styled.div`
-  padding: 40px;
+  padding: 2.3rem;
   background: linear-gradient(
     86.57deg,
     rgba(62, 63, 73, 0.9) 5.65%,
     rgba(4, 13, 33, 0.3) 94.35%,
     rgba(4, 13, 33, 0.3) 94.35%
   );
+  @media ${QUERIES.tabletAndSmaller} {
+    padding: 1.5rem;
+  }
 `;
 
 const TopicTitle = styled.p`
   font-weight: 600;
-  font-size: 28px;
+  font-size: clamp(1.3rem, 1.429vw + 0.464rem, 1.75rem);
 `;
 
 const TopicDetail = styled.p`
   font-weight: 500;
-  font-size: 18px;
+  font-size: var(--font-size-md);
   margin-bottom: 10px;
 `;
 
 const TopicToggle = styled(UnstyledButton)`
   font-weight: 500;
-  font-size: 18px;
+  font-size: var(--font-size-md);
   margin-top: 10px;
   text-decoration-line: underline;
   color: #8691a6;
 `;
 
 const TopicContentWrapper = styled.article`
-  padding: 40px;
+  padding: 2.3rem;
   background: linear-gradient(
     263.71deg,
     rgba(62, 63, 73, 0.9) 0%,
@@ -96,6 +100,9 @@ const TopicContentWrapper = styled.article`
     rgba(4, 13, 33, 0.3) 97.36%,
     rgba(4, 13, 33, 0.3) 97.36%
   );
+  @media ${QUERIES.tabletAndSmaller} {
+    padding: 1.5rem;
+  }
 `;
 
 const TopicResourceList = styled.div``;

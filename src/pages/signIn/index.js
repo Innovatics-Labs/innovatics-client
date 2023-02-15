@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
-import Button from "../components/Button";
-import { QUERIES } from "../constants";
+import Button from "../../components/Button";
+import { QUERIES } from "../../constants";
 
 const signIn = () => {
   return (

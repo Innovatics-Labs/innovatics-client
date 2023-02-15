@@ -12,7 +12,7 @@ import {
   FormButton,
   SignInButton,
   NoAccountContainer,
-} from "../components/GlobalStyles/authStyle";
+} from "../../components/GlobalStyles/authStyle";
 
 const signUp = () => {
   return (

@@ -2,16 +2,16 @@ import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaReact } from "react-icons/fa";
 import styled from "styled-components";
-import GradientIcon from "../components/GradientIcon";
+import GradientIcon from "../../components/GradientIcon";
 
-import JoinCohort from "../components/JoinCohort";
-import JoinDiscord from "../components/JoinDiscord";
-import LineGradient from "../components/LineGradient";
-import Button from "../components/Button";
-import InsetSection from "../components/InsetSection";
-import TopicCard from "../components/TopicCard";
-import { QUERIES } from "../constants";
-import { GrayTitle } from "./dashboard-sc";
+import JoinCohort from "../../components/JoinCohort";
+import JoinDiscord from "../../components/JoinDiscord";
+import LineGradient from "../../components/LineGradient";
+import Button from "../../components/Button";
+import InsetSection from "../../components/InsetSection";
+import TopicCard from "../../components/TopicCard";
+import { QUERIES } from "../../constants";
+import { GrayTitle } from "../dashboard-sc";
 
 const Dashboard = () => {
   return (

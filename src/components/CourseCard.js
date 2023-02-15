@@ -3,7 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import thumbnail from "../assets/images/thumbnail.png";
 import { QUERIES } from "../constants";
-import { GrayTitle } from "../pages/dashboard-sc";
+import { GrayTitle } from "../pages/course-work";
 import Button from "./Button";
 
 const CourseCard = () => {
@@ -13,7 +13,6 @@ const CourseCard = () => {
         <ThumbnailContainer>
           <Image src={thumbnail} alt="video tumbnail" sizes="100vw" />
         </ThumbnailContainer>
-
         <CourseDetail>
           <CourseTitle>Python Crash Course</CourseTitle>
           <CourseInstructor>
@@ -25,12 +24,7 @@ const CourseCard = () => {
         </CourseDetail>
       </DetailContainer>
       <div style={{ alignSelf: "center" }}>
-        <Button
-          as={Link}
-          variant={"outline"}
-          title="Begin"
-          href="dashboard-class"
-        />
+        <Button as={Link} variant={"outline"} title="Begin" href="course" />
       </div>
     </Container>
   );
@@ -81,9 +75,9 @@ const CourseTitle = styled.p`
 `;
 
 const CourseInstructor = styled.p`
-  font-size: 18px;
+  font-size: var(--font-size-md);
 `;
 
 const CourseDuration = styled.p`
-  font-size: 18px;
+  font-size: var(--font-size-md);
 `;

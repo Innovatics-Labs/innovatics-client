@@ -4,15 +4,15 @@ import { FaReact } from "react-icons/fa";
 import { VscGraph } from "react-icons/vsc";
 import Link from "next/link";
 
-import GradientIcon from "../components/GradientIcon";
-import LineGradient from "../components/LineGradient";
-import JoinCohort from "../components/JoinCohort";
-import JoinDiscord from "../components/JoinDiscord";
-import Button from "../components/Button";
-import InstructorCard from "../components/InstructorCard";
-import CourseCard from "../components/CourseCard";
-import Pagination from "../components/pagination";
-import { QUERIES } from "../constants";
+import GradientIcon from "../../components/GradientIcon";
+import LineGradient from "../../components/LineGradient";
+import JoinCohort from "../../components/JoinCohort";
+import JoinDiscord from "../../components/JoinDiscord";
+import Button from "../../components/Button";
+import InstructorCard from "../../components/InstructorCard";
+import CourseCard from "../../components/CourseCard";
+import Pagination from "../../components/Pagination";
+import { QUERIES } from "../../constants";
 
 const Dashboardsc = () => {
   return (
@@ -203,7 +203,7 @@ const Title = styled.p`
 `;
 
 const Description = styled.p`
-  font-size: clamp(0.8rem, 1.667vw + 0.5rem, 2rem);
+  font-size: var(--font-size-md);
   line-height: 1.5;
   width: min(70ch, 100%);
 `;

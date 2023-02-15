@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GrayTitle } from "../pages/dashboard-sc";
+import { GrayTitle } from "../pages/course-work";
 
 const Pagination = () => {
   return (
@@ -25,10 +25,11 @@ export default Pagination;
 const Container = styled.article`
   flex: 1;
   margin-block: 2rem;
+  flex-wrap: wrap;
 `;
 
 const RecommendedTitle = styled.p`
   font-weight: 500;
-  font-size: 1.7rem;
+  font-size: clamp(var(--font-size-md), 1.429vw + 0.464rem, 1.75rem);
   color: white;
 `;
