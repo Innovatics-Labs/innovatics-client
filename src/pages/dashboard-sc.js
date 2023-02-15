@@ -129,7 +129,7 @@ const Dashboardsc = () => {
           </CourseList>
         </CourseListContainer>
       </CourseListSection>
-      {/* <AcademicPaths>
+      <AcademicPaths>
         <GradientContainer>
           <LineGradient
             colorFrom={"#10C75900"}
@@ -145,7 +145,7 @@ const Dashboardsc = () => {
           <p style={{ fontWeight: "600", fontSize: "2rem" }}>Academic Paths</p>
           <Pagination />
         </Content>
-      </AcademicPaths> */}
+      </AcademicPaths>
       <JoinCohort />
       <JoinDiscord />
     </div>

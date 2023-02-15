@@ -45,12 +45,12 @@ const CourseDetail = styled.div`
 
 const CourseCategory = styled.h6`
   font-weight: 600;
-  font-size: 32px;
+  font-size: var(--font-size-xl);
   margin-block: 1rem;
 `;
 
 const CourseTitle = styled.h4`
   font-weight: 600;
-  font-size: 55px;
+  font-size: var(--font-size-3xl);
   margin-block: 2rem;
 `;

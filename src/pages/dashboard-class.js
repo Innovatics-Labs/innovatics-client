@@ -48,9 +48,9 @@ const DashboardClass = () => {
           </CourseContentWrapper>
         </Content>
       </CourseSection>
-      <section style={{ padding: "2rem 4rem", backgroundColor: "#0d1117" }}>
+      <PaginationContainer>
         <Pagination />
-      </section>
+      </PaginationContainer>
       <JoinDiscord />
     </div>
   );
@@ -99,5 +99,10 @@ const CourseContentWrapper = styled.div`
 
 const CourseTitle = styled.h5`
   font-weight: 600;
-  font-size: 32px;
+  font-size: var(--font-size-xl);
+`;
+
+const PaginationContainer = styled.div`
+  padding: 2rem 4rem;
+  background-color: #0d1117;
 `;
