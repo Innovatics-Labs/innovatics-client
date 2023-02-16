@@ -11,7 +11,7 @@ import Button from "../../components/Button";
 import InsetSection from "../../components/InsetSection";
 import TopicCard from "../../components/TopicCard";
 import { QUERIES } from "../../constants";
-import { GrayTitle } from "../dashboard-sc";
+import { GrayTitle } from "../course-work";
 
 const Dashboard = () => {
   return (

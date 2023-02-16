@@ -179,7 +179,7 @@ const GradientContainer = styled.div`
   }
 `;
 
-const DetailContainer = styled.div`
+const DetailContainer = styled.header`
   /* display: flex;
   gap: 4rem; */
   margin-top: 1rem;
