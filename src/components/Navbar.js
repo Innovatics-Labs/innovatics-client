@@ -1,19 +1,32 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaRegUserCircle } from "react-icons/fa";
 import styled, { css } from "styled-components";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
+
+import { auth } from "../../firebaseConfig";
+import UnstyledButton from "./UnstyledButton";
 import logo from "../assets/images/logo 1.png";
 import { QUERIES } from "../constants";
 
 const Navbar = () => {
   const route = useRouter();
-
   const [showNav, setShowNav] = useState(false);
+  const [user, loading, error] = useAuthState(auth);
 
   const handleShowNavbar = () => {
     setShowNav(!showNav);
+  };
+
+  const logout = () => {
+    if (!loading) {
+      signOut(auth);
+      route.push("/");
+    }
   };
 
   return (
@@ -36,10 +49,20 @@ const Navbar = () => {
               <Link href={"/resources"}>Resources</Link>
             </li>
             <li>
-              <Link href={"/"}>Pricing</Link>
+              {!loading && user ? (
+                <User>
+                  <FaRegUserCircle size={24} />
+                </User>
+              ) : (
+                <Link href={"/"}>Pricing</Link>
+              )}
             </li>
             <SignInButton>
-              <Link href={"/signIn"}>Sign In</Link>
+              {!loading && user ? (
+                <UnstyledButton onClick={logout}>Logout</UnstyledButton>
+              ) : (
+                <Link href={"/signIn"}>Sign In</Link>
+              )}
             </SignInButton>
           </NavItems>
         </NavElements>
@@ -119,6 +142,11 @@ const NavItems = styled.ul`
   @media ${QUERIES.tabletAndSmaller} {
     flex-direction: column;
   }
+`;
+const User = styled.div`
+  border-radius: 50%;
+  padding: 0.5rem;
+  background: linear-gradient(180deg, #8b90ff 0%, #eb73ff 100%);
 `;
 
 const SignInButton = styled.li`

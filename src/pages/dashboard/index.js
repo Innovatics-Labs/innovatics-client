@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaReact } from "react-icons/fa";
 import styled from "styled-components";
-import GradientIcon from "../../components/GradientIcon";
+import { auth } from "../../../firebaseConfig";
 
+import GradientIcon from "../../components/GradientIcon";
 import JoinCohort from "../../components/JoinCohort";
 import JoinDiscord from "../../components/JoinDiscord";
 import LineGradient from "../../components/LineGradient";
@@ -14,10 +16,18 @@ import { QUERIES } from "../../constants";
 import { GrayTitle } from "../course-work";
 
 const Dashboard = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    setUser(auth.currentUser);
+    console.log(auth.currentUser);
+    return () => {};
+  }, []);
+
   return (
     <Container>
       <WelcomeSection>
-        <Greeting>Welcome Anas!</Greeting>
+        <Greeting>Welcome {user && user.displayName}</Greeting>
         <GreetingSub>
           June Data Science Live cohort registration is on-going. Click
           <Link href={"/"}>here</Link> to learn more or click the button below

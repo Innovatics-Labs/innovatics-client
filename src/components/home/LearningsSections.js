@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { BsSun } from "react-icons/bs";
+import { collection } from "firebase/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 
 import LineGradient from "../LineGradient";
 import GradientIcon from "../GradientIcon";
 import { TextWithColor } from "./Practicality";
 import TopicCard from "../TopicCard";
 import { QUERIES } from "../../constants";
+import { db } from "../../../firebaseConfig";
 
 const LearningsSections = () => {
+  const [value, loading, error] = useCollection(
+    collection(db, "academic-paths"),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
+  const [paths, setPaths] = useState([]);
+
+  useEffect(() => {
+    if (value) {
+      setPaths(value.docs);
+      const singledata = paths.map((doc) => JSON.stringify(doc.data()));
+      console.log({ paths }, { value }, { singledata });
+    }
+  }, [value, loading]);
+
   return (
     <Container>
       <TopSection>

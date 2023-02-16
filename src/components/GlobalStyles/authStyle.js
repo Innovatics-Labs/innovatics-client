@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { QUERIES } from "../../constants";
 import Button from "../Button";
+import UnstyledButton from "../UnstyledButton";
 
 export const Container = styled.section`
   background: linear-gradient(90deg, rgba(13, 17, 23, 0.3) 0%, #0d1117 47.99%),
@@ -43,6 +44,7 @@ export const Input = styled.input`
   border-radius: 10px;
   padding: 1.3rem;
   width: 100%;
+  color: white;
 `;
 
 export const FormActions = styled.div`
@@ -63,7 +65,7 @@ export const ForgotContainer = styled.div`
   width: 100%;
 `;
 
-export const ForgotText = styled.p`
+export const ForgotText = styled(UnstyledButton)`
   font-weight: 500;
   font-size: var(--font-size-md);
   color: white;
