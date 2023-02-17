@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { BsSun } from "react-icons/bs";
 import styled from "styled-components";
 
 import arrow from "../assets/images/arrow.png";
 import GradientIcon from "./GradientIcon";
 
-const TopicCard = ({ color, number, comingSoon, topic }) => {
+const TopicCard = ({ color, number, comingSoon, topic, id }) => {
   return (
     <Card>
       <GradientContainer>
@@ -17,7 +18,9 @@ const TopicCard = ({ color, number, comingSoon, topic }) => {
       </GradientContainer>
       <Topic>{topic}</Topic>
       <Arrow>
-        <Image src={arrow} alt={""} sizes="100vw" />
+        <Link href={`/academic-paths/${id}`}>
+          <Image src={arrow} alt={""} sizes="100vw" />
+        </Link>
         {comingSoon && <p>Coming Soon</p>}
       </Arrow>
     </Card>

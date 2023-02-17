@@ -19,12 +19,12 @@ const LearningsSections = () => {
     }
   );
   const [paths, setPaths] = useState([]);
+  let colors = ["#44E986", "#FFA28B", "#DD7DF7", "#8B90FF"];
 
   useEffect(() => {
     if (value) {
       setPaths(value.docs);
-      const singledata = paths.map((doc) => JSON.stringify(doc.data()));
-      console.log({ paths }, { value }, { singledata });
+      // console.log({ paths }, { value });
     }
   }, [value, loading]);
 
@@ -49,14 +49,17 @@ const LearningsSections = () => {
         </TextContent>
       </TopSection>
       <BottomSection>
-        <TopicCard topic={"Data Science"} color="#44E986" number={"01"} />
-        <TopicCard
-          topic={"Software Engineering"}
-          color="#FFA28B"
-          number={"02"}
-        />
-        <TopicCard topic={"Cyber Security"} color="#DD7DF7" number={"03"} />
-        <TopicCard topic={"Cloud Engineering"} color="#8B90FF" number={"04"} />
+        {loading && <h4>Collection: Loading...</h4>}
+        {value &&
+          paths.map((doc, index) => (
+            <TopicCard
+              key={doc.id}
+              id={doc.id}
+              topic={doc.data().name}
+              color={colors[index]}
+              number={`0${index + 1}`}
+            />
+          ))}
       </BottomSection>
     </Container>
   );

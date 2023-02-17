@@ -1,148 +1,61 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { BsSun } from "react-icons/bs";
+import { collection } from "firebase/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 
 import Button from "../Button";
-import GradientIcon from "../GradientIcon";
-import arrow from "../../assets/images/arrow.png";
-import courseimg from "../../assets/images/james-yarema-E-CdfbrnnFs-unsplash 2.png";
+import courseimg from "../../assets/images/abstract-1392404_1920.png";
 import { QUERIES } from "../../constants";
+import { db } from "../../../firebaseConfig";
+import { useEffect, useState } from "react";
+
+const tablist = ["Data Science", "Software", "Security", "Cloud"];
 
 const CoursesSection = () => {
+  const [value, loading, error] = useCollection(collection(db, "courses"));
+
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    if (value) {
+      setCourses(value.docs);
+      // console.log({ courses }, { value });
+    }
+  }, [value, loading]);
+
   return (
     <Container>
       <TabsSection>
         <ul>
-          <li>
-            <Link href={"/"}>Data Science</Link>
-          </li>
-          <li>
-            <Link href={"/"}>Software</Link>
-          </li>
-          <li>Security</li>
-          <li>Cloud</li>
+          {tablist.map((tab) => (
+            <li key={tab}>
+              <Link href={"/"}>{tab}</Link>
+            </li>
+          ))}
         </ul>
         <Button title={"View All"} bgColor={"#D5DBE2"} size={"18px"} />
       </TabsSection>
       <CourseList>
-        <CourseCard>
-          <CourseImage>
-            <Image src={courseimg} alt="" />
-          </CourseImage>
-          <Content>
-            <Gradient>
-              <GradientIcon
-                IconComponent={<BsSun size={30} color="#44E986" />}
-                bgColor={"#44E986"}
-              />
-            </Gradient>
-            <CourseTitle>Python Introduction</CourseTitle>
-            <CourseLevel>
-              <p>Beginner</p>
-              <Image src={arrow} alt={""} />
-            </CourseLevel>
-          </Content>
-        </CourseCard>
-        <CourseCard>
-          <CourseImage>
-            <Image src={courseimg} alt="" />
-          </CourseImage>
-          <Content>
-            <Gradient>
-              <GradientIcon
-                IconComponent={<BsSun size={30} color="#44E986" />}
-                bgColor={"#44E986"}
-              />
-            </Gradient>
-            <CourseTitle>Python Introduction</CourseTitle>
-            <CourseLevel>
-              <p>Beginner</p>
-              <Image src={arrow} alt={""} />
-            </CourseLevel>
-          </Content>
-        </CourseCard>
-        <CourseCard>
-          <CourseImage>
-            <Image src={courseimg} alt="" />
-          </CourseImage>
-          <Content>
-            <Gradient>
-              <GradientIcon
-                IconComponent={<BsSun size={30} color="#44E986" />}
-                bgColor={"#44E986"}
-              />
-            </Gradient>
-            <CourseTitle>Python Introduction</CourseTitle>
-            <CourseLevel>
-              <p>Beginner</p>
-              <Image src={arrow} alt={""} />
-            </CourseLevel>
-          </Content>
-        </CourseCard>
-        <CourseCard>
-          <CourseImage>
-            <Image src={courseimg} alt="" />
-          </CourseImage>
-          <Content>
-            <Gradient>
-              <GradientIcon
-                IconComponent={<BsSun size={30} color="#44E986" />}
-                bgColor={"#44E986"}
-              />
-            </Gradient>
-            <CourseTitle>Python Introduction</CourseTitle>
-            <CourseLevel>
-              <p>Beginner</p>
-              <Image src={arrow} alt={""} />
-            </CourseLevel>
-          </Content>
-        </CourseCard>
-        <CourseCard>
-          <CourseImage>
-            <Image src={courseimg} alt="" />
-          </CourseImage>
-          <Content>
-            <Gradient>
-              <GradientIcon
-                IconComponent={<BsSun size={30} color="#44E986" />}
-                bgColor={"#44E986"}
-              />
-            </Gradient>
-            <CourseTitle>Python Introduction</CourseTitle>
-            <CourseLevel>
-              <p>Beginner</p>
-              <Image src={arrow} alt={""} />
-            </CourseLevel>
-          </Content>
-        </CourseCard>
-        <CourseCard>
-          <CourseImage>
-            <Image src={courseimg} alt="" />
-          </CourseImage>
-          <Content>
-            <Gradient>
-              <GradientIcon
-                IconComponent={<BsSun size={30} color="#44E986" />}
-                bgColor={"#44E986"}
-              />
-            </Gradient>
-            <CourseTitle>Python Introduction</CourseTitle>
-            <CourseLevel>
-              <p
-                style={{
-                  fontWeight: "500",
-                  fontSize: "18px",
-                  color: "#8691A6",
-                  marginBlock: 0,
-                }}
-              >
-                Beginner
-              </p>
-              <Image src={arrow} alt={""} />
-            </CourseLevel>
-          </Content>
-        </CourseCard>
+        {loading && <h4>Collection: Loading Recommended Courses...</h4>}
+        {courses &&
+          courses.map((doc) => (
+            <CourseCard key={doc.id}>
+              <CourseImage>
+                <Image src={courseimg} alt="" />
+              </CourseImage>
+              <Content>
+                <TitleDuration>
+                  <CourseTitle>{doc.data().title}</CourseTitle>
+                  <CourseDuration>{doc.data().duration}</CourseDuration>
+                </TitleDuration>
+                <AuthorLevel>
+                  <CourseLevel>{doc.data().level}</CourseLevel>
+                  <CourseAuthor>{doc.data().instructor}</CourseAuthor>
+                </AuthorLevel>
+              </Content>
+            </CourseCard>
+          ))}
       </CourseList>
     </Container>
   );
@@ -204,41 +117,58 @@ const CourseCard = styled.div`
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.05);
+  position: relative;
 `;
 
 const CourseImage = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
   img {
-    line-height: 0px;
     width: 100%;
     height: auto;
+    object-fit: cover;
   }
 `;
 
 const Content = styled.div`
   padding: 1rem;
-`;
-
-const CourseTitle = styled.div`
-  margin-block: 1rem;
-  font-weight: 600;
-  font-size: 18px;
-  color: black;
-`;
-
-const Gradient = styled.div`
-  width: fit-content;
-`;
-
-const CourseLevel = styled.div`
+  color: #ffffff;
+  isolation: isolate;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  gap: 2rem;
+`;
 
-  p {
-    font-weight: 500;
-    font-size: 18px;
-    color: #8691a6;
-    margin-block: 0;
-  }
+const TitleDuration = styled.div``;
+
+const CourseDuration = styled.p`
+  font-weight: 500;
+  font-size: 11px;
+`;
+
+const CourseTitle = styled.p`
+  font-weight: 600;
+  font-size: 15px;
+`;
+
+const AuthorLevel = styled.div``;
+
+const CourseAuthor = styled.p`
+  font-weight: 600;
+  font-size: 15px;
+`;
+
+const CourseLevel = styled.p`
+  font-weight: 500;
+  font-size: 11px;
+  color: #8691a6;
+  margin-block: 0;
+  text-transform: capitalize;
 `;
