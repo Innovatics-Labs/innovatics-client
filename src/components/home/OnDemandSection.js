@@ -28,11 +28,12 @@ const OnDemandSection = () => {
             <Icon>
               <BsCollectionPlay size={24} />
             </Icon>
-            <p>On-Demand</p>
+            <p>Consultation & Contracting </p>
           </Top>
           <Text>
-            Access to all Introductory learning Paths including MLMC and Cloud
-            is the learn Fundamentals
+            Our experienced consultants work with you to identify and analyze
+            your business needs, and provide tailor-made solutions that meet
+            your specific requirements.
           </Text>
           <Button title={"Learn More"} variant="outline" />
         </Card>
@@ -41,11 +42,12 @@ const OnDemandSection = () => {
             <Icon>
               <BsCollectionPlay size={24} />
             </Icon>
-            <p>On-Demand</p>
+            <p>Career Change & Job Placements</p>
           </Top>
           <Text>
-            Access to all Introductory learning Paths including MLMC and Cloud
-            is the learn Fundamentals
+            Our job placement program provides guidance and support to help you
+            identify and pursue job opportunities that align with your skills
+            and experience.
           </Text>
           <Button title={"Learn More"} variant="outline" />
         </Card>
@@ -54,11 +56,11 @@ const OnDemandSection = () => {
             <Icon>
               <BsCollectionPlay size={24} />
             </Icon>
-            <p>On-Demand</p>
+            <p>Innovation & Development</p>
           </Top>
           <Text>
-            Access to all Introductory learning Paths including MLMC and Cloud
-            is the learn Fundamentals
+            Our innovation and development services provide cutting-edge
+            solutions to complex problems using advanced technologies.
           </Text>
           <Button title={"Learn More"} variant="outline" />
         </Card>
@@ -67,11 +69,12 @@ const OnDemandSection = () => {
             <Icon>
               <BsCollectionPlay size={24} />
             </Icon>
-            <p>On-Demand</p>
+            <p>Training</p>
           </Top>
           <Text>
-            Access to all Introductory learning Paths including MLMC and Cloud
-            is the learn Fundamentals
+            Our training program is designed to provide a high-quality learning
+            experience that equips you with the skills and knowledge necessary
+            to succeed in your chosen field.
           </Text>
           <Button title={"Learn More"} variant="outline" />
         </Card>
@@ -88,6 +91,7 @@ const Container = styled.div`
   padding: 3rem var(--container-padding);
   padding-bottom: 0px;
   display: flex;
+  align-items: flex-end;
   gap: 2rem;
 
   @media ${QUERIES.tabletAndSmaller} {
@@ -116,6 +120,7 @@ const CardsContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-self: flex-start;
+  padding-bottom: 2rem;
 
   @media ${QUERIES.tabletAndSmaller} {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
