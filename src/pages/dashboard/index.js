@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaReact } from "react-icons/fa";
 import styled from "styled-components";
-import { auth } from "../../../firebaseConfig";
+import { auth, db } from "../../../firebaseConfig";
+import { collection } from "firebase/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 
 import GradientIcon from "../../components/GradientIcon";
 import JoinCohort from "../../components/JoinCohort";
@@ -17,6 +19,21 @@ import { GrayTitle } from "../course-work";
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
+  const [value, loading, error] = useCollection(
+    collection(db, "academic-paths"),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
+  const [paths, setPaths] = useState([]);
+  let colors = ["#44E986", "#FFA28B", "#DD7DF7", "#8B90FF"];
+
+  useEffect(() => {
+    if (value) {
+      setPaths(value.docs);
+      // console.log({ paths }, { value });
+    }
+  }, [value, loading]);
 
   useEffect(() => {
     setUser(auth.currentUser);
@@ -120,27 +137,18 @@ const Dashboard = () => {
         <AcademicAreas>
           <AreasTitle>Other Academic Areas</AreasTitle>
           <TopicsContainer>
-            <TopicCard
-              topic={"Software Engineering"}
-              color="#FFA28B"
-              number={"02"}
-              comingSoon
-            />
-            <TopicCard
-              topic={"Cyber Security"}
-              color="#DD7DF7"
-              number={"03"}
-              comingSoon
-            />
-            <TopicCard
-              topic={"Cloud Engineering"}
-              color="#8B90FF"
-              number={"04"}
-              comingSoon
-            />
-            <div style={{ alignSelf: "center", marginInline: "2rem " }}>
-              <Button title={"See All"} variant="outline" />
-            </div>
+            {loading && <h4>Collection: Loading...</h4>}
+            {error && <h4>Collection: error fetching data...</h4>}
+            {value &&
+              paths.map((doc, index) => (
+                <TopicCard
+                  key={doc.id}
+                  id={doc.id}
+                  topic={doc.data().name}
+                  color={colors[index]}
+                  number={`0${index + 1}`}
+                />
+              ))}
           </TopicsContainer>
         </AcademicAreas>
       </InsetSection>
@@ -176,6 +184,7 @@ const Greeting = styled.h3`
   font-weight: 500;
   font-size: clamp(1.3rem, 1.429vw + 0.464rem, 1.75rem);
   color: #ffffff;
+  text-transform: capitalize;
 `;
 
 const GreetingSub = styled.p`

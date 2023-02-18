@@ -50,6 +50,7 @@ const LearningsSections = () => {
       </TopSection>
       <BottomSection>
         {loading && <h4>Collection: Loading...</h4>}
+        {error && <h4>Collection: error fetching data...</h4>}
         {value &&
           paths.map((doc, index) => (
             <TopicCard

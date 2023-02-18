@@ -1,13 +1,35 @@
-import styled from "styled-components";
-import { FaReact } from "react-icons/fa";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import styled from "styled-components";
+import { doc } from "firebase/firestore";
+import { useDocument } from "react-firebase-hooks/firestore";
+import { FaReact } from "react-icons/fa";
 import { BsSun } from "react-icons/bs";
 
 import GradientIcon from "../../components/GradientIcon";
 import LineGradient from "../../components/LineGradient";
 import { QUERIES } from "../../constants";
+import { db } from "../../../firebaseConfig";
+import { getAllAcademicPathsId } from "../../utils";
 
 const AcademicPaths = () => {
+  const [pathDetail, setPathDetail] = useState({});
+  const router = useRouter();
+  const { id } = router.query;
+
+  const [value, loading, error] = useDocument(doc(db, "academic-paths", id), {
+    snapshotListenOptions: { includeMetadataChanges: true },
+  });
+
+  useEffect(() => {
+    if (value) {
+      console.log({ value: value.data() });
+      setPathDetail(value.data());
+    }
+    getAllAcademicPathsId();
+  }, [value]);
+
   return (
     <Container>
       <CourseDetailSection>
@@ -20,14 +42,14 @@ const AcademicPaths = () => {
         </GradientContainer>
         <DetailContainer>
           <Detail>
-            <Title>Data Science</Title>
-            <Description>
-              Data science is an ever-evolving field, which is growing in
-              popularity at an exponential rate. Data science includes
-              techniques and theories extracted from the fields of statistics;
-              computer science, and, most importantly, machine learning,
-              databases, data visualization, and so on.
-            </Description>
+            {loading && <h4>Details: Loading...</h4>}
+            {error && <h4>Details: error fetching data...</h4>}
+            {pathDetail && (
+              <>
+                <Title>{pathDetail.name}</Title>
+                <Description> {pathDetail.description}</Description>
+              </>
+            )}
           </Detail>
           <AcademicLevelsContainer>
             <PathTitle>Academic Levels</PathTitle>
@@ -98,6 +120,14 @@ const AcademicPaths = () => {
 };
 
 export default AcademicPaths;
+
+// export async function getStaticPaths() {
+//   const paths = await getAllAcademicPathsId();
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
 
 const Container = styled.div``;
 

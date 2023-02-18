@@ -10,7 +10,7 @@ import JoinCohort from "../../components/JoinCohort";
 import JoinDiscord from "../../components/JoinDiscord";
 import Button from "../../components/Button";
 import InstructorCard from "../../components/InstructorCard";
-import CourseCard from "../../components/CourseCard";
+import CourseCard from "../../components/coursework-components/CourseCard";
 import Pagination from "../../components/Pagination";
 import { QUERIES } from "../../constants";
 

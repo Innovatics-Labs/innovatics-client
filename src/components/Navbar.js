@@ -50,7 +50,7 @@ const Navbar = () => {
             </li>
             <li>
               {!loading && user ? (
-                <User>
+                <User href={"/dashboard"}>
                   <FaRegUserCircle size={24} />
                 </User>
               ) : (
@@ -143,7 +143,8 @@ const NavItems = styled.ul`
     flex-direction: column;
   }
 `;
-const User = styled.div`
+const User = styled(Link)`
+  display: inline-block;
   border-radius: 50%;
   padding: 0.5rem;
   background: linear-gradient(180deg, #8b90ff 0%, #eb73ff 100%);
