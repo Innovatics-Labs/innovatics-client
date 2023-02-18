@@ -12,13 +12,13 @@ import { QUERIES } from "../../constants";
 import { db } from "../../../firebaseConfig";
 
 const LearningsSections = () => {
+  const [paths, setPaths] = useState([]);
   const [value, loading, error] = useCollection(
     collection(db, "academic-paths"),
     {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
-  const [paths, setPaths] = useState([]);
   let colors = ["#44E986", "#FFA28B", "#DD7DF7", "#8B90FF"];
 
   useEffect(() => {

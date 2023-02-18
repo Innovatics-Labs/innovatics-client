@@ -98,9 +98,9 @@ const AcademicPaths = () => {
                   />
                 </CardGradient>
                 <LevelDetails>
-                  <Level>Professional</Level>
+                  <Level>Expert</Level>
                   <LevelDescription>
-                    Take up lead role in your establishment
+                    Expand your abilities as a well-rounded engineer!
                   </LevelDescription>
                 </LevelDetails>
                 <SubDetail>
@@ -196,6 +196,11 @@ const PathTitle = styled.p`
 const CardList = styled.div`
   display: flex;
   gap: 2rem;
+  @media ${QUERIES.tabletAndSmaller} {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
 `;
 
 const CardGradient = styled.div`
@@ -213,7 +218,7 @@ const Card = styled.div`
   border-radius: 9px;
   gap: 4rem;
   flex: 1;
-  filter: blur(0.48px) drop-shadow(0px 0px 57px rgba(62, 63, 73, 0.25));
+  filter: blur(0.25px) drop-shadow(0px 0px 57px rgba(62, 63, 73, 0.25));
 `;
 const LevelDetails = styled.div``;
 

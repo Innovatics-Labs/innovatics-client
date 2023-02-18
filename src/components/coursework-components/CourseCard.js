@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import thumbnail from "../assets/images/thumbnail.png";
+import thumbnail from "../../assets/images/thumbnail.png";
 import { QUERIES } from "../../constants";
 import { GrayTitle } from "../../pages/course-work";
 import Button from "../Button";

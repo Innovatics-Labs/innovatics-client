@@ -3,10 +3,11 @@ import Head from "next/head";
 import "../../styles/globals.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { AuthProvider } from "../context/AuthContext";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <AuthProvider>
       <Head>
         <meta
           name="viewport"
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
       <Footer />
-    </>
+    </AuthProvider>
   );
 }
 
