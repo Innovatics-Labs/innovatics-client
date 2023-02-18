@@ -341,18 +341,25 @@ const CourseGrid = styled.div`
 const Courses = styled.div`
   width: 100%;
 `;
+
 const LevelsList = styled.ul`
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
   padding-left: 0;
   margin-bottom: 3rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    gap: 1rem;
+  }
 `;
+
 const Levels = styled.li`
   font-weight: 500;
   font-size: 1.12rem;
-  padding: 15px 1.3rem;
+  padding: 0.8rem 1.3rem;
   cursor: pointer;
 
   :nth-child(1) {
@@ -361,13 +368,18 @@ const Levels = styled.li`
     color: #0d1117;
     border-radius: 50px;
   }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: 0.8rem;
+  }
 `;
 
 const Pagination = styled.div`
   background-color: #0d1117;
-  padding: 2rem 4rem;
+  padding: 2rem var(--container-padding);
   color: white;
 `;
+
 const PaginationActions = styled.div`
   display: flex;
   align-items: flex-start;
@@ -377,6 +389,7 @@ const PaginationActions = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
 const Prev = styled.p`
   text-decoration-line: underline;
 `;
