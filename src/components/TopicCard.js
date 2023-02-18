@@ -16,7 +16,9 @@ const TopicCard = ({ color, number, comingSoon, topic, id }) => {
         />
         <Number color={color}>{number}</Number>
       </GradientContainer>
-      <Topic>{topic}</Topic>
+      <Topic>
+        <Link href={`/academic-paths/${id}`}>{topic}</Link>
+      </Topic>
       <Arrow>
         <Link href={`/academic-paths/${id}`}>
           <Image src={arrow} alt={""} sizes="100vw" />

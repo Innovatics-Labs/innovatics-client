@@ -31,7 +31,7 @@ const AcademicPaths = () => {
       setPathDetail(value.data());
     }
 
-    console.log({ error });
+    // console.log({ error });
 
     getAllAcademicPathsId();
   }, [value]);
