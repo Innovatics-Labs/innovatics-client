@@ -12,6 +12,9 @@ import LineGradient from "../../components/LineGradient";
 import { QUERIES } from "../../constants";
 import { db } from "../../../firebaseConfig";
 import { getAllAcademicPathsId } from "../../utils";
+import Spinner from "../../components/Spinner";
+import CourseCard from "../../components/CourseCard";
+import JoinDiscord from "../../components/JoinDiscord";
 
 const AcademicPaths = () => {
   const [pathDetail, setPathDetail] = useState({});
@@ -27,6 +30,9 @@ const AcademicPaths = () => {
       console.log({ value: value.data() });
       setPathDetail(value.data());
     }
+
+    console.log({ error });
+
     getAllAcademicPathsId();
   }, [value]);
 
@@ -113,8 +119,74 @@ const AcademicPaths = () => {
         </DetailContainer>
       </CourseDetailSection>
       <CourseListings>
-        <h4>Hello world</h4>
+        <div style={{ paddingLeft: "1rem" }}>
+          <FoundText>102 Courses found for Beginners</FoundText>
+          <hr />
+        </div>
+        <ListingsContent>
+          <div>
+            <LineGradient
+              colorFrom={"#10C75900,#10C759"}
+              colorTo={"#10C75900"}
+            />
+          </div>
+          <Courses>
+            <LevelsList>
+              <Levels>Beginner</Levels>
+              <Levels>Professional</Levels>
+              <Levels>Expert</Levels>
+            </LevelsList>
+            <CourseGrid>
+              <CourseCard
+                title={"Advance Data Engineering with Tableau"}
+                duration={"2h 3m"}
+                level={"Professional"}
+                instructor={"Medwani"}
+              />
+              <CourseCard
+                title={"Advance Data Engineering with Tableau"}
+                duration={"2h 3m"}
+                level={"Professional"}
+                instructor={"Medwani"}
+              />
+              <CourseCard
+                title={"Advance Data Engineering with Tableau"}
+                duration={"2h 3m"}
+                level={"Professional"}
+                instructor={"Medwani"}
+              />
+              <CourseCard
+                title={"Advance Data Engineering with Tableau"}
+                duration={"2h 3m"}
+                level={"Professional"}
+                instructor={"Medwani"}
+              />
+              <CourseCard
+                title={"Advance Data Engineering with Tableau"}
+                duration={"2h 3m"}
+                level={"Professional"}
+                instructor={"Medwani"}
+              />
+              <CourseCard
+                title={"Advance Data Engineering with Tableau"}
+                duration={"2h 3m"}
+                level={"Professional"}
+                instructor={"Medwani"}
+              />
+              {/* <Spinner /> */}
+            </CourseGrid>
+          </Courses>
+        </ListingsContent>
       </CourseListings>
+
+      <Pagination>
+        <PaginationActions>
+          <Prev>Prev</Prev>
+          <PagesCount>1 0f 10 pages</PagesCount>
+          <Next>Next</Next>
+        </PaginationActions>
+      </Pagination>
+      <JoinDiscord />
     </Container>
   );
 };
@@ -227,6 +299,7 @@ const Level = styled.p`
   font-size: 36px;
   margin-block: 1rem;
 `;
+
 const LevelDescription = styled.p`
   font-weight: 400;
   margin-block: 5px;
@@ -239,4 +312,79 @@ const SubDetail = styled.div`
 
 const CourseListings = styled.section`
   padding: 2rem var(--container-padding);
+  background-color: rgba(13, 17, 22);
+  color: white;
+
+  hr {
+    border: 1px solid #8691a6;
+  }
+`;
+
+const ListingsContent = styled.div`
+  display: flex;
+  gap: 2.5rem;
+`;
+
+const FoundText = styled.p`
+  font-weight: 500;
+  font-size: var(--font-size-2md);
+`;
+
+const CourseGrid = styled.div`
+  margin-top: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+`;
+
+const Courses = styled.div`
+  width: 100%;
+`;
+const LevelsList = styled.ul`
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding-left: 0;
+  margin-bottom: 3rem;
+`;
+const Levels = styled.li`
+  font-weight: 500;
+  font-size: 1.12rem;
+  padding: 15px 1.3rem;
+  cursor: pointer;
+
+  :nth-child(1) {
+    background: #ffffff;
+    font-weight: 600;
+    color: #0d1117;
+    border-radius: 50px;
+  }
+`;
+
+const Pagination = styled.div`
+  background-color: #0d1117;
+  padding: 2rem 4rem;
+  color: white;
+`;
+const PaginationActions = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  font-weight: 500;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+`;
+const Prev = styled.p`
+  text-decoration-line: underline;
+`;
+
+const PagesCount = styled.p`
+  color: #8691a6;
+`;
+
+const Next = styled.p`
+  text-decoration-line: underline;
 `;

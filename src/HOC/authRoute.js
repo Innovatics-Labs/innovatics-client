@@ -6,6 +6,11 @@ const AuthRoute = ({ children }) => {
   const { currentUser } = useContext(AuthContext);
   const Router = useRouter();
 
+  // useEffect(() => {
+  //   if (!loading && !authUser) router.push("/");
+  // }, [authUser, loading]);
+
+  // Listen for changes on loading and authUser, redirect if needed
   if (currentUser) {
     return <>{children}</>;
   } else {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
+import Spinner from "../components/Spinner";
 
 export const AuthContext = React.createContext();
 
@@ -36,7 +37,11 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   if (loading) {
-    return <>Loading...</>;
+    return (
+      <>
+        <Spinner />
+      </>
+    );
   }
 
   return (
