@@ -2,8 +2,20 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { doc } from "firebase/firestore";
-import { useDocument, useDocumentOnce } from "react-firebase-hooks/firestore";
+import {
+  doc,
+  collection,
+  query,
+  where,
+  orderBy,
+  limit,
+} from "firebase/firestore";
+import {
+  useCollection,
+  useCollectionOnce,
+  useDocument,
+  useDocumentOnce,
+} from "react-firebase-hooks/firestore";
 import { FaReact } from "react-icons/fa";
 import { BsSun } from "react-icons/bs";
 
@@ -15,26 +27,54 @@ import { getAllAcademicPathsId } from "../../utils";
 import Spinner from "../../components/Spinner";
 import CourseCard from "../../components/CourseCard";
 import JoinDiscord from "../../components/JoinDiscord";
+import courseimg from "../../assets/images/abstract-1392404_1920.png";
 
 const AcademicPaths = () => {
-  const [pathDetail, setPathDetail] = useState({});
   const router = useRouter();
   const { id } = router.query;
-
+  const [pathDetail, setPathDetail] = useState({});
+  const [courseList, setCourseList] = useState([]);
+  const [filterBy, setFilterBy] = useState("beginner");
   const [value, loading, error] = useDocumentOnce(
     doc(db, "academic-paths", id)
   );
+  const q = query(
+    collection(db, "courses"),
+    where("academic-path", "==", id),
+    where("level", "==", filterBy)
+  );
+  const [courseResult, courseLoad, courseError] = useCollectionOnce(q);
+
+  // TODO: make the filtering occur at the client and not on firebase
 
   useEffect(() => {
     if (value) {
-      console.log({ value: value.data() });
       setPathDetail(value.data());
+      console.log({ value: value.data() });
     }
-
     // console.log({ error });
 
     // getAllAcademicPathsId();
   }, [value]);
+
+  useEffect(() => {
+    if (courseResult) {
+      setCourseList(courseResult.docs);
+      console.log({ courseResult: courseResult.docs });
+    }
+    if (courseError) {
+      console.log({ courseError });
+    }
+  }, [courseResult, courseError]);
+
+  // useEffect(() => {
+  //   if (courseList) {
+  //     let filtered = courseList
+  //       .map((result) => result)
+  //       .filter((filter) => filter.level === filterBy);
+  //     console.log({ filtered });
+  //   }
+  // }, [courseList, filterBy]);
 
   return (
     <Container>
@@ -120,7 +160,11 @@ const AcademicPaths = () => {
       </CourseDetailSection>
       <CourseListings>
         <div style={{ paddingLeft: "1rem" }}>
-          <FoundText>102 Courses found for Beginners</FoundText>
+          {courseList && (
+            <FoundText>
+              {courseList.length} value found for <span>{filterBy}</span>
+            </FoundText>
+          )}
           <hr />
         </div>
         <ListingsContent>
@@ -132,53 +176,36 @@ const AcademicPaths = () => {
           </div>
           <Courses>
             <LevelsList>
-              <Levels>Beginner</Levels>
-              <Levels>Professional</Levels>
-              <Levels>Expert</Levels>
+              <Levels onClick={() => setFilterBy("beginner")}>Beginner</Levels>
+              <Levels onClick={() => setFilterBy("professional")}>
+                Professional
+              </Levels>
+              <Levels onClick={() => setFilterBy("expert")}>Expert</Levels>
             </LevelsList>
             <CourseGrid>
-              <CourseCard
-                title={"Intro to Data Science: Overview"}
-                duration={"2h 3m"}
-                level={"Professional"}
-                instructor={"Medwani"}
-              />
-              <CourseCard
-                title={"Javascript Progamming Fundamentals"}
-                duration={"2h 3m"}
-                level={"Professional"}
-                instructor={"Medwani"}
-              />
-              <CourseCard
-                title={"Python Progamming Fundamentals"}
-                duration={"1h 3m"}
-                level={"Professional"}
-                instructor={"Medwani"}
-              />
-              <CourseCard
-                title={"Intro to Web Development"}
-                duration={"5h 3m"}
-                level={"Professional"}
-                instructor={"Medwani"}
-              />
-              <CourseCard
-                title={"Advance Data Engineering with Tableau"}
-                duration={"4h 3m"}
-                level={"Professional"}
-                instructor={"Medwani"}
-              />
-              <CourseCard
-                title={"Advance Data Engineering with Tableau"}
-                duration={"2h 3m"}
-                level={"Professional"}
-                instructor={"Medwani"}
-              />
+              {courseError && (
+                <h4 style={{ margin: "2rem", color: "red" }}>
+                  Error Loading Path Courses...
+                </h4>
+              )}
+              {courseLoad && (
+                <div style={{ margin: "2rem", width: "100%" }}>
+                  <Spinner />
+                  <h4>Loading Academic Area Courses...</h4>
+                </div>
+              )}
+              {!courseLoad &&
+                courseList &&
+                courseList.map((doc) => (
+                  <>
+                    <CourseCard key={doc.id} doc={doc} courseimg={courseimg} />
+                  </>
+                ))}
               {/* <Spinner /> */}
             </CourseGrid>
           </Courses>
         </ListingsContent>
       </CourseListings>
-
       <Pagination>
         <PaginationActions>
           <Prev>Prev</Prev>
@@ -328,6 +355,10 @@ const ListingsContent = styled.div`
 const FoundText = styled.p`
   font-weight: 500;
   font-size: var(--font-size-2md);
+  span {
+    font-weight: 700;
+    text-transform: capitalize;
+  }
 `;
 
 const CourseGrid = styled.div`
