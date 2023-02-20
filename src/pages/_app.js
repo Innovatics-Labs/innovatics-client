@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "../../styles/globals.css";
 import Footer from "../components/Footer";
@@ -19,6 +21,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
       <Footer />
+      <ToastContainer />
     </AuthProvider>
   );
 }

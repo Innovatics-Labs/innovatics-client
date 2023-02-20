@@ -102,6 +102,7 @@ const SignUp = () => {
           <ForgotContainer>
             <ForgotText>Forgot password?</ForgotText>
             <SignInButton
+              type="submit"
               title={"Sign Up"}
               bgColor={"#979797"}
               color={"#0D1117"}
