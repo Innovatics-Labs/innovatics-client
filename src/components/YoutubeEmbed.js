@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useRef } from "react";
+import { FaPlayCircle } from "react-icons/fa";
 import styled from "styled-components";
 import thumbnail from "../assets/images/thumbnail.png";
 
@@ -7,9 +8,9 @@ import thumbnail from "../assets/images/thumbnail.png";
 
 export default function YouTubeFrame({
   video,
-  width = "100",
+  width = "400",
   height = "400",
-  thumbnailQuality = "sddefault",
+  thumbnailQuality = "hqdefault",
 }) {
   const divRef = useRef(null);
 
@@ -34,11 +35,10 @@ export default function YouTubeFrame({
   };
 
   return (
-    <YoutubeFrame ref={divRef} className="position-relative">
-      <span
-        onClick={onClick}
-        className="ti-control-play position-absolute display-1 text-white"
-      />
+    <YoutubeFrame ref={divRef}>
+      <Play onClick={onClick}>
+        <FaPlayCircle size={54} />
+      </Play>
       <Image
         onClick={onClick}
         src={`https://img.youtube.com/vi/${video}/${thumbnailQuality}.jpg`}
@@ -60,12 +60,28 @@ export default function YouTubeFrame({
 
 const YoutubeFrame = styled.div`
   width: 100%;
-  min-height: 200px;
-  /* height: auto; */
+  position: relative;
+
+  iframe {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
 
   img {
     width: 100%;
-    height: 300px;
+    height: auto;
+    /* aspect-ratio: 16 / 9; */
     object-fit: cover;
   }
+`;
+
+const Play = styled.div`
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%);
+  color: #44e986;
+  border: 2px solid #44e986;
+  border-radius: 50%;
+  padding: 5px;
 `;
