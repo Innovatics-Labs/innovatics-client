@@ -138,32 +138,32 @@ const AcademicPaths = () => {
             </LevelsList>
             <CourseGrid>
               <CourseCard
-                title={"Advance Data Engineering with Tableau"}
+                title={"Intro to Data Science: Overview"}
                 duration={"2h 3m"}
                 level={"Professional"}
                 instructor={"Medwani"}
               />
               <CourseCard
-                title={"Advance Data Engineering with Tableau"}
+                title={"Javascript Progamming Fundamentals"}
                 duration={"2h 3m"}
                 level={"Professional"}
                 instructor={"Medwani"}
               />
               <CourseCard
-                title={"Advance Data Engineering with Tableau"}
-                duration={"2h 3m"}
+                title={"Python Progamming Fundamentals"}
+                duration={"1h 3m"}
+                level={"Professional"}
+                instructor={"Medwani"}
+              />
+              <CourseCard
+                title={"Intro to Web Development"}
+                duration={"5h 3m"}
                 level={"Professional"}
                 instructor={"Medwani"}
               />
               <CourseCard
                 title={"Advance Data Engineering with Tableau"}
-                duration={"2h 3m"}
-                level={"Professional"}
-                instructor={"Medwani"}
-              />
-              <CourseCard
-                title={"Advance Data Engineering with Tableau"}
-                duration={"2h 3m"}
+                duration={"4h 3m"}
                 level={"Professional"}
                 instructor={"Medwani"}
               />
