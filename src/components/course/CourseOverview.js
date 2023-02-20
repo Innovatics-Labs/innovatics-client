@@ -4,7 +4,7 @@ import { VscGraph } from "react-icons/vsc";
 import GradientIcon from "../GradientIcon";
 import LineGradient from "../LineGradient";
 
-const CourseOverview = () => {
+const CourseOverview = ({ courseTitle }) => {
   return (
     <CourseOverviewWrapper>
       <GradientContainer>
@@ -17,7 +17,9 @@ const CourseOverview = () => {
       </GradientContainer>
       <CourseDetail>
         <CourseCategory>Data Science</CourseCategory>
-        <CourseTitle>Python for Data Science</CourseTitle>
+        <CourseTitle>
+          {courseTitle ? courseTitle : "Python for Data Science"}
+        </CourseTitle>
       </CourseDetail>
     </CourseOverviewWrapper>
   );

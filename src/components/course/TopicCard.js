@@ -3,10 +3,10 @@ import styled from "styled-components";
 import TopicResourceCard from "./TopicResourceCard";
 import UnstyledButton from "../UnstyledButton";
 import { QUERIES } from "../../constants";
+import useToggle from "../../hooks/useToggle";
 
-const TopicCard = ({ topicTitle, activityCount }) => {
-  const [showDetails, setShowDetails] = useState(true);
-
+const TopicCard = ({ topicTitle, activityCount, topicResource }) => {
+  const [showDetails, setShowDetails] = useToggle(true);
   return (
     <Container>
       <TopicDetails>
@@ -19,26 +19,16 @@ const TopicCard = ({ topicTitle, activityCount }) => {
       {showDetails && (
         <TopicContentWrapper>
           <TopicResourceList>
-            <TopicResourceCard
-              resourcetype={"video"}
-              resourceTitle={"Innovatics Walk around"}
-              resourceDuration={"15m 6s"}
-            />
-            <TopicResourceCard
-              resourcetype={"video"}
-              resourceTitle={"Python lab with Jupyter Notebook"}
-              resourceDuration={"15m 6s"}
-            />
-            <TopicResourceCard
-              resourcetype={"quiz"}
-              resourceTitle={"Python IDE test"}
-              resourceDuration={"15m 10s"}
-            />
-            <TopicResourceCard
-              resourcetype={"lab"}
-              resourceTitle={"Python Jupyter Lab"}
-              resourceDuration={"10m 10s"}
-            />
+            {topicResource &&
+              topicResource.map((resource) => (
+                <TopicResourceCard
+                  key={resource.name}
+                  resourcetype={resource.type}
+                  resourceTitle={resource.name}
+                  resourceDuration={resource.duration || "15m 6s"}
+                  videoUrl={resource.videoUrl}
+                />
+              ))}
           </TopicResourceList>
         </TopicContentWrapper>
       )}
@@ -102,6 +92,9 @@ const TopicContentWrapper = styled.article`
   );
   @media ${QUERIES.tabletAndSmaller} {
     padding: 1.5rem;
+  }
+  @media ${QUERIES.phoneAndSmaller} {
+    padding: 1rem;
   }
 `;
 

@@ -38,6 +38,7 @@ const CoursesSection = () => {
       </TabsSection>
       <CourseList>
         {loading && <h4>Collection: Loading Recommended Courses...</h4>}
+        {error && <h4>Error Loading Recommended Courses...</h4>}
         {courses &&
           courses.map((doc) => (
             <CourseCard key={doc.id} doc={doc} courseimg={courseimg} />

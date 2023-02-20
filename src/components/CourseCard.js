@@ -14,7 +14,7 @@ function CourseCard({
 }) {
   return (
     <CourseCardContainer>
-      <Link href={"/course"}>
+      <Link href={`/course/${doc?.id || "alrMf2i9X1SvEu9gIyx4"}`}>
         <CourseImage>
           <Image src={courseimg} alt="" />
         </CourseImage>

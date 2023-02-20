@@ -5,6 +5,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    domains: ["img.youtube.com"],
+  },
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.svg$/,

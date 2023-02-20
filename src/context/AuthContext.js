@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import Spinner from "../components/Spinner";
@@ -8,6 +8,7 @@ export const AuthContext = React.createContext();
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const isMounted = useRef(true);
   const [userData, setUserData] = useState({
     userProviderId: "",
     userId: "",
@@ -34,6 +35,9 @@ export const AuthProvider = ({ children }) => {
       }
       setLoading(false);
     });
+    // return () => {
+    //   isMounted.current = false;
+    // };
   }, []);
 
   if (loading) {
