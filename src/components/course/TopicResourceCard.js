@@ -66,7 +66,11 @@ const TopicResourceCard = ({
           <Finished onClick={setIsMarkFinished}>
             <p>MARK FINISHED</p>
             <Switch className="switch">
-              <input type="checkbox" checked={isMarkFinished} />
+              <Input
+                type="checkbox"
+                checked={isMarkFinished}
+                onClick={setIsMarkFinished}
+              />
               <Slider className="slider round"></Slider>
             </Switch>
           </Finished>
@@ -150,6 +154,7 @@ const Finished = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+  width: fit-content;
 `;
 
 const Switch = styled.div`
@@ -159,25 +164,6 @@ const Switch = styled.div`
   height: 28px;
   /* border-radius: ${({ rounded }) => `${rounded ? "2rem" : "10px"}`}; */
 
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  input:checked + .slider {
-    background-color: #2196f3;
-  }
-
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196f3;
-  }
-
-  input:checked + .slider:before {
-    -webkit-transform: translateX(16px);
-    -ms-transform: translateX(16px);
-    transform: translateX(16px);
-  }
   .round {
     border-radius: 34px;
   }
@@ -208,5 +194,25 @@ const Slider = styled.span`
     background-color: #0d1117;
     -webkit-transition: 0.4s;
     transition: 0.4s;
+  }
+`;
+
+const Input = styled.input`
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  :checked + ${Slider} {
+    background-color: #2196f3;
+  }
+
+  :focus + ${Slider} {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  :checked + ${Slider}:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
   }
 `;

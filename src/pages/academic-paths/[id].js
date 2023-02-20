@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { doc } from "firebase/firestore";
-import { useDocument } from "react-firebase-hooks/firestore";
+import { useDocument, useDocumentOnce } from "react-firebase-hooks/firestore";
 import { FaReact } from "react-icons/fa";
 import { BsSun } from "react-icons/bs";
 
@@ -21,9 +21,9 @@ const AcademicPaths = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  const [value, loading, error] = useDocument(doc(db, "academic-paths", id), {
-    snapshotListenOptions: { includeMetadataChanges: true },
-  });
+  const [value, loading, error] = useDocumentOnce(
+    doc(db, "academic-paths", id)
+  );
 
   useEffect(() => {
     if (value) {
@@ -33,7 +33,7 @@ const AcademicPaths = () => {
 
     // console.log({ error });
 
-    getAllAcademicPathsId();
+    // getAllAcademicPathsId();
   }, [value]);
 
   return (
