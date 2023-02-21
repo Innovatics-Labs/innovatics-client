@@ -11,6 +11,7 @@ import { QUERIES } from "../../constants";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebaseConfig";
 import UnstyledButton from "../../components/UnstyledButton";
+import OAuth from "../../components/OAuth";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -82,17 +83,14 @@ const SignIn = () => {
               <ForgotText>Forgot password?</ForgotText>
               <SignInButton
                 onClick={onSubmit}
+                type="submit"
                 title={"Sign In"}
                 bgColor={"#979797"}
                 color={"#0D1117"}
               />
             </ForgotContainer>
             <OR>OR</OR>
-            <FormButton
-              variant={"outline"}
-              title={"Continue with Google"}
-              color={"#8691A6"}
-            />
+            <OAuth />
             <NoAccountContainer>
               Don’t Have an account?
               <span>
@@ -120,15 +118,7 @@ export const Container = styled.section`
   }
 `;
 
-const FormContainer = styled.div`
-  /* width: 40%; */
-  /* @media ${QUERIES.tabletAndSmaller} {
-    width: 60%;
-  }
-  @media ${QUERIES.phoneAndSmaller} {
-    width: revert;
-  } */
-`;
+const FormContainer = styled.div``;
 
 const Title = styled.h3`
   font-weight: 600;
@@ -185,11 +175,6 @@ const OR = styled.p`
   margin-block: 2rem;
   font-weight: 500;
   font-size: var(--font-size-md);
-`;
-
-const FormButton = styled(Button)`
-  border-color: #8691a6;
-  width: 100%;
 `;
 
 const NoAccountContainer = styled.p`

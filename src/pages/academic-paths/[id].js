@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   doc,
   collection,
@@ -173,15 +173,29 @@ const AcademicPaths = () => {
               />
             </div>
             <Courses>
-              <LevelsList>
-                <Levels onClick={() => setFilterBy("beginner")}>
-                  Beginner
-                </Levels>
-                <Levels onClick={() => setFilterBy("professional")}>
-                  Professional
-                </Levels>
-                <Levels onClick={() => setFilterBy("expert")}>Expert</Levels>
-              </LevelsList>
+              <nav>
+                <LevelsList>
+                  <Levels
+                    selected={filterBy === "beginner"}
+                    onClick={() => setFilterBy("beginner")}
+                  >
+                    Beginner
+                  </Levels>
+                  <Levels
+                    selected={filterBy === "professional"}
+                    onClick={() => setFilterBy("professional")}
+                  >
+                    Professional
+                  </Levels>
+                  <Levels
+                    selected={filterBy === "expert"}
+                    onClick={() => setFilterBy("expert")}
+                  >
+                    Expert
+                  </Levels>
+                </LevelsList>
+              </nav>
+
               <CourseGrid>
                 {courseError && (
                   <h4 style={{ margin: "2rem", color: "red" }}>
@@ -398,12 +412,14 @@ const Levels = styled.li`
   padding: 0.8rem 1.3rem;
   cursor: pointer;
 
-  :nth-child(1) {
-    background: #ffffff;
-    font-weight: 600;
-    color: #0d1117;
-    border-radius: 50px;
-  }
+  ${({ selected }) =>
+    selected &&
+    css`
+      background: #ffffff;
+      font-weight: 600;
+      color: #0d1117;
+      border-radius: 50px;
+    `};
 
   @media ${QUERIES.phoneAndSmaller} {
     font-size: 0.8rem;

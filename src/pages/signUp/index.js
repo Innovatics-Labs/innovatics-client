@@ -22,6 +22,7 @@ import {
   SignInButton,
   NoAccountContainer,
 } from "../../components/GlobalStyles/authStyle";
+import OAuth from "../../components/OAuth";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -119,12 +120,7 @@ const SignUp = () => {
               />
             </ForgotContainer>
             <OR>OR</OR>
-            <FormButton
-              type="submit"
-              variant={"outline"}
-              title={"Continue with Google"}
-              color={"#8691A6"}
-            />
+            <OAuth />
             <NoAccountContainer>
               Already a member?
               <span>
