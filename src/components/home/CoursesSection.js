@@ -1,7 +1,10 @@
 import Link from "next/link";
-import styled from "styled-components";
-import { collection } from "firebase/firestore";
-import { useCollection } from "react-firebase-hooks/firestore";
+import styled, { css } from "styled-components";
+import { collection, query, where, orderBy, limit } from "firebase/firestore";
+import {
+  useCollection,
+  useCollectionOnce,
+} from "react-firebase-hooks/firestore";
 
 import Button from "../Button";
 import CourseCard from "../CourseCard";
@@ -9,41 +12,89 @@ import courseimg from "../../assets/images/abstract-1392404_1920.png";
 import { QUERIES } from "../../constants";
 import { db } from "../../../firebaseConfig";
 import { useEffect, useState } from "react";
+import Spinner from "../Spinner";
 
-const tablist = ["Data Science", "Software", "Security", "Cloud"];
+// const tablist = ["Data Science", "Software", "Cyber Security", "Cloud"];
 
 const CoursesSection = () => {
-  const [value, loading, error] = useCollection(collection(db, "courses"));
-
+  const [filterBy, setFilterBy] = useState("");
   const [courses, setCourses] = useState([]);
+  const [paths, setPaths] = useState([]);
+  const [path, pathLoading, pathError] = useCollection(
+    collection(db, "academic-paths")
+  );
+
+  const q = query(
+    collection(db, "courses"),
+    where("academic-path", "==", filterBy)
+  );
+
+  const [courseResult, courseLoad, courseError] = useCollectionOnce(q);
 
   useEffect(() => {
-    if (value) {
-      setCourses(value.docs);
-      // console.log({ courses }, { value });
+    if (path) {
+      setPaths(path.docs);
+      const id = path.docs[0].id;
+      setFilterBy(id);
+      console.log({ path }, { id });
     }
-  }, [value, loading]);
+  }, [path]);
+
+  useEffect(() => {
+    if (courseResult) {
+      setCourses(courseResult.docs);
+      console.log({ courseResult });
+    }
+  }, [courseResult]);
+
+  // useEffect(() => {
+  //   if (value) {
+  //     setCourses(value.docs);
+  //     // console.log({ courses }, { value });
+  //   }
+  // }, [value, loading, error]);
 
   return (
     <Container>
       <TabsSection>
         <ul>
-          {tablist.map((tab) => (
-            <li key={tab}>
-              <Link href={"/"}>{tab}</Link>
-            </li>
-          ))}
+          {/* {tablist.map((tab) => (
+            <PathTab key={tab}>{tab}</PathTab>
+          ))} */}
+          {pathLoading && <p>Loading</p>}
+          {paths &&
+            paths.map((tab) => (
+              <PathTab
+                key={tab.id}
+                onClick={() => setFilterBy(tab.id)}
+                selected={filterBy === tab.id}
+              >
+                {tab.data().name}
+              </PathTab>
+            ))}
         </ul>
-        <Button title={"View All"} bgColor={"#D5DBE2"} size={"18px"} />
+        <Button
+          as={Link}
+          href={`/academic-path/${filterBy}`}
+          title={"View All"}
+          bgColor={"#D5DBE2"}
+          size={"18px"}
+        />
       </TabsSection>
-      <CourseList>
-        {loading && <h4>Collection: Loading Recommended Courses...</h4>}
-        {error && <h4>Error Loading Recommended Courses...</h4>}
-        {courses &&
-          courses.map((doc) => (
+      {courseLoad && (
+        <div>
+          <Spinner />
+          <h4>Collection: Loading Recommended Courses...</h4>
+        </div>
+      )}
+      {courseError && <h4>Error Loading Recommended Courses...</h4>}
+      {!courseLoad && courses && (
+        <CourseList>
+          {courses.map((doc) => (
             <CourseCard key={doc.id} doc={doc} courseimg={courseimg} />
           ))}
-      </CourseList>
+        </CourseList>
+      )}
     </Container>
   );
 };
@@ -59,37 +110,38 @@ const TabsSection = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
 
   ul {
     list-style-type: none;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     padding-left: 0;
     flex-wrap: wrap;
   }
 
-  li {
-    font-weight: 500;
-    font-size: 22px;
-    color: #8691a6;
+  @media ${QUERIES.phoneAndSmaller} {
+    ul {
+      gap: 1rem;
+    }
+  }
+`;
 
-    :first-child {
+const PathTab = styled.li`
+  font-weight: 500;
+  font-size: clamp(0.9rem, 1.429vw + 0.464rem, 1.3rem);
+  color: #8691a6;
+  cursor: pointer;
+  transition: border 0.3s linear;
+
+  ${({ selected }) =>
+    selected &&
+    css`
       color: #0d1117;
       padding-bottom: 0.5rem;
       border-bottom: 3px solid #44e986;
       border-radius: 20px 10px 0px 0px;
-    }
-  }
-
-  @media ${QUERIES.phoneAndSmaller} {
-    ul {
-      gap: 1.5rem;
-    }
-
-    li {
-      font-size: 14px;
-    }
-  }
+    `};
 `;
 
 const CourseList = styled.div`
