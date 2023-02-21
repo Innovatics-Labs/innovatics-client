@@ -11,14 +11,14 @@ import {
   limit,
 } from "firebase/firestore";
 import {
-  useCollection,
   useCollectionOnce,
-  useDocument,
   useDocumentOnce,
 } from "react-firebase-hooks/firestore";
 import { FaReact } from "react-icons/fa";
 import { BsSun } from "react-icons/bs";
 
+import siteMetadata from "../../data/siteMetadata";
+import HeadSeo from "../../components/HeadSeo";
 import GradientIcon from "../../components/GradientIcon";
 import LineGradient from "../../components/LineGradient";
 import { QUERIES } from "../../constants";
@@ -67,154 +67,159 @@ const AcademicPaths = () => {
     }
   }, [courseResult, courseError]);
 
-  // useEffect(() => {
-  //   if (courseList) {
-  //     let filtered = courseList
-  //       .map((result) => result)
-  //       .filter((filter) => filter.level === filterBy);
-  //     console.log({ filtered });
-  //   }
-  // }, [courseList, filterBy]);
-
   return (
-    <Container>
-      <CourseDetailSection>
-        <GradientContainer>
-          <GradientIcon
-            IconComponent={<FaReact size={30} color="#44E986" />}
-            bgColor={"#44E986"}
-          />
-          <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
-        </GradientContainer>
-        <DetailContainer>
-          <Detail>
-            {loading && <h4>Details: Loading...</h4>}
-            {error && <h4>Details: error fetching data...</h4>}
-            {pathDetail && (
-              <>
-                <Title>{pathDetail.name}</Title>
-                <Description> {pathDetail.description}</Description>
-              </>
-            )}
-          </Detail>
-          <AcademicLevelsContainer>
-            <PathTitle>Academic Levels</PathTitle>
-            <CardList>
-              <Card>
-                <CardGradient>
-                  <GradientIcon
-                    IconComponent={<BsSun size={30} color={"#44E986"} />}
-                    bgColor={"#44E986"}
-                  />
-                </CardGradient>
-                <LevelDetails>
-                  <Level>Beginner</Level>
-                  <LevelDescription>
-                    Join the data driven companies.
-                  </LevelDescription>
-                </LevelDetails>
-                <SubDetail>
-                  <p>12h 30m</p>
-                  <p>Data</p>
-                </SubDetail>
-              </Card>
-              <Card>
-                <CardGradient>
-                  <GradientIcon
-                    IconComponent={<BsSun size={30} color={"#44E986"} />}
-                    bgColor={"#44E986"}
-                  />
-                </CardGradient>
-                <LevelDetails>
-                  <Level>Professional</Level>
-                  <LevelDescription>
-                    Take up lead role in your establishment
-                  </LevelDescription>
-                </LevelDetails>
-                <SubDetail>
-                  <p>12h 30m</p>
-                  <p>Data</p>
-                </SubDetail>
-              </Card>
-              <Card>
-                <CardGradient>
-                  <GradientIcon
-                    IconComponent={<BsSun size={30} color={"#44E986"} />}
-                    bgColor={"#44E986"}
-                  />
-                </CardGradient>
-                <LevelDetails>
-                  <Level>Expert</Level>
-                  <LevelDescription>
-                    Expand your abilities as a well-rounded engineer!
-                  </LevelDescription>
-                </LevelDetails>
-                <SubDetail>
-                  <p>12h 30m</p>
-                  <p>Data</p>
-                </SubDetail>
-              </Card>
-            </CardList>
-          </AcademicLevelsContainer>
-        </DetailContainer>
-      </CourseDetailSection>
-      <CourseListings>
-        <div style={{ paddingLeft: "1rem" }}>
-          {courseList && (
-            <FoundText>
-              {courseList.length} value found for <span>{filterBy}</span>
-            </FoundText>
-          )}
-          <hr />
-        </div>
-        <ListingsContent>
-          <div>
-            <LineGradient
-              colorFrom={"#10C75900,#10C759"}
-              colorTo={"#10C75900"}
+    <>
+      <HeadSeo
+        title={`Academic Path | ${siteMetadata.companyName} `}
+        description={pathDetail.description}
+        canonicalUrl={`${siteMetadata.siteUrl}/${pathDetail.id}`}
+        ogType={"article"}
+      />
+      <Container>
+        <CourseDetailSection>
+          <GradientContainer>
+            <GradientIcon
+              IconComponent={<FaReact size={30} color="#44E986" />}
+              bgColor={"#44E986"}
             />
+            <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
+          </GradientContainer>
+          <DetailContainer>
+            <Detail>
+              {loading && <h4>Details: Loading...</h4>}
+              {error && <h4>Details: error fetching data...</h4>}
+              {pathDetail && (
+                <>
+                  <Title>{pathDetail.name}</Title>
+                  <Description> {pathDetail.description}</Description>
+                </>
+              )}
+            </Detail>
+            <AcademicLevelsContainer>
+              <PathTitle>Academic Levels</PathTitle>
+              <CardList>
+                <Card>
+                  <CardGradient>
+                    <GradientIcon
+                      IconComponent={<BsSun size={30} color={"#44E986"} />}
+                      bgColor={"#44E986"}
+                    />
+                  </CardGradient>
+                  <LevelDetails>
+                    <Level>Beginner</Level>
+                    <LevelDescription>
+                      Join the data driven companies.
+                    </LevelDescription>
+                  </LevelDetails>
+                  <SubDetail>
+                    <p>12h 30m</p>
+                    <p>Data</p>
+                  </SubDetail>
+                </Card>
+                <Card>
+                  <CardGradient>
+                    <GradientIcon
+                      IconComponent={<BsSun size={30} color={"#44E986"} />}
+                      bgColor={"#44E986"}
+                    />
+                  </CardGradient>
+                  <LevelDetails>
+                    <Level>Professional</Level>
+                    <LevelDescription>
+                      Take up lead role in your establishment
+                    </LevelDescription>
+                  </LevelDetails>
+                  <SubDetail>
+                    <p>12h 30m</p>
+                    <p>Data</p>
+                  </SubDetail>
+                </Card>
+                <Card>
+                  <CardGradient>
+                    <GradientIcon
+                      IconComponent={<BsSun size={30} color={"#44E986"} />}
+                      bgColor={"#44E986"}
+                    />
+                  </CardGradient>
+                  <LevelDetails>
+                    <Level>Expert</Level>
+                    <LevelDescription>
+                      Expand your abilities as a well-rounded engineer!
+                    </LevelDescription>
+                  </LevelDetails>
+                  <SubDetail>
+                    <p>12h 30m</p>
+                    <p>Data</p>
+                  </SubDetail>
+                </Card>
+              </CardList>
+            </AcademicLevelsContainer>
+          </DetailContainer>
+        </CourseDetailSection>
+        <CourseListings>
+          <div style={{ paddingLeft: "1rem" }}>
+            {courseList && (
+              <FoundText>
+                {courseList.length} value found for <span>{filterBy}</span>
+              </FoundText>
+            )}
+            <hr />
           </div>
-          <Courses>
-            <LevelsList>
-              <Levels onClick={() => setFilterBy("beginner")}>Beginner</Levels>
-              <Levels onClick={() => setFilterBy("professional")}>
-                Professional
-              </Levels>
-              <Levels onClick={() => setFilterBy("expert")}>Expert</Levels>
-            </LevelsList>
-            <CourseGrid>
-              {courseError && (
-                <h4 style={{ margin: "2rem", color: "red" }}>
-                  Error Loading Path Courses...
-                </h4>
-              )}
-              {courseLoad && (
-                <div style={{ margin: "2rem", width: "100%" }}>
-                  <Spinner />
-                  <h4>Loading Academic Area Courses...</h4>
-                </div>
-              )}
-              {!courseLoad &&
-                courseList &&
-                courseList.map((doc) => (
-                  <>
-                    <CourseCard key={doc.id} doc={doc} courseimg={courseimg} />
-                  </>
-                ))}
-              {/* <Spinner /> */}
-            </CourseGrid>
-          </Courses>
-        </ListingsContent>
-      </CourseListings>
-      <Pagination>
-        <PaginationActions>
-          <Prev>Prev</Prev>
-          <PagesCount>1 0f 10 pages</PagesCount>
-          <Next>Next</Next>
-        </PaginationActions>
-      </Pagination>
-      <JoinDiscord />
-    </Container>
+          <ListingsContent>
+            <div>
+              <LineGradient
+                colorFrom={"#10C75900,#10C759"}
+                colorTo={"#10C75900"}
+              />
+            </div>
+            <Courses>
+              <LevelsList>
+                <Levels onClick={() => setFilterBy("beginner")}>
+                  Beginner
+                </Levels>
+                <Levels onClick={() => setFilterBy("professional")}>
+                  Professional
+                </Levels>
+                <Levels onClick={() => setFilterBy("expert")}>Expert</Levels>
+              </LevelsList>
+              <CourseGrid>
+                {courseError && (
+                  <h4 style={{ margin: "2rem", color: "red" }}>
+                    Error Loading Path Courses...
+                  </h4>
+                )}
+                {courseLoad && (
+                  <div style={{ margin: "2rem", width: "100%" }}>
+                    <Spinner />
+                    <h4>Loading Academic Area Courses...</h4>
+                  </div>
+                )}
+                {!courseLoad &&
+                  courseList &&
+                  courseList.map((doc) => (
+                    <>
+                      <CourseCard
+                        key={doc.id}
+                        doc={doc}
+                        courseimg={courseimg}
+                      />
+                    </>
+                  ))}
+                {/* <Spinner /> */}
+              </CourseGrid>
+            </Courses>
+          </ListingsContent>
+        </CourseListings>
+        <Pagination>
+          <PaginationActions>
+            <Prev>Prev</Prev>
+            <PagesCount>1 0f 10 pages</PagesCount>
+            <Next>Next</Next>
+          </PaginationActions>
+        </Pagination>
+        <JoinDiscord />
+      </Container>
+    </>
   );
 };
 

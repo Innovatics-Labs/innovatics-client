@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { useDocument } from "react-firebase-hooks/firestore";
 import { doc } from "firebase/firestore";
 
+import siteMetadata from "../../data/siteMetadata";
+import HeadSeo from "../../components/HeadSeo";
 import CourseOverview from "../../components/course/CourseOverview";
 import TopicCard from "../../components/course/TopicCard";
 import GradientIcon from "../../components/GradientIcon";
@@ -34,62 +36,72 @@ const DashboardClass = () => {
   }, [value, error, loading]);
 
   return (
-    <Container>
-      {error && <strong>Error: {JSON.stringify(error)}</strong>}
-      {loading && <span>Document: Loading...</span>}
-      {value && (
-        <>
-          <CourseOverview courseTitle={courseDetail.title} />
-          <CourseSection>
-            <GradientContainer>
-              <LineGradient colorFrom={"#44E98600"} colorTo={"#44E986"} />
-              <GradientIcon
-                IconComponent={<VscGraph size={30} color="#44E986" />}
-                bgColor={"#44E986"}
-              />
-            </GradientContainer>
-            <Content>
-              <Instructordetails>
-                <CapContainer>
-                  <InstructorCap size={"140px"} iconsize={70} />
-                </CapContainer>
-                <CourseStats>
-                  <InstructorName>
-                    <GrayTitle>INSTRUCTOR:</GrayTitle> {courseDetail.instructor}
-                  </InstructorName>
-                  <Duration>
-                    <GrayTitle>DURATION:</GrayTitle> {courseDetail.duration}
-                  </Duration>
-                  <Level>
-                    <GrayTitle>LEVEL:</GrayTitle> {courseDetail.level}
-                  </Level>
-                </CourseStats>
-              </Instructordetails>
-              <CourseContentWrapper>
-                <CourseTitle>{courseDetail.title}</CourseTitle>
-                {courseDetail.topics ? (
-                  courseDetail.topics?.map((topic) => (
-                    <TopicCard
-                      key={topic.name}
-                      topicTitle={topic.name}
-                      activityCount={topic.resources.length}
-                      topicResource={topic.resources}
-                    />
-                  ))
-                ) : (
-                  <h4>Course coming soon stay tuned.....</h4>
-                )}
-              </CourseContentWrapper>
-            </Content>
-          </CourseSection>
-        </>
-      )}
+    <>
+      <HeadSeo
+        title={`Course | ${siteMetadata.companyName} `}
+        description={courseDetail.description}
+        canonicalUrl={`${siteMetadata.siteUrl}/${courseDetail.id}`}
+        // ogImageUrl={courseDetail.url}
+        ogType={"article"}
+      />
+      <Container>
+        {error && <strong>Error: {JSON.stringify(error)}</strong>}
+        {loading && <span>Document: Loading...</span>}
+        {value && (
+          <>
+            <CourseOverview courseTitle={courseDetail.title} />
+            <CourseSection>
+              <GradientContainer>
+                <LineGradient colorFrom={"#44E98600"} colorTo={"#44E986"} />
+                <GradientIcon
+                  IconComponent={<VscGraph size={30} color="#44E986" />}
+                  bgColor={"#44E986"}
+                />
+              </GradientContainer>
+              <Content>
+                <Instructordetails>
+                  <CapContainer>
+                    <InstructorCap size={"140px"} iconsize={70} />
+                  </CapContainer>
+                  <CourseStats>
+                    <InstructorName>
+                      <GrayTitle>INSTRUCTOR:</GrayTitle>{" "}
+                      {courseDetail.instructor}
+                    </InstructorName>
+                    <Duration>
+                      <GrayTitle>DURATION:</GrayTitle> {courseDetail.duration}
+                    </Duration>
+                    <Level>
+                      <GrayTitle>LEVEL:</GrayTitle> {courseDetail.level}
+                    </Level>
+                  </CourseStats>
+                </Instructordetails>
+                <CourseContentWrapper>
+                  <CourseTitle>{courseDetail.title}</CourseTitle>
+                  {courseDetail.topics ? (
+                    courseDetail.topics?.map((topic) => (
+                      <TopicCard
+                        key={topic.name}
+                        topicTitle={topic.name}
+                        activityCount={topic.resources.length}
+                        topicResource={topic.resources}
+                      />
+                    ))
+                  ) : (
+                    <h4>Course coming soon stay tuned.....</h4>
+                  )}
+                </CourseContentWrapper>
+              </Content>
+            </CourseSection>
+          </>
+        )}
 
-      <PaginationContainer>
-        <Pagination />
-      </PaginationContainer>
-      <JoinDiscord />
-    </Container>
+        <PaginationContainer>
+          <Pagination />
+        </PaginationContainer>
+        <JoinDiscord />
+      </Container>
+    </>
   );
 };
 

@@ -4,6 +4,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import { toast } from "react-toastify";
 
+import siteMetadata from "../../data/siteMetadata";
+import HeadSeo from "../../components/HeadSeo";
 import Button from "../../components/Button";
 import { QUERIES } from "../../constants";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -47,52 +49,60 @@ const SignIn = () => {
   };
 
   return (
-    <Container>
-      <FormContainer>
-        <Title>Sign in to continue</Title>
-        <Form>
-          <Input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-            value={email}
-            onChange={onChange}
-          />
-          <Input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            value={password}
-            onChange={onChange}
-          />
-        </Form>
-        <FormActions>
-          <ForgotContainer>
-            <ForgotText>Forgot password?</ForgotText>
-            <SignInButton
-              onClick={onSubmit}
-              title={"Sign In"}
-              bgColor={"#979797"}
-              color={"#0D1117"}
+    <>
+      <HeadSeo
+        title={`Sign In | ${siteMetadata.companyName} `}
+        description={"Sign in to continue"}
+        canonicalUrl={`${siteMetadata.siteUrl}/signIn`}
+        ogType={"website"}
+      />
+      <Container>
+        <FormContainer>
+          <Title>Sign in to continue</Title>
+          <Form>
+            <Input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              value={email}
+              onChange={onChange}
             />
-          </ForgotContainer>
-          <OR>OR</OR>
-          <FormButton
-            variant={"outline"}
-            title={"Continue with Google"}
-            color={"#8691A6"}
-          />
-          <NoAccountContainer>
-            Don’t Have an account?
-            <span>
-              <Link href={"signUp"}>Signup for free</Link>
-            </span>
-          </NoAccountContainer>
-        </FormActions>
-      </FormContainer>
-    </Container>
+            <Input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              value={password}
+              onChange={onChange}
+            />
+          </Form>
+          <FormActions>
+            <ForgotContainer>
+              <ForgotText>Forgot password?</ForgotText>
+              <SignInButton
+                onClick={onSubmit}
+                title={"Sign In"}
+                bgColor={"#979797"}
+                color={"#0D1117"}
+              />
+            </ForgotContainer>
+            <OR>OR</OR>
+            <FormButton
+              variant={"outline"}
+              title={"Continue with Google"}
+              color={"#8691A6"}
+            />
+            <NoAccountContainer>
+              Don’t Have an account?
+              <span>
+                <Link href={"signUp"}>Signup for free</Link>
+              </span>
+            </NoAccountContainer>
+          </FormActions>
+        </FormContainer>
+      </Container>
+    </>
   );
 };
 

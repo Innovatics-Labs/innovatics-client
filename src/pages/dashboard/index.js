@@ -7,6 +7,8 @@ import { auth, db } from "../../../firebaseConfig";
 import { collection } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 
+import siteMetadata from "../../data/siteMetadata";
+import HeadSeo from "../../components/HeadSeo";
 import AuthRoute from "../../HOC/authRoute";
 import GradientIcon from "../../components/GradientIcon";
 import JoinCohort from "../../components/JoinCohort";
@@ -43,121 +45,129 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <AuthRoute>
-      <Container>
-        <WelcomeSection>
-          <Greeting>Welcome {user && user.displayName}</Greeting>
-          <GreetingSub>
-            June Data Science Live cohort registration is on-going. Click
-            <Link href={"/"}>here</Link> to learn more or click the button below
-            to register.
-          </GreetingSub>
-          <Start>
-            <span>Register Now</span>
-            <MdKeyboardArrowRight color={"#8691A6"} size={24} />
-          </Start>
-        </WelcomeSection>
-        <CourseDetailSection>
-          <GradientContainer>
-            <LineGradient
-              colorFrom={"#10C75900"}
-              colorTo={"#10C759"}
-              height={"54px"}
-            />
-            <GradientIcon
-              IconComponent={<FaReact size={30} color="#44E986" />}
-              bgColor={"#44E986"}
-            />
-            <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
-          </GradientContainer>
-          <DetailContainer>
-            <Detail>
-              <Title>Data Science</Title>
-              <Description>
-                Data science is an ever-evolving field, which is growing in
-                popularity at an exponential rate. Data science includes
-                techniques and theories extracted from the fields of statistics;
-                computer science, and, most importantly, machine learning,
-                databases, data visualization, and so on.
-              </Description>
-              <FeatureList>
-                <li>Virtual Jupyter Notebook</li>
-                <li>Programming Exercises</li>
-                <li>Real World DS & ML Projects</li>
-              </FeatureList>
-              <Button
-                as={Link}
-                href="/dashboard-sc"
-                title={"Start Learning"}
-                bgColor="white"
-                color={"#0D1117"}
+    <>
+      <HeadSeo
+        title={`Dashboard | ${siteMetadata.companyName} `}
+        description={"User Dashboard"}
+        canonicalUrl={`${siteMetadata.siteUrl}/dashboard`}
+        ogType={"article"}
+      />
+      <AuthRoute>
+        <Container>
+          <WelcomeSection>
+            <Greeting>Welcome {user && user.displayName}</Greeting>
+            <GreetingSub>
+              June Data Science Live cohort registration is on-going. Click
+              <Link href={"/"}>here</Link> to learn more or click the button
+              below to register.
+            </GreetingSub>
+            <Start>
+              <span>Register Now</span>
+              <MdKeyboardArrowRight color={"#8691A6"} size={24} />
+            </Start>
+          </WelcomeSection>
+          <CourseDetailSection>
+            <GradientContainer>
+              <LineGradient
+                colorFrom={"#10C75900"}
+                colorTo={"#10C759"}
+                height={"54px"}
               />
-            </Detail>
-            <LearningPath>
-              <Tag>Learning Path</Tag>
-              <Content>
-                <PathTitle>Getting Started in Data Science</PathTitle>
-                <ul>
-                  <li>
-                    <GrayTitle>Difficulty:</GrayTitle> Beginner
-                  </li>
-                  <li>
-                    <GrayTitle>Duration:</GrayTitle> 7hrs 20min
-                  </li>
-                  <li>
-                    <GrayTitle>Sections:</GrayTitle> 1
-                  </li>
-                  <li>
-                    <GrayTitle>Courses:</GrayTitle> 3
-                  </li>
-                  <li>
-                    <GrayTitle>Videos:</GrayTitle> 7
-                  </li>
-                  <li>
-                    <GrayTitle> Quiz:</GrayTitle> 5
-                  </li>
-                  <li>
-                    <GrayTitle>Labs:</GrayTitle> 3
-                  </li>
-                </ul>
-              </Content>
-            </LearningPath>
-          </DetailContainer>
-        </CourseDetailSection>
-        <InsetSection bgImage="/galaxy-2.png">
-          <GradientStyleContainer>
-            <LineGradient
-              colorFrom={"#10C75900"}
-              colorTo={"#10C759"}
-              height={"54px"}
-            />
-            <GradientIcon
-              IconComponent={<FaReact size={30} color="#10C759" />}
-              bgColor={"#10C759"}
-            />
-          </GradientStyleContainer>
-          <AcademicAreas>
-            <AreasTitle>Other Academic Areas</AreasTitle>
-            <TopicsContainer>
-              {loading && <h4>Collection: Loading...</h4>}
-              {error && <h4>Collection: error fetching data...</h4>}
-              {value &&
-                paths.map((doc, index) => (
-                  <TopicCard
-                    key={doc.id}
-                    id={doc.id}
-                    topic={doc.data().name}
-                    color={colors[index]}
-                    number={`0${index + 1}`}
-                  />
-                ))}
-            </TopicsContainer>
-          </AcademicAreas>
-        </InsetSection>
-        <JoinCohort />
-        <JoinDiscord />
-      </Container>
-    </AuthRoute>
+              <GradientIcon
+                IconComponent={<FaReact size={30} color="#44E986" />}
+                bgColor={"#44E986"}
+              />
+              <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
+            </GradientContainer>
+            <DetailContainer>
+              <Detail>
+                <Title>Data Science</Title>
+                <Description>
+                  Data science is an ever-evolving field, which is growing in
+                  popularity at an exponential rate. Data science includes
+                  techniques and theories extracted from the fields of
+                  statistics; computer science, and, most importantly, machine
+                  learning, databases, data visualization, and so on.
+                </Description>
+                <FeatureList>
+                  <li>Virtual Jupyter Notebook</li>
+                  <li>Programming Exercises</li>
+                  <li>Real World DS & ML Projects</li>
+                </FeatureList>
+                <Button
+                  as={Link}
+                  href="/dashboard-sc"
+                  title={"Start Learning"}
+                  bgColor="white"
+                  color={"#0D1117"}
+                />
+              </Detail>
+              <LearningPath>
+                <Tag>Learning Path</Tag>
+                <Content>
+                  <PathTitle>Getting Started in Data Science</PathTitle>
+                  <ul>
+                    <li>
+                      <GrayTitle>Difficulty:</GrayTitle> Beginner
+                    </li>
+                    <li>
+                      <GrayTitle>Duration:</GrayTitle> 7hrs 20min
+                    </li>
+                    <li>
+                      <GrayTitle>Sections:</GrayTitle> 1
+                    </li>
+                    <li>
+                      <GrayTitle>Courses:</GrayTitle> 3
+                    </li>
+                    <li>
+                      <GrayTitle>Videos:</GrayTitle> 7
+                    </li>
+                    <li>
+                      <GrayTitle> Quiz:</GrayTitle> 5
+                    </li>
+                    <li>
+                      <GrayTitle>Labs:</GrayTitle> 3
+                    </li>
+                  </ul>
+                </Content>
+              </LearningPath>
+            </DetailContainer>
+          </CourseDetailSection>
+          <InsetSection bgImage="/galaxy-2.png">
+            <GradientStyleContainer>
+              <LineGradient
+                colorFrom={"#10C75900"}
+                colorTo={"#10C759"}
+                height={"54px"}
+              />
+              <GradientIcon
+                IconComponent={<FaReact size={30} color="#10C759" />}
+                bgColor={"#10C759"}
+              />
+            </GradientStyleContainer>
+            <AcademicAreas>
+              <AreasTitle>Other Academic Areas</AreasTitle>
+              <TopicsContainer>
+                {loading && <h4>Collection: Loading...</h4>}
+                {error && <h4>Collection: error fetching data...</h4>}
+                {value &&
+                  paths.map((doc, index) => (
+                    <TopicCard
+                      key={doc.id}
+                      id={doc.id}
+                      topic={doc.data().name}
+                      color={colors[index]}
+                      number={`0${index + 1}`}
+                    />
+                  ))}
+              </TopicsContainer>
+            </AcademicAreas>
+          </InsetSection>
+          <JoinCohort />
+          <JoinDiscord />
+        </Container>
+      </AuthRoute>
+    </>
   );
 };
 

@@ -1,0 +1,221 @@
+{
+  "learning_paths": [
+    {
+      "id": 1,
+      "title": "Full Stack Web Development",
+      "description": "Learn to build modern web applications from front-end to back-end.",
+      "sections": [
+        {
+          "id": 1,
+          "title": "HTML and CSS Fundamentals",
+          "courses": [
+            {
+              "id": 1,
+              "title": "HTML Fundamentals",
+              "topics": [
+                {
+                  "id": 1,
+                  "title": "Introduction to HTML",
+                  "videos": [
+                    {
+                      "id": 1,
+                      "title": "What is HTML?",
+                      "duration": "10:00"
+                    },
+                    {
+                      "id": 2,
+                      "title": "HTML Elements",
+                      "duration": "12:00"
+                    }
+                  ],
+                  "labs": [
+                    {
+                      "id": 1,
+                      "title": "HTML Elements Lab",
+                      "description": "Practice using HTML elements to create a simple webpage."
+                    }
+                  ],
+                  "quizzes": [
+                    {
+                      "id": 1,
+                      "title": "HTML Quiz",
+                      "questions": [
+                        {
+                          "id": 1,
+                          "question": "What does HTML stand for?",
+                          "answers": [
+                            {
+                              "id": 1,
+                              "answer": "Hyper Text Markup Language",
+                              "is_correct": true
+                            },
+                            {
+                              "id": 2,
+                              "answer": "Hyperlink and Text Markup Language",
+                              "is_correct": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 2,
+                  "title": "HTML Semantic Elements",
+                  "videos": [
+                    {
+                      "id": 3,
+                      "title": "Semantic Elements in HTML",
+                      "duration": "14:00"
+                    },
+                    {
+                      "id": 4,
+                      "title": "Using Semantic Elements for Accessibility",
+                      "duration": "16:00"
+                    }
+                  ],
+                  "labs": [
+                    {
+                      "id": 2,
+                      "title": "HTML Semantic Elements Lab",
+                      "description": "Practice using semantic elements in HTML to create a accessible webpage."
+                    }
+                  ],
+                  "quizzes": [
+                    {
+                      "id": 2,
+                      "title": "HTML Semantic Elements Quiz",
+                      "questions": [
+                        {
+                          "id": 2,
+                          "question": "What is the purpose of semantic elements in HTML?",
+                          "answers": [
+                            {
+                              "id": 3,
+                              "answer": "To make the content more accessible for users and search engines",
+                              "is_correct": true
+                            },
+                            {
+                              "id": 4,
+                              "answer": "To make the HTML code more complex",
+                              "is_correct": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Full Stack Web Development",
+      "description": "A comprehensive learning path to become a full stack web developer.",
+      "sections": [
+        {
+          "id": 2.1,
+          "title": "HTML, CSS, and JavaScript",
+          "courses": [
+            {
+              "id": 1,
+              "title": "HTML Fundamentals",
+              "topics": [
+                {
+                  "id": 1,
+                  "title": "Introduction to HTML",
+                  "videos": [
+                    {
+                      "id": 1,
+                      "title": "HTML Introduction",
+                      "url": "https://www.example.com/html-introduction.mp4"
+                    },
+                    {
+                      "id": 2,
+                      "title": "HTML Elements",
+                      "url": "https://www.example.com/html-elements.mp4"
+                    }
+                  ],
+                  "labs": [
+                    {
+                      "id": 1,
+                      "title": "HTML Lab 1",
+                      "instructions": "https://www.example.com/html-lab-1.pdf"
+                    },
+                    {
+                      "id": 2,
+                      "title": "HTML Lab 2",
+                      "instructions": "https://www.example.com/html-lab-2.pdf"
+                    }
+                  ],
+                  "quizzes": [
+                    {
+                      "id": 1,
+                      "title": "HTML Quiz 1",
+                      "questions": [
+                        {
+                          "id": 1,
+                          "question": "What is HTML?",
+                          "options": [
+                            "Hyper Text Markup Language",
+                            "Hyperlink and Text Markup Language",
+                            "Hyper Text Modelling Language"
+                          ],
+                          "answer": "Hyper Text Markup Language"
+                        },
+                        {
+                          "id": 2,
+                          "question": "What is the purpose of HTML?",
+                          "options": [
+                            "To add styling to a website",
+                            "To create structure for a website",
+                            "To create animations for a website"
+                          ],
+                          "answer": "To create structure for a website"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "title": "CSS Fundamentals",
+              "topics": [
+                {
+                  "id": 1,
+                  "title": "Introduction to CSS",
+                  "videos": [
+                    {
+                      "id": 1,
+                      "title": "CSS Introduction",
+                      "url": "https://www.example.com/css-introduction.mp4"
+                    },
+                    {
+                      "id": 2,
+                      "title": "CSS Selectors",
+                      "url": "https://www.example.com/css-selectors.mp4"
+                    }
+                  ],
+                  "labs": [
+                    {
+                      "id": 1,
+                      "title": "CSS Lab 1",
+                      "instructions": "https://www.example.com/css-lab"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

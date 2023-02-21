@@ -7,6 +7,8 @@ import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { toast } from "react-toastify";
 
 import { db, auth } from "../../../firebaseConfig";
+import siteMetadata from "../../data/siteMetadata";
+import HeadSeo from "../../components/HeadSeo";
 import {
   Container,
   FormContainer,
@@ -66,65 +68,73 @@ const SignUp = () => {
   };
 
   return (
-    <Container>
-      <FormContainer>
-        <Title>Sign up to start learning</Title>
-        <Form>
-          <Input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Name"
-            onChange={onChange}
-            value={name}
-            required
-          />
-          <Input
-            type="email"
-            name="email"
-            id="email"
-            required
-            placeholder="Email"
-            onChange={onChange}
-            value={email}
-          />
-          <Input
-            type="password"
-            name="password"
-            id="password"
-            required
-            placeholder="Password"
-            onChange={onChange}
-            value={password}
-          />
-        </Form>
-        <FormActions>
-          <ForgotContainer>
-            <ForgotText>Forgot password?</ForgotText>
-            <SignInButton
-              type="submit"
-              title={"Sign Up"}
-              bgColor={"#979797"}
-              color={"#0D1117"}
-              onClick={onSubmit}
+    <>
+      <HeadSeo
+        title={`Sign In | ${siteMetadata.companyName} `}
+        description={"Sign up to start learning"}
+        canonicalUrl={`${siteMetadata.siteUrl}/signUp`}
+        ogType={"website"}
+      />
+      <Container>
+        <FormContainer>
+          <Title>Sign up to start learning</Title>
+          <Form>
+            <Input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name"
+              onChange={onChange}
+              value={name}
+              required
             />
-          </ForgotContainer>
-          <OR>OR</OR>
-          <FormButton
-            type="submit"
-            variant={"outline"}
-            title={"Continue with Google"}
-            color={"#8691A6"}
-          />
-          <NoAccountContainer>
-            Already a member?
-            <span>
-              <Link href={"signIn"}>Signin</Link>
-            </span>
-          </NoAccountContainer>
-        </FormActions>
-      </FormContainer>
-    </Container>
+            <Input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Email"
+              onChange={onChange}
+              value={email}
+            />
+            <Input
+              type="password"
+              name="password"
+              id="password"
+              required
+              placeholder="Password"
+              onChange={onChange}
+              value={password}
+            />
+          </Form>
+          <FormActions>
+            <ForgotContainer>
+              <ForgotText>Forgot password?</ForgotText>
+              <SignInButton
+                type="submit"
+                title={"Sign Up"}
+                bgColor={"#979797"}
+                color={"#0D1117"}
+                onClick={onSubmit}
+              />
+            </ForgotContainer>
+            <OR>OR</OR>
+            <FormButton
+              type="submit"
+              variant={"outline"}
+              title={"Continue with Google"}
+              color={"#8691A6"}
+            />
+            <NoAccountContainer>
+              Already a member?
+              <span>
+                <Link href={"signIn"}>Signin</Link>
+              </span>
+            </NoAccountContainer>
+          </FormActions>
+        </FormContainer>
+      </Container>
+    </>
   );
 };
 
