@@ -20,6 +20,13 @@
   --font-size-base: 1rem;
 }
 
+html {
+  /*
+    Silence the warning about missing Reach Dialog styles
+  */
+  --reach-dialog: 1;
+}
+
 @media (max-width: 900px) {
   :root {
     --container-padding: 2rem;

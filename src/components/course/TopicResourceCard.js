@@ -6,6 +6,8 @@ import { FcCheckmark } from "react-icons/fc";
 import useToggle from "../../hooks/useToggle";
 import YouTubeFrame from "../YoutubeEmbed";
 import { QUERIES } from "../../constants";
+import Quiz from "../Quiz";
+import quiz from "../../data/quiz.json";
 
 const TopicResourceCard = ({
   resourcetype,
@@ -15,6 +17,7 @@ const TopicResourceCard = ({
 }) => {
   const [isShowVideo, setIsShowVideo] = useToggle();
   const [isMarkFinished, setIsMarkFinished] = useToggle();
+  const [isShowQuiz, setIsShowQuiz] = useToggle();
 
   const getIconName = (type) => {
     switch (type) {
@@ -48,17 +51,27 @@ const TopicResourceCard = ({
           </div>
         </div>
         <ResourceAction>
-          <Button
-            onClick={setIsShowVideo}
-            variant={"outline"}
-            title={
-              resourcetype === "video"
-                ? "Play video"
-                : resourcetype === "quiz"
-                ? "Start Quiz"
-                : resourcetype === "lab" && "Start Lab"
-            }
-          />
+          {resourcetype === "video" ? (
+            <Button
+              onClick={setIsShowVideo}
+              variant={"outline"}
+              title={"Play video"}
+            />
+          ) : resourcetype === "quiz" ? (
+            <Button
+              onClick={setIsShowQuiz}
+              variant={"outline"}
+              title={"Start Quiz"}
+            />
+          ) : (
+            resourcetype === "lab" && (
+              <Button
+                onClick={setIsShowVideo}
+                variant={"outline"}
+                title={"Start Lab"}
+              />
+            )
+          )}
         </ResourceAction>
       </TopicResource>
       {isShowVideo && resourcetype === "video" && (
@@ -76,6 +89,9 @@ const TopicResourceCard = ({
           </Finished>
           <YouTubeFrame video={videoUrl} />
         </VideoShow>
+      )}
+      {isShowQuiz && resourcetype === "quiz" && (
+        <Quiz quizData={quiz} isOpen={isShowQuiz} onDismiss={setIsShowQuiz} />
       )}
     </Container>
   );
