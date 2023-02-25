@@ -4,16 +4,7 @@ import styled from "styled-components";
 const ContactDetails = ({ mobile, address, updateFields }) => {
   return (
     <div>
-      <p
-        style={{
-          color: "white",
-          fontWeight: "500",
-          fontSize: "16px",
-          marginBlock: 22,
-        }}
-      >
-        Add contact details
-      </p>
+      <Title>Add contact details</Title>
       <Form>
         <Input
           type="text"
@@ -38,6 +29,13 @@ const ContactDetails = ({ mobile, address, updateFields }) => {
 
 export default ContactDetails;
 
+const Title = styled.p`
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  margin-block: 22;
+`;
+
 const Form = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,4 +48,5 @@ const Input = styled.input`
   border-radius: 10px;
   padding: 1.3rem;
   width: 100%;
+  color: #8691a6;
 `;

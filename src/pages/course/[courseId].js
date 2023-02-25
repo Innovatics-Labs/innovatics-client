@@ -5,10 +5,10 @@ import styled from "styled-components";
 import { useDocument } from "react-firebase-hooks/firestore";
 import { doc } from "firebase/firestore";
 
+import { TopicCard, CourseOverview } from "../../components/course";
+
 import siteMetadata from "../../data/siteMetadata";
 import HeadSeo from "../../components/HeadSeo";
-import CourseOverview from "../../components/course/CourseOverview";
-import TopicCard from "../../components/course/TopicCard";
 import GradientIcon from "../../components/GradientIcon";
 import InstructorCap from "../../components/InstructorCap";
 import JoinDiscord from "../../components/JoinDiscord";

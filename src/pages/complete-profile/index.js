@@ -3,8 +3,10 @@ import { useState } from "react";
 import { MdSportsHandball } from "react-icons/md";
 import styled from "styled-components";
 import Button from "../../components/Button";
-import ContactDetails from "../../components/completeprofile/ContactDetails";
-import DescriptionForm from "../../components/completeprofile/DescriptionForm";
+import {
+  ContactDetails,
+  DescriptionForm,
+} from "../../components/completeprofile";
 import { useMultistepForm } from "../../hooks/useMultistepForm";
 import { Container } from "../signIn";
 
@@ -31,7 +33,7 @@ const CompleteProfile = () => {
 
   function onSubmit(e) {
     e.preventDefault();
-    if (!isLastStep) return next();
+    if (!isLastStep) return;
     alert("Successful Account Creation");
   }
 
@@ -50,8 +52,8 @@ const CompleteProfile = () => {
           </div>
         </Header>
         <Divider>
-          <Ellipse active />
-          <Ellipse />
+          <Ellipse active={currentStepIndex === 0} />
+          <Ellipse active={currentStepIndex === 1} />
           <hr />
         </Divider>
         <div>
@@ -81,6 +83,8 @@ const CompleteProfile = () => {
             />
           ) : (
             <Button
+              type="button"
+              onClick={next}
               title={"Continue"}
               bgColor={"#979797"}
               color={"rgba(13, 17, 23, 0.5);"}
