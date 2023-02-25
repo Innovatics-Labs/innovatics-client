@@ -7,7 +7,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import LineGradient from "../LineGradient";
 import GradientIcon from "../GradientIcon";
 import { TextWithColor } from "./Practicality";
-import TopicCard from "../TopicCard";
+import PathCard from "../PathCard";
 import { QUERIES } from "../../constants";
 import { db } from "../../../firebaseConfig";
 
@@ -53,7 +53,7 @@ const LearningsSections = () => {
         {error && <h4>Collection: error fetching data...</h4>}
         {value &&
           paths.map((doc, index) => (
-            <TopicCard
+            <PathCard
               key={doc.id}
               id={doc.id}
               topic={doc.data().name}

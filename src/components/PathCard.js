@@ -6,7 +6,7 @@ import styled from "styled-components";
 import arrow from "../assets/images/arrow.png";
 import GradientIcon from "./GradientIcon";
 
-const TopicCard = ({ color, number, comingSoon, topic, id }) => {
+const PathCard = ({ color, number, comingSoon, topic, id }) => {
   return (
     <Card>
       <GradientContainer>
@@ -29,7 +29,7 @@ const TopicCard = ({ color, number, comingSoon, topic, id }) => {
   );
 };
 
-export default TopicCard;
+export default PathCard;
 
 const Card = styled.div`
   display: grid;
@@ -39,7 +39,7 @@ const Card = styled.div`
   border-radius: 9px;
   gap: 4rem;
   flex: 1;
-  filter: blur(0.48px) drop-shadow(0px 0px 57px rgba(62, 63, 73, 0.25));
+  filter: drop-shadow(0px 0px 57px rgba(62, 63, 73, 0.25));
 `;
 
 const GradientContainer = styled.div`

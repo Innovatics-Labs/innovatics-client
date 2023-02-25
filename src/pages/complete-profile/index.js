@@ -1,14 +1,43 @@
 import Image from "next/image";
-import React from "react";
+import { useState } from "react";
 import { MdSportsHandball } from "react-icons/md";
 import styled from "styled-components";
-import Button from "../components/Button";
-import { Container } from "./signIn";
+import Button from "../../components/Button";
+import ContactDetails from "../../components/completeprofile/ContactDetails";
+import DescriptionForm from "../../components/completeprofile/DescriptionForm";
+import { useMultistepForm } from "../../hooks/useMultistepForm";
+import { Container } from "../signIn";
+
+const INITIAL_DATA = {
+  mobile: "",
+  address: "",
+  about: "",
+};
 
 const CompleteProfile = () => {
+  const [data, setData] = useState(INITIAL_DATA);
+
+  function updateFields(fields) {
+    setData((prev) => {
+      return { ...prev, ...fields };
+    });
+  }
+
+  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
+    useMultistepForm([
+      <ContactDetails key={1} {...data} updateFields={updateFields} />,
+      <DescriptionForm key={2} {...data} updateFields={updateFields} />,
+    ]);
+
+  function onSubmit(e) {
+    e.preventDefault();
+    if (!isLastStep) return next();
+    alert("Successful Account Creation");
+  }
+
   return (
     <Container>
-      <FormContainer>
+      <FormContainer onSubmit={onSubmit}>
         <Header>
           <IconContainer>
             <MdSportsHandball size={42} color={"white"} />
@@ -26,30 +55,37 @@ const CompleteProfile = () => {
           <hr />
         </Divider>
         <div>
-          <Step>1 of 2</Step>
-          <p
-            style={{
-              color: "white",
-              fontWeight: "500",
-              fontSize: "16px",
-              marginBlock: 22,
-            }}
-          >
-            Add a profile photo
-          </p>
-          <Form>
-            <Input type="text" name="phone" id="" placeholder="Phone" />
-            <Input type="text" name="address" id="" placeholder="Address" />
-          </Form>
+          <Step>
+            {currentStepIndex + 1} of {steps.length}
+          </Step>
+          {step}
         </div>
-
         <FormActions>
-          <Button title={"Skip"} variant={"outline"} color="#8691A6" />
-          <Button
-            title={"Continue"}
-            bgColor={"#979797"}
-            color={"rgba(13, 17, 23, 0.5);"}
-          />
+          {!isFirstStep ? (
+            <Button
+              type="button"
+              title={"Back"}
+              onClick={back}
+              variant={"outline"}
+              color="#8691A6"
+            />
+          ) : (
+            <Button title={"Skip"} variant={"outline"} color="#8691A6" />
+          )}
+          {isLastStep ? (
+            <Button
+              type="submit"
+              title={"Finish"}
+              bgColor={"#979797"}
+              color={"rgba(13, 17, 23, 0.5);"}
+            />
+          ) : (
+            <Button
+              title={"Continue"}
+              bgColor={"#979797"}
+              color={"rgba(13, 17, 23, 0.5);"}
+            />
+          )}
         </FormActions>
       </FormContainer>
     </Container>
@@ -58,8 +94,7 @@ const CompleteProfile = () => {
 
 export default CompleteProfile;
 
-const FormContainer = styled.div`
-  /* width: 50%; */
+const FormContainer = styled.form`
   padding: 2rem 4rem;
   background: linear-gradient(
     -286.85deg,
@@ -128,20 +163,6 @@ const FormActions = styled.div`
   display: flex;
   justify-content: space-between;
   margin-block: 2rem;
-`;
-
-const Form = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-`;
-
-const Input = styled.input`
-  background: rgba(13, 17, 23, 0.5);
-  border: 1px solid #8691a6;
-  border-radius: 10px;
-  padding: 1.3rem;
-  width: 100%;
 `;
 
 const Divider = styled.div`

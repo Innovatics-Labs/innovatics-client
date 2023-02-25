@@ -16,7 +16,7 @@ import JoinDiscord from "../../components/JoinDiscord";
 import LineGradient from "../../components/LineGradient";
 import Button from "../../components/Button";
 import InsetSection from "../../components/InsetSection";
-import TopicCard from "../../components/TopicCard";
+import PathCard from "../../components/PathCard";
 import { QUERIES } from "../../constants";
 import { GrayTitle } from "../course-work";
 
@@ -152,7 +152,7 @@ const Dashboard = () => {
                 {error && <h4>Collection: error fetching data...</h4>}
                 {value &&
                   paths.map((doc, index) => (
-                    <TopicCard
+                    <PathCard
                       key={doc.id}
                       id={doc.id}
                       topic={doc.data().name}

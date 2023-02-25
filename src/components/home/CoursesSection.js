@@ -20,7 +20,7 @@ const CoursesSection = () => {
   const [filterBy, setFilterBy] = useState("");
   const [courses, setCourses] = useState([]);
   const [paths, setPaths] = useState([]);
-  const [path, pathLoading, pathError] = useCollection(
+  const [path, pathLoading, pathError] = useCollectionOnce(
     collection(db, "academic-paths")
   );
 
@@ -36,7 +36,7 @@ const CoursesSection = () => {
       setPaths(path.docs);
       const id = path.docs[0].id;
       setFilterBy(id);
-      console.log({ path }, { id });
+      // console.log({ path }, { id });
     }
   }, [path]);
 
@@ -47,21 +47,12 @@ const CoursesSection = () => {
     }
   }, [courseResult]);
 
-  // useEffect(() => {
-  //   if (value) {
-  //     setCourses(value.docs);
-  //     // console.log({ courses }, { value });
-  //   }
-  // }, [value, loading, error]);
-
   return (
     <Container>
       <TabsSection>
         <ul>
-          {/* {tablist.map((tab) => (
-            <PathTab key={tab}>{tab}</PathTab>
-          ))} */}
-          {pathLoading && <p>Loading</p>}
+          {pathLoading && <p>Loading...</p>}
+          {pathError && <p>Error Fetching data...</p>}
           {paths &&
             paths.map((tab) => (
               <PathTab
@@ -75,7 +66,7 @@ const CoursesSection = () => {
         </ul>
         <Button
           as={Link}
-          href={`/academic-path/${filterBy}`}
+          href={`/academic-paths/${filterBy}`}
           title={"View All"}
           bgColor={"#D5DBE2"}
           size={"18px"}
