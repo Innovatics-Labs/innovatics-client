@@ -42,7 +42,6 @@ const SignUp = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -55,13 +54,13 @@ const SignUp = () => {
         displayName: name,
       });
 
-      const formDataCopy = { ...formData };
+      const formDataCopy = { ...formData, mobile: "", address: "", about: "" };
       delete formDataCopy.password;
       formDataCopy.timestamp = serverTimestamp();
 
       await setDoc(doc(db, "users", user.uid), formDataCopy);
 
-      router.push("/dashboard");
+      router.push("/complete-profile");
     } catch (error) {
       toast.error("Something went wrong with registration");
       console.log(error);

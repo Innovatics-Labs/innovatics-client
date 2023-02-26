@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const DescriptionForm = ({ description, updateFields }) => {
+const DescriptionForm = ({ about, updateFields }) => {
   return (
     <div>
       <Title>Tell Us about You</Title>
       <TextArea
-        value={description}
+        value={about}
         placeholder="Write short Description about who you are"
-        name="description"
-        id="description"
+        name="about"
+        id="about"
         cols="40"
         rows="8"
-        onChange={(e) => updateFields({ description: e.target.value })}
+        onChange={(e) => updateFields({ about: e.target.value })}
       ></TextArea>
     </div>
   );

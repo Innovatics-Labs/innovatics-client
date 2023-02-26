@@ -1,25 +1,33 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
-import { getAuth, updateProfile } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import { updateDoc, doc } from "firebase/firestore";
+import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import { MdSportsHandball } from "react-icons/md";
 
 import profileBanner from "../../assets/images/profile-banner.png";
 import Button from "../../components/Button";
-import { db } from "../../../firebaseConfig";
+import { auth, db } from "../../../firebaseConfig";
 import { QUERIES } from "../../constants";
+import AuthRoute from "../../HOC/authRoute";
 import Select from "../../components/Select/Select";
+import { toast } from "react-toastify";
 
 const Profile = () => {
-  const auth = getAuth();
   const [changeDetails, setChangeDetails] = useState(false);
+  const [user, loading, error] = useDocumentOnce(
+    doc(db, "users", auth.currentUser.uid),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
+
   const [formData, setFormData] = useState({
     name: auth.currentUser.displayName,
     email: auth.currentUser.email,
-    mobile: "09023435506",
-    about:
-      "My aspiration is to continue providing reliable and helpful support to users. my aspiration is to continue providing reliable and helpful support to users...",
+    mobile: auth.currentUser.mobile,
+    about: auth.currentUser.about,
   });
 
   const { name, email, mobile, about } = formData;
@@ -28,11 +36,10 @@ const Profile = () => {
 
   const onCancel = () => {
     setFormData({
+      ...formData,
       name: auth.currentUser.displayName,
-      email: auth.currentUser.email,
-      mobile: "09023435506",
-      about:
-        "My aspiration is to continue providing reliable and helpful support to users. my aspiration is to continue providing reliable and helpful support to users...",
+      about: user.data().about,
+      mobile: user.data().mobile,
     });
   };
 
@@ -43,8 +50,7 @@ const Profile = () => {
     }));
   };
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
+  const onSubmit = async () => {
     try {
       if (auth.currentUser.displayName !== name) {
         // Update display name in fb
@@ -56,7 +62,10 @@ const Profile = () => {
         const userRef = doc(db, "users", auth.currentUser.uid);
         await updateDoc(userRef, {
           name,
+          mobile,
+          about,
         });
+        toast.success("Successfully update profile details");
       }
     } catch (error) {
       console.log(error);
@@ -64,101 +73,123 @@ const Profile = () => {
     }
   };
 
+  useEffect(() => {
+    if (user) {
+      setFormData((prev) => {
+        const previous = prev;
+        return {
+          ...previous,
+          about: user.data().about,
+          mobile: user.data().mobile,
+        };
+      });
+      console.log({ user: user.data() });
+    }
+  }, [user]);
+
   return (
-    <Container>
-      <Header>
-        <ImageContainer>
-          <Image src={profileBanner} alt="profile banner" priority />
-        </ImageContainer>
-        <IntroContainer>
-          <IconContainer>
-            <MdSportsHandball size={55} color={"white"} />
-          </IconContainer>
-          <Title>Profile Settings</Title>
-        </IntroContainer>
-      </Header>
-      <Details>
-        <TabHeader>
-          <TabList>
-            <Tab active>My Details</Tab>
-            <Tab>Learnings</Tab>
-            <Tab>Certifications</Tab>
-            <Tab>Plan</Tab>
-            <Tab>Community</Tab>
-          </TabList>
-        </TabHeader>
-        <FormSection>
-          <FormContainer>
-            <FormField>
-              <Label>Full Name</Label>
-              <Input
-                type="text"
-                id="name"
-                className={!changeDetails ? "profileName" : "profileNameActive"}
-                disabled={!changeDetails}
-                value={name}
-                onChange={onChange}
-              />
-            </FormField>
-            <FormField>
-              <Label>Email</Label>
-              <Input
-                type="email"
-                id="email"
-                disabled={!changeDetails}
-                value={email}
-                onChange={onChange}
-              />
-            </FormField>
-            <FormField>
-              <Label>Phone</Label>
-              <Input
-                type="tel"
-                id="mobile"
-                disabled={!changeDetails}
-                value={mobile}
-                onChange={onChange}
-              />
-            </FormField>
-            <FormField>
-              <Label>About Me</Label>
-              <TextArea
-                name="about"
-                disabled={!changeDetails}
-                id="about"
-                cols="30"
-                rows="10"
-                placeholder=""
-              >
-                {about}
-              </TextArea>
-            </FormField>
-          </FormContainer>
-          <EditActions>
-            {changeDetails && (
+    <AuthRoute>
+      <Container>
+        <Header>
+          <ImageContainer>
+            <Image src={profileBanner} alt="profile banner" priority />
+          </ImageContainer>
+          <IntroContainer>
+            <IconContainer>
+              <MdSportsHandball size={55} color={"white"} />
+            </IconContainer>
+            <Title>Profile Settings</Title>
+          </IntroContainer>
+        </Header>
+        <Details>
+          <TabHeader>
+            <TabList>
+              <Tab active>My Details</Tab>
+              <Tab>Learnings</Tab>
+              <Tab>Certifications</Tab>
+              <Tab>Plan</Tab>
+              <Tab>Community</Tab>
+            </TabList>
+          </TabHeader>
+          <FormSection>
+            {user && (
+              <FormContainer>
+                <FormField>
+                  <Label>Full Name</Label>
+                  <Input
+                    type="text"
+                    id="name"
+                    className={
+                      !changeDetails ? "profileName" : "profileNameActive"
+                    }
+                    disabled={!changeDetails}
+                    value={name}
+                    onChange={onChange}
+                  />
+                </FormField>
+                <FormField>
+                  <Label>Email</Label>
+                  <Input
+                    type="email"
+                    id="email"
+                    disabled={true}
+                    value={email}
+                    onChange={onChange}
+                  />
+                </FormField>
+                <FormField>
+                  <Label>Phone</Label>
+                  <Input
+                    type="tel"
+                    id="mobile"
+                    disabled={!changeDetails}
+                    value={mobile}
+                    onChange={onChange}
+                  />
+                </FormField>
+                <FormField>
+                  <Label>About Me</Label>
+                  <TextArea
+                    name="about"
+                    disabled={!changeDetails}
+                    id="about"
+                    cols="30"
+                    rows="10"
+                    value={about}
+                    placeholder="About me"
+                  >
+                    {about}
+                  </TextArea>
+                </FormField>
+              </FormContainer>
+            )}
+
+            <EditActions>
+              {changeDetails && (
+                <Button
+                  width={"100%"}
+                  onClick={() => {
+                    onCancel();
+                    setChangeDetails((prevState) => !prevState);
+                  }}
+                  title={"Cancel"}
+                  color={"#fff"}
+                  variant="outline"
+                />
+              )}
               <Button
+                width={"100%"}
                 onClick={() => {
-                  onCancel();
+                  changeDetails && onSubmit();
                   setChangeDetails((prevState) => !prevState);
                 }}
-                title={"Cancel"}
-                color={"#fff"}
-                variant="outline"
+                title={changeDetails ? "Save" : "Edit"}
+                bgColor={changeDetails ? "#6E40C9" : "#fff"}
+                color={changeDetails ? "#fff" : "#0D1117"}
               />
-            )}
-            <Button
-              width={!changeDetails && "100%"}
-              onClick={() => {
-                changeDetails && onSubmit();
-                setChangeDetails((prevState) => !prevState);
-              }}
-              title={changeDetails ? "Save" : "Edit"}
-              bgColor={changeDetails ? "#6E40C9" : "#fff"}
-              color={changeDetails ? "#fff" : "#0D1117"}
-            />
-          </EditActions>
-        </FormSection>
-        {/* <Select
+            </EditActions>
+          </FormSection>
+          {/* <Select
           label="Sort"
           value={sortId}
           onChange={(ev) => setSortId(ev.target.value)}
@@ -166,8 +197,9 @@ const Profile = () => {
           <option value="newest">Newest Releases</option>
           <option value="price">Price</option>
         </Select> */}
-      </Details>
-    </Container>
+        </Details>
+      </Container>
+    </AuthRoute>
   );
 };
 

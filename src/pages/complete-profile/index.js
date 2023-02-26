@@ -1,7 +1,10 @@
-import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { MdSportsHandball } from "react-icons/md";
 import styled from "styled-components";
+import { auth, db } from "../../../firebaseConfig";
+import { doc, updateDoc, getDoc, serverTimestamp } from "firebase/firestore";
+
 import Button from "../../components/Button";
 import {
   ContactDetails,
@@ -18,6 +21,7 @@ const INITIAL_DATA = {
 
 const CompleteProfile = () => {
   const [data, setData] = useState(INITIAL_DATA);
+  const router = useRouter();
 
   function updateFields(fields) {
     setData((prev) => {
@@ -31,15 +35,30 @@ const CompleteProfile = () => {
       <DescriptionForm key={2} {...data} updateFields={updateFields} />,
     ]);
 
-  function onSubmit(e) {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!isLastStep) return;
-    alert("Successful Account Creation");
-  }
+
+    try {
+      const userRef = doc(db, "users", auth.currentUser.uid);
+      const docSnap = await getDoc(userRef);
+      if (auth.currentUser && docSnap.exists()) {
+        // Update in firestore
+        await updateDoc(userRef, {
+          ...data,
+        });
+        alert("Successful Account Creation");
+        router.push("/dashboard");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Could not update profile details");
+    }
+  };
 
   return (
     <Container>
-      <FormContainer onSubmit={onSubmit}>
+      <FormContainer>
         <Header>
           <IconContainer>
             <MdSportsHandball size={42} color={"white"} />
@@ -72,10 +91,16 @@ const CompleteProfile = () => {
               color="#8691A6"
             />
           ) : (
-            <Button title={"Skip"} variant={"outline"} color="#8691A6" />
+            <Button
+              onClick={() => router.push("/dashboard")}
+              title={"Skip"}
+              variant={"outline"}
+              color="#8691A6"
+            />
           )}
           {isLastStep ? (
             <Button
+              onClick={onSubmit}
               type="submit"
               title={"Finish"}
               bgColor={"#979797"}
@@ -98,7 +123,7 @@ const CompleteProfile = () => {
 
 export default CompleteProfile;
 
-const FormContainer = styled.form`
+const FormContainer = styled.div`
   padding: 2rem 4rem;
   background: linear-gradient(
     -286.85deg,

@@ -1,5 +1,5 @@
 import CareerTalksSection from "./CareerTalksSection";
-import CoursesSection from "./CoursesSection ";
+import CoursesSection from "./CoursesSection";
 import FeaturedSection from "./FeaturedSection";
 import Hero from "./Hero";
 import LearningsSections from "./LearningsSections";
