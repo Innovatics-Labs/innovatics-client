@@ -25,7 +25,7 @@ const AuthNavbar = ({ loading, auth }) => {
         </Link>
       </li>
       <li>
-        <User href={"/dashboard"}>
+        <User href={"/dashboard/profile"}>
           <FaRegUserCircle size={24} />
         </User>
       </li>

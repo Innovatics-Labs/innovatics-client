@@ -26,8 +26,8 @@ const Profile = () => {
   const [formData, setFormData] = useState({
     name: auth.currentUser.displayName,
     email: auth.currentUser.email,
-    mobile: auth.currentUser.mobile,
-    about: auth.currentUser.about,
+    mobile: "",
+    about: "",
   });
 
   const { name, email, mobile, about } = formData;
@@ -83,7 +83,7 @@ const Profile = () => {
           mobile: user.data().mobile,
         };
       });
-      console.log({ user: user.data() });
+      // console.log({ user: user.data() });
     }
   }, [user]);
 
@@ -119,9 +119,6 @@ const Profile = () => {
                   <Input
                     type="text"
                     id="name"
-                    className={
-                      !changeDetails ? "profileName" : "profileNameActive"
-                    }
                     disabled={!changeDetails}
                     value={name}
                     onChange={onChange}
@@ -134,7 +131,6 @@ const Profile = () => {
                     id="email"
                     disabled={true}
                     value={email}
-                    onChange={onChange}
                   />
                 </FormField>
                 <FormField>
@@ -157,13 +153,11 @@ const Profile = () => {
                     rows="10"
                     value={about}
                     placeholder="About me"
-                  >
-                    {about}
-                  </TextArea>
+                    onChange={onChange}
+                  ></TextArea>
                 </FormField>
               </FormContainer>
             )}
-
             <EditActions>
               {changeDetails && (
                 <Button
