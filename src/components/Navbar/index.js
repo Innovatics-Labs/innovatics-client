@@ -21,22 +21,22 @@ const Navbar = () => {
   };
 
   return (
-    <NavContainer pathName={route.pathname}>
+    <NavContainer pathName={route.pathname} active={showNav}>
       <Container>
         <Logo>
           <Link href={"/"}>
-            <Image src={logo} alt="innovatics logo" />
+            <Image src={logo} alt="innovatics logo" sizes="100vw" />
           </Link>
         </Logo>
-        <MenuIcon onClick={handleShowNavbar}>
-          <GiHamburgerMenu size={26} />
-        </MenuIcon>
-        <NavElements active={showNav}>
-          <NavItems>
-            {!loading && user ? (
-              <AuthNavbar loading={loading} auth={auth} />
-            ) : (
-              <>
+        {!loading && user ? (
+          <AuthNavbar loading={loading} auth={auth} />
+        ) : (
+          <>
+            <MenuIcon onClick={handleShowNavbar}>
+              <GiHamburgerMenu size={26} />
+            </MenuIcon>
+            <NavElements active={showNav}>
+              <NavItems>
                 <li>
                   <Link href={"/academy"}>Academy</Link>
                 </li>
@@ -49,10 +49,10 @@ const Navbar = () => {
                 <SignInButton>
                   <Link href={"/signIn"}>Sign In</Link>
                 </SignInButton>
-              </>
-            )}
-          </NavItems>
-        </NavElements>
+              </NavItems>
+            </NavElements>
+          </>
+        )}
       </Container>
     </NavContainer>
   );
@@ -61,7 +61,6 @@ const Navbar = () => {
 export default Navbar;
 
 const NavContainer = styled.nav`
-  position: relative;
   background: black;
   ${({ pathName }) =>
     pathName === "/" &&
@@ -73,7 +72,7 @@ const NavContainer = styled.nav`
     `}
 
   @media ${QUERIES.tabletAndSmaller} {
-    z-index: 5;
+    ${({ active }) => `${active && "z-index: 5"}`}
   }
 `;
 
@@ -85,7 +84,8 @@ const Container = styled.div`
   max-width: 1400px;
   align-items: center;
   padding-inline: 4rem;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+  /* flex-wrap: wrap; */
   @media ${QUERIES.tabletAndSmaller} {
     padding-inline: 2rem;
   }
@@ -117,6 +117,12 @@ const MenuIcon = styled.div`
 
 const Logo = styled.div`
   align-self: center;
+  @media ${QUERIES.phoneAndSmaller} {
+    /* img {
+      width: 100%;
+      height: auto;
+    } */
+  }
 `;
 
 const NavItems = styled.ul`
