@@ -8,59 +8,67 @@ import jupyterLab from "../../assets/images/JupyterLab.png";
 import codesnippet from "../../assets/images/codesnippet.png";
 import labRunning from "../../assets/images/labRunning.png";
 import { QUERIES } from "../../constants";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 const Practicality = () => {
   return (
-    <Container>
-      <TopSection>
-        <GradientStyleContainer>
-          <GradientIcon
-            IconComponent={<BsCodeSlash size={30} color="#10C759" />}
-            bgColor={"#10C759"}
-          />
-          <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
-        </GradientStyleContainer>
-        <TextContent>
-          <Title>Practicality</Title>
-          <SubTitle>
-            <TextWithColor color="#44e986">
-              Put to practice what you learn immediately.{" "}
-            </TextWithColor>
-            We provide you suitable learning environment.
-          </SubTitle>
-        </TextContent>
-      </TopSection>
-      <BottomSection>
-        <Jupyter>
-          <Image
-            src={jupyterLab}
-            alt="jupyterLab"
-            placeholder="blur"
-            sizes="100vw"
-          />
-        </Jupyter>
+    <BgContainer>
+      <MaxwidthContainer>
+        <Container>
+          <TopSection>
+            <GradientStyleContainer>
+              <GradientIcon
+                IconComponent={<BsCodeSlash size={30} color="#10C759" />}
+                bgColor={"#10C759"}
+              />
+              <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
+            </GradientStyleContainer>
+            <TextContent>
+              <Title>Practicality</Title>
+              <SubTitle>
+                <TextWithColor color="#44e986">
+                  Put to practice what you learn immediately.{" "}
+                </TextWithColor>
+                We provide you suitable learning environment.
+              </SubTitle>
+            </TextContent>
+          </TopSection>
+          <BottomSection>
+            <Jupyter>
+              <Image
+                src={jupyterLab}
+                alt="jupyterLab"
+                placeholder="blur"
+                sizes="100vw"
+              />
+            </Jupyter>
 
-        <Code>
-          <Image
-            src={codesnippet}
-            alt="codesnippet"
-            placeholder="blur"
-            sizes="100vw"
-          />
-        </Code>
-        <Lab>
-          <Image src={labRunning} alt="" placeholder="blur" sizes="100vw" />
-        </Lab>
-      </BottomSection>
-    </Container>
+            <Code>
+              <Image
+                src={codesnippet}
+                alt="codesnippet"
+                placeholder="blur"
+                sizes="100vw"
+              />
+            </Code>
+            <Lab>
+              <Image src={labRunning} alt="" placeholder="blur" sizes="100vw" />
+            </Lab>
+          </BottomSection>
+        </Container>
+      </MaxwidthContainer>
+    </BgContainer>
   );
 };
 
 export default Practicality;
 
-const Container = styled.section`
+const BgContainer = styled.section`
   max-width: 100vw;
   background: rgba(13, 17, 22);
+`;
+
+const Container = styled.div`
   padding: 2rem var(--container-padding);
   padding-bottom: 1rem;
 `;

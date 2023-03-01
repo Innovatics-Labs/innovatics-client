@@ -28,6 +28,7 @@ import Spinner from "../../components/Spinner";
 import CourseCard from "../../components/CourseCard";
 import JoinDiscord from "../../components/JoinDiscord";
 import courseimg from "../../assets/images/abstract-1392404_1920.png";
+import { MaxwidthContainer } from "../../components/GlobalStyles";
 
 const AcademicPaths = () => {
   const router = useRouter();
@@ -77,160 +78,166 @@ const AcademicPaths = () => {
       />
       <Container>
         <CourseDetailSection>
-          <GradientContainer>
-            <GradientIcon
-              IconComponent={<FaReact size={30} color="#44E986" />}
-              bgColor={"#44E986"}
-            />
-            <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
-          </GradientContainer>
-          <DetailContainer>
-            <Detail>
-              {loading && <h4>Details: Loading...</h4>}
-              {error && <h4>Details: error fetching data...</h4>}
-              {pathDetail && (
-                <>
-                  <Title>{pathDetail.name}</Title>
-                  <Description> {pathDetail.description}</Description>
-                </>
-              )}
-            </Detail>
-            <AcademicLevelsContainer>
-              <PathTitle>Academic Levels</PathTitle>
-              <CardList>
-                <Card>
-                  <CardGradient>
-                    <GradientIcon
-                      IconComponent={<BsSun size={30} color={"#44E986"} />}
-                      bgColor={"#44E986"}
-                    />
-                  </CardGradient>
-                  <LevelDetails>
-                    <Level>Beginner</Level>
-                    <LevelDescription>
-                      Join the data driven companies.
-                    </LevelDescription>
-                  </LevelDetails>
-                  <SubDetail>
-                    <p>12h 30m</p>
-                    <p>Data</p>
-                  </SubDetail>
-                </Card>
-                <Card>
-                  <CardGradient>
-                    <GradientIcon
-                      IconComponent={<BsSun size={30} color={"#44E986"} />}
-                      bgColor={"#44E986"}
-                    />
-                  </CardGradient>
-                  <LevelDetails>
-                    <Level>Professional</Level>
-                    <LevelDescription>
-                      Take up lead role in your establishment
-                    </LevelDescription>
-                  </LevelDetails>
-                  <SubDetail>
-                    <p>12h 30m</p>
-                    <p>Data</p>
-                  </SubDetail>
-                </Card>
-                <Card>
-                  <CardGradient>
-                    <GradientIcon
-                      IconComponent={<BsSun size={30} color={"#44E986"} />}
-                      bgColor={"#44E986"}
-                    />
-                  </CardGradient>
-                  <LevelDetails>
-                    <Level>Expert</Level>
-                    <LevelDescription>
-                      Expand your abilities as a well-rounded engineer!
-                    </LevelDescription>
-                  </LevelDetails>
-                  <SubDetail>
-                    <p>12h 30m</p>
-                    <p>Data</p>
-                  </SubDetail>
-                </Card>
-              </CardList>
-            </AcademicLevelsContainer>
-          </DetailContainer>
+          <CourseDetailContent>
+            <GradientContainer>
+              <GradientIcon
+                IconComponent={<FaReact size={30} color="#44E986" />}
+                bgColor={"#44E986"}
+              />
+              <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
+            </GradientContainer>
+            <DetailContainer>
+              <Detail>
+                {loading && <h4>Details: Loading...</h4>}
+                {error && <h4>Details: error fetching data...</h4>}
+                {pathDetail && (
+                  <>
+                    <Title>{pathDetail.name}</Title>
+                    <Description> {pathDetail.description}</Description>
+                  </>
+                )}
+              </Detail>
+              <AcademicLevelsContainer>
+                <PathTitle>Academic Levels</PathTitle>
+                <CardList>
+                  <Card>
+                    <CardGradient>
+                      <GradientIcon
+                        IconComponent={<BsSun size={30} color={"#44E986"} />}
+                        bgColor={"#44E986"}
+                      />
+                    </CardGradient>
+                    <LevelDetails>
+                      <Level>Beginner</Level>
+                      <LevelDescription>
+                        Join the data driven companies.
+                      </LevelDescription>
+                    </LevelDetails>
+                    <SubDetail>
+                      <p>12h 30m</p>
+                      <p>Data</p>
+                    </SubDetail>
+                  </Card>
+                  <Card>
+                    <CardGradient>
+                      <GradientIcon
+                        IconComponent={<BsSun size={30} color={"#44E986"} />}
+                        bgColor={"#44E986"}
+                      />
+                    </CardGradient>
+                    <LevelDetails>
+                      <Level>Professional</Level>
+                      <LevelDescription>
+                        Take up lead role in your establishment
+                      </LevelDescription>
+                    </LevelDetails>
+                    <SubDetail>
+                      <p>12h 30m</p>
+                      <p>Data</p>
+                    </SubDetail>
+                  </Card>
+                  <Card>
+                    <CardGradient>
+                      <GradientIcon
+                        IconComponent={<BsSun size={30} color={"#44E986"} />}
+                        bgColor={"#44E986"}
+                      />
+                    </CardGradient>
+                    <LevelDetails>
+                      <Level>Expert</Level>
+                      <LevelDescription>
+                        Expand your abilities as a well-rounded engineer!
+                      </LevelDescription>
+                    </LevelDetails>
+                    <SubDetail>
+                      <p>12h 30m</p>
+                      <p>Data</p>
+                    </SubDetail>
+                  </Card>
+                </CardList>
+              </AcademicLevelsContainer>
+            </DetailContainer>
+          </CourseDetailContent>
         </CourseDetailSection>
         <CourseListings>
-          <div style={{ paddingLeft: "1rem" }}>
-            {courseList && (
-              <FoundText>
-                {courseList.length} value found for <span>{filterBy}</span>
-              </FoundText>
-            )}
-            <hr />
-          </div>
-          <ListingsContent>
-            <div>
-              <LineGradient
-                colorFrom={"#10C75900,#10C759"}
-                colorTo={"#10C75900"}
-              />
+          <MaxwidthContainer>
+            <div style={{ paddingLeft: "1rem" }}>
+              {courseList && (
+                <FoundText>
+                  {courseList.length} value found for <span>{filterBy}</span>
+                </FoundText>
+              )}
+              <hr />
             </div>
-            <Courses>
-              <nav>
-                <LevelsList>
-                  <Levels
-                    selected={filterBy === "beginner"}
-                    onClick={() => setFilterBy("beginner")}
-                  >
-                    Beginner
-                  </Levels>
-                  <Levels
-                    selected={filterBy === "professional"}
-                    onClick={() => setFilterBy("professional")}
-                  >
-                    Professional
-                  </Levels>
-                  <Levels
-                    selected={filterBy === "expert"}
-                    onClick={() => setFilterBy("expert")}
-                  >
-                    Expert
-                  </Levels>
-                </LevelsList>
-              </nav>
-
-              <CourseGrid>
-                {courseError && (
-                  <h4 style={{ margin: "2rem", color: "red" }}>
-                    Error Loading Path Courses...
-                  </h4>
-                )}
-                {courseLoad && (
-                  <div style={{ margin: "2rem", width: "100%" }}>
-                    <Spinner />
-                    <h4>Loading Academic Area Courses...</h4>
-                  </div>
-                )}
-                {!courseLoad &&
-                  courseList &&
-                  courseList.map((doc) => (
-                    <>
-                      <CourseCard
-                        key={doc.id}
-                        doc={doc}
-                        courseimg={courseimg}
-                      />
-                    </>
-                  ))}
-                {/* <Spinner /> */}
-              </CourseGrid>
-            </Courses>
-          </ListingsContent>
+            <ListingsContent>
+              <div>
+                <LineGradient
+                  colorFrom={"#10C75900,#10C759"}
+                  colorTo={"#10C75900"}
+                />
+              </div>
+              <Courses>
+                <nav>
+                  <LevelsList>
+                    <Levels
+                      selected={filterBy === "beginner"}
+                      onClick={() => setFilterBy("beginner")}
+                    >
+                      Beginner
+                    </Levels>
+                    <Levels
+                      selected={filterBy === "professional"}
+                      onClick={() => setFilterBy("professional")}
+                    >
+                      Professional
+                    </Levels>
+                    <Levels
+                      selected={filterBy === "expert"}
+                      onClick={() => setFilterBy("expert")}
+                    >
+                      Expert
+                    </Levels>
+                  </LevelsList>
+                </nav>
+                <CourseGrid>
+                  {courseError && (
+                    <h4 style={{ margin: "2rem", color: "red" }}>
+                      Error Loading Path Courses...
+                    </h4>
+                  )}
+                  {courseLoad && (
+                    <div style={{ margin: "2rem", width: "100%" }}>
+                      <Spinner />
+                      <h4>Loading Academic Area Courses...</h4>
+                    </div>
+                  )}
+                  {!courseLoad &&
+                    courseList &&
+                    courseList.map((doc) => (
+                      <>
+                        <CourseCard
+                          key={doc.id}
+                          doc={doc}
+                          courseimg={courseimg}
+                        />
+                      </>
+                    ))}
+                  {/* <Spinner /> */}
+                </CourseGrid>
+              </Courses>
+            </ListingsContent>
+          </MaxwidthContainer>
         </CourseListings>
         <Pagination>
-          <PaginationActions>
-            <Prev>Prev</Prev>
-            <PagesCount>1 0f 10 pages</PagesCount>
-            <Next>Next</Next>
-          </PaginationActions>
+          <MaxwidthContainer>
+            <PaginationActions>
+              <Prev>Prev</Prev>
+              <PagesCount>1 0f 10 pages</PagesCount>
+              <Next>Next</Next>
+            </PaginationActions>
+          </MaxwidthContainer>
         </Pagination>
+
         <JoinDiscord />
       </Container>
     </>
@@ -250,10 +257,6 @@ export default AcademicPaths;
 const Container = styled.div``;
 
 const CourseDetailSection = styled.section`
-  padding: 2rem var(--container-padding);
-  display: flex;
-  gap: 3rem;
-  color: white;
   background-image: linear-gradient(
       90deg,
       #0d1117,
@@ -263,6 +266,13 @@ const CourseDetailSection = styled.section`
     url("/circuit-board.png");
   background-size: cover;
   background-repeat: no-repeat;
+`;
+
+const CourseDetailContent = styled(MaxwidthContainer)`
+  padding: 2rem var(--container-padding);
+  display: flex;
+  gap: 3rem;
+  color: white;
 `;
 
 const GradientContainer = styled.div`

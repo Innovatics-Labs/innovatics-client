@@ -17,6 +17,7 @@ import Pagination from "../../components/Pagination";
 import { QUERIES } from "../../constants";
 import { GrayTitle } from "../course-work";
 import { db } from "../../../firebaseConfig";
+import { MaxwidthContainer } from "../../components/GlobalStyles";
 
 const DashboardClass = () => {
   const [courseDetail, setCourseDetail] = useState({});
@@ -51,53 +52,57 @@ const DashboardClass = () => {
           <>
             <CourseOverview courseTitle={courseDetail.title} />
             <CourseSection>
-              <GradientContainer>
-                <LineGradient colorFrom={"#44E98600"} colorTo={"#44E986"} />
-                <GradientIcon
-                  IconComponent={<VscGraph size={30} color="#44E986" />}
-                  bgColor={"#44E986"}
-                />
-              </GradientContainer>
-              <Content>
-                <Instructordetails>
-                  <CapContainer>
-                    <InstructorCap size={"140px"} iconsize={70} />
-                  </CapContainer>
-                  <CourseStats>
-                    <InstructorName>
-                      <GrayTitle>INSTRUCTOR:</GrayTitle>{" "}
-                      {courseDetail.instructor}
-                    </InstructorName>
-                    <Duration>
-                      <GrayTitle>DURATION:</GrayTitle> {courseDetail.duration}
-                    </Duration>
-                    <Level>
-                      <GrayTitle>LEVEL:</GrayTitle> {courseDetail.level}
-                    </Level>
-                  </CourseStats>
-                </Instructordetails>
-                <CourseContentWrapper>
-                  <CourseTitle>{courseDetail.title}</CourseTitle>
-                  {courseDetail.topics ? (
-                    courseDetail.topics?.map((topic) => (
-                      <TopicCard
-                        key={topic.name}
-                        topicTitle={topic.name}
-                        activityCount={topic.resources.length}
-                        topicResource={topic.resources}
-                      />
-                    ))
-                  ) : (
-                    <h4>Course coming soon stay tuned.....</h4>
-                  )}
-                </CourseContentWrapper>
-              </Content>
+              <CourseSectionContent>
+                <GradientContainer>
+                  <LineGradient colorFrom={"#44E98600"} colorTo={"#44E986"} />
+                  <GradientIcon
+                    IconComponent={<VscGraph size={30} color="#44E986" />}
+                    bgColor={"#44E986"}
+                  />
+                </GradientContainer>
+                <Content>
+                  <Instructordetails>
+                    <CapContainer>
+                      <InstructorCap size={"140px"} iconsize={70} />
+                    </CapContainer>
+                    <CourseStats>
+                      <InstructorName>
+                        <GrayTitle>INSTRUCTOR:</GrayTitle>{" "}
+                        {courseDetail.instructor}
+                      </InstructorName>
+                      <Duration>
+                        <GrayTitle>DURATION:</GrayTitle> {courseDetail.duration}
+                      </Duration>
+                      <Level>
+                        <GrayTitle>LEVEL:</GrayTitle> {courseDetail.level}
+                      </Level>
+                    </CourseStats>
+                  </Instructordetails>
+                  <CourseContentWrapper>
+                    <CourseTitle>{courseDetail.title}</CourseTitle>
+                    {courseDetail.topics ? (
+                      courseDetail.topics?.map((topic) => (
+                        <TopicCard
+                          key={topic.name}
+                          topicTitle={topic.name}
+                          activityCount={topic.resources.length}
+                          topicResource={topic.resources}
+                        />
+                      ))
+                    ) : (
+                      <h4>Course coming soon stay tuned.....</h4>
+                    )}
+                  </CourseContentWrapper>
+                </Content>
+              </CourseSectionContent>
             </CourseSection>
           </>
         )}
 
         <PaginationContainer>
-          <Pagination />
+          <MaxwidthContainer>
+            <Pagination />
+          </MaxwidthContainer>
         </PaginationContainer>
         <JoinDiscord />
       </Container>
@@ -110,10 +115,13 @@ export default DashboardClass;
 const Container = styled.div``;
 
 const CourseSection = styled.section`
+  background: #0d1117;
+`;
+
+const CourseSectionContent = styled(MaxwidthContainer)`
   padding: 2rem var(--container-padding);
   display: flex;
   gap: 3rem;
-  background: #0d1117;
 `;
 
 const GradientContainer = styled.div`

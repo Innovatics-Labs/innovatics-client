@@ -19,6 +19,9 @@ import InsetSection from "../../components/InsetSection";
 import PathCard from "../../components/PathCard";
 import { QUERIES } from "../../constants";
 import { GrayTitle } from "../course-work";
+import { MaxwidthContainer } from "../../components/GlobalStyles";
+
+let colors = ["#44E986", "#FFA28B", "#DD7DF7", "#8B90FF"];
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
@@ -29,7 +32,6 @@ const Dashboard = () => {
     }
   );
   const [paths, setPaths] = useState([]);
-  let colors = ["#44E986", "#FFA28B", "#DD7DF7", "#8B90FF"];
 
   useEffect(() => {
     if (value) {
@@ -55,83 +57,87 @@ const Dashboard = () => {
       <AuthRoute>
         <Container>
           <WelcomeSection>
-            <Greeting>Welcome {user && user.displayName}</Greeting>
-            <GreetingSub>
-              June Data Science Live cohort registration is on-going. Click
-              <Link href={"/"}>here</Link> to learn more or click the button
-              below to register.
-            </GreetingSub>
-            <Start>
-              <span>Register Now</span>
-              <MdKeyboardArrowRight color={"#8691A6"} size={24} />
-            </Start>
+            <WelcomeContent>
+              <Greeting>Welcome {user && user.displayName}</Greeting>
+              <GreetingSub>
+                June Data Science Live cohort registration is on-going. Click
+                <Link href={"/"}>here</Link> to learn more or click the button
+                below to register.
+              </GreetingSub>
+              <Start>
+                <span>Register Now</span>
+                <MdKeyboardArrowRight color={"#8691A6"} size={24} />
+              </Start>
+            </WelcomeContent>
           </WelcomeSection>
           <CourseDetailSection>
-            <GradientContainer>
-              <LineGradient
-                colorFrom={"#10C75900"}
-                colorTo={"#10C759"}
-                height={"54px"}
-              />
-              <GradientIcon
-                IconComponent={<FaReact size={30} color="#44E986" />}
-                bgColor={"#44E986"}
-              />
-              <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
-            </GradientContainer>
-            <DetailContainer>
-              <Detail>
-                <Title>Data Science</Title>
-                <Description>
-                  Data science is an ever-evolving field, which is growing in
-                  popularity at an exponential rate. Data science includes
-                  techniques and theories extracted from the fields of
-                  statistics; computer science, and, most importantly, machine
-                  learning, databases, data visualization, and so on.
-                </Description>
-                <FeatureList>
-                  <li>Virtual Jupyter Notebook</li>
-                  <li>Programming Exercises</li>
-                  <li>Real World DS & ML Projects</li>
-                </FeatureList>
-                <Button
-                  as={Link}
-                  href="/dashboard-sc"
-                  title={"Start Learning"}
-                  bgColor="white"
-                  color={"#0D1117"}
+            <CourseDetailContent>
+              <GradientContainer>
+                <LineGradient
+                  colorFrom={"#10C75900"}
+                  colorTo={"#10C759"}
+                  height={"54px"}
                 />
-              </Detail>
-              <LearningPath>
-                <Tag>Learning Path</Tag>
-                <Content>
-                  <PathTitle>Getting Started in Data Science</PathTitle>
-                  <ul>
-                    <li>
-                      <GrayTitle>Difficulty:</GrayTitle> Beginner
-                    </li>
-                    <li>
-                      <GrayTitle>Duration:</GrayTitle> 7hrs 20min
-                    </li>
-                    <li>
-                      <GrayTitle>Sections:</GrayTitle> 1
-                    </li>
-                    <li>
-                      <GrayTitle>Courses:</GrayTitle> 3
-                    </li>
-                    <li>
-                      <GrayTitle>Videos:</GrayTitle> 7
-                    </li>
-                    <li>
-                      <GrayTitle> Quiz:</GrayTitle> 5
-                    </li>
-                    <li>
-                      <GrayTitle>Labs:</GrayTitle> 3
-                    </li>
-                  </ul>
-                </Content>
-              </LearningPath>
-            </DetailContainer>
+                <GradientIcon
+                  IconComponent={<FaReact size={30} color="#44E986" />}
+                  bgColor={"#44E986"}
+                />
+                <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
+              </GradientContainer>
+              <DetailContainer>
+                <Detail>
+                  <Title>Data Science</Title>
+                  <Description>
+                    Data science is an ever-evolving field, which is growing in
+                    popularity at an exponential rate. Data science includes
+                    techniques and theories extracted from the fields of
+                    statistics; computer science, and, most importantly, machine
+                    learning, databases, data visualization, and so on.
+                  </Description>
+                  <FeatureList>
+                    <li>Virtual Jupyter Notebook</li>
+                    <li>Programming Exercises</li>
+                    <li>Real World DS & ML Projects</li>
+                  </FeatureList>
+                  <Button
+                    as={Link}
+                    href="/dashboard"
+                    title={"Start Learning"}
+                    bgColor="white"
+                    color={"#0D1117"}
+                  />
+                </Detail>
+                <LearningPath>
+                  <Tag>Learning Path</Tag>
+                  <Content>
+                    <PathTitle>Getting Started in Data Science</PathTitle>
+                    <ul>
+                      <li>
+                        <GrayTitle>Difficulty:</GrayTitle> Beginner
+                      </li>
+                      <li>
+                        <GrayTitle>Duration:</GrayTitle> 7hrs 20min
+                      </li>
+                      <li>
+                        <GrayTitle>Sections:</GrayTitle> 1
+                      </li>
+                      <li>
+                        <GrayTitle>Courses:</GrayTitle> 3
+                      </li>
+                      <li>
+                        <GrayTitle>Videos:</GrayTitle> 7
+                      </li>
+                      <li>
+                        <GrayTitle> Quiz:</GrayTitle> 5
+                      </li>
+                      <li>
+                        <GrayTitle>Labs:</GrayTitle> 3
+                      </li>
+                    </ul>
+                  </Content>
+                </LearningPath>
+              </DetailContainer>
+            </CourseDetailContent>
           </CourseDetailSection>
           <InsetSection bgImage="/galaxy-2.png">
             <GradientStyleContainer>
@@ -176,12 +182,14 @@ export default Dashboard;
 const Container = styled.div``;
 
 const WelcomeSection = styled.section`
-  padding: 2rem var(--container-padding);
   background: linear-gradient(
     -280deg,
     rgba(4, 13, 33, 0.9) 0%,
     rgba(62, 63, 73, 0.8) 90.21%
   );
+`;
+const WelcomeContent = styled(MaxwidthContainer)`
+  padding: 2rem var(--container-padding);
 `;
 
 const Start = styled.p`
@@ -218,10 +226,6 @@ const GreetingSub = styled.p`
 `;
 
 const CourseDetailSection = styled.section`
-  padding: 2rem var(--container-padding);
-  display: flex;
-  gap: 2.5rem;
-  color: white;
   background-image: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.9) 5.87%,
@@ -231,6 +235,13 @@ const CourseDetailSection = styled.section`
     url("/data-globe.png");
   background-size: cover;
   background-repeat: no-repeat;
+`;
+
+const CourseDetailContent = styled(MaxwidthContainer)`
+  padding: 2rem var(--container-padding);
+  display: flex;
+  gap: 2.5rem;
+  color: white;
 `;
 
 const GradientContainer = styled.div`

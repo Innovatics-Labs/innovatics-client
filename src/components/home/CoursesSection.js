@@ -13,6 +13,7 @@ import { QUERIES } from "../../constants";
 import { db } from "../../../firebaseConfig";
 import { useEffect, useState } from "react";
 import Spinner from "../Spinner";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 // const tablist = ["Data Science", "Software", "Cyber Security", "Cloud"];
 
@@ -48,52 +49,57 @@ const CoursesSection = () => {
   }, [courseResult]);
 
   return (
-    <Container>
-      <TabsSection>
-        <ul>
-          {pathLoading && <p>Loading...</p>}
-          {pathError && <p>Error Fetching data...</p>}
-          {paths &&
-            paths.map((tab) => (
-              <PathTab
-                key={tab.id}
-                onClick={() => setFilterBy(tab.id)}
-                selected={filterBy === tab.id}
-              >
-                {tab.data().name}
-              </PathTab>
+    <BackgroundContainer>
+      <Container>
+        <TabsSection>
+          <ul>
+            {pathLoading && <p>Loading...</p>}
+            {pathError && <p>Error Fetching data...</p>}
+            {paths &&
+              paths.map((tab) => (
+                <PathTab
+                  key={tab.id}
+                  onClick={() => setFilterBy(tab.id)}
+                  selected={filterBy === tab.id}
+                >
+                  {tab.data().name}
+                </PathTab>
+              ))}
+          </ul>
+          <Button
+            as={Link}
+            href={`/academic-paths/${filterBy}`}
+            title={"View All"}
+            bgColor={"#D5DBE2"}
+            size={"18px"}
+          />
+        </TabsSection>
+        {courseLoad && (
+          <div>
+            <Spinner />
+            <h4>Collection: Loading Recommended Courses...</h4>
+          </div>
+        )}
+        {courseError && <h4>Error Loading Recommended Courses...</h4>}
+        {!courseLoad && courses && (
+          <CourseList>
+            {courses.map((doc) => (
+              <CourseCard key={doc.id} doc={doc} courseimg={courseimg} />
             ))}
-        </ul>
-        <Button
-          as={Link}
-          href={`/academic-paths/${filterBy}`}
-          title={"View All"}
-          bgColor={"#D5DBE2"}
-          size={"18px"}
-        />
-      </TabsSection>
-      {courseLoad && (
-        <div>
-          <Spinner />
-          <h4>Collection: Loading Recommended Courses...</h4>
-        </div>
-      )}
-      {courseError && <h4>Error Loading Recommended Courses...</h4>}
-      {!courseLoad && courses && (
-        <CourseList>
-          {courses.map((doc) => (
-            <CourseCard key={doc.id} doc={doc} courseimg={courseimg} />
-          ))}
-        </CourseList>
-      )}
-    </Container>
+          </CourseList>
+        )}
+      </Container>
+    </BackgroundContainer>
   );
 };
 
 export default CoursesSection;
 
-const Container = styled.section`
+const BackgroundContainer = styled.section`
   background-color: #fafcff;
+`;
+
+const Container = styled(MaxwidthContainer)`
   padding: 2rem var(--container-padding);
 `;
 

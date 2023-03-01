@@ -1,34 +1,40 @@
 import styled from "styled-components";
 import { QUERIES } from "../constants";
 import Button from "./Button";
+import { MaxwidthContainer } from "./GlobalStyles";
 
 const JoinCohort = () => {
   return (
-    <Container>
-      <Title>Join the next Live Cohort</Title>
-      <SubTitle>
-        Experience the live interactive classes with our world-class instructors
-        and mentors in the upcoming Bootcamp.
-      </SubTitle>
-      <Button
-        title={"Register Now!"}
-        bgColor="white"
-        color={"#0D1117"}
-        fontSize={"18px"}
-      />
-    </Container>
+    <BackgroundContainer>
+      <Container>
+        <Title>Join the next Live Cohort</Title>
+        <SubTitle>
+          Experience the live interactive classes with our world-class
+          instructors and mentors in the upcoming Bootcamp.
+        </SubTitle>
+        <Button
+          title={"Register Now!"}
+          bgColor="white"
+          color={"#0D1117"}
+          fontSize={"18px"}
+        />
+      </Container>
+    </BackgroundContainer>
   );
 };
 
 export default JoinCohort;
 
-const Container = styled.section`
+const BackgroundContainer = styled.section`
+  background: linear-gradient(90deg, #578dff 0%, #dd56ff 100%);
+`;
+
+const Container = styled(MaxwidthContainer)`
   color: white;
   padding: 3rem;
   text-align: center;
   display: grid;
   place-items: center;
-  background: linear-gradient(90deg, #578dff 0%, #dd56ff 100%);
 `;
 
 const Title = styled.p`

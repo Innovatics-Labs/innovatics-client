@@ -4,24 +4,27 @@ import { VscGraph } from "react-icons/vsc";
 import GradientIcon from "../GradientIcon";
 import LineGradient from "../LineGradient";
 import { QUERIES } from "../../constants";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 const CourseOverview = ({ courseTitle }) => {
   return (
     <CourseOverviewWrapper>
-      <GradientContainer>
-        <LineGradient colorFrom={"#FFFFFF00"} colorTo={"#fff"} />
-        <GradientIcon
-          IconComponent={<VscGraph size={30} color="#fff" />}
-          bgColor={"#fff"}
-        />
-        <LineGradient colorFrom={"#FFF"} colorTo={"#fffFFF00"} />
-      </GradientContainer>
-      <CourseDetail>
-        <CourseCategory>Data Science</CourseCategory>
-        <CourseTitle>
-          {courseTitle ? courseTitle : "Python for Data Science"}
-        </CourseTitle>
-      </CourseDetail>
+      <CourseOveriewContent>
+        <GradientContainer>
+          <LineGradient colorFrom={"#FFFFFF00"} colorTo={"#fff"} />
+          <GradientIcon
+            IconComponent={<VscGraph size={30} color="#fff" />}
+            bgColor={"#fff"}
+          />
+          <LineGradient colorFrom={"#FFF"} colorTo={"#fffFFF00"} />
+        </GradientContainer>
+        <CourseDetail>
+          <CourseCategory>Data Science</CourseCategory>
+          <CourseTitle>
+            {courseTitle ? courseTitle : "Python for Data Science"}
+          </CourseTitle>
+        </CourseDetail>
+      </CourseOveriewContent>
     </CourseOverviewWrapper>
   );
 };
@@ -29,11 +32,15 @@ const CourseOverview = ({ courseTitle }) => {
 export default CourseOverview;
 
 const CourseOverviewWrapper = styled.section`
+  background: linear-gradient(90deg, #578dff 0%, #dd56ff 100%);
+`;
+
+const CourseOveriewContent = styled(MaxwidthContainer)`
   padding: 2rem var(--container-padding);
   display: flex;
   gap: 3rem;
   color: white;
-  background: linear-gradient(90deg, #578dff 0%, #dd56ff 100%);
+
   @media ${QUERIES.phoneAndSmaller} {
     gap: 1.5rem;
   }

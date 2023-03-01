@@ -5,39 +5,45 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import LineGradient from "../LineGradient";
 import GradientIcon from "../GradientIcon";
 import { TextWithColor } from "./Practicality";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 const CareerTalksSection = () => {
   return (
-    <Container>
-      <GradientStyleContainer>
-        <LineGradient colorFrom={"#FC69AF00"} colorTo={"#FC69AF"} />
-        <GradientIcon
-          IconComponent={<BsCodeSlash size={30} color="#FC69AF" />}
-          bgColor={"#FC69AF"}
-        />
-        <LineGradient colorFrom={"#FC69AF"} colorTo={"#FC69AF00"} />
-      </GradientStyleContainer>
-      <TextContent>
-        <Title>Career Talks</Title>
-        <SubTitle>
-          <TextWithColor color="#FC69AF">
-            Join our weekend career talks with intensive mentorship.{" "}
-          </TextWithColor>
-          Join the race to catch the ace.
-        </SubTitle>
-        <Start>
-          <span>Learn more</span>
-          <MdKeyboardArrowRight color={"#8691A6"} size={24} />
-        </Start>
-      </TextContent>
-    </Container>
+    <BackgroundContainer>
+      <Container>
+        <GradientStyleContainer>
+          <LineGradient colorFrom={"#FC69AF00"} colorTo={"#FC69AF"} />
+          <GradientIcon
+            IconComponent={<BsCodeSlash size={30} color="#FC69AF" />}
+            bgColor={"#FC69AF"}
+          />
+          <LineGradient colorFrom={"#FC69AF"} colorTo={"#FC69AF00"} />
+        </GradientStyleContainer>
+        <TextContent>
+          <Title>Career Talks</Title>
+          <SubTitle>
+            <TextWithColor color="#FC69AF">
+              Join our weekend career talks with intensive mentorship.{" "}
+            </TextWithColor>
+            Join the race to catch the ace.
+          </SubTitle>
+          <Start>
+            <span>Learn more</span>
+            <MdKeyboardArrowRight color={"#8691A6"} size={24} />
+          </Start>
+        </TextContent>
+      </Container>
+    </BackgroundContainer>
   );
 };
 
 export default CareerTalksSection;
 
-const Container = styled.section`
+const BackgroundContainer = styled.section`
   background: #0d1117;
+`;
+
+const Container = styled(MaxwidthContainer)`
   display: flex;
   gap: 2.5rem;
   padding: 2rem var(--container-padding);

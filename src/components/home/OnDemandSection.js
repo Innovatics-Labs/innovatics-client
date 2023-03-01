@@ -6,88 +6,96 @@ import Button from "../Button";
 import LineGradient from "../LineGradient";
 import rocket from "../../assets/images/rocket.png";
 import { QUERIES } from "../../constants";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 const OnDemandSection = () => {
   return (
-    <Container>
-      <GradientContainer>
-        <Gradient>
-          <LineGradient
-            colorFrom={"#FC69AF00"}
-            colorTo={"#EC674C,#FFA28B"}
-            height={"250px"}
-          />
-        </Gradient>
-        <ImageContainer>
-          <Image src={rocket} alt="" sizes="100vw" />
-        </ImageContainer>
-      </GradientContainer>
-      <CardsContainer>
-        <Card>
-          <Top>
-            <Icon>
-              <BsCollectionPlay size={24} />
-            </Icon>
-            <p>Consultation & Contracting </p>
-          </Top>
-          <Text>
-            Our experienced consultants work with you to identify and analyze
-            your business needs, and provide tailor-made solutions that meet
-            your specific requirements.
-          </Text>
-          <Button title={"Learn More"} variant="outline" />
-        </Card>
-        <Card>
-          <Top>
-            <Icon>
-              <BsCollectionPlay size={24} />
-            </Icon>
-            <p>Career Change & Job Placements</p>
-          </Top>
-          <Text>
-            Our job placement program provides guidance and support to help you
-            identify and pursue job opportunities that align with your skills
-            and experience.
-          </Text>
-          <Button title={"Learn More"} variant="outline" />
-        </Card>
-        <Card>
-          <Top>
-            <Icon>
-              <BsCollectionPlay size={24} />
-            </Icon>
-            <p>Innovation & Development</p>
-          </Top>
-          <Text>
-            Our innovation and development services provide cutting-edge
-            solutions to complex problems using advanced technologies.
-          </Text>
-          <Button title={"Learn More"} variant="outline" />
-        </Card>
-        <Card>
-          <Top>
-            <Icon>
-              <BsCollectionPlay size={24} />
-            </Icon>
-            <p>Training</p>
-          </Top>
-          <Text>
-            Our training program is designed to provide a high-quality learning
-            experience that equips you with the skills and knowledge necessary
-            to succeed in your chosen field.
-          </Text>
-          <Button title={"Learn More"} variant="outline" />
-        </Card>
-      </CardsContainer>
-    </Container>
+    <BackgroundContainer>
+      <MaxwidthContainer>
+        <Container>
+          <GradientContainer>
+            <Gradient>
+              <LineGradient
+                colorFrom={"#FC69AF00"}
+                colorTo={"#EC674C,#FFA28B"}
+                height={"250px"}
+              />
+            </Gradient>
+            <ImageContainer>
+              <Image src={rocket} alt="" sizes="100vw" />
+            </ImageContainer>
+          </GradientContainer>
+          <CardsContainer>
+            <Card>
+              <Top>
+                <Icon>
+                  <BsCollectionPlay size={24} />
+                </Icon>
+                <p>Consultation & Contracting </p>
+              </Top>
+              <Text>
+                Our experienced consultants work with you to identify and
+                analyze your business needs, and provide tailor-made solutions
+                that meet your specific requirements.
+              </Text>
+              <Button title={"Learn More"} variant="outline" />
+            </Card>
+            <Card>
+              <Top>
+                <Icon>
+                  <BsCollectionPlay size={24} />
+                </Icon>
+                <p>Career Change & Job Placements</p>
+              </Top>
+              <Text>
+                Our job placement program provides guidance and support to help
+                you identify and pursue job opportunities that align with your
+                skills and experience.
+              </Text>
+              <Button title={"Learn More"} variant="outline" />
+            </Card>
+            <Card>
+              <Top>
+                <Icon>
+                  <BsCollectionPlay size={24} />
+                </Icon>
+                <p>Innovation & Development</p>
+              </Top>
+              <Text>
+                Our innovation and development services provide cutting-edge
+                solutions to complex problems using advanced technologies.
+              </Text>
+              <Button title={"Learn More"} variant="outline" />
+            </Card>
+            <Card>
+              <Top>
+                <Icon>
+                  <BsCollectionPlay size={24} />
+                </Icon>
+                <p>Training</p>
+              </Top>
+              <Text>
+                Our training program is designed to provide a high-quality
+                learning experience that equips you with the skills and
+                knowledge necessary to succeed in your chosen field.
+              </Text>
+              <Button title={"Learn More"} variant="outline" />
+            </Card>
+          </CardsContainer>
+        </Container>
+      </MaxwidthContainer>
+    </BackgroundContainer>
   );
 };
 
 export default OnDemandSection;
 
-const Container = styled.div`
+const BackgroundContainer = styled.section`
   max-width: 100vw;
   background: #0d1117;
+`;
+
+const Container = styled.div`
   padding: 3rem var(--container-padding);
   padding-bottom: 0px;
   display: flex;

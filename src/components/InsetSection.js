@@ -1,19 +1,18 @@
+import { MdContentCopy } from "react-icons/md";
 import styled from "styled-components";
+import { MaxwidthContainer } from "./GlobalStyles";
 
 const InsetSection = ({ bgImage = "/galaxy.png", children }) => {
-  return <Container bgImage={bgImage}>{children}</Container>;
+  return (
+    <Container bgImage={bgImage}>
+      <Content>{children}</Content>
+    </Container>
+  );
 };
 
 export default InsetSection;
 
 const Container = styled.section`
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  position: relative;
-  padding: 2rem var(--container-padding);
-  overflow: hidden;
-  color: white;
   //* FIXME:: // fix the background image issue later, this is a temporary fix
   background-image: ${(props) => `linear-gradient(
       90deg,
@@ -42,4 +41,14 @@ const Container = styled.section`
     box-shadow: inset 50px 0px 70px rgba(13, 17, 23, 0.9);
     transform: rotate(-90deg); */
   }
+`;
+
+const Content = styled(MaxwidthContainer)`
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  position: relative;
+  color: white;
+  padding: 2rem var(--container-padding);
+  overflow: hidden;
 `;

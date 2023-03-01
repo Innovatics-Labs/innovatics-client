@@ -7,47 +7,52 @@ import GradientIcon from "../GradientIcon";
 import { TextWithColor } from "./Practicality";
 import PricingPlanCard from "../PricingPlanCard";
 import { QUERIES } from "../../constants";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 const PricingSection = () => {
   return (
-    <Container>
-      <TopContainer>
-        <GradientStyleContainer>
-          <LineGradient colorFrom={"#FC69AF00"} colorTo={"#8B90FF"} />
-          <GradientIcon
-            IconComponent={<BsCodeSlash size={30} color="#8B90FF" />}
-            bgColor={"#8B90FF"}
-          />
-          <LineGradient colorFrom={"#8B90FF"} colorTo={"#FC69AF00"} />
-        </GradientStyleContainer>
-        <TextContent>
-          <Title>Pricings</Title>
-          <SubTitle>
-            <TextWithColor color="#8B90FF">
-              Affordable monthly and annual subscriptions.{" "}
-            </TextWithColor>
-            Start learning the next Big things.
-          </SubTitle>
-          <Start>
-            <span>Learn more</span>
-            <MdKeyboardArrowRight color={"#8691A6"} size={24} />
-          </Start>
-        </TextContent>
-      </TopContainer>
-      <PricingContainer>
-        <PricingPlanCard planType={"Basic"} planPrice={"$35"} />
-        <PricingPlanCard planType={"Standard"} planPrice={"$285"} />
-        <PricingPlanCard planType={"Premium"} planPrice={"$735"} />
-      </PricingContainer>
-    </Container>
+    <BackgroundContainer>
+      <Container>
+        <TopContainer>
+          <GradientStyleContainer>
+            <LineGradient colorFrom={"#FC69AF00"} colorTo={"#8B90FF"} />
+            <GradientIcon
+              IconComponent={<BsCodeSlash size={30} color="#8B90FF" />}
+              bgColor={"#8B90FF"}
+            />
+            <LineGradient colorFrom={"#8B90FF"} colorTo={"#FC69AF00"} />
+          </GradientStyleContainer>
+          <TextContent>
+            <Title>Pricings</Title>
+            <SubTitle>
+              <TextWithColor color="#8B90FF">
+                Affordable monthly and annual subscriptions.{" "}
+              </TextWithColor>
+              Start learning the next Big things.
+            </SubTitle>
+            <Start>
+              <span>Learn more</span>
+              <MdKeyboardArrowRight color={"#8691A6"} size={24} />
+            </Start>
+          </TextContent>
+        </TopContainer>
+        <PricingContainer>
+          <PricingPlanCard planType={"Basic"} planPrice={"$35"} />
+          <PricingPlanCard planType={"Standard"} planPrice={"$285"} />
+          <PricingPlanCard planType={"Premium"} planPrice={"$735"} />
+        </PricingContainer>
+      </Container>
+    </BackgroundContainer>
   );
 };
 
 export default PricingSection;
-
-const Container = styled.section`
+const BackgroundContainer = styled.section`
   max-width: 100vw;
   background: #0d1117;
+`;
+
+const Container = styled(MaxwidthContainer)`
   padding: 2rem var(--container-padding);
 `;
 

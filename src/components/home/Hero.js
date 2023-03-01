@@ -4,6 +4,7 @@ import { GiStarsStack } from "react-icons/gi";
 
 import { QUERIES } from "../../constants";
 import Button from "../Button";
+import { MaxwidthContainer } from "../GlobalStyles";
 import GradientIcon from "../GradientIcon";
 import LineGradient from "../LineGradient";
 import heroimage from "../../assets/images/earth-gb512373bb_1280 1.png";
@@ -17,53 +18,59 @@ import pinterest from "../../assets/images/pinterest.png";
 const Hero = () => {
   return (
     <HeroContainer>
-      <ImageContainer>
-        <Image src={heroimage} alt={"earth hero"} />
-      </ImageContainer>
-      <HeroCampaign>
-        <div>
-          <HeroDrone src={herodrone} alt={"hero drone"} />
-          <HeroContentContainer>
-            <LineContainer>
-              <LineImage>
-                <Image
-                  src={campaigLines}
-                  alt={"campaign lines"}
-                  priority
-                  sizes="100vw"
+      <MaxwidthContainer>
+        <ImageContainer>
+          <Image src={heroimage} alt={"earth hero"} />
+        </ImageContainer>
+        <HeroCampaign>
+          <div>
+            <HeroDrone src={herodrone} alt={"hero drone"} />
+            <HeroContentContainer>
+              <LineContainer>
+                <LineImage>
+                  <Image
+                    src={campaigLines}
+                    alt={"campaign lines"}
+                    priority
+                    sizes="100vw"
+                  />
+                </LineImage>
+                <GradientIcon
+                  IconComponent={<GiStarsStack size={40} color={"#fff"} />}
+                  bgColor="#dd7df7"
                 />
-              </LineImage>
-              <GradientIcon
-                IconComponent={<GiStarsStack size={40} color={"#fff"} />}
-                bgColor="#dd7df7"
-              />
-              <LineGradient colorFrom={"#dd7df7"} colorTo={"#10c759"} />
-            </LineContainer>
-            <HeroDetails>
-              <Heading>Hands-On Virtual Labs</Heading>
-              <SubHeading>
-                Take along with Learn from expert instructors and prove your
-                knowledge in Networking, Cyber Security, Cloud and Data Science.
-              </SubHeading>
-              <ButtonGroup>
-                <Button title="Start Learning Now" />
-                <Button title="Join the next Live Cohort" variant={"outline"} />
-              </ButtonGroup>
-              <DataCompany>
-                <JoinCompany>
-                  <span>Join the world leading data driven companies</span>
-                  <Image src={downarrow} alt="" />
-                </JoinCompany>
-                <DataCompanyImages>
-                  <Image src={kpmgLogo} alt="" sizes="100vw" />
-                  <Image src={mercedes} alt="" sizes="100vw" />
-                  <Image src={pinterest} alt="" sizes="100vw" />
-                </DataCompanyImages>
-              </DataCompany>
-            </HeroDetails>
-          </HeroContentContainer>
-        </div>
-      </HeroCampaign>
+                <LineGradient colorFrom={"#dd7df7"} colorTo={"#10c759"} />
+              </LineContainer>
+              <HeroDetails>
+                <Heading>Hands-On Virtual Labs</Heading>
+                <SubHeading>
+                  Take along with Learn from expert instructors and prove your
+                  knowledge in Networking, Cyber Security, Cloud and Data
+                  Science.
+                </SubHeading>
+                <ButtonGroup>
+                  <Button title="Start Learning Now" />
+                  <Button
+                    title="Join the next Live Cohort"
+                    variant={"outline"}
+                  />
+                </ButtonGroup>
+                <DataCompany>
+                  <JoinCompany>
+                    <span>Join the world leading data driven companies</span>
+                    <Image src={downarrow} alt="" />
+                  </JoinCompany>
+                  <DataCompanyImages>
+                    <Image src={kpmgLogo} alt="" sizes="100vw" />
+                    <Image src={mercedes} alt="" sizes="100vw" />
+                    <Image src={pinterest} alt="" sizes="100vw" />
+                  </DataCompanyImages>
+                </DataCompany>
+              </HeroDetails>
+            </HeroContentContainer>
+          </div>
+        </HeroCampaign>
+      </MaxwidthContainer>
     </HeroContainer>
   );
 };

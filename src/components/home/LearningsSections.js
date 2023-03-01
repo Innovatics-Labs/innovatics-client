@@ -10,6 +10,7 @@ import { TextWithColor } from "./Practicality";
 import PathCard from "../PathCard";
 import { QUERIES } from "../../constants";
 import { db } from "../../../firebaseConfig";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 const LearningsSections = () => {
   const [paths, setPaths] = useState([]);
@@ -29,48 +30,57 @@ const LearningsSections = () => {
   }, [value, loading]);
 
   return (
-    <Container>
-      <TopSection>
-        <GradientStyleContainer>
-          <GradientIcon
-            IconComponent={<BsSun size={30} color="#FFA28B" />}
-            bgColor={"#FFA28B"}
-          />
-          <LineGradient colorFrom={"#FFA28B, #EC674C"} colorTo={"#EA604500"} />
-        </GradientStyleContainer>
-        <TextContent>
-          <Title>Learnings</Title>
-          <SubTitle>
-            <TextWithColor color="#FFA28B">
-              Put to practice what you learn immediately.{" "}
-            </TextWithColor>
-            <span>We provide you suitable learning environment.</span>
-          </SubTitle>
-        </TextContent>
-      </TopSection>
-      <BottomSection>
-        {loading && <h4>Collection: Loading...</h4>}
-        {error && <h4>Collection: error fetching data...</h4>}
-        {value &&
-          paths.map((doc, index) => (
-            <PathCard
-              key={doc.id}
-              id={doc.id}
-              topic={doc.data().name}
-              color={colors[index]}
-              number={`0${index + 1}`}
-            />
-          ))}
-      </BottomSection>
-    </Container>
+    <BackgroundContainer>
+      <MaxwidthContainer>
+        <Container>
+          <TopSection>
+            <GradientStyleContainer>
+              <GradientIcon
+                IconComponent={<BsSun size={30} color="#FFA28B" />}
+                bgColor={"#FFA28B"}
+              />
+              <LineGradient
+                colorFrom={"#FFA28B, #EC674C"}
+                colorTo={"#EA604500"}
+              />
+            </GradientStyleContainer>
+            <TextContent>
+              <Title>Learnings</Title>
+              <SubTitle>
+                <TextWithColor color="#FFA28B">
+                  Put to practice what you learn immediately.{" "}
+                </TextWithColor>
+                <span>We provide you suitable learning environment.</span>
+              </SubTitle>
+            </TextContent>
+          </TopSection>
+          <BottomSection>
+            {loading && <h4>Collection: Loading...</h4>}
+            {error && <h4>Collection: error fetching data...</h4>}
+            {value &&
+              paths.map((doc, index) => (
+                <PathCard
+                  key={doc.id}
+                  id={doc.id}
+                  topic={doc.data().name}
+                  color={colors[index]}
+                  number={`0${index + 1}`}
+                />
+              ))}
+          </BottomSection>
+        </Container>
+      </MaxwidthContainer>
+    </BackgroundContainer>
   );
 };
 
 export default LearningsSections;
 
-const Container = styled.section`
-  /* max-width: 100vw; */
+const BackgroundContainer = styled.section`
   background: #fafcff;
+`;
+
+const Container = styled.div`
   padding: 2rem var(--container-padding);
 `;
 

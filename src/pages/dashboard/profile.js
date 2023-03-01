@@ -13,6 +13,7 @@ import { QUERIES } from "../../constants";
 import AuthRoute from "../../HOC/authRoute";
 import Select from "../../components/Select/Select";
 import { toast } from "react-toastify";
+import { MaxwidthContainer } from "../../components/GlobalStyles";
 
 const Profile = () => {
   const [changeDetails, setChangeDetails] = useState(false);
@@ -94,96 +95,99 @@ const Profile = () => {
           <ImageContainer>
             <Image src={profileBanner} alt="profile banner" priority />
           </ImageContainer>
-          <IntroContainer>
-            <IconContainer>
-              <MdSportsHandball size={55} color={"white"} />
-            </IconContainer>
-            <Title>Profile Settings</Title>
-          </IntroContainer>
+          <MaxwidthContainer>
+            <IntroContainer>
+              <IconContainer>
+                <MdSportsHandball color={"white"} />
+              </IconContainer>
+              <Title>Profile Settings</Title>
+            </IntroContainer>
+          </MaxwidthContainer>
         </Header>
-        <Details>
-          <TabHeader>
-            <TabList>
-              <Tab active>My Details</Tab>
-              <Tab>Learnings</Tab>
-              <Tab>Certifications</Tab>
-              <Tab>Plan</Tab>
-              <Tab>Community</Tab>
-            </TabList>
-          </TabHeader>
-          <FormSection>
-            {user && (
-              <FormContainer>
-                <FormField>
-                  <Label>Full Name</Label>
-                  <Input
-                    type="text"
-                    id="name"
-                    disabled={!changeDetails}
-                    value={name}
-                    onChange={onChange}
+        <MaxwidthContainer>
+          <Details>
+            <TabHeader>
+              <TabList>
+                <Tab active>My Details</Tab>
+                <Tab>Learnings</Tab>
+                <Tab>Certifications</Tab>
+                <Tab>Plan</Tab>
+                <Tab>Community</Tab>
+              </TabList>
+            </TabHeader>
+            <FormSection>
+              {user && (
+                <FormContainer>
+                  <FormField>
+                    <Label>Full Name</Label>
+                    <Input
+                      type="text"
+                      id="name"
+                      disabled={!changeDetails}
+                      value={name}
+                      onChange={onChange}
+                    />
+                  </FormField>
+                  <FormField>
+                    <Label>Email</Label>
+                    <Input
+                      type="email"
+                      id="email"
+                      disabled={true}
+                      value={email}
+                    />
+                  </FormField>
+                  <FormField>
+                    <Label>Phone</Label>
+                    <Input
+                      type="tel"
+                      id="mobile"
+                      disabled={!changeDetails}
+                      value={mobile}
+                      onChange={onChange}
+                    />
+                  </FormField>
+                  <FormField>
+                    <Label>About Me</Label>
+                    <TextArea
+                      name="about"
+                      disabled={!changeDetails}
+                      id="about"
+                      cols="30"
+                      rows="10"
+                      value={about}
+                      placeholder="About me"
+                      onChange={onChange}
+                    ></TextArea>
+                  </FormField>
+                </FormContainer>
+              )}
+              <EditActions>
+                {changeDetails && (
+                  <Button
+                    width={"100%"}
+                    onClick={() => {
+                      onCancel();
+                      setChangeDetails((prevState) => !prevState);
+                    }}
+                    title={"Cancel"}
+                    color={"#fff"}
+                    variant="outline"
                   />
-                </FormField>
-                <FormField>
-                  <Label>Email</Label>
-                  <Input
-                    type="email"
-                    id="email"
-                    disabled={true}
-                    value={email}
-                  />
-                </FormField>
-                <FormField>
-                  <Label>Phone</Label>
-                  <Input
-                    type="tel"
-                    id="mobile"
-                    disabled={!changeDetails}
-                    value={mobile}
-                    onChange={onChange}
-                  />
-                </FormField>
-                <FormField>
-                  <Label>About Me</Label>
-                  <TextArea
-                    name="about"
-                    disabled={!changeDetails}
-                    id="about"
-                    cols="30"
-                    rows="10"
-                    value={about}
-                    placeholder="About me"
-                    onChange={onChange}
-                  ></TextArea>
-                </FormField>
-              </FormContainer>
-            )}
-            <EditActions>
-              {changeDetails && (
+                )}
                 <Button
                   width={"100%"}
                   onClick={() => {
-                    onCancel();
+                    changeDetails && onSubmit();
                     setChangeDetails((prevState) => !prevState);
                   }}
-                  title={"Cancel"}
-                  color={"#fff"}
-                  variant="outline"
+                  title={changeDetails ? "Save" : "Edit"}
+                  bgColor={changeDetails ? "#6E40C9" : "#fff"}
+                  color={changeDetails ? "#fff" : "#0D1117"}
                 />
-              )}
-              <Button
-                width={"100%"}
-                onClick={() => {
-                  changeDetails && onSubmit();
-                  setChangeDetails((prevState) => !prevState);
-                }}
-                title={changeDetails ? "Save" : "Edit"}
-                bgColor={changeDetails ? "#6E40C9" : "#fff"}
-                color={changeDetails ? "#fff" : "#0D1117"}
-              />
-            </EditActions>
-          </FormSection>
-          {/* <Select
+              </EditActions>
+            </FormSection>
+            {/* <Select
           label="Sort"
           value={sortId}
           onChange={(ev) => setSortId(ev.target.value)}
@@ -191,7 +195,8 @@ const Profile = () => {
           <option value="newest">Newest Releases</option>
           <option value="price">Price</option>
         </Select> */}
-        </Details>
+          </Details>
+        </MaxwidthContainer>
       </Container>
     </AuthRoute>
   );
@@ -199,7 +204,10 @@ const Profile = () => {
 
 export default Profile;
 
-const Container = styled.div``;
+const Container = styled.div`
+  background: #0d1117;
+`;
+
 const Header = styled.header`
   position: relative;
 `;
@@ -223,14 +231,14 @@ const IntroContainer = styled.div`
   background: #0d1117;
   width: 100%;
 
-  @media ${QUERIES.phoneAndSmaller} {
+  /* @media ${QUERIES.phoneAndSmaller} {
     flex-wrap: wrap;
-  }
+  } */
 `;
 
 const IconContainer = styled.div`
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -244,11 +252,17 @@ const IconContainer = styled.div`
 
   svg {
     transform: rotate(-30deg);
+    font-size: 60px;
   }
 
   @media ${QUERIES.phoneAndSmaller} {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
+
+    svg {
+      transform: rotate(-30deg);
+      font-size: 50px;
+    }
   }
 `;
 
@@ -303,11 +317,16 @@ const FormSection = styled.main`
   }
 `;
 
-const FormContainer = styled.div``;
+const FormContainer = styled.div`
+  width: 100%;
+`;
 
 const FormField = styled.div`
   margin-bottom: 1.5rem;
-  width: 350px;
+  width: 500px;
+  @media ${QUERIES.tabletAndSmaller} {
+    width: 80%;
+  }
   @media ${QUERIES.phoneAndSmaller} {
     width: 100%;
   }
