@@ -27,6 +27,7 @@ const TopicCard = ({ topicTitle, activityCount, topicResource }) => {
                   resourceTitle={resource.name}
                   resourceDuration={resource.duration || "15m 6s"}
                   videoUrl={resource.videoUrl}
+                  labUrl={resource.labUrl}
                 />
               ))}
           </TopicResourceList>

@@ -8,15 +8,18 @@ import YouTubeFrame from "../YoutubeEmbed";
 import { QUERIES } from "../../constants";
 import Quiz from "../Quiz";
 import quiz from "../../data/quiz.json";
+import Lab from "../Lab";
 
 const TopicResourceCard = ({
   resourcetype,
   resourceTitle,
   resourceDuration,
   videoUrl,
+  labUrl,
 }) => {
   const [isShowVideo, setIsShowVideo] = useToggle();
   const [isMarkFinished, setIsMarkFinished] = useToggle();
+  const [showLab, setShowLab] = useToggle();
   const [isShowQuiz, setIsShowQuiz] = useToggle();
 
   const getIconName = (type) => {
@@ -66,7 +69,7 @@ const TopicResourceCard = ({
           ) : (
             resourcetype === "lab" && (
               <Button
-                onClick={setIsShowVideo}
+                onClick={setShowLab}
                 variant={"outline"}
                 title={"Start Lab"}
               />
@@ -92,6 +95,14 @@ const TopicResourceCard = ({
       )}
       {isShowQuiz && resourcetype === "quiz" && (
         <Quiz quizData={quiz} isOpen={isShowQuiz} onDismiss={setIsShowQuiz} />
+      )}
+      {showLab && resourcetype === "lab" && (
+        <Lab
+          title={resourceTitle}
+          labUrl={labUrl}
+          isOpen={showLab}
+          onDismiss={setShowLab}
+        />
       )}
     </Container>
   );
@@ -173,7 +184,7 @@ const Finished = styled.div`
   width: fit-content;
 `;
 
-const Switch = styled.div`
+export const Switch = styled.div`
   position: relative;
   display: inline-block;
   width: 44px;
@@ -189,7 +200,7 @@ const Switch = styled.div`
   }
 `;
 
-const Slider = styled.span`
+export const Slider = styled.span`
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -213,7 +224,7 @@ const Slider = styled.span`
   }
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   opacity: 0;
   width: 0;
   height: 0;

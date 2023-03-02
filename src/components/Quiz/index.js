@@ -74,7 +74,6 @@ function Quiz({ quizData, isOpen, onDismiss }) {
 export default Quiz;
 
 const Overlay = styled(DialogOverlay)`
-  --color-backdrop: hsl(${COLORS.gray[700]} / 0.8);
   position: fixed;
   top: 0;
   left: 0;
