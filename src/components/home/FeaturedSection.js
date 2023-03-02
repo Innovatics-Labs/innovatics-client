@@ -8,6 +8,7 @@ import RedCurve from "../../assets/images/curve-gradient-red.png";
 import Button from "../Button";
 import { TextWithColor } from "./Practicality";
 import { QUERIES } from "../../constants";
+import { Animate } from "../Animations/AnimateIn";
 
 const FeaturedSection = () => {
   return (
@@ -22,20 +23,22 @@ const FeaturedSection = () => {
         </CurveContainer>
       </GradientContainer>
       <TextContent>
-        <Button
-          title={"Featured Courses"}
-          variant={"outline"}
-          color={"white"}
-          borderColor={"#EA6045"}
-          size={`18px`}
-          rounded
-        />
-        <QualityText>
-          <TextWithColor color="#EA6045">30.9% Discounts</TextWithColor>
-        </QualityText>
-        <SubQualityText>
-          on all courses until August 29th 2023. Hurry Now!
-        </SubQualityText>
+        <Animate.FadeUp>
+          <Button
+            title={"Featured Courses"}
+            variant={"outline"}
+            color={"white"}
+            borderColor={"#EA6045"}
+            size={`18px`}
+            rounded
+          />
+          <QualityText>
+            <TextWithColor color="#EA6045">30.9% Discounts</TextWithColor>
+          </QualityText>
+          <SubQualityText>
+            on all courses until August 29th 2023. Hurry Now!
+          </SubQualityText>
+        </Animate.FadeUp>
       </TextContent>
     </InsetSection>
   );

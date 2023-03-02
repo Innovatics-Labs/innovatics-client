@@ -8,6 +8,7 @@ import { TextWithColor } from "./Practicality";
 import PricingPlanCard from "../PricingPlanCard";
 import { QUERIES } from "../../constants";
 import { MaxwidthContainer } from "../GlobalStyles";
+import { Animate } from "../Animations/AnimateIn";
 
 const PricingSection = () => {
   return (
@@ -23,13 +24,17 @@ const PricingSection = () => {
             <LineGradient colorFrom={"#8B90FF"} colorTo={"#FC69AF00"} />
           </GradientStyleContainer>
           <TextContent>
-            <Title>Pricings</Title>
-            <SubTitle>
-              <TextWithColor color="#8B90FF">
-                Affordable monthly and annual subscriptions.{" "}
-              </TextWithColor>
-              Start learning the next Big things.
-            </SubTitle>
+            <Animate.FadeUp>
+              <Title>Pricings</Title>
+            </Animate.FadeUp>
+            <Animate.SlideInLeft>
+              <SubTitle>
+                <TextWithColor color="#8B90FF">
+                  Affordable monthly and annual subscriptions.{" "}
+                </TextWithColor>
+                Start learning the next Big things.
+              </SubTitle>
+            </Animate.SlideInLeft>
             <Start>
               <span>Learn more</span>
               <MdKeyboardArrowRight color={"#8691A6"} size={24} />

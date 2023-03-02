@@ -6,6 +6,7 @@ import LineGradient from "../LineGradient";
 import GradientIcon from "../GradientIcon";
 import { TextWithColor } from "./Practicality";
 import { MaxwidthContainer } from "../GlobalStyles";
+import { Animate } from "../Animations/AnimateIn";
 
 const CareerTalksSection = () => {
   return (
@@ -19,19 +20,21 @@ const CareerTalksSection = () => {
           />
           <LineGradient colorFrom={"#FC69AF"} colorTo={"#FC69AF00"} />
         </GradientStyleContainer>
-        <TextContent>
-          <Title>Career Talks</Title>
-          <SubTitle>
-            <TextWithColor color="#FC69AF">
-              Join our weekend career talks with intensive mentorship.{" "}
-            </TextWithColor>
-            Join the race to catch the ace.
-          </SubTitle>
-          <Start>
-            <span>Learn more</span>
-            <MdKeyboardArrowRight color={"#8691A6"} size={24} />
-          </Start>
-        </TextContent>
+        <Animate.SlideInLeft>
+          <TextContent>
+            <Title>Career Talks</Title>
+            <SubTitle>
+              <TextWithColor color="#FC69AF">
+                Join our weekend career talks with intensive mentorship.{" "}
+              </TextWithColor>
+              Join the race to catch the ace.
+            </SubTitle>
+            <Start>
+              <span>Learn more</span>
+              <MdKeyboardArrowRight color={"#8691A6"} size={24} />
+            </Start>
+          </TextContent>
+        </Animate.SlideInLeft>
       </Container>
     </BackgroundContainer>
   );

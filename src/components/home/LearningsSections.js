@@ -11,6 +11,7 @@ import PathCard from "../PathCard";
 import { QUERIES } from "../../constants";
 import { db } from "../../../firebaseConfig";
 import { MaxwidthContainer } from "../GlobalStyles";
+import { Animate } from "../Animations/AnimateIn";
 
 const LearningsSections = () => {
   const [paths, setPaths] = useState([]);
@@ -45,13 +46,17 @@ const LearningsSections = () => {
               />
             </GradientStyleContainer>
             <TextContent>
-              <Title>Learnings</Title>
-              <SubTitle>
-                <TextWithColor color="#FFA28B">
-                  Put to practice what you learn immediately.{" "}
-                </TextWithColor>
-                <span>We provide you suitable learning environment.</span>
-              </SubTitle>
+              <Animate.FadeIn>
+                <Title>Learnings</Title>
+              </Animate.FadeIn>
+              <Animate.SlideInLeft>
+                <SubTitle>
+                  <TextWithColor color="#FFA28B">
+                    Put to practice what you learn immediately.{" "}
+                  </TextWithColor>
+                  <span>We provide you suitable learning environment.</span>
+                </SubTitle>
+              </Animate.SlideInLeft>
             </TextContent>
           </TopSection>
           <BottomSection>

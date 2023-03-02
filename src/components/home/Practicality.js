@@ -9,6 +9,8 @@ import codesnippet from "../../assets/images/codesnippet.png";
 import labRunning from "../../assets/images/labRunning.png";
 import { QUERIES } from "../../constants";
 import { MaxwidthContainer } from "../GlobalStyles";
+import { Animate } from "../Animations/AnimateIn";
+import SlideInFromRight from "../Animations/SlideInFromRight";
 
 const Practicality = () => {
   return (
@@ -23,15 +25,17 @@ const Practicality = () => {
               />
               <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
             </GradientStyleContainer>
-            <TextContent>
-              <Title>Practicality</Title>
-              <SubTitle>
-                <TextWithColor color="#44e986">
-                  Put to practice what you learn immediately.{" "}
-                </TextWithColor>
-                We provide you suitable learning environment.
-              </SubTitle>
-            </TextContent>
+            <Animate.SlideInLeft>
+              <TextContent>
+                <Title>Practicality</Title>
+                <SubTitle>
+                  <TextWithColor color="#44e986">
+                    Put to practice what you learn immediately.{" "}
+                  </TextWithColor>
+                  We provide you suitable learning environment.
+                </SubTitle>
+              </TextContent>
+            </Animate.SlideInLeft>
           </TopSection>
           <BottomSection>
             <Jupyter>
@@ -44,15 +48,24 @@ const Practicality = () => {
             </Jupyter>
 
             <Code>
-              <Image
-                src={codesnippet}
-                alt="codesnippet"
-                placeholder="blur"
-                sizes="100vw"
-              />
+              <Animate.ScaleIn>
+                <Image
+                  src={codesnippet}
+                  alt="codesnippet"
+                  placeholder="blur"
+                  sizes="100vw"
+                />
+              </Animate.ScaleIn>
             </Code>
             <Lab>
-              <Image src={labRunning} alt="" placeholder="blur" sizes="100vw" />
+              <Animate.FadeUp>
+                <Image
+                  src={labRunning}
+                  alt=""
+                  placeholder="blur"
+                  sizes="100vw"
+                />
+              </Animate.FadeUp>
             </Lab>
           </BottomSection>
         </Container>

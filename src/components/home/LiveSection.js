@@ -8,6 +8,7 @@ import InsetSection from "../InsetSection";
 import LineGradient from "../LineGradient";
 import BlueCurve from "../../assets/images/curve-gradient-blue.png";
 import { QUERIES } from "../../constants";
+import { Animate } from "../Animations/AnimateIn";
 
 const FeaturedSection = () => {
   return (
@@ -22,20 +23,22 @@ const FeaturedSection = () => {
         </CurveContainer>
       </GradientContainer>
       <TextContent>
-        <Button
-          title={"Featured Courses"}
-          variant={"outline"}
-          color={"white"}
-          borderColor={"#8B90FF"}
-          size={`18px`}
-          rounded
-        />
-        <QualityText>
-          <TextWithColor color="#8B90FF">100% Live</TextWithColor>
-        </QualityText>
-        <SubQualityText>
-          Join our live sessions where we discuss futuristic technologies
-        </SubQualityText>
+        <Animate.SlideInLeft>
+          <Button
+            title={"Featured Courses"}
+            variant={"outline"}
+            color={"white"}
+            borderColor={"#8B90FF"}
+            size={`18px`}
+            rounded
+          />
+          <QualityText>
+            <TextWithColor color="#8B90FF">100% Live</TextWithColor>
+          </QualityText>
+          <SubQualityText>
+            Join our live sessions where we discuss futuristic technologies
+          </SubQualityText>
+        </Animate.SlideInLeft>
       </TextContent>
     </InsetSection>
   );

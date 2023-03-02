@@ -10,6 +10,7 @@ import { TextWithColor } from "./Practicality";
 import labRunning from "../../assets/images/labRunningLarg.png";
 import GreenCurve from "../../assets/images/curve-gradient-green.png";
 import { QUERIES } from "../../constants";
+import { Animate } from "../Animations/AnimateIn";
 
 const WhyInnovatics = () => {
   return (
@@ -27,9 +28,11 @@ const WhyInnovatics = () => {
         <TopContent>
           <TextContent>
             <Title>
-              <TextWithColor color="#44E986">Python Lab</TextWithColor> for you
-              to exercise what you learnt from our expert instructor-led video
-              trainings.
+              <Animate.SlideInLeft>
+                <TextWithColor color="#44E986">Python Lab</TextWithColor> for
+                you to exercise what you learnt from our expert instructor-led
+                video trainings.
+              </Animate.SlideInLeft>
             </Title>
             <Start>
               <UnstyledButton>Start learning</UnstyledButton>
@@ -37,23 +40,27 @@ const WhyInnovatics = () => {
             </Start>
           </TextContent>
           <ImageContent>
-            <Image src={labRunning} alt={""} sizes="100vw" />
+            <Animate.SlideInRight>
+              <Image src={labRunning} alt={""} sizes="100vw" />
+            </Animate.SlideInRight>
           </ImageContent>
         </TopContent>
         <BottomContent>
-          <Button
-            title={"Why Innovatics?"}
-            variant={"outline"}
-            borderColor={"#44E986"}
-            size={`18px`}
-            rounded
-          />
-          <QualityText>
-            <TextWithColor color="#44E986">99.9% Quality</TextWithColor>
-          </QualityText>
-          <SubQualityText>
-            education that makes you a Pro at what you do
-          </SubQualityText>
+          <Animate.SlideInLeft>
+            <Button
+              title={"Why Innovatics?"}
+              variant={"outline"}
+              borderColor={"#44E986"}
+              size={`18px`}
+              rounded
+            />
+            <QualityText>
+              <TextWithColor color="#44E986">99.9% Quality</TextWithColor>
+            </QualityText>
+            <SubQualityText>
+              education that makes you a Pro at what you do
+            </SubQualityText>
+          </Animate.SlideInLeft>
         </BottomContent>
       </Content>
     </InsetSection>

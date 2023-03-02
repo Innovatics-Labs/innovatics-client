@@ -14,6 +14,7 @@ import downarrow from "../../assets/images/Group 2.png";
 import kpmgLogo from "../../assets/images/kpmg-logo.png";
 import mercedes from "../../assets/images/mercedes.png";
 import pinterest from "../../assets/images/pinterest.png";
+import { Animate } from "../Animations/AnimateIn";
 
 const Hero = () => {
   return (
