@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import { updateProfile } from "firebase/auth";
 import { updateDoc, doc } from "firebase/firestore";
@@ -14,19 +14,21 @@ import AuthRoute from "../../HOC/authRoute";
 import Select from "../../components/Select/Select";
 import { toast } from "react-toastify";
 import { MaxwidthContainer } from "../../components/GlobalStyles";
+import { AuthContext } from "../../context/AuthContext";
 
 const Profile = () => {
   const [changeDetails, setChangeDetails] = useState(false);
+  const { userData } = useContext(AuthContext);
   const [user, loading, error] = useDocumentOnce(
-    doc(db, "users", auth.currentUser.uid),
+    doc(db, "users", userData.userId),
     {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
 
   const [formData, setFormData] = useState({
-    name: auth.currentUser.displayName,
-    email: auth.currentUser.email,
+    name: userData.userName,
+    email: userData.userEmail,
     mobile: "",
     about: "",
   });
@@ -38,7 +40,7 @@ const Profile = () => {
   const onCancel = () => {
     setFormData({
       ...formData,
-      name: auth.currentUser.displayName,
+      name: userData.userName,
       about: user.data().about,
       mobile: user.data().mobile,
     });

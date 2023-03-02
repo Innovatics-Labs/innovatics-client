@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { signOut } from "firebase/auth";
@@ -11,9 +11,11 @@ import styled from "styled-components";
 import UnstyledButton from "../UnstyledButton";
 import Button from "../Button";
 import { QUERIES } from "../../constants";
+import { AuthContext } from "../../context/AuthContext";
 
 const AuthNavbar = ({ loading, auth }) => {
   const route = useRouter();
+  const { userData } = useContext(AuthContext);
   const [showDialog, setShowDialog] = useState(false);
   const open = () => setShowDialog(true);
   const close = () => setShowDialog(false);
@@ -56,8 +58,8 @@ const AuthNavbar = ({ loading, auth }) => {
               <User href={"/dashboard/profile"}>
                 <FaRegUserCircle size={38} />
               </User>
-              <Name>AbdurRohman Ali</Name>
-              <Email>Email: abdurrohman12@gmail.com</Email>
+              <Name>{userData.userName}</Name>
+              <Email>Email: {userData.userEmail}</Email>
             </Top>
             <NavItems>
               <NavItem>
