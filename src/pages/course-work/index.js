@@ -32,19 +32,15 @@ const Dashboardsc = () => {
         </GradientContainer>
         <DetailContainer>
           <Detail>
-            <p>Course Description</p>
-            <Title>Step 1 to become a Data Scientist</Title>
+            <p>Learning Path</p>
+            <Title>Beginner</Title>
             <Description>
-              Data science is an ever-evolving field, which is growing in
-              popularity at an exponential rate. Data science includes
-              techniques and theories extracted from the fields of statistics;
-              computer science, and, most importantly, machine learning,
-              databases, data visualization, and so on. Data science is an
-              ever-evolving field, which is growing in popularity at an
-              exponential rate. Data science includes techniques and theories
-              extracted from the fields of statistics; computer science, and,
-              most importantly, machine learning, databases, data visualization,
-              and so on.
+              In the beginner learning path, learners will be introduced to the
+              basic concepts of programming and data analysis using Python. The
+              courses cover topics such as programming fundamentals, data
+              analysis, SQL, and cloud computing. By the end of the beginner
+              path, learners will have a good understanding of programming and
+              data analysis fundamentals.
             </Description>
             <ProgressContainer>
               <label htmlFor="course-completion">

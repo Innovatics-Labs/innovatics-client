@@ -29,6 +29,7 @@ import CourseCard from "../../components/CourseCard";
 import JoinDiscord from "../../components/JoinDiscord";
 import courseimg from "../../assets/images/abstract-1392404_1920.png";
 import { MaxwidthContainer } from "../../components/GlobalStyles";
+import LevelsCard from "../../components/LevelsCard";
 
 const AcademicPaths = () => {
   const router = useRouter();
@@ -100,60 +101,24 @@ const AcademicPaths = () => {
               <AcademicLevelsContainer>
                 <PathTitle>Academic Levels</PathTitle>
                 <CardList>
-                  <Card>
-                    <CardGradient>
-                      <GradientIcon
-                        IconComponent={<BsSun size={30} color={"#44E986"} />}
-                        bgColor={"#44E986"}
-                      />
-                    </CardGradient>
-                    <LevelDetails>
-                      <Level>Beginner</Level>
-                      <LevelDescription>
-                        Join the data driven companies.
-                      </LevelDescription>
-                    </LevelDetails>
-                    <SubDetail>
-                      <p>12h 30m</p>
-                      <p>Data</p>
-                    </SubDetail>
-                  </Card>
-                  <Card>
-                    <CardGradient>
-                      <GradientIcon
-                        IconComponent={<BsSun size={30} color={"#44E986"} />}
-                        bgColor={"#44E986"}
-                      />
-                    </CardGradient>
-                    <LevelDetails>
-                      <Level>Professional</Level>
-                      <LevelDescription>
-                        Take up lead role in your establishment
-                      </LevelDescription>
-                    </LevelDetails>
-                    <SubDetail>
-                      <p>12h 30m</p>
-                      <p>Data</p>
-                    </SubDetail>
-                  </Card>
-                  <Card>
-                    <CardGradient>
-                      <GradientIcon
-                        IconComponent={<BsSun size={30} color={"#44E986"} />}
-                        bgColor={"#44E986"}
-                      />
-                    </CardGradient>
-                    <LevelDetails>
-                      <Level>Expert</Level>
-                      <LevelDescription>
-                        Expand your abilities as a well-rounded engineer!
-                      </LevelDescription>
-                    </LevelDetails>
-                    <SubDetail>
-                      <p>12h 30m</p>
-                      <p>Data</p>
-                    </SubDetail>
-                  </Card>
+                  <LevelsCard
+                    title={"Beginner"}
+                    description="Join the data driven companies."
+                    duration={"12h 30m"}
+                    category="Data"
+                  />
+                  <LevelsCard
+                    title={"Professional"}
+                    description="Take up lead role in your establishment"
+                    duration={"18h 50m"}
+                    category="Data"
+                  />
+                  <LevelsCard
+                    title={"Expert"}
+                    description=" Expand your abilities as a well-rounded engineer!"
+                    duration={"12h 30m"}
+                    category="Data"
+                  />
                 </CardList>
               </AcademicLevelsContainer>
             </DetailContainer>
@@ -329,41 +294,6 @@ const CardList = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
   }
-`;
-
-const CardGradient = styled.div`
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Card = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  padding: 2.3rem;
-  background: linear-gradient(rgba(13, 17, 22), rgba(13, 17, 22, 0.8));
-  border-radius: 9px;
-  gap: 4rem;
-  flex: 1;
-  filter: blur(0.25px) drop-shadow(0px 0px 57px rgba(62, 63, 73, 0.25));
-`;
-const LevelDetails = styled.div``;
-
-const Level = styled.p`
-  font-weight: 500;
-  font-size: 36px;
-  margin-block: 1rem;
-`;
-
-const LevelDescription = styled.p`
-  font-weight: 400;
-  margin-block: 5px;
-`;
-
-const SubDetail = styled.div`
-  display: flex;
-  justify-content: space-between;
 `;
 
 export const CourseListings = styled.section`

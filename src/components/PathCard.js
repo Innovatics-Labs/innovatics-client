@@ -8,7 +8,7 @@ import GradientIcon from "./GradientIcon";
 
 const PathCard = ({ color, number, comingSoon, topic, id }) => {
   return (
-    <Card>
+    <Card as={Link} href={`/academic-paths/${id}`}>
       <GradientContainer>
         <GradientIcon
           IconComponent={<BsSun size={30} color={color} />}
@@ -16,15 +16,16 @@ const PathCard = ({ color, number, comingSoon, topic, id }) => {
         />
         <Number color={color}>{number}</Number>
       </GradientContainer>
-      <Topic>
-        <Link href={`/academic-paths/${id}`}>{topic}</Link>
-      </Topic>
-      <Arrow>
-        <Link href={`/academic-paths/${id}`}>
+      <Link href={`/academic-paths/${id}`}>
+        <Topic>{topic}</Topic>
+      </Link>
+      <Link href={`/academic-paths/${id}`}>
+        <Arrow>
           <Image src={arrow} alt={""} sizes="100vw" />
-        </Link>
-        {comingSoon && <p>Coming Soon</p>}
-      </Arrow>
+
+          {comingSoon && <p>Coming Soon</p>}
+        </Arrow>
+      </Link>
     </Card>
   );
 };
