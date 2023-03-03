@@ -5,6 +5,7 @@ import Question from "./Question";
 import QuizResultPage from "./QuizResultPage";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 import { COLORS, QUERIES } from "../../constants";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 function Quiz({ quizData, isOpen, onDismiss }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -33,21 +34,22 @@ function Quiz({ quizData, isOpen, onDismiss }) {
   return (
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
       <DContent>
-        <Header>
-          <Back onClick={onDismiss}>
-            <FaLessThan size={20} color="white" /> <span>Back</span>
-          </Back>
-          <HeaderContent>
-            <Title>Test your knowledge: Introduction to python</Title>
-            <Detail>
-              <li>Practice Quiz</li>
-              <li>{quizData.questions.length} Questions</li>
-              <li>{currentQuestionIndex} Attempts</li>
-            </Detail>
-          </HeaderContent>
-        </Header>
-        <Content>
-          {/* {quizData.questions.map((question, index) => (
+        <MaxwidthContainer>
+          <Header>
+            <Back onClick={onDismiss}>
+              <FaLessThan size={20} color="white" /> <span>Back</span>
+            </Back>
+            <HeaderContent>
+              <Title>Test your knowledge: Introduction to python</Title>
+              <Detail>
+                <li>Practice Quiz</li>
+                <li>{quizData.questions.length} Questions</li>
+                <li>{currentQuestionIndex} Attempts</li>
+              </Detail>
+            </HeaderContent>
+          </Header>
+          <Content>
+            {/* {quizData.questions.map((question, index) => (
             <Question
               key={index}
               question={question}
@@ -56,17 +58,18 @@ function Quiz({ quizData, isOpen, onDismiss }) {
               setCurrentQuestionIndex={setCurrentQuestionIndex}
             />
           ))} */}
-          {currentQuestionIndex < quizData.questions.length ? (
-            <Question
-              question={quizData.questions[currentQuestionIndex]}
-              onRetry={handleRetryQuestion}
-              currentQuestionIndex={currentQuestionIndex}
-              setCurrentQuestionIndex={setCurrentQuestionIndex}
-            />
-          ) : (
-            <QuizResultPage quizData={quizData} />
-          )}
-        </Content>
+            {currentQuestionIndex < quizData.questions.length ? (
+              <Question
+                question={quizData.questions[currentQuestionIndex]}
+                onRetry={handleRetryQuestion}
+                currentQuestionIndex={currentQuestionIndex}
+                setCurrentQuestionIndex={setCurrentQuestionIndex}
+              />
+            ) : (
+              <QuizResultPage quizData={quizData} />
+            )}
+          </Content>
+        </MaxwidthContainer>
       </DContent>
     </Overlay>
   );
@@ -80,18 +83,13 @@ const Overlay = styled(DialogOverlay)`
   right: 0;
   bottom: 0;
   background: var(--color-backdrop);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow-y: auto;
 `;
 
 const DContent = styled(DialogContent)`
-  width: 80%;
+  width: 100%;
   height: 100%;
-  @media ${QUERIES.phoneAndSmaller} {
-    width: 100%;
-  }
+  background: #0d1117;
 `;
 
 const Header = styled.div`
@@ -149,4 +147,6 @@ const Detail = styled.ul`
 const Content = styled.div`
   background: #0d1117;
   padding: 1rem;
+  height: 100%;
+  width: 100%;
 `;

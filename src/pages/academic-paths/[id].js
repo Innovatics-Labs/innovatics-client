@@ -176,6 +176,9 @@ const AcademicPaths = () => {
                       <h4>Loading Academic Area Courses...</h4>
                     </div>
                   )}
+                  {!courseLoad && courseList.length === 0 && (
+                    <h4>No Available course found...</h4>
+                  )}
                   {!courseLoad &&
                     courseList &&
                     courseList.map((doc) => (

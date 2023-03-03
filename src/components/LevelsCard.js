@@ -42,7 +42,11 @@ const Card = styled.div`
   border-radius: 9px;
   gap: 4rem;
   flex: 1;
-  filter: blur(0.25px) drop-shadow(0px 0px 57px rgba(62, 63, 73, 0.25));
+  filter: drop-shadow(0px 0px 57px rgba(62, 63, 73, 0.25));
+
+  :hover {
+    box-shadow: 0px 0px 60px rgba(255, 255, 255, 0.1);
+  }
 `;
 const LevelDetails = styled.div``;
 

@@ -5,17 +5,33 @@ const variantStyles = (
   variant = "primary",
   bgColor = "#6e40c9",
   color = "white",
-  borderColor
+  borderColor,
+  hoverbg = "white",
+  hover = false
 ) =>
   ({
     primary: css`
       background: ${bgColor};
       color: ${color};
+      transition: all 0.3s;
+      :hover {
+        box-shadow: 0px 0px 40px ${bgColor};
+      }
     `,
     outline: css`
       background: transparent;
       color: ${color};
       border-color: ${borderColor ? borderColor : "white"};
+      transition: all 0.3s;
+      :hover {
+        background: white;
+        color: #0d1117;
+        box-shadow: 0px 4px 60px rgba(255, 255, 255, 0.5);
+
+        svg {
+          color: #0d1117;
+        }
+      }
     `,
   }[variant]);
 
@@ -33,6 +49,8 @@ const Button = ({
   onClick,
   className,
   disabled,
+  hoverbg,
+  hover,
   ...delegated
 }) => {
   return (
@@ -45,9 +63,9 @@ const Button = ({
       borderColor={borderColor}
       size={size}
       rounded={rounded}
-      IconRight
-      IconLeft
       onClick={onClick}
+      hoverbg={hoverbg}
+      hover={hover}
       {...delegated}
     >
       {IconLeft && <span>{IconLeft}</span>}
@@ -60,6 +78,10 @@ const Button = ({
 export default Button;
 
 const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   border: 1px solid transparent;
   border-radius: ${({ rounded }) => `${rounded ? "2rem" : "10px"}`};
   width: ${({ width }) => `${width && width}`};
@@ -70,6 +92,6 @@ const StyledButton = styled.button`
   padding-inline: 2rem;
   cursor: pointer;
 
-  ${({ variant, bgColor, color, borderColor }) =>
-    variantStyles(variant, bgColor, color, borderColor)}
+  ${({ variant, bgColor, color, borderColor, hover, hoverbg }) =>
+    variantStyles(variant, bgColor, color, borderColor, hover, hoverbg)}
 `;

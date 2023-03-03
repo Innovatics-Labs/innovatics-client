@@ -40,6 +40,10 @@ const CourseCardContainer = styled.div`
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+
+  :hover {
+    box-shadow: 0px 0px 60px rgba(255, 255, 255, 0.1);
+  }
 `;
 
 const CourseImage = styled.div`

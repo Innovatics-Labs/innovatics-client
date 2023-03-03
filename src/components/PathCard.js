@@ -16,16 +16,12 @@ const PathCard = ({ color, number, comingSoon, topic, id }) => {
         />
         <Number color={color}>{number}</Number>
       </GradientContainer>
-      <Link href={`/academic-paths/${id}`}>
-        <Topic>{topic}</Topic>
-      </Link>
-      <Link href={`/academic-paths/${id}`}>
-        <Arrow>
-          <Image src={arrow} alt={""} sizes="100vw" />
 
-          {comingSoon && <p>Coming Soon</p>}
-        </Arrow>
-      </Link>
+      <Topic>{topic}</Topic>
+      <Arrow>
+        <Image src={arrow} alt={""} sizes="100vw" />
+        {comingSoon && <p>Coming Soon</p>}
+      </Arrow>
     </Card>
   );
 };

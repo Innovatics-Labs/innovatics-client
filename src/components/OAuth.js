@@ -1,6 +1,7 @@
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { doc, setDoc, getDoc, serverTimestamp } from "firebase/firestore";
 import { useRouter } from "next/router";
+import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import { auth, db } from "../../firebaseConfig";
@@ -42,6 +43,7 @@ function OAuth() {
       variant={"outline"}
       title={"Continue with Google"}
       color={"#8691A6"}
+      IconLeft={<FcGoogle />}
     />
     // <div className="socialLogin">
     //   <p>Sign {location.pathname === "/sign-up" ? "up" : "in"} with </p>

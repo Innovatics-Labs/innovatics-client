@@ -10,7 +10,6 @@ import labRunning from "../../assets/images/labRunning.png";
 import { QUERIES } from "../../constants";
 import { MaxwidthContainer } from "../GlobalStyles";
 import { Animate } from "../Animations/AnimateIn";
-import SlideInFromRight from "../Animations/SlideInFromRight";
 
 const Practicality = () => {
   return (

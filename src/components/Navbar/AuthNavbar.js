@@ -31,7 +31,7 @@ const AuthNavbar = ({ loading, auth }) => {
     <>
       <AuthNavContainer>
         <IconContainer>
-          <Link href={"/search"}>
+          <Link href={{ pathname: "/search", query: { name: "data" } }}>
             <BiSearch />
           </Link>
         </IconContainer>
@@ -142,7 +142,7 @@ const NavContent = styled(DialogContent)`
   display: flex;
   flex-direction: column;
   color: white;
-  width: 300px;
+  width: 500px;
   height: 100%;
   overflow-y: scroll;
   background: white;
@@ -150,6 +150,10 @@ const NavContent = styled(DialogContent)`
   background: linear-gradient(286.85deg, #040d21 0%, #3e3f49 98.21%);
   box-shadow: 0px 0px 106.452px rgba(246, 249, 253, 0.25);
   border-radius: 30px 0px 0px 30px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    width: 300px;
+  }
 `;
 
 const CloseButton = styled(UnstyledButton)`

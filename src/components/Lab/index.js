@@ -19,56 +19,58 @@ const Lab = ({ title, labUrl, isOpen, onDismiss }) => {
     <MaxwidthContainer>
       <LabOverlay isOpen={isOpen} onDismiss={onDismiss}>
         <LabContent>
-          <Header>
-            <Back onClick={onDismiss}>
-              <IoMdArrowRoundBack size={20} color="white" />
-              <span>Back</span>
-            </Back>
-            <HeaderContent>
-              <Image src={Logo} alt="Innovatics Logo" />
-            </HeaderContent>
-          </Header>
-          <Content>
-            <LabDetails>
-              <LabTitle>{title}</LabTitle>
-              <LabDescription>
-                In this project, you’ll be using giving some questions regarding
-                what you have learned in the python class to ascertain your
-                understanding of the course. Click Start lab to launch the
-                Notebook, Wish you the best!
-              </LabDescription>
-              <ImageContainer>
-                <Image src={programming} alt="" sizes="100vw" />
-              </ImageContainer>
-            </LabDetails>
-            <StartLabContainer>
-              <LabRunningCard>
-                <RunningMark>
-                  <Running>Lab Running</Running>
-                  <Mark>
-                    MARK FINISHED{" "}
-                    <Switch className="switch">
-                      <Input
-                        type="checkbox"
-                        checked={isMarkFinished}
-                        onClick={setIsMarkFinished}
-                      />
-                      <Slider className="slider round" />
-                    </Switch>
-                  </Mark>
-                </RunningMark>
-                <Timer>TIME RUNNING: 00:00:00</Timer>
-                <Warning>
-                  Please keep this window open while you’re working on the lab.
-                  Lab that don’t register activity will be automatically be
-                  stopped.
-                </Warning>
-                <Start href={labUrl} target="_blank">
-                  Start Lab
-                </Start>
-              </LabRunningCard>
-            </StartLabContainer>
-          </Content>
+          <MaxwidthContainer>
+            <Header>
+              <Back onClick={onDismiss}>
+                <IoMdArrowRoundBack size={20} color="white" />
+                <span>Back</span>
+              </Back>
+              <HeaderContent>
+                <Image src={Logo} alt="Innovatics Logo" />
+              </HeaderContent>
+            </Header>
+            <Content>
+              <LabDetails>
+                <LabTitle>{title}</LabTitle>
+                <LabDescription>
+                  In this project, you’ll be using giving some questions
+                  regarding what you have learned in the python class to
+                  ascertain your understanding of the course. Click Start lab to
+                  launch the Notebook, Wish you the best!
+                </LabDescription>
+                <ImageContainer>
+                  <Image src={programming} alt="" sizes="100vw" />
+                </ImageContainer>
+              </LabDetails>
+              <StartLabContainer>
+                <LabRunningCard>
+                  <RunningMark>
+                    <Running>Lab Running</Running>
+                    <Mark>
+                      MARK FINISHED{" "}
+                      <Switch className="switch">
+                        <Input
+                          type="checkbox"
+                          checked={isMarkFinished}
+                          onClick={setIsMarkFinished}
+                        />
+                        <Slider className="slider round" />
+                      </Switch>
+                    </Mark>
+                  </RunningMark>
+                  <Timer>TIME RUNNING: 00:00:00</Timer>
+                  <Warning>
+                    Please keep this window open while you’re working on the
+                    lab. Lab that don’t register activity will be automatically
+                    be stopped.
+                  </Warning>
+                  <Start href={labUrl} target="_blank">
+                    Start Lab
+                  </Start>
+                </LabRunningCard>
+              </StartLabContainer>
+            </Content>
+          </MaxwidthContainer>
         </LabContent>
       </LabOverlay>
     </MaxwidthContainer>

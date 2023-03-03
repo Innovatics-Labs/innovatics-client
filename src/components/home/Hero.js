@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { GiStarsStack } from "react-icons/gi";
+import { FiChevronRight } from "react-icons/fi";
 
 import { QUERIES } from "../../constants";
 import Button from "../Button";
@@ -50,8 +51,9 @@ const Hero = () => {
                   Science.
                 </SubHeading>
                 <ButtonGroup>
-                  <Button title="Start Learning Now" />
+                  <Button title="Start Learning Now" hover={true} />
                   <Button
+                    IconRight={<FiChevronRight size={20} />}
                     title="Join the next Live Cohort"
                     variant={"outline"}
                   />

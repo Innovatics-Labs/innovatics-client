@@ -99,7 +99,13 @@ const Start = styled.p`
   color: white;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.3rem;
+  /* width: fit-content; */
+
+  :hover {
+    text-decoration-line: underline;
+    transition: all 0.5s;
+  }
 `;
 
 const PricingContainer = styled.div`
