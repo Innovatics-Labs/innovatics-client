@@ -366,7 +366,7 @@ const SubDetail = styled.div`
   justify-content: space-between;
 `;
 
-const CourseListings = styled.section`
+export const CourseListings = styled.section`
   padding: 2rem var(--container-padding);
   background-color: rgba(13, 17, 22);
   color: white;
@@ -376,12 +376,12 @@ const CourseListings = styled.section`
   }
 `;
 
-const ListingsContent = styled.div`
+export const ListingsContent = styled.div`
   display: flex;
   gap: 2.5rem;
 `;
 
-const FoundText = styled.p`
+export const FoundText = styled.p`
   font-weight: 500;
   font-size: var(--font-size-2md);
   span {
@@ -390,7 +390,7 @@ const FoundText = styled.p`
   }
 `;
 
-const CourseGrid = styled.div`
+export const CourseGrid = styled.div`
   margin-top: 1rem;
   width: 100%;
   display: grid;
@@ -398,11 +398,11 @@ const CourseGrid = styled.div`
   gap: 1rem;
 `;
 
-const Courses = styled.div`
+export const Courses = styled.div`
   width: 100%;
 `;
 
-const LevelsList = styled.ul`
+export const LevelsList = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -416,7 +416,7 @@ const LevelsList = styled.ul`
   }
 `;
 
-const Levels = styled.li`
+export const Levels = styled.li`
   font-weight: 500;
   font-size: 1.12rem;
   padding: 0.8rem 1.3rem;

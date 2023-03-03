@@ -16,7 +16,7 @@ import OAuth from "../../components/OAuth";
 const SignIn = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const { email, password } = formData;
-  const [error, setError] = useState();
+  const [errors, setErrors] = useState({});
   const [loggedInUser, setLoggedInUser] = useState();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -28,20 +28,41 @@ const SignIn = () => {
     }));
   };
 
+  const isDisabled = Object.keys(errors).length > 0;
+
   const onSubmit = async (e) => {
     e.preventDefault();
+
+    // Perform validation
+    const errors = {};
+
+    if (!formData.email) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Invalid email address";
+    }
+
+    if (!formData.password) {
+      errors.password = "Password is required";
+    } else if (formData.password.length < 8) {
+      errors.password = "Password must be at least 8 characters";
+    }
     setLoading(true);
-    setError(undefined);
+    setErrors(errors);
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      setLoading(false);
-      setLoggedInUser(userCredential.user);
-      if (userCredential.user) {
-        router.push("/dashboard");
+      if (Object.keys(errors).length === 0) {
+        // Perform submit logic
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        setLoading(false);
+        setLoggedInUser(userCredential.user);
+        if (userCredential.user) {
+          router.push("/dashboard");
+        }
+        console.log("Form submitted!");
       }
     } catch (error) {
       console.log(error);
@@ -61,22 +82,28 @@ const SignIn = () => {
         <FormContainer>
           <Title>Sign in to continue</Title>
           <Form>
-            <Input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              value={email}
-              onChange={onChange}
-            />
-            <Input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              value={password}
-              onChange={onChange}
-            />
+            <label htmlFor="email">
+              <Input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                value={email}
+                onChange={onChange}
+              />
+              {errors.email && <ErrorSpan>{errors.email}</ErrorSpan>}
+            </label>
+            <label htmlFor="password">
+              <Input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                value={password}
+                onChange={onChange}
+              />
+              {errors.password && <ErrorSpan>{errors.password}</ErrorSpan>}
+            </label>
           </Form>
           <FormActions>
             <ForgotContainer>
@@ -87,6 +114,7 @@ const SignIn = () => {
                 title={"Sign In"}
                 bgColor={"#979797"}
                 color={"#0D1117"}
+                disabled={isDisabled}
               />
             </ForgotContainer>
             <OR>OR</OR>
@@ -140,6 +168,12 @@ const Input = styled.input`
   padding: 1.3rem;
   width: 100%;
   color: white;
+`;
+
+export const ErrorSpan = styled.span`
+  color: red;
+  padding-block: 5px;
+  display: inline-block;
 `;
 
 const FormActions = styled.div`

@@ -32,6 +32,7 @@ const Button = ({
   IconLeft,
   onClick,
   className,
+  disabled,
   ...delegated
 }) => {
   return (

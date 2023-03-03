@@ -41,11 +41,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   if (loading) {
-    return (
-      <>
-        <Spinner />
-      </>
-    );
+    return <Spinner />;
   }
 
   return (
