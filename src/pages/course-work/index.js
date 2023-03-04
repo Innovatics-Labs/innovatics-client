@@ -17,6 +17,7 @@ import { useCollectionOnce } from "react-firebase-hooks/firestore";
 import { where, query, collection } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
 import { useRouter } from "next/router";
+import { MaxwidthContainer } from "../../components/GlobalStyles";
 
 const Dashboardsc = () => {
   const router = useRouter();
@@ -37,122 +38,129 @@ const Dashboardsc = () => {
   }, [courseResult, courseLoad]);
 
   return (
-    <div>
+    <BgContainer>
       <CourseDetailSection>
-        <GradientContainer>
-          <LineGradient
-            colorFrom={"#10C75900"}
-            colorTo={"#10C759"}
-            height={"54px"}
-          />
-          <GradientIcon
-            IconComponent={<FaReact size={30} color="#44E986" />}
-            bgColor={"#44E986"}
-          />
-          <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
-        </GradientContainer>
-        <DetailContainer>
-          <Detail>
-            <p>Learning Path</p>
-            <Title>{router.query.level}</Title>
-            <Description>
-              In the beginner learning path, learners will be introduced to the
-              basic concepts of programming and data analysis using Python. The
-              courses cover topics such as programming fundamentals, data
-              analysis, SQL, and cloud computing. By the end of the beginner
-              path, learners will have a good understanding of programming and
-              data analysis fundamentals.
-            </Description>
-            <ProgressContainer>
-              <label htmlFor="course-completion">
-                Progress: <span>0% Complete</span>
-              </label>
-              <Progress id="course-completion" max="100" value="60">
-                60%
-              </Progress>
-            </ProgressContainer>
-            <Button
-              as={Link}
-              href="/course-work"
-              title={"Start"}
-              bgColor={"white"}
-              color={"#0D1117"}
+        <CourseDetailContent>
+          <GradientContainer>
+            <LineGradient
+              colorFrom={"#10C75900"}
+              colorTo={"#10C759"}
+              height={"54px"}
             />
-          </Detail>
-        </DetailContainer>
+            <GradientIcon
+              IconComponent={<FaReact size={30} color="#44E986" />}
+              bgColor={"#44E986"}
+            />
+            <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
+          </GradientContainer>
+          <DetailContainer>
+            <Detail>
+              <p>Learning Path</p>
+              <Title>{router.query.level}</Title>
+              <Description>
+                In the beginner learning path, learners will be introduced to
+                the basic concepts of programming and data analysis using
+                Python. The courses cover topics such as programming
+                fundamentals, data analysis, SQL, and cloud computing. By the
+                end of the beginner path, learners will have a good
+                understanding of programming and data analysis fundamentals.
+              </Description>
+              <ProgressContainer>
+                <label htmlFor="course-completion">
+                  Progress: <span>0% Complete</span>
+                </label>
+                <Progress id="course-completion" max="100" value="60">
+                  60%
+                </Progress>
+              </ProgressContainer>
+              <Button
+                as={Link}
+                href="/course-work"
+                title={"Start"}
+                bgColor={"white"}
+                color={"#0D1117"}
+              />
+            </Detail>
+          </DetailContainer>
+        </CourseDetailContent>
       </CourseDetailSection>
       <CourseHighlightSection>
-        <GradientContainer>
-          <LineGradient
-            colorFrom={"#10C75900"}
-            colorTo={"#10C759"}
-            height={"54px"}
-          />
-          <GradientIcon
-            IconComponent={<VscGraph size={30} color="#44E986" />}
-            bgColor={"#44E986"}
-          />
-          <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
-        </GradientContainer>
-        <HighLightContent>
-          <HighlightTitle>Course Highlights</HighlightTitle>
-          <DurationLevel>
-            <Duration>
-              <GrayTitle>DURATION</GrayTitle>: 7h 20min
-            </Duration>
-            <Level>
-              <GrayTitle>LEVEL:</GrayTitle> {router.query.level}
-            </Level>
-          </DurationLevel>
-          <Activities>
-            <GrayTitle>ACTIVITIES:</GrayTitle> 1 section, 4 courses, 8 videos, 5
-            quizzes, 3 labs, 15 exercises
-          </Activities>
-          <InstructorsContainer>
-            <IntructorSectionTitle>
-              <GrayTitle>Instructors</GrayTitle>
-            </IntructorSectionTitle>
-            <InstructorsList>
-              <InstructorCard
-                instructorName="Muhammad Medwani"
-                isLeadInstructor
-              />
-              <InstructorCard instructorName="Muhammad Medwani" />
-              <InstructorCard instructorName="Muhammad Medwani" />
-            </InstructorsList>
-          </InstructorsContainer>
-        </HighLightContent>
-      </CourseHighlightSection>
-      <CourseListSection>
-        <GradientContainer>
-          <LineGradient
-            colorFrom={"#10C75900"}
-            colorTo={"#10C759"}
-            height={"54px"}
-          />
-          <GradientIcon
-            IconComponent={<VscGraph size={30} color="#44E986" />}
-            bgColor={"#44E986"}
-          />
-        </GradientContainer>
-        <CourseListContainer>
-          <CourseListHeading>
-            Section 1 | Data Science Crash Course
-          </CourseListHeading>
-          <CourseList>
-            {!courseLoad &&
-              courseList &&
-              courseList.map((doc) => (
-                <CourseCard
-                  key={doc.id}
-                  id={doc.id}
-                  title={doc.data().title}
-                  instructor={doc.data().instructor}
-                  duration={doc.data().duration}
+        <CourseHighlightContent>
+          <GradientContainer>
+            <LineGradient
+              colorFrom={"#10C75900"}
+              colorTo={"#10C759"}
+              height={"54px"}
+            />
+            <GradientIcon
+              IconComponent={<VscGraph size={30} color="#44E986" />}
+              bgColor={"#44E986"}
+            />
+            <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
+          </GradientContainer>
+          <HighLightContent>
+            <HighlightTitle>Course Highlights</HighlightTitle>
+            <DurationLevel>
+              <Duration>
+                <GrayTitle>DURATION</GrayTitle>: 7h 20min
+              </Duration>
+              <Level>
+                <GrayTitle>LEVEL:</GrayTitle> {router.query.level}
+              </Level>
+            </DurationLevel>
+            <Activities>
+              <GrayTitle>ACTIVITIES:</GrayTitle> 1 section, 4 courses, 8 videos,
+              5 quizzes, 3 labs, 15 exercises
+            </Activities>
+            <InstructorsContainer>
+              <IntructorSectionTitle>
+                <GrayTitle>Instructors</GrayTitle>
+              </IntructorSectionTitle>
+              <InstructorsList>
+                <InstructorCard
+                  instructorName="Muhammad Medwani"
+                  isLeadInstructor
                 />
-              ))}
-          </CourseList>
-        </CourseListContainer>
+                <InstructorCard instructorName="Muhammad Medwani" />
+                <InstructorCard instructorName="Muhammad Medwani" />
+              </InstructorsList>
+            </InstructorsContainer>
+          </HighLightContent>
+        </CourseHighlightContent>
+      </CourseHighlightSection>
+
+      <CourseListSection>
+        <CourseListContent>
+          <GradientContainer>
+            <LineGradient
+              colorFrom={"#10C75900"}
+              colorTo={"#10C759"}
+              height={"54px"}
+            />
+            <GradientIcon
+              IconComponent={<VscGraph size={30} color="#44E986" />}
+              bgColor={"#44E986"}
+            />
+          </GradientContainer>
+          <CourseListContainer>
+            <CourseListHeading>
+              Section 1 | Data Science Crash Course
+            </CourseListHeading>
+            <CourseList>
+              {!courseLoad &&
+                courseList &&
+                courseList.map((doc) => (
+                  <CourseCard
+                    key={doc.id}
+                    id={doc.id}
+                    title={doc.data().title}
+                    instructor={doc.data().instructor}
+                    duration={doc.data().duration}
+                  />
+                ))}
+            </CourseList>
+          </CourseListContainer>
+        </CourseListContent>
       </CourseListSection>
       <AcademicPaths>
         <GradientContainer>
@@ -173,17 +181,15 @@ const Dashboardsc = () => {
       </AcademicPaths>
       <JoinCohort />
       <JoinDiscord />
-    </div>
+    </BgContainer>
   );
 };
 
 export default Dashboardsc;
 
+const BgContainer = styled.div``;
+
 const CourseDetailSection = styled.section`
-  padding: 2rem var(--container-padding);
-  display: flex;
-  gap: 3rem;
-  color: white;
   background-image: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.9) 5.87%,
@@ -193,6 +199,12 @@ const CourseDetailSection = styled.section`
     url("/data-globe.png");
   background-size: cover;
   background-repeat: no-repeat;
+`;
+const CourseDetailContent = styled(MaxwidthContainer)`
+  display: flex;
+  gap: 3rem;
+  color: white;
+  padding: 2rem var(--container-padding);
 `;
 
 const GradientContainer = styled.div`
@@ -282,15 +294,18 @@ const Progress = styled.progress`
 `;
 
 const CourseHighlightSection = styled.section`
-  padding: 2rem var(--container-padding);
-  display: flex;
-  gap: 3rem;
   color: white;
   background: linear-gradient(
     -286deg,
     rgba(4, 13, 33, 0.9) 40%,
     rgba(62, 63, 73, 0.8) 98.21%
   );
+`;
+
+const CourseHighlightContent = styled(MaxwidthContainer)`
+  padding: 2rem var(--container-padding);
+  display: flex;
+  gap: 3rem;
 `;
 
 const HighLightContent = styled.div`
@@ -346,10 +361,14 @@ const InstructorsList = styled.div`
 `;
 
 const CourseListSection = styled.div`
+ 
+  background: #0d1117;
+`;
+
+const CourseListContent = styled(MaxwidthContainer)`
   display: flex;
   gap: 3rem;
   padding: 2rem var(--container-padding);
-  background: #0d1117;
 `;
 
 const CourseListContainer = styled.div`
