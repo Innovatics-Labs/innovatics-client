@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components";
 import {
@@ -15,7 +14,6 @@ import {
   useDocumentOnce,
 } from "react-firebase-hooks/firestore";
 import { FaReact } from "react-icons/fa";
-import { BsSun } from "react-icons/bs";
 
 import siteMetadata from "../../data/siteMetadata";
 import HeadSeo from "../../components/HeadSeo";
@@ -54,7 +52,6 @@ const AcademicPaths = () => {
       setPathDetail(value.data());
       console.log({ value: value.data() });
     }
-    // console.log({ error });
 
     // getAllAcademicPathsId();
   }, [value]);
@@ -106,18 +103,21 @@ const AcademicPaths = () => {
                     description="Join the data driven companies."
                     duration={"12h 30m"}
                     category="Data"
+                    level={"beginner"}
                   />
                   <LevelsCard
                     title={"Professional"}
                     description="Take up lead role in your establishment"
                     duration={"18h 50m"}
                     category="Data"
+                    level={"professional"}
                   />
                   <LevelsCard
                     title={"Expert"}
                     description=" Expand your abilities as a well-rounded engineer!"
                     duration={"12h 30m"}
                     category="Data"
+                    level={"expert"}
                   />
                 </CardList>
               </AcademicLevelsContainer>

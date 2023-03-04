@@ -100,6 +100,9 @@ const BackgroundContainer = styled.footer`
 const FooterContainer = styled(MaxwidthContainer)`
   color: white;
   padding-inline: 4rem;
+  @media ${QUERIES.tabletAndSmaller} {
+    padding-inline: 3rem;
+  }
   @media ${QUERIES.phoneAndSmaller} {
     padding-inline: 2rem;
   }
@@ -109,7 +112,6 @@ const FooterTopSection = styled.div`
   display: flex;
   gap: 7rem;
   padding-block: 2rem;
-
   @media ${QUERIES.tabletAndSmaller} {
     flex-wrap: wrap;
     align-items: center;
@@ -120,7 +122,7 @@ const FooterTopSection = styled.div`
 
 const LinksContainer = styled.div`
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
   @media ${QUERIES.phoneAndSmaller} {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

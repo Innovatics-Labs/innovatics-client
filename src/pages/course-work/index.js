@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FaReact } from "react-icons/fa";
 import { VscGraph } from "react-icons/vsc";
@@ -13,8 +13,29 @@ import InstructorCard from "../../components/InstructorCard";
 import CourseCard from "../../components/coursework-components/CourseCard";
 import Pagination from "../../components/Pagination";
 import { QUERIES } from "../../constants";
+import { useCollectionOnce } from "react-firebase-hooks/firestore";
+import { where, query, collection } from "firebase/firestore";
+import { db } from "../../../firebaseConfig";
+import { useRouter } from "next/router";
 
 const Dashboardsc = () => {
+  const router = useRouter();
+  const [courseList, setCourseList] = useState([]);
+  const q = query(
+    collection(db, "courses"),
+    where("level", "==", router.query.level)
+  );
+  const [courseResult, courseLoad, courseError] = useCollectionOnce(q);
+
+  console.log(router.query.level);
+
+  useEffect(() => {
+    if (courseResult) {
+      setCourseList(courseResult.docs);
+      console.log({ courseResult: courseResult.docs });
+    }
+  }, [courseResult, courseLoad]);
+
   return (
     <div>
       <CourseDetailSection>
@@ -33,7 +54,7 @@ const Dashboardsc = () => {
         <DetailContainer>
           <Detail>
             <p>Learning Path</p>
-            <Title>Beginner</Title>
+            <Title>{router.query.level}</Title>
             <Description>
               In the beginner learning path, learners will be introduced to the
               basic concepts of programming and data analysis using Python. The
@@ -46,15 +67,15 @@ const Dashboardsc = () => {
               <label htmlFor="course-completion">
                 Progress: <span>0% Complete</span>
               </label>
-              <Progress id="course-completion" max="100" value="70">
-                70%
+              <Progress id="course-completion" max="100" value="60">
+                60%
               </Progress>
             </ProgressContainer>
             <Button
               as={Link}
-              href="/dashboard-sc"
+              href="/course-work"
               title={"Start"}
-              bgColor="white"
+              bgColor={"white"}
               color={"#0D1117"}
             />
           </Detail>
@@ -80,7 +101,7 @@ const Dashboardsc = () => {
               <GrayTitle>DURATION</GrayTitle>: 7h 20min
             </Duration>
             <Level>
-              <GrayTitle>LEVEL:</GrayTitle> BEGINNER
+              <GrayTitle>LEVEL:</GrayTitle> {router.query.level}
             </Level>
           </DurationLevel>
           <Activities>
@@ -119,9 +140,17 @@ const Dashboardsc = () => {
             Section 1 | Data Science Crash Course
           </CourseListHeading>
           <CourseList>
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
+            {!courseLoad &&
+              courseList &&
+              courseList.map((doc) => (
+                <CourseCard
+                  key={doc.id}
+                  id={doc.id}
+                  title={doc.data().title}
+                  instructor={doc.data().instructor}
+                  duration={doc.data().duration}
+                />
+              ))}
           </CourseList>
         </CourseListContainer>
       </CourseListSection>
@@ -176,8 +205,6 @@ const GradientContainer = styled.div`
 `;
 
 const DetailContainer = styled.div`
-  /* display: flex;
-  gap: 4rem; */
   margin-top: 1rem;
   margin-bottom: 4rem;
 `;
@@ -190,18 +217,25 @@ const Detail = styled.div`
   a {
     display: inline-block;
   }
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: 1rem;
+  }
 `;
 
 const Title = styled.p`
   font-weight: 600;
   font-size: var(--font-size-3xl);
   margin-block: 10px;
+  text-transform: capitalize;
 `;
 
 const Description = styled.p`
   font-size: var(--font-size-md);
   line-height: 1.5;
   width: min(70ch, 100%);
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: 1rem;
+  }
 `;
 
 const ProgressContainer = styled.div`
@@ -289,11 +323,13 @@ const Duration = styled.p`
   border-right: 2px solid gray;
   padding-right: 2rem;
   @media ${QUERIES.phoneAndSmaller} {
-    padding-right: rem;
+    padding-right: 1rem;
   }
 `;
 
-const Level = styled.p``;
+const Level = styled.p`
+  text-transform: uppercase;
+`;
 const Activities = styled.p``;
 
 const InstructorsContainer = styled.div`

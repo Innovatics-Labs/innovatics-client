@@ -4,9 +4,9 @@ import { BsSun } from "react-icons/bs";
 import styled from "styled-components";
 import GradientIcon from "./GradientIcon";
 
-const LevelsCard = ({ title, description, category, duration }) => {
+const LevelsCard = ({ title, description, category, duration, level }) => {
   return (
-    <Card as={Link} href={"/course-work"}>
+    <Card as={Link} href={{ pathname: "/course-work", query: { level } }}>
       <CardGradient>
         <GradientIcon
           IconComponent={<BsSun size={30} color={"#44E986"} />}

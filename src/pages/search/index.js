@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import {
   collection,
   onSnapshot,
@@ -25,12 +26,15 @@ import LineGradient from "../../components/LineGradient";
 import { useCollectionOnce } from "react-firebase-hooks/firestore";
 
 export default function SearchPage() {
+  const router = useRouter();
   const [data, setData] = useState("");
   const [search, setSearch] = useState("");
   const [filterBy, setFilterBy] = useState("Data Science");
   const q = query(collection(db, "courses"));
   const [courseList, setCourseList] = useState([]);
   const [courseResult, courseLoad, courseError] = useCollectionOnce(q);
+
+  console.log(router.query);
 
   const searchRecords = (e) => {
     e.preventDefault();
@@ -95,19 +99,19 @@ export default function SearchPage() {
                   </Levels>
                   <Levels
                     selected={filterBy === "cloud"}
-                    onClick={() => setFilterBy("Cloud")}
+                    onClick={() => setFilterBy("cloud")}
                   >
                     Cloud
                   </Levels>
                   <Levels
                     selected={filterBy === "software"}
-                    onClick={() => setFilterBy("Software Eng.")}
+                    onClick={() => setFilterBy("software")}
                   >
                     Software Eng.
                   </Levels>
                   <Levels
                     selected={filterBy === "security"}
-                    onClick={() => setFilterBy("Security")}
+                    onClick={() => setFilterBy("security")}
                   >
                     Security
                   </Levels>

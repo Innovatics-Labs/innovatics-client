@@ -6,26 +6,29 @@ import { QUERIES } from "../../constants";
 import { GrayTitle } from "../../pages/course-work";
 import Button from "../Button";
 
-const CourseCard = () => {
+const CourseCard = ({ instructor, duration, title, id }) => {
   return (
     <Container>
-      <DetailContainer>
-        <ThumbnailContainer>
-          <Image src={thumbnail} alt="video tumbnail" sizes="100vw" />
-        </ThumbnailContainer>
-        <CourseDetail>
-          <CourseTitle>Python Crash Course</CourseTitle>
-          <CourseInstructor>
-            <GrayTitle>INSTRUCTOR:</GrayTitle> MUHAMMAD MED.
-          </CourseInstructor>
-          <CourseDuration>
-            <GrayTitle>DURATION:</GrayTitle> 4h 15m
-          </CourseDuration>
-        </CourseDetail>
-      </DetailContainer>
-      <div style={{ alignSelf: "center" }}>
-        <Button as={Link} variant={"outline"} title="Begin" href="course" />
-      </div>
+      <ThumbnailContainer>
+        <Image src={thumbnail} alt="video tumbnail" sizes="100vw" />
+      </ThumbnailContainer>
+      <CourseDetail>
+        <CourseTitle>{title}</CourseTitle>
+        <CourseInstructor>
+          <GrayTitle>INSTRUCTOR:</GrayTitle> {instructor}
+        </CourseInstructor>
+        <CourseDuration>
+          <GrayTitle>DURATION:</GrayTitle> {duration}
+        </CourseDuration>
+      </CourseDetail>
+      <Action>
+        <Button
+          as={Link}
+          variant={"outline"}
+          title="Begin"
+          href={`/course/${id}`}
+        />
+      </Action>
     </Container>
   );
 };
@@ -33,35 +36,24 @@ const CourseCard = () => {
 export default CourseCard;
 
 const Container = styled.article`
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
   color: white;
   width: 100%;
   border-bottom: 1px solid #8691a6;
   padding-bottom: 2rem;
-  flex-wrap: wrap;
 
-  @media ${QUERIES.phoneAndSmaller} {
-    /* justify-content: center; */
-    gap: 1rem;
-  }
-`;
-
-const DetailContainer = styled.div`
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  @media ${QUERIES.phoneAndSmaller} {
-    /* justify-content: center; */
+  @media (max-width: ${720 / 16}rem) {
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
   }
 `;
 
 const ThumbnailContainer = styled.div`
-  /* width: 100%; */
+  width: 100%;
   img {
-    width: 100%;
+    max-width: 100%;
     object-fit: cover;
   }
 `;
@@ -71,7 +63,7 @@ const CourseDetail = styled.div`
 
 const CourseTitle = styled.p`
   font-weight: 600;
-  font-size: clamp(1.2rem, 1.667vw + 0.5rem, 1.8rem);
+  font-size: clamp(1.1rem, 1.667vw + 0.5rem, 1.5rem);
 `;
 
 const CourseInstructor = styled.p`
@@ -80,4 +72,9 @@ const CourseInstructor = styled.p`
 
 const CourseDuration = styled.p`
   font-size: var(--font-size-md);
+`;
+
+const Action = styled.div`
+  width: fit-content;
+  align-self: center;
 `;
