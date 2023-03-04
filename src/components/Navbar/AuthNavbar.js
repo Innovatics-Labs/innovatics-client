@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { signOut } from "firebase/auth";
@@ -18,7 +18,7 @@ const AuthNavbar = ({ loading, auth }) => {
   const { userData } = useContext(AuthContext);
   const [showDialog, setShowDialog] = useState(false);
   const open = () => setShowDialog(true);
-  const close = () => setShowDialog(false);
+  const close = useCallback(() => setShowDialog(false), [setShowDialog]);
 
   const signOutHandler = async () => {
     if (!loading) {
@@ -26,6 +26,14 @@ const AuthNavbar = ({ loading, auth }) => {
       route.push("/");
     }
   };
+
+  useEffect(() => {
+    // subscribe
+    route.events.on("routeChangeStart", close);
+
+    // unsubscribe
+    return () => route.events.off("routeChangeStart", close);
+  }, [close, route.events]);
 
   return (
     <>
@@ -47,11 +55,11 @@ const AuthNavbar = ({ loading, auth }) => {
       <NavOverlay isOpen={showDialog} onDismiss={close}>
         <NavContent>
           <CloseLogout>
-            <CloseButton onClick={close}>X</CloseButton>
             <Logout onClick={signOutHandler}>
               <BiLogOutCircle />
               Logout
             </Logout>
+            <CloseButton onClick={close}>X</CloseButton>
           </CloseLogout>
           <NavDetails>
             <Top>
@@ -150,6 +158,7 @@ const NavContent = styled(DialogContent)`
   background: linear-gradient(286.85deg, #040d21 0%, #3e3f49 98.21%);
   box-shadow: 0px 0px 106.452px rgba(246, 249, 253, 0.25);
   border-radius: 30px 0px 0px 30px;
+  font-size: 18px;
 
   @media ${QUERIES.tabletAndSmaller} {
     width: 300px;

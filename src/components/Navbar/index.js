@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -10,15 +10,24 @@ import { auth } from "../../../firebaseConfig";
 import logo from "../../assets/images/logo 1.png";
 import { QUERIES } from "../../constants";
 import AuthNavbar from "./AuthNavbar";
+import useToggle from "../../hooks/useToggle";
 
 const Navbar = () => {
   const route = useRouter();
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useToggle();
   const [user, loading, error] = useAuthState(auth);
 
-  const handleShowNavbar = () => {
-    setShowNav(!showNav);
-  };
+  const handleShowNavbar = useCallback(() => {
+    setShowNav();
+  }, [setShowNav]);
+
+  useEffect(() => {
+    // subscribe
+    route.events.on("routeChangeStart", handleShowNavbar);
+
+    // unsubscribe
+    return () => route.events.off("routeChangeStart", handleShowNavbar);
+  }, [handleShowNavbar, route.events]);
 
   return (
     <NavContainer pathName={route.pathname} active={showNav}>
