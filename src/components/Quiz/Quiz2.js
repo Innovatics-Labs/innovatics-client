@@ -140,7 +140,10 @@ const Quiz = ({ quiz = {} }) => {
                 .join(", ")}
             </p>
             {question.explanation && (
-              <ReactMarkdown source={question.explanation} />
+              <ReactMarkdown
+                children={`#### Explanation: 
+                ${question.explanation}`}
+              />
             )}
           </div>
         ))}
@@ -180,7 +183,7 @@ const Pic = styled.img`
 
 const QuestionText = styled.h4`
   color: white;
-  font-size: var(--font-size-2md);
+  font-size: var(--font-size-md);
 `;
 
 const QuestionOptions = styled.ul`
