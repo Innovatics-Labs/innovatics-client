@@ -12,7 +12,7 @@ import { QualityText, TextContent, SubQualityText } from "./FeaturedSection";
 
 const Newslettersection = () => {
   return (
-    <section>
+    <Container>
       <Content>
         <Top>
           <GradientContainer>
@@ -48,20 +48,23 @@ const Newslettersection = () => {
           <Newsletter />
         </Bottom>
       </Content>
-    </section>
+    </Container>
   );
 };
 
 export default Newslettersection;
 
-const Content = styled(MaxwidthContainer)`
-  padding: var(--container-padding);
+const Container = styled.section`
   background: linear-gradient(
       90.44deg,
       rgba(13, 17, 23, 0.3) 0.46%,
       #0d1117 44.88%
     ),
     url("galaxy.png");
+`;
+
+const Content = styled(MaxwidthContainer)`
+  padding: var(--container-padding);
 `;
 
 const Top = styled.div`
@@ -90,4 +93,4 @@ const SubHeading = styled(SubQualityText)`
   color: white;
 `;
 
-const Bottom = styled.div``
+const Bottom = styled.div``;
