@@ -2,7 +2,7 @@ import React from "react";
 import { FiCalendar, FiShare } from "react-icons/fi";
 import { MdAlarm } from "react-icons/md";
 import { VscCode } from "react-icons/vsc";
-import { FaReact } from "react-icons/fa";
+import { FaLinkedinIn, FaReact, FaTwitter } from "react-icons/fa";
 import styled from "styled-components";
 import Button from "../../components/Button";
 import { MaxwidthContainer } from "../../components/GlobalStyles";
@@ -168,26 +168,77 @@ const Bootcamps = () => {
           </GradientContainer>
           <InstructorContainer>
             <h4>Instructors</h4>
-            <InstructorDetailContainer>
-              <CapContainer>
-                <InstructorCap />
-                <p>Muhammad Medwani</p>
-              </CapContainer>
-              <InstructorDetail>
-                <h5>Founder - Innovatics.ai</h5>
-                <p>
-                  Founder of Innovatics.ai is an expert data scientist with a
-                  passion for transforming data into useful products. He has
-                  over 20 years of experience in service delivery management;
-                  Ph.D. candidate in AI, four master’s degrees in data science,
-                  IT, machine learning, and business administration; and over
-                  nine years of experience working with data science. Mo’s
-                  specialties include data science, machine learning, big data,
-                  deep learning, data analytics, application support and IT
-                  service delivery management.
-                </p>
-              </InstructorDetail>
-            </InstructorDetailContainer>
+            <div>
+              <InstructorDetailContainer>
+                <CapContainer>
+                  <InstructorCap />
+                  <p>Muhammad Medwani</p>
+                </CapContainer>
+                <InstructorDetail>
+                  <h5>Founder - Innovatics.ai</h5>
+                  <p>
+                    Founder of Innovatics.ai is an expert data scientist with a
+                    passion for transforming data into useful products. He has
+                    over 20 years of experience in service delivery management;
+                    Ph.D. candidate in AI, four master’s degrees in data
+                    science, IT, machine learning, and business administration;
+                    and over nine years of experience working with data science.
+                    Mo’s specialties include data science, machine learning, big
+                    data, deep learning, data analytics, application support and
+                    IT service delivery management.
+                  </p>
+                  <Social>
+                    Social Links: <FaLinkedinIn /> <FaTwitter />{" "}
+                  </Social>
+                </InstructorDetail>
+              </InstructorDetailContainer>
+              <InstructorDetailContainer>
+                <CapContainer>
+                  <InstructorCap />
+                  <p>Muhammad Medwani</p>
+                </CapContainer>
+                <InstructorDetail>
+                  <h5>Founder - Innovatics.ai</h5>
+                  <p>
+                    Founder of Innovatics.ai is an expert data scientist with a
+                    passion for transforming data into useful products. He has
+                    over 20 years of experience in service delivery management;
+                    Ph.D. candidate in AI, four master’s degrees in data
+                    science, IT, machine learning, and business administration;
+                    and over nine years of experience working with data science.
+                    Mo’s specialties include data science, machine learning, big
+                    data, deep learning, data analytics, application support and
+                    IT service delivery management.
+                  </p>
+                  <Social>
+                    Social Links: <FaLinkedinIn /> <FaTwitter />{" "}
+                  </Social>
+                </InstructorDetail>
+              </InstructorDetailContainer>
+              <InstructorDetailContainer>
+                <CapContainer>
+                  <InstructorCap />
+                  <p>Muhammad Medwani</p>
+                </CapContainer>
+                <InstructorDetail>
+                  <h5>Founder - Innovatics.ai</h5>
+                  <p>
+                    Founder of Innovatics.ai is an expert data scientist with a
+                    passion for transforming data into useful products. He has
+                    over 20 years of experience in service delivery management;
+                    Ph.D. candidate in AI, four master’s degrees in data
+                    science, IT, machine learning, and business administration;
+                    and over nine years of experience working with data science.
+                    Mo’s specialties include data science, machine learning, big
+                    data, deep learning, data analytics, application support and
+                    IT service delivery management.
+                  </p>
+                  <Social>
+                    Social Links: <FaLinkedinIn /> <FaTwitter />{" "}
+                  </Social>
+                </InstructorDetail>
+              </InstructorDetailContainer>
+            </div>
           </InstructorContainer>
         </InstructorContent>
       </InstructorSection>
@@ -485,5 +536,21 @@ const SubTitle = styled.p`
   width: 80%;
   @media ${QUERIES.tabletAndSmaller} {
     width: revert;
+  }
+`;
+
+const Social = styled.p`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    background: #ffffff;
+    width: 32px;
+    height: 32px;
+    color: black;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 14px;
   }
 `;
