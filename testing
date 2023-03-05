@@ -1,0 +1,32 @@
+// pages/_app.js
+import { useState, useEffect } from "react";
+import Dashboard from "../components/Dashboard";
+import Home from "../components/Home";
+import { useRouter } from "next/router";
+
+function MyApp({ Component, pageProps }) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    // Check authentication state on initial render
+    // You can call an API endpoint or check the user's authentication token here
+    const userIsAuthenticated = true; // Set to true for demo purposes only
+    setIsAuthenticated(userIsAuthenticated);
+  }, []);
+
+  // Render either the dashboard or the normal home page based on authentication state
+  const defaultHomePage = isAuthenticated ? <Dashboard /> : <Home />;
+  const ComponentToRender = Component === Home ? defaultHomePage : Component;
+
+  // Redirect to dashboard if user is authenticated and tries to access the home page
+  useEffect(() => {
+    if (isAuthenticated && router.pathname === "/") {
+      router.push("/dashboard");
+    }
+  }, [isAuthenticated, router]);
+
+  return <ComponentToRender {...pageProps} />;
+}
+
+export default MyApp;

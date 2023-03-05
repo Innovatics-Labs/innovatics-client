@@ -33,7 +33,7 @@ const Navbar = () => {
     <NavContainer pathName={route.pathname} active={showNav}>
       <Container>
         <Logo>
-          <Link href={"/"}>
+          <Link href={`${user ? "/dashboard" : "/"}`}>
             <Image src={logo} alt="innovatics logo" sizes="100vw" />
           </Link>
         </Logo>

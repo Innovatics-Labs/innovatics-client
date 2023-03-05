@@ -122,6 +122,10 @@ const CourseSectionContent = styled(MaxwidthContainer)`
   padding: 2rem var(--container-padding);
   display: flex;
   gap: 3rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    padding-inline: 1rem;
+  }
 `;
 
 const GradientContainer = styled.div`
@@ -164,7 +168,7 @@ const CourseStats = styled.div`
   display: flex;
   gap: 3rem;
   @media ${QUERIES.phoneAndSmaller} {
-    gap: 1.3rem;
+    gap: 1rem;
   }
 `;
 
@@ -183,6 +187,6 @@ const CourseTitle = styled.h5`
 `;
 
 const PaginationContainer = styled.div`
-  padding: 2rem 4rem;
+  padding: 2rem var(--container-padding);
   background-color: #0d1117;
 `;

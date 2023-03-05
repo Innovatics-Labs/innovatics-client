@@ -207,7 +207,7 @@ const CourseDetailContent = styled(MaxwidthContainer)`
   padding: 2rem var(--container-padding);
 `;
 
-const GradientContainer = styled.div`
+export const GradientContainer = styled.div`
   display: grid;
   gap: 1.5rem;
   grid-template-rows: 50px auto 1fr;
@@ -361,7 +361,6 @@ const InstructorsList = styled.div`
 `;
 
 const CourseListSection = styled.div`
- 
   background: #0d1117;
 `;
 

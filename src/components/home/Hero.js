@@ -16,6 +16,7 @@ import kpmgLogo from "../../assets/images/kpmg-logo.png";
 import mercedes from "../../assets/images/mercedes.png";
 import pinterest from "../../assets/images/pinterest.png";
 import { Animate } from "../Animations/AnimateIn";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -53,6 +54,8 @@ const Hero = () => {
                 <ButtonGroup>
                   <Button title="Start Learning Now" hover={true} />
                   <Button
+                    as={Link}
+                    href="/bootcamps"
                     IconRight={<FiChevronRight size={20} />}
                     title="Join the next Live Cohort"
                     variant={"outline"}

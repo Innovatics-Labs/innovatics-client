@@ -139,7 +139,7 @@ const LinksSection = styled.div`
 
 const LinksSectionTitle = styled.h2`
   margin-top: 0;
-  font-weight: 600;
+  font-weight: 500;
   color: #8691a6;
 `;
 
