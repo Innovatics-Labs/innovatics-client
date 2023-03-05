@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 
 function QuizResultPage(props) {
   const { quizData } = props;
@@ -29,7 +30,7 @@ function QuizResultPage(props) {
   const filteredQuestions = getFilteredQuestions();
 
   return (
-    <div>
+    <Container>
       <h2>Quiz Results</h2>
       <p>
         You answered {filteredQuestions.length} out of{" "}
@@ -45,14 +46,19 @@ function QuizResultPage(props) {
         {filteredQuestions.map((question, index) => (
           <li key={index}>
             <h3>{question.text}</h3>
-            <p>Your answer: {question.selectedAnswer}</p>
-            <p>Correct answer: {question.correctAnswers.join(", ")}</p>
+            {/* <p>Your answer: {question.selectedAnswer}</p> */}
+            <p>Correct answer: {question.correctAnswers}</p>
             <p>{question.explanation}</p>
           </li>
         ))}
       </ul>
-    </div>
+    </Container>
   );
 }
 
 export default QuizResultPage;
+
+const Container = styled.div`
+  padding: var(--container-padding);
+  color: white;
+`;

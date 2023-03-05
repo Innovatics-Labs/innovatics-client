@@ -3,6 +3,7 @@ import { FaLessThan } from "react-icons/fa";
 import styled from "styled-components";
 import Question from "./Question";
 import QuizResultPage from "./QuizResultPage";
+import Quiz2 from "./Quiz2";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 import { COLORS, QUERIES } from "../../constants";
 import { MaxwidthContainer } from "../GlobalStyles";
@@ -40,7 +41,7 @@ function Quiz({ quizData, isOpen, onDismiss }) {
               <FaLessThan size={20} color="white" /> <span>Back</span>
             </Back>
             <HeaderContent>
-              <Title>Test your knowledge: Introduction to python</Title>
+              <Title>Test your knowledge: {quizData.title}</Title>
               <Detail>
                 <li>Practice Quiz</li>
                 <li>{quizData.questions.length} Questions</li>
@@ -49,16 +50,7 @@ function Quiz({ quizData, isOpen, onDismiss }) {
             </HeaderContent>
           </Header>
           <Content>
-            {/* {quizData.questions.map((question, index) => (
-            <Question
-              key={index}
-              question={question}
-              onRetry={handleRetryQuestion}
-              currentQuestionIndex={index}
-              setCurrentQuestionIndex={setCurrentQuestionIndex}
-            />
-          ))} */}
-            {currentQuestionIndex < quizData.questions.length ? (
+            {/* {currentQuestionIndex < quizData.questions.length ? (
               <Question
                 question={quizData.questions[currentQuestionIndex]}
                 onRetry={handleRetryQuestion}
@@ -67,7 +59,8 @@ function Quiz({ quizData, isOpen, onDismiss }) {
               />
             ) : (
               <QuizResultPage quizData={quizData} />
-            )}
+            )} */}
+            <Quiz2 quiz={quizData} />
           </Content>
         </MaxwidthContainer>
       </DContent>

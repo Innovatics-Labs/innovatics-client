@@ -7,7 +7,8 @@ import useToggle from "../../hooks/useToggle";
 import YouTubeFrame from "../YoutubeEmbed";
 import { QUERIES } from "../../constants";
 import Quiz from "../Quiz";
-import quiz from "../../data/quiz.json";
+// import quiz from "../../data/quiz.json";
+import { quizData2 } from "../Quiz/quizData";
 import Lab from "../Lab";
 
 const TopicResourceCard = ({
@@ -94,7 +95,11 @@ const TopicResourceCard = ({
         </VideoShow>
       )}
       {isShowQuiz && resourcetype === "quiz" && (
-        <Quiz quizData={quiz} isOpen={isShowQuiz} onDismiss={setIsShowQuiz} />
+        <Quiz
+          quizData={quizData2}
+          isOpen={isShowQuiz}
+          onDismiss={setIsShowQuiz}
+        />
       )}
       {showLab && resourcetype === "lab" && (
         <Lab
