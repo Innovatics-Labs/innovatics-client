@@ -65,13 +65,13 @@ export default function SearchPage() {
   return (
     <Container>
       <MaxwidthContainer>
-        <Search
+        {/* <Search
           id="search"
           type="text"
           placeholder="Search"
           onKeyUp={searchRecords}
           onChange={(e) => setSearch(e.target.value)}
-        />
+        /> */}
         <CourseListings>
           <div style={{ paddingLeft: "1rem" }}>
             {courseList && (
