@@ -75,7 +75,7 @@ const Dashboardsc = () => {
               </ProgressContainer>
               <Button
                 as={Link}
-                href="/course-work"
+                href={`/course-work?level=${router.query.level}`}
                 title={"Start"}
                 bgColor={"white"}
                 color={"#0D1117"}
