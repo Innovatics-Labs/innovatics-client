@@ -20,7 +20,7 @@ export default JoinDiscord;
 
 const BackgroundContainer = styled.section`
   background: #0d1117;
-  padding: 4rem var(--container-padding);
+  padding: var(--container-padding);
 `;
 
 const Container = styled(MaxwidthContainer)`

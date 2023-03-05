@@ -13,6 +13,8 @@ import JoinDiscord from "../../components/JoinDiscord";
 import LineGradient from "../../components/LineGradient";
 import { QUERIES, WEIGHTS } from "../../constants";
 import { GradientContainer } from "../course-work";
+import Newsletter from "../../components/Newsletter";
+import { TextWithColor } from "../../components/home/Practicality";
 
 const Bootcamps = () => {
   return (
@@ -189,6 +191,29 @@ const Bootcamps = () => {
           </InstructorContainer>
         </InstructorContent>
       </InstructorSection>
+      <MentorshipSection>
+        <MentorshipContent>
+          <div>
+            <GradientIcon
+              IconComponent={<FaReact size={30} color="#44E986" />}
+              bgColor={"#44E986"}
+            />
+          </div>
+          <div>
+            <TextContent>
+              <Title>Live Mentorship</Title>
+              <SubTitle>
+                <TextWithColor color="#44e986">
+                  We go with you as you tread the path.
+                </TextWithColor>
+                Your success means a lot to us so you can reach our to us any
+                time.
+              </SubTitle>
+            </TextContent>
+            <Newsletter />
+          </div>
+        </MentorshipContent>
+      </MentorshipSection>
       <JoinCohort />
       <JoinDiscord />
     </div>
@@ -352,6 +377,7 @@ const OverViewContent = styled(MaxwidthContainer)`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
+  width: 100%;
   @media ${QUERIES.phoneAndSmaller} {
     padding-inline: 1rem;
   }
@@ -377,7 +403,6 @@ const OverviewTitle = styled.div`
 `;
 
 const OverviewFeatureList = styled.ul`
-  list-style: none;
   list-style-image: url("checkmark.png");
   font-weight: ${WEIGHTS.medium};
 
@@ -387,7 +412,7 @@ const OverviewFeatureList = styled.ul`
 `;
 
 const InstructorSection = styled.section`
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
 `;
 
@@ -430,5 +455,35 @@ const InstructorDetail = styled.div`
     font-size: var(--font-size-md);
     line-height: 1;
     color: #44e986;
+  }
+`;
+
+const MentorshipSection = styled.section`
+  background-color: #0d1117;
+  color: white;
+`;
+
+const MentorshipContent = styled(MaxwidthContainer)`
+  padding: 3rem var(--container-padding);
+  display: flex;
+  gap: 2rem;
+`;
+
+const TextContent = styled.div`
+  font-weight: 600;
+  color: white;
+`;
+
+const Title = styled.h4`
+  font-size: var(--font-size-xl);
+  margin: 0;
+`;
+
+const SubTitle = styled.p`
+  font-size: var(--font-size-3xl);
+  margin-block: 1.5rem;
+  width: 80%;
+  @media ${QUERIES.tabletAndSmaller} {
+    width: revert;
   }
 `;

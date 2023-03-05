@@ -94,18 +94,13 @@ const Footer = () => {
 export default Footer;
 
 const BackgroundContainer = styled.footer`
-  background-color: #0d1117;
+  background-color: #0d1116;
 `;
 
 const FooterContainer = styled(MaxwidthContainer)`
   color: white;
-  padding-inline: 4rem;
-  @media ${QUERIES.tabletAndSmaller} {
-    padding-inline: 3rem;
-  }
-  @media ${QUERIES.phoneAndSmaller} {
-    padding-inline: 2rem;
-  }
+  padding: var(--container-padding);
+  padding-bottom: 2rem;
 `;
 
 const FooterTopSection = styled.div`
