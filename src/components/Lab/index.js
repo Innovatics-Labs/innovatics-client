@@ -16,10 +16,10 @@ const Lab = ({ title, labUrl, isOpen, onDismiss }) => {
   const [isMarkFinished, setIsMarkFinished] = useToggle();
 
   return (
-    <MaxwidthContainer>
+    <>
       <LabOverlay isOpen={isOpen} onDismiss={onDismiss}>
-        <LabContent as={MaxwidthContainer}>
-          <>
+        <LabContent>
+          <Container>
             <Header>
               <Back onClick={onDismiss}>
                 <IoMdArrowRoundBack size={20} color="white" />
@@ -70,10 +70,10 @@ const Lab = ({ title, labUrl, isOpen, onDismiss }) => {
                 </LabRunningCard>
               </StartLabContainer>
             </Content>
-          </>
+          </Container>
         </LabContent>
       </LabOverlay>
-    </MaxwidthContainer>
+    </>
   );
 };
 
@@ -92,6 +92,10 @@ const LabOverlay = styled(DialogOverlay)`
 const LabContent = styled(DialogContent)`
   height: 100%;
   width: 100%;
+`;
+
+const Container = styled(MaxwidthContainer)`
+  height: 100%;
 `;
 
 const Header = styled.div`

@@ -98,6 +98,8 @@ const Header = styled.div`
   color: white;
   display: flex;
   gap: 1rem;
+  box-shadow: 0 0 0 100vmax #000000;
+  clip-path: inset(0 -100vmax);
   @media ${QUERIES.phoneAndSmaller} {
     padding-inline: 1rem;
   }
