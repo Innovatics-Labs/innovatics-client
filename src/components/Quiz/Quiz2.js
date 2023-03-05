@@ -99,7 +99,9 @@ const Quiz = ({ quiz = {} }) => {
         </p>
         {quiz.questions.map((question, index) => (
           <div key={index}>
-            <QuestionText>{question.question}</QuestionText>
+            <QuestionText>
+              {index + 1}. {question.question}
+            </QuestionText>
             {question.picture && <Pic src={question.picture} alt="" />}
             {/* {JSON.stringify(
               question.options.filter((option) =>
