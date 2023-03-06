@@ -496,7 +496,7 @@ const DetailSummary = styled.div``;
 
 const DetailSummaryTitle = styled.p`
   font-weight: ${WEIGHTS.semiBold};
-  font-size: 28px;
+  font-size: var(--font-size-2md);
   padding-left: 1rem;
   margin-bottom: 0;
 `;
@@ -580,6 +580,10 @@ const OverviewCard = styled.div`
   );
   border-radius: 20px;
   padding: 2rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    padding: 1rem;
+  }
 `;
 
 const OverviewTitle = styled.div`
@@ -589,6 +593,10 @@ const OverviewTitle = styled.div`
   margin-bottom: 1rem;
   font-size: var(--font-size-2md);
   font-weight: ${WEIGHTS.semiBold};
+
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: 20px;
+  }
 `;
 
 const OverviewFeatureList = styled.ul`
@@ -612,7 +620,7 @@ const AccordItem = styled(AccordionItem)`
 `;
 
 const AccordionTitle = styled.h5`
-  font-size: 22px;
+  font-size: var(--font-size-md);
   margin: 0;
   button {
     background: transparent;
