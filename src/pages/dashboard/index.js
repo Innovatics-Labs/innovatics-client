@@ -61,11 +61,11 @@ const Dashboard = () => {
               <Greeting>Welcome {user && user.displayName}</Greeting>
               <GreetingSub>
                 June Data Science Live cohort registration is on-going. Click
-                <Link href={"/"}>here</Link> to learn more or click the button
-                below to register.
+                <Link href={"/bootcamps"}>here</Link> to learn more or click the
+                button below to register.
               </GreetingSub>
               <Start>
-                <span>Register Now</span>
+                <Link href={"/bootcamps"}>Register Now</Link>
                 <MdKeyboardArrowRight color={"#8691A6"} size={24} />
               </Start>
             </WelcomeContent>

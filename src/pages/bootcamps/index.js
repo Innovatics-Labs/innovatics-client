@@ -122,9 +122,7 @@ const Bootcamps = () => {
       </DetailSection>
       <OverviewSection>
         <OverViewContent>
-          <ResponsiveMasonry
-            columnsCountBreakPoints={{ 350: 1, 750: 2, 1400: 3 }}
-          >
+          <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2 }}>
             <Masonry gutter={"2rem"}>
               <OverviewCard>
                 <OverviewTitle>
