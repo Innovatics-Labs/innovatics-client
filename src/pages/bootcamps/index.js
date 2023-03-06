@@ -2,8 +2,16 @@ import React from "react";
 import { FiCalendar, FiShare } from "react-icons/fi";
 import { MdAlarm } from "react-icons/md";
 import { VscCode } from "react-icons/vsc";
-import { FaLinkedinIn, FaReact, FaTwitter } from "react-icons/fa";
+import { FaLinkedinIn, FaPlus, FaReact, FaTwitter } from "react-icons/fa";
 import styled from "styled-components";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+} from "@reach/accordion";
+
 import Button from "../../components/Button";
 import { MaxwidthContainer } from "../../components/GlobalStyles";
 import GradientIcon from "../../components/GradientIcon";
@@ -114,42 +122,171 @@ const Bootcamps = () => {
       </DetailSection>
       <OverviewSection>
         <OverViewContent>
-          <OverviewCard>
-            <OverviewTitle>
-              <GradientIcon
-                IconComponent={<VscCode size={30} color="#44E986" />}
-                bgColor={"#44E986"}
-              />
-              <p>What you’ll learn</p>
-            </OverviewTitle>
-            <OverviewFeatureList>
-              <li>Provision Azure virtual networks</li>
-              <li>Control virtual network traffic</li>
-              <li>Manage DNS for virtual networks and public access</li>
-              <li>
-                Connect virtual networks to other virtual networks and external
-                networks
-              </li>
-              <li>Monitor virtual network traffic</li>
-            </OverviewFeatureList>
-          </OverviewCard>
-          <OverviewCard>
-            <OverviewTitle>
-              <GradientIcon
-                IconComponent={<VscCode size={30} color="#44E986" />}
-                bgColor={"#44E986"}
-              />
-              <p>Requirements</p>
-            </OverviewTitle>
-            <OverviewFeatureList>
-              <li>Basic understanding of cloud concepts</li>
-              <li>
-                Basic understanding of networking concepts including IP
-                addressing, DHCP, and DNS
-              </li>
-              <li>Familiarity with templated deployments</li>
-            </OverviewFeatureList>
-          </OverviewCard>
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{ 350: 1, 750: 2, 1400: 3 }}
+          >
+            <Masonry gutter={"2rem"}>
+              <OverviewCard>
+                <OverviewTitle>
+                  <GradientIcon
+                    IconComponent={<VscCode size={30} color="#44E986" />}
+                    bgColor={"#44E986"}
+                  />
+                  <p>What you’ll learn</p>
+                </OverviewTitle>
+                <OverviewFeatureList>
+                  <li>Provision Azure virtual networks</li>
+                  <li>Control virtual network traffic</li>
+                  <li>Manage DNS for virtual networks and public access</li>
+                  <li>
+                    Connect virtual networks to other virtual networks and
+                    external networks
+                  </li>
+                  <li>Monitor virtual network traffic</li>
+                  <li>
+                    Connect virtual networks to other virtual networks and
+                    external networks
+                  </li>
+                  <li>Monitor virtual network traffic</li>
+                  <li>Real Time projects</li>
+                  <li>Architecture</li>
+                  <li>Domain wise project</li>
+                  <li>Databases</li>
+                  <li>Negotiations skills</li>
+                  <li>Mock interview</li>
+                  <li>Interview preparation</li>
+                  <li> Resume building after every module</li>
+                </OverviewFeatureList>
+              </OverviewCard>
+              <OverviewCard>
+                <OverviewTitle>
+                  <GradientIcon
+                    IconComponent={<VscCode size={30} color="#44E986" />}
+                    bgColor={"#44E986"}
+                  />
+                  <p>Course Features</p>
+                </OverviewTitle>
+                <OverviewFeatureList>
+                  <li>Full stack Data Science master’s certification</li>
+                  <li>Job guarantee otherwise refund</li>
+                  <li>One year of internship Anytime</li>
+                  <li>
+                    Online Instructor-led learning: Live teaching by instructors
+                  </li>
+                  <li>56 + hands-on industry real-time projects.</li>
+                  <li>500 hours live interactive classes.</li>
+                  <li>
+                    Every week doubt clearing session after the live classes.
+                  </li>
+                  <li>Lifetime Dashboard access</li>
+                  <li>Doubt clearing one to one</li>
+                  <li>Doubt clearing through mail and skype support team</li>
+                  <li>Assignment in all the module</li>
+                  <li>A live project with real-time implementation</li>
+                </OverviewFeatureList>
+              </OverviewCard>
+              <OverviewCard>
+                <OverviewTitle>
+                  <GradientIcon
+                    IconComponent={<VscCode size={30} color="#44E986" />}
+                    bgColor={"#44E986"}
+                  />
+                  <p>Curriculum</p>
+                </OverviewTitle>
+                <Accordion multiple>
+                  <AccordItem>
+                    <AccordionTitle>
+                      <AccordionButton>
+                        Welcome to the Course <FaPlus />
+                      </AccordionButton>
+                    </AccordionTitle>
+                    <Panel>
+                      <CurriculumFeatureList>
+                        <CurriculumList>Course Overview</CurriculumList>
+                        <CurriculumList>Dashboard Introduction</CurriculumList>
+                      </CurriculumFeatureList>
+                    </Panel>
+                  </AccordItem>
+                  <AccordItem>
+                    <AccordionTitle>
+                      <AccordionButton>
+                        Advanced Python <FaPlus />
+                      </AccordionButton>
+                    </AccordionTitle>
+                    <Panel>
+                      <CurriculumFeatureList>
+                        <CurriculumList>
+                          Iterator Generator & File System
+                        </CurriculumList>
+                        <CurriculumList>
+                          Exception handling Class 1 part 1
+                        </CurriculumList>
+                        <CurriculumList>
+                          Exception handling Class 1 part 2
+                        </CurriculumList>
+                        <CurriculumList>
+                          Exception handling Class 2
+                        </CurriculumList>
+                        <CurriculumList>Module & Packages</CurriculumList>
+                        <CurriculumList>OOPS Part 1</CurriculumList>
+                        <CurriculumList>OOPS Part 2</CurriculumList>
+                        <CurriculumList>
+                          OOPs Concepts - Polymorphism
+                        </CurriculumList>
+                      </CurriculumFeatureList>
+                    </Panel>
+                  </AccordItem>
+                  <AccordItem>
+                    <AccordionTitle>
+                      <AccordionButton>
+                        Python Fundamentals <FaPlus />
+                      </AccordionButton>
+                    </AccordionTitle>
+                    <Panel>
+                      <CurriculumFeatureList>
+                        <CurriculumList>Python Basic</CurriculumList>
+                        <CurriculumList>String, List, Indexing</CurriculumList>
+                        <CurriculumList>Tuple, Set & Dict</CurriculumList>
+                        <CurriculumList>String, List, Indexing</CurriculumList>
+                        <CurriculumList>If, Else & For Loop</CurriculumList>
+                        <CurriculumList>For Loops & While loops</CurriculumList>
+                        <CurriculumList>
+                          Python Program Discussion in loops
+                        </CurriculumList>
+                      </CurriculumFeatureList>
+                    </Panel>
+                  </AccordItem>
+                </Accordion>
+              </OverviewCard>
+              <OverviewCard>
+                <OverviewTitle>
+                  <GradientIcon
+                    IconComponent={<VscCode size={30} color="#44E986" />}
+                    bgColor={"#44E986"}
+                  />
+                  <p>Requirements</p>
+                </OverviewTitle>
+                <OverviewFeatureList>
+                  <li>Basic understanding of cloud concepts</li>
+                  <li>
+                    Basic understanding of networking concepts including IP
+                    addressing, DHCP, and DNS
+                  </li>
+                  <li>Familiarity with templated deployments</li>
+                  <li>
+                    Basic understanding of networking concepts including IP
+                    addressing, DHCP, and DNS
+                  </li>
+                  <li>Familiarity with templated deployments</li>
+                  <li>
+                    Basic understanding of networking concepts including IP
+                    addressing, DHCP, and DNS
+                  </li>
+                  <li>Familiarity with templated deployments</li>
+                </OverviewFeatureList>
+              </OverviewCard>
+            </Masonry>
+          </ResponsiveMasonry>
         </OverViewContent>
       </OverviewSection>
       <InstructorSection>
@@ -425,13 +562,13 @@ const OverviewSection = styled.section`
 
 const OverViewContent = styled(MaxwidthContainer)`
   padding: 3rem var(--container-padding);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  @media ${QUERIES.phoneAndSmaller} {
-    padding-inline: 1rem;
-  }
+  // display: grid;
+  // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  // gap: 2rem;
+  // width: 100%;
+  // @media ${QUERIES.phoneAndSmaller} {
+  //   padding-inline: 1rem;
+  // }
 `;
 
 const OverviewCard = styled.div`
@@ -449,7 +586,8 @@ const OverviewTitle = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: var(--font-size-md);
+  margin-bottom: 1rem;
+  font-size: var(--font-size-2md);
   font-weight: ${WEIGHTS.semiBold};
 `;
 
@@ -459,6 +597,47 @@ const OverviewFeatureList = styled.ul`
 
   li {
     margin-bottom: 0.7rem;
+  }
+`;
+
+const AccordItem = styled(AccordionItem)`
+  background: linear-gradient(
+    86.57deg,
+    rgba(62, 63, 73, 0.9) 5.65%,
+    rgba(4, 13, 33, 0.3) 94.35%,
+    rgba(4, 13, 33, 0.3) 94.35%
+  );
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+`;
+
+const AccordionTitle = styled.h5`
+  font-size: 22px;
+  margin: 0;
+  button {
+    background: transparent;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+  }
+`;
+
+const Panel = styled(AccordionPanel)``;
+
+const CurriculumFeatureList = styled(OverviewFeatureList)`
+  padding-left: 1.5rem;
+`;
+
+const CurriculumList = styled.li`
+  ::marker {
+    content: "> ";
+    font-size: 20px;
+    padding-left: 0;
+    /* padding-right: 10px; */
   }
 `;
 
