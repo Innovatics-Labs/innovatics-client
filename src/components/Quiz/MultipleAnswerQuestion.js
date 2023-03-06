@@ -21,7 +21,6 @@ function MultipleAnswerQuestion(props) {
 
   useEffect(() => {
     onSelectAnswer(selectedAnswers);
-    console.log(selectedAnswers);
   }, [selectedAnswers]);
 
   return (

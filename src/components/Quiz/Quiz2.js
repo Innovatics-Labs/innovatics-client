@@ -140,10 +140,7 @@ const Quiz = ({ quiz = {} }) => {
                 .join(", ")}
             </p>
             {question.explanation && (
-              <ReactMarkdown
-                children={`#### Explanation: 
-                ${question.explanation}`}
-              />
+              <ReactMarkdown>Explanation: {question.explanation}</ReactMarkdown>
             )}
           </div>
         ))}
