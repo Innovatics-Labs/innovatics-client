@@ -52,7 +52,12 @@ const Hero = () => {
                   Science.
                 </SubHeading>
                 <ButtonGroup>
-                  <Button title="Start Learning Now" hover={true} />
+                  <Button
+                    as={Link}
+                    href="/signIn"
+                    title="Start Learning Now"
+                    hover={true}
+                  />
                   <Button
                     as={Link}
                     href="/bootcamps"

@@ -34,8 +34,6 @@ export default function SearchPage() {
   const [courseList, setCourseList] = useState([]);
   const [courseResult, courseLoad, courseError] = useCollectionOnce(q);
 
-  console.log(router.query);
-
   const searchRecords = (e) => {
     e.preventDefault();
     const collectionref = collection(db, "courses");
@@ -56,9 +54,6 @@ export default function SearchPage() {
     if (courseResult) {
       setCourseList(courseResult.docs);
       console.log({ courseResult: courseResult.docs });
-    }
-    if (courseError) {
-      console.log({ courseError });
     }
   }, [courseResult, courseError]);
 

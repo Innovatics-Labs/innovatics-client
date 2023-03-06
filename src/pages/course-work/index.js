@@ -28,12 +28,9 @@ const Dashboardsc = () => {
   );
   const [courseResult, courseLoad, courseError] = useCollectionOnce(q);
 
-  console.log(router.query.level);
-
   useEffect(() => {
     if (courseResult) {
       setCourseList(courseResult.docs);
-      console.log({ courseResult: courseResult.docs });
     }
   }, [courseResult, courseLoad]);
 

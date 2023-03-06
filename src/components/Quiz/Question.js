@@ -12,7 +12,7 @@ function Question(props) {
 
   const onSelectAnswer = (e) => {
     setSelectedAnswer(e);
-    console.log({ selectedAnswer });
+    // console.log({ selectedAnswer });
   };
 
   function handleRetryQuestion() {

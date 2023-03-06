@@ -7,7 +7,7 @@ function SingleAnswerQuestion(props) {
   function handleAnswerSelection(event) {
     const selectedAnswer = event.target.value;
     onSelectAnswer(selectedAnswer);
-    console.log({ selectedAnswer });
+    // console.log({ selectedAnswer });
   }
 
   return (

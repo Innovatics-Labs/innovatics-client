@@ -50,7 +50,6 @@ const AcademicPaths = () => {
   useEffect(() => {
     if (value) {
       setPathDetail(value.data());
-      console.log({ value: value.data() });
     }
 
     // getAllAcademicPathsId();
@@ -59,10 +58,6 @@ const AcademicPaths = () => {
   useEffect(() => {
     if (courseResult) {
       setCourseList(courseResult.docs);
-      console.log({ courseResult: courseResult.docs });
-    }
-    if (courseError) {
-      console.log({ courseError });
     }
   }, [courseResult, courseError]);
 

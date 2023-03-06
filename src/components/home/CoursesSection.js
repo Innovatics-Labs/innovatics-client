@@ -44,7 +44,7 @@ const CoursesSection = () => {
   useEffect(() => {
     if (courseResult) {
       setCourses(courseResult.docs);
-      console.log({ courseResult });
+      // console.log({ courseResult });
     }
   }, [courseResult]);
 

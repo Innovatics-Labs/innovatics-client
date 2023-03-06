@@ -32,7 +32,6 @@ function OAuth() {
         router.push("/dashboard");
       }
     } catch (error) {
-      console.log({ oauth: error });
       toast.error("Could not authorize with Google");
     }
   };

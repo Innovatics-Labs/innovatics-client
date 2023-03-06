@@ -62,10 +62,8 @@ const SignIn = () => {
         if (userCredential.user) {
           router.push("/dashboard");
         }
-        console.log("Form submitted!");
       }
     } catch (error) {
-      console.log(error);
       toast.error("Bad User Credentials");
     }
   };

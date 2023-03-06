@@ -29,11 +29,8 @@ const DashboardClass = () => {
 
   useEffect(() => {
     if (value) {
-      // console.log({ value: value.data() });
       setCourseDetail(value.data());
-      // console.log(courseDetail);
     }
-    console.log({ error });
   }, [value, error, loading]);
 
   return (

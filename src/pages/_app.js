@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../../styles/globals.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import ScrollToTop from "../components/ScrollToTop";
 import { AuthProvider } from "../context/AuthContext";
 
 function MyApp({ Component, pageProps }) {
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
       <Footer />
+      <ScrollToTop />
       <ToastContainer />
     </AuthProvider>
   );

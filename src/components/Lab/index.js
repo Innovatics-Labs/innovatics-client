@@ -46,7 +46,7 @@ const Lab = ({ title, labUrl, isOpen, onDismiss }) => {
                 <LabRunningCard>
                   <RunningMark>
                     <Running>Lab Running</Running>
-                    <Mark>
+                    <Mark onClick={setIsMarkFinished}>
                       MARK FINISHED{" "}
                       <Switch className="switch">
                         <Input
@@ -248,9 +248,16 @@ const Warning = styled.p`
 `;
 
 const Start = styled(Link)`
-  color: #8691a6;
-  border: 1.3px solid #36373a;
+  color: #fff;
+  border: 1.3px solid #fff;
   border-radius: 92px;
-  padding: 10px;
+  padding: 1rem;
   display: inline-block;
+
+  :hover {
+    background-color: white;
+    color: black;
+    transition: all 0.3s;
+    border-color: black;
+  }
 `;
