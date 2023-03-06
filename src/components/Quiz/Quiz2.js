@@ -39,7 +39,7 @@ const Question = ({
       <Button
         title={"Next Question"}
         onClick={handleNextQuestion}
-        bgColor="#979797"
+        bgColor="white"
         color={"#0D1117"}
       />
     ) : null}
@@ -103,11 +103,6 @@ const Quiz = ({ quiz = {} }) => {
               {index + 1}. {question.question}
             </QuestionText>
             {question.picture && <Pic src={question.picture} alt="" />}
-            {/* {JSON.stringify(
-              question.options.filter((option) =>
-                selectedAnswers.includes(option.id)
-              )
-            )} */}
             <p>
               <span
                 style={{

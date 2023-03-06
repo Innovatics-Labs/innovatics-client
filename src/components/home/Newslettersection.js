@@ -45,6 +45,17 @@ const Newslettersection = () => {
           </TextContent>
         </Top>
         <Bottom>
+          <ContactDetail>
+            <p>
+              <span>Monday - Friday</span> 8:00 AM - 5:00 PM Eastern Time
+            </p>
+            <p>
+              <span>Phone</span> +1-678-209-9780
+            </p>
+            <p>
+              <span>Email</span> info@innovatics.ai
+            </p>
+          </ContactDetail>
           <Newsletter />
         </Bottom>
       </Content>
@@ -93,4 +104,20 @@ const SubHeading = styled(SubQualityText)`
   color: white;
 `;
 
-const Bottom = styled.div``;
+const Bottom = styled.div`
+  display: flex;
+  /* grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); */
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+`;
+
+const ContactDetail = styled.div`
+  color: white;
+  align-self: flex-end;
+  span {
+    font-weight: 500;
+    font-size: 18px;
+    color: #8691a6;
+  }
+`;
