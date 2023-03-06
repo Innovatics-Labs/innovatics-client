@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
@@ -18,8 +18,7 @@ import {
   FormActions,
   OR,
   ForgotText,
-  FormButton,
-  SignInButton,
+  SignInAction,
   NoAccountContainer,
 } from "../../components/GlobalStyles/authStyle";
 import OAuth from "../../components/OAuth";
@@ -31,6 +30,7 @@ const SignUp = () => {
     password: "",
   });
   const { name, email, password } = formData;
+  const [isDisabled, setIsDisabled] = useState(true);
   const router = useRouter();
 
   const onChange = (e) => {
@@ -66,6 +66,14 @@ const SignUp = () => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (email.length > 0 && password.length > 0 && name.length > 0) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
+  }, [email, password, name]);
 
   return (
     <>
@@ -110,13 +118,13 @@ const SignUp = () => {
           <FormActions>
             <ForgotContainer>
               <ForgotText>Forgot password?</ForgotText>
-              <SignInButton
+              <SignInAction
                 type="submit"
-                title={"Sign Up"}
-                bgColor={"#979797"}
-                color={"#0D1117"}
                 onClick={onSubmit}
-              />
+                disabled={isDisabled}
+              >
+                Sign Up
+              </SignInAction>
             </ForgotContainer>
             <OR>OR</OR>
             <OAuth />

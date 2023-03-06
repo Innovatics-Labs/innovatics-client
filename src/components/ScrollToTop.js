@@ -6,7 +6,8 @@ const ScrollToTopButton = styled.button`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #0077c2;
+  background: linear-gradient(180deg, #6567c3 0%, #9169ff 100%);
+  box-shadow: 0px 4px 25px rgba(255, 255, 255, 0.15);
   color: #fff;
   border: none;
   border-radius: 50%;

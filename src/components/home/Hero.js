@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { GiStarsStack } from "react-icons/gi";
 import { FiChevronRight } from "react-icons/fi";
 
@@ -17,6 +17,7 @@ import mercedes from "../../assets/images/mercedes.png";
 import pinterest from "../../assets/images/pinterest.png";
 import { Animate } from "../Animations/AnimateIn";
 import Link from "next/link";
+import { FaCode } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -39,7 +40,7 @@ const Hero = () => {
                   />
                 </LineImage>
                 <GradientIcon
-                  IconComponent={<GiStarsStack size={40} color={"#fff"} />}
+                  IconComponent={<FaCode size={40} color={"#fff"} />}
                   bgColor="#dd7df7"
                 />
                 <LineGradient colorFrom={"#dd7df7"} colorTo={"#10c759"} />
@@ -125,12 +126,26 @@ const HeroContentContainer = styled.div`
   }
 `;
 
+const floatUpDown = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+`;
+
 const HeroDrone = styled(Image)`
   position: absolute;
   right: 0;
   padding-right: 3rem;
   object-fit: contain;
   height: auto;
+  animation: ${floatUpDown} 2s ease-in-out infinite;
+
+  @media (prefers-reduced-motion) {
+    animation: dissolve 2s linear infinite both;
+  }
 
   @media ${QUERIES.tabletAndSmaller} {
     display: none;

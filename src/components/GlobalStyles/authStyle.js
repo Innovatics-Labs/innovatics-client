@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { QUERIES } from "../../constants";
+import { WEIGHTS, QUERIES } from "../../constants";
 import Button from "../Button";
 import UnstyledButton from "../UnstyledButton";
 
@@ -85,6 +85,23 @@ export const OR = styled.p`
 export const FormButton = styled(Button)`
   border-color: #8691a6;
   width: 100%;
+`;
+
+export const SignInAction = styled.button`
+  width: fit-content;
+  background-color: white;
+  color: #0d1117;
+  padding: 0.8rem 1rem;
+  font-size: 1.5rem;
+  font-weight: ${WEIGHTS.medium};
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+
+  :disabled {
+    background-color: #979797;
+    cursor: not-allowed;
+  }
 `;
 
 export const NoAccountContainer = styled.p`
