@@ -18,6 +18,8 @@
   --font-size-md: 1.12rem;
   /* 16px */
   --font-size-base: 1rem;
+
+  --color-bg-black: #0d1117;
 }
 
 html {
