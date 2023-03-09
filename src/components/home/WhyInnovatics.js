@@ -55,7 +55,7 @@ const WhyInnovatics = () => {
               rounded
             />
             <QualityText>
-              <TextWithColor color="#44E986">99.9% Quality</TextWithColor>
+              <TextWithColor color="#44E986">Trainning</TextWithColor>
             </QualityText>
             <SubQualityText>
               education that makes you a Pro at what you do

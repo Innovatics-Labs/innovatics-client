@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import { GiStarsStack } from "react-icons/gi";
+import { GiFallingStar } from "react-icons/gi";
 import { FiChevronRight } from "react-icons/fi";
 
 import { QUERIES } from "../../constants";
@@ -11,13 +11,7 @@ import LineGradient from "../LineGradient";
 import heroimage from "../../assets/images/earth-gb512373bb_1280 1.png";
 import herodrone from "../../assets/images/hero-drone 1.png";
 import campaigLines from "../../assets/images/hero-campaig-lines.png";
-import downarrow from "../../assets/images/Group 2.png";
-import kpmgLogo from "../../assets/images/kpmg-logo.png";
-import mercedes from "../../assets/images/mercedes.png";
-import pinterest from "../../assets/images/pinterest.png";
-import { Animate } from "../Animations/AnimateIn";
 import Link from "next/link";
-import { FaCode } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -40,17 +34,20 @@ const Hero = () => {
                   />
                 </LineImage>
                 <GradientIcon
-                  IconComponent={<FaCode size={40} color={"#fff"} />}
+                  IconComponent={<GiFallingStar size={40} color={"#fff"} />}
                   bgColor="#dd7df7"
                 />
-                <LineGradient colorFrom={"#dd7df7"} colorTo={"#10c759"} />
               </LineContainer>
               <HeroDetails>
-                <Heading>Hands-On Virtual Labs</Heading>
+                <Heading>Welcome to Innovatics</Heading>
                 <SubHeading>
-                  Take along with Learn from expert instructors and prove your
-                  knowledge in Networking, Cyber Security, Cloud and Data
-                  Science.
+                  A platform where we offer a range of services to help
+                  individuals and organizations to excel in the ever-evolving
+                  world of technology. We specialize in four key areas: data
+                  science, cloud engineering, software engineering, and
+                  networking. Whether you are looking to learn new skills,
+                  consult with experts, or find your next job, we are here to
+                  support you every step of the way.
                 </SubHeading>
                 <ButtonGroup>
                   <Button
@@ -63,21 +60,10 @@ const Hero = () => {
                     as={Link}
                     href="/bootcamps"
                     IconRight={<FiChevronRight size={20} />}
-                    title="Join the next Live Cohort"
+                    title="Explore  other services"
                     variant={"outline"}
                   />
                 </ButtonGroup>
-                <DataCompany>
-                  <JoinCompany>
-                    <span>Join the world leading data driven companies</span>
-                    <Image src={downarrow} alt="" />
-                  </JoinCompany>
-                  <DataCompanyImages>
-                    <Image src={kpmgLogo} alt="" sizes="100vw" />
-                    <Image src={mercedes} alt="" sizes="100vw" />
-                    <Image src={pinterest} alt="" sizes="100vw" />
-                  </DataCompanyImages>
-                </DataCompany>
               </HeroDetails>
             </HeroContentContainer>
           </div>
@@ -90,6 +76,7 @@ const Hero = () => {
 export default Hero;
 
 const HeroContainer = styled.header`
+  padding-bottom: var(--container-padding);
   background-image: linear-gradient(
     rgba(13, 17, 23, 0.1) 0%,
     rgba(13, 17, 23, 0.9) 30%,
@@ -158,9 +145,13 @@ const LineContainer = styled.div`
   justify-content: center;
   align-items: baseline;
   position: relative;
-  gap: 1.5rem;
+  gap: 2rem;
   width: 9%;
   margin: 0 auto;
+
+  svg {
+    transform: translateX(-5px);
+  }
 `;
 
 const LineImage = styled.div`
@@ -173,6 +164,7 @@ const LineImage = styled.div`
     img {
       width: 100%;
       height: auto;
+      object-fit: cover;
     }
   }
 `;
@@ -191,15 +183,17 @@ const HeroDetails = styled.div`
 const Heading = styled.h1`
   font-weight: 600;
   font-size: var(--font-size-4xl);
+  margin-bottom: 1rem;
   color: white;
 `;
 
 const SubHeading = styled.p`
   font-weight: 500;
-  font-size: var(--font-size-xl);
-  line-height: clamp(1.6rem, 5vw - 1rem, 3.438rem);
+  font-size: var(--font-size-2md);
+  line-height: 1.5;
   color: #8b949e;
   max-width: 85%;
+  margin-bottom: 2.5rem;
   @media ${QUERIES.tabletAndSmaller} {
     max-width: revert;
     width: 70vw;
@@ -217,28 +211,4 @@ const ButtonGroup = styled.div`
       padding: 10px;
     }
   }
-`;
-
-const DataCompany = styled.div`
-  color: #8b949e;
-  padding-block: 2rem;
-  margin-bottom: 1rem;
-`;
-
-const JoinCompany = styled.p`
-  display: flex;
-  align-items: center;
-  font-weight: 400;
-  font-size: clamp(0.875rem, 1.19vw + 0.429rem, 1.5rem);
-  margin-block: clamp(1rem, 1.19vw + 0.429rem, 2rem);
-  img {
-    margin-inline: 1rem;
-  }
-`;
-
-const DataCompanyImages = styled.div`
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  flex-wrap: wrap;
 `;

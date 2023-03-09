@@ -9,6 +9,7 @@ import LineGradient from "../LineGradient";
 import BlueCurve from "../../assets/images/curve-gradient-blue.png";
 import { QUERIES } from "../../constants";
 import { Animate } from "../Animations/AnimateIn";
+import { BsPlayBtn } from "react-icons/bs";
 
 const FeaturedSection = () => {
   return (
@@ -25,7 +26,7 @@ const FeaturedSection = () => {
       <TextContent>
         <Animate.SlideInLeft>
           <Button
-            title={"Featured Courses"}
+            title={"Live Courses"}
             variant={"outline"}
             color={"white"}
             borderColor={"#8B90FF"}
@@ -39,6 +40,13 @@ const FeaturedSection = () => {
             Join our live sessions where we discuss futuristic technologies
           </SubQualityText>
         </Animate.SlideInLeft>
+        <div>
+          <Button
+            title={"Watch Us Live"}
+            variant="outline"
+            IconLeft={<BsPlayBtn />}
+          />
+        </div>
       </TextContent>
     </InsetSection>
   );
@@ -66,8 +74,13 @@ const CurveContainer = styled.div`
 `;
 
 const TextContent = styled.div`
+  display: flex;
   align-self: center;
+  align-items: center;
   padding-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
   padding-bottom: 2rem;
   @media ${QUERIES.phoneAndSmaller} {
     margin-left: 2rem;
@@ -84,7 +97,7 @@ const SubQualityText = styled.p`
   font-weight: 500;
   font-size: clamp(0.875rem, 1.667vw + 0.25rem, 1.75rem);
   margin-top: 0;
-  width: 70%;
+  width: 35ch;
 
   @media ${QUERIES.phoneAndSmaller} {
     width: revert;

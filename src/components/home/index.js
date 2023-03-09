@@ -9,6 +9,7 @@ import OnDemandSection from "./OnDemandSection";
 import Practicality from "./Practicality";
 import PricingSection from "./PricingSection";
 import WhyInnovatics from "./WhyInnovatics";
+import Consulting from "./Consulting";
 
 export {
   CareerTalksSection,
@@ -22,4 +23,5 @@ export {
   Practicality,
   PricingSection,
   WhyInnovatics,
+  Consulting,
 };

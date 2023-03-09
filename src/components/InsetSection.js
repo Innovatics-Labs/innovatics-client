@@ -1,4 +1,3 @@
-import { MdContentCopy } from "react-icons/md";
 import styled from "styled-components";
 import { MaxwidthContainer } from "./GlobalStyles";
 

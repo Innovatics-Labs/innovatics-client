@@ -53,7 +53,7 @@ const Card = styled.div`
     rgba(62, 63, 73, 0.7) 0%,
     rgba(62, 63, 73, 0) 98.21%
   );
-  filter: blur(0.483065px) drop-shadow(0px 0px 57.9677px rgba(62, 63, 73, 0.25));
+  filter: drop-shadow(0px 0px 57.9677px rgba(62, 63, 73, 0.25));
   border-radius: 9.6px;
 `;
 

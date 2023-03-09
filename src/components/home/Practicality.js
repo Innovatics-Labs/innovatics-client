@@ -29,9 +29,12 @@ const Practicality = () => {
                 <Title>Practicality</Title>
                 <SubTitle>
                   <TextWithColor color="#44e986">
-                    Put to practice what you learn immediately.{" "}
+                    Our experienced trainers use hands-on, interactive learning
+                    methods to ensure that you not only understand the concepts
+                    but can apply them in real-world scenarios.{" "}
                   </TextWithColor>
-                  We provide you suitable learning environment.
+                  Our training programs are designed to equip you with the
+                  knowledge and skills you need to succeed in the tech industry.
                 </SubTitle>
               </TextContent>
             </Animate.SlideInLeft>
@@ -81,8 +84,7 @@ const BgContainer = styled.section`
 `;
 
 const Container = styled.div`
-  padding: 2rem var(--container-padding);
-  padding-bottom: 1rem;
+  padding: var(--container-padding);
 `;
 
 const TopSection = styled.div`
@@ -108,7 +110,7 @@ const Title = styled.h4`
 `;
 
 const SubTitle = styled.p`
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-xl);
   margin-block: 1.5rem;
   width: 80%;
   @media ${QUERIES.tabletAndSmaller} {
