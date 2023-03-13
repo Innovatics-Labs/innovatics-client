@@ -60,7 +60,7 @@ const Hero = () => {
                     as={Link}
                     href="/bootcamps"
                     IconRight={<FiChevronRight size={20} />}
-                    title="Explore  other services"
+                    title="Explore other services"
                     variant={"outline"}
                   />
                 </ButtonGroup>

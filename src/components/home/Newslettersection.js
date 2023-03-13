@@ -9,6 +9,7 @@ import { TextWithColor } from "./Practicality";
 import { QUERIES } from "../../constants";
 import { Animate } from "../Animations/AnimateIn";
 import { QualityText, TextContent, SubQualityText } from "./FeaturedSection";
+import ContactDetail from "../ContactDetail";
 
 const Newslettersection = () => {
   return (
@@ -45,17 +46,7 @@ const Newslettersection = () => {
           </TextContent>
         </Top>
         <Bottom>
-          <ContactDetail>
-            <p>
-              <span>Monday - Friday</span> 8:00 AM - 5:00 PM Eastern Time
-            </p>
-            <p>
-              <span>Phone</span> +1-678-209-9780
-            </p>
-            <p>
-              <span>Email</span> info@innovatics.ai
-            </p>
-          </ContactDetail>
+          <ContactDetail />
           <Newsletter />
         </Bottom>
       </Content>
@@ -110,14 +101,4 @@ const Bottom = styled.div`
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
-`;
-
-const ContactDetail = styled.div`
-  color: white;
-  align-self: flex-end;
-  span {
-    font-weight: 500;
-    font-size: 18px;
-    color: #8691a6;
-  }
 `;

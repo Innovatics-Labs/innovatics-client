@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { WEIGHTS } from "../../constants";
+import { QUERIES, WEIGHTS } from "../../constants";
 
 const ServiceHero = ({ bgImage, headline, subtitle }) => {
   return (
@@ -37,6 +37,9 @@ const Headline = styled.h2`
   font-size: var(--font-size-3xl);
   line-height: 1.5;
   margin-bottom: 5px;
+  @media ${QUERIES.phoneAndSmaller} {
+    text-align: center;
+  }
 `;
 
 const Subtitle = styled.p`

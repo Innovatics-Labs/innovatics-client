@@ -7,8 +7,11 @@ import ServiceHero from "../../components/services/Hero";
 import ServiceCard from "../../components/services/ServiceCard";
 import JoinCohort from "../../components/JoinCohort";
 import JoinDiscord from "../../components/JoinDiscord";
-import CoursesSection from "../../components/home/CoursesSection";
-import LearningsSections from "../../components/home/LearningsSections";
+import {
+  CoursesSection,
+  PricingSection,
+  LearningsSections,
+} from "../../components/home";
 
 const Training = () => {
   return (
@@ -121,6 +124,7 @@ const Training = () => {
           </Bottom>
         </Content>
       </DetailSection>
+      <PricingSection />
       <LearningsSections />
       <CoursesSection />
       <JoinCohort />
@@ -162,6 +166,10 @@ const TrainingSection = styled.section`
 const GradientDivider = styled.div`
   display: grid;
   place-items: center;
+
+  div {
+    transform: translateX(-1rem);
+  }
 `;
 
 const Bottom = styled.div`

@@ -5,15 +5,24 @@ import { QUERIES, WEIGHTS } from "../../constants";
 import Button from "../Button";
 import circuit from "../../assets/images/circuit-board.png";
 
-const ServiceCard = ({ img, title, description, reverse, linkUrl }) => {
+const ServiceCard = ({
+  img,
+  title,
+  description,
+  reverse,
+  linkUrl,
+  action = true,
+}) => {
   return (
     <>
       <ServiceCardContainer reverse={reverse}>
-        <Image src={img ? img : circuit} alt="" sizes="100vw" />
+        <ImageContainer>
+          <Image src={img ? img : circuit} alt="" sizes="100vw" />
+        </ImageContainer>
         <ServiceCardContent>
           <ServiceTitle>{title}</ServiceTitle>
           <ServiceDescription>{description}</ServiceDescription>
-          <Button variant={"outline"} title="Learn More" />
+          {action && <Button variant={"outline"} title="Learn More" />}
         </ServiceCardContent>
       </ServiceCardContainer>
     </>
@@ -28,20 +37,34 @@ const ServiceCardContainer = styled.article`
   margin-block: 3rem;
   flex-wrap: wrap;
 
-  img {
-    flex: 1;
-    object-fit: cover;
-  }
+  ${({ reverse }) => reverse && `flex-direction:row-reverse;`}
 
   @media ${QUERIES.tabletAndSmaller} {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
-
-  ${({ reverse }) => reverse && `flex-direction:row-reverse;`}
 `;
 
 const ServiceCardContent = styled.div`
   flex: 1;
+`;
+
+const ImageContainer = styled.div`
+  flex: 1;
+  height: 100%;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+  }
+
+  @media ${QUERIES.tabletAndSmaller} {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 `;
 
 const ServiceTitle = styled.h4`
@@ -49,6 +72,7 @@ const ServiceTitle = styled.h4`
   font-size: var(--font-size-xl);
   margin-top: 0;
 `;
+
 const ServiceDescription = styled.p`
   font-weight: ${WEIGHTS.medium};
   font-size: var(--font-size-md);
