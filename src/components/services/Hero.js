@@ -19,13 +19,13 @@ const HeroBg = styled.header`
   background: ${(props) =>
     props.bgImage
       ? `
-    url(${props.bgImage});`
+      linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props.bgImage});`
       : "var(--color-bg-black)"};
 
   background-size: cover;
 `;
 
-const HeroContainer = styled.header`
+const HeroContainer = styled.div`
   padding: var(--container-padding);
   display: grid;
   place-items: center;

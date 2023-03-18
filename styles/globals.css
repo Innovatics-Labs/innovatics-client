@@ -41,10 +41,15 @@
     rgba(187, 188, 199, 0) 112.38%
   );
 
+  --grey: #797b8c;
+  --mid-grey: #bbbcc7;
+  --dusty-grey: #e9e9ed;
+  --light-grey: #fafafa;
+
   /* z-indices */
   --z-navbar: 200;
   --z-modal: 1000;
-  --navbar-height: 90px;
+  --navbar-height: 85px;
 }
 
 html {

@@ -19,7 +19,7 @@ const Footer = () => {
               <LinksSectionTitle>About</LinksSectionTitle>
               <LinkList>
                 <LinkListItem>
-                  <Link href="/features">About Us</Link>
+                  <Link href="/about">About Us</Link>
                 </LinkListItem>
                 <LinkListItem>
                   <Link href="/careers">Careers</Link>

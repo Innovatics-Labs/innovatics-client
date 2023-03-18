@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import styled, { css } from "styled-components";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -11,6 +11,7 @@ import logo from "../../assets/images/logo 1.png";
 import { QUERIES } from "../../constants";
 import AuthNavbar from "./AuthNavbar";
 import useToggle from "../../hooks/useToggle";
+import { MdCancel } from "react-icons/md";
 
 const Navbar = () => {
   const route = useRouter();
@@ -42,7 +43,7 @@ const Navbar = () => {
         ) : (
           <>
             <MenuIcon onClick={handleShowNavbar}>
-              <GiHamburgerMenu size={26} />
+              {showNav ? <GiCancel size={26} /> : <GiHamburgerMenu size={26} />}
             </MenuIcon>
             <NavElements active={showNav}>
               <NavItems>
@@ -111,10 +112,10 @@ const NavElements = styled.div`
   @media ${QUERIES.tabletAndSmaller} {
     position: absolute;
     right: 0;
-    top: 65px;
+    top: 85px;
     background-color: black;
     width: 0;
-    height: calc(100vh - 65px);
+    height: calc(100vh - 85px);
     transition: all 0.3s ease-in;
     overflow: hidden;
 
@@ -125,9 +126,11 @@ const NavElements = styled.div`
 const MenuIcon = styled.div`
   display: none;
   color: white;
+
   @media ${QUERIES.tabletAndSmaller} {
     display: block;
     cursor: pointer;
+    margin-block: auto;
   }
 `;
 

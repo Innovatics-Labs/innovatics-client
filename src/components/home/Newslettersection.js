@@ -28,7 +28,7 @@ const Newslettersection = () => {
           <TextContent>
             <Animate.FadeUp>
               <Button
-                title={"Featured Courses"}
+                title={"Stay in Touch"}
                 variant={"outline"}
                 color={"white"}
                 borderColor={"#EA6045"}
@@ -36,7 +36,9 @@ const Newslettersection = () => {
                 rounded
               />
               <QualityText>
-                <TextWithColor color="#EA6045">Stay in Touch</TextWithColor>
+                <TextWithColor color="#EA6045">
+                  Have a question? We’re here to help!
+                </TextWithColor>
               </QualityText>
               <SubHeading>
                 for all inquiries as regard our services. Please feel free to

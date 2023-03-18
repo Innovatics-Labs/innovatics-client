@@ -33,7 +33,8 @@ export default function Home() {
       <WhyInnovatics />
       <OnDemandSection />
       <LearningsSections />
-      <Practicality />
+      <JoinCohort />
+      <PricingSection />
       <LiveSection />
       <Newslettersection />
       <JoinDiscord />
