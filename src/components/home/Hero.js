@@ -1,9 +1,15 @@
 import styled, { keyframes } from "styled-components";
+import Link from "next/link";
+import Image from "next/image";
+
 import { FiChevronRight } from "react-icons/fi";
 import { QUERIES } from "../../constants";
 import Button from "../Button";
 import { MaxwidthContainer } from "../GlobalStyles";
-import Link from "next/link";
+import downarrow from "../../assets/images/Group 2.png";
+import kpmgLogo from "../../assets/images/kpmg-logo.png";
+import mercedes from "../../assets/images/mercedes.png";
+import pinterest from "../../assets/images/pinterest.png";
 
 const Hero = () => {
   return (
@@ -41,6 +47,17 @@ const Hero = () => {
               </HeroDetails>
             </HeroContentContainer>
           </div>
+          <DataCompany>
+            <JoinCompany>
+              <span>Join the world leading data driven companies</span>
+              <Image src={downarrow} alt="" />
+            </JoinCompany>
+            <DataCompanyImages>
+              <Image src={kpmgLogo} alt="" sizes="100vw" />
+              <Image src={mercedes} alt="" sizes="100vw" />
+              <Image src={pinterest} alt="" sizes="100vw" />
+            </DataCompanyImages>
+          </DataCompany>
         </HeroCampaign>
       </MaxwidthContainer>
     </HeroContainer>
@@ -103,11 +120,16 @@ const SubHeading = styled.p`
   font-size: var(--font-size-md);
   line-height: 1.5;
   color: #8b949e;
-  max-width: 50ch;
+  max-width: 60ch;
   margin-bottom: 2.5rem;
   @media ${QUERIES.tabletAndSmaller} {
     max-width: revert;
     width: 70vw;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    max-width: revert;
+    width: revert;
   }
 `;
 
@@ -122,4 +144,26 @@ const ButtonGroup = styled.div`
       padding: 10px;
     }
   }
+`;
+
+const DataCompany = styled.div`
+  color: white;
+`;
+
+const JoinCompany = styled.p`
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: clamp(0.875rem, 1.19vw + 0.429rem, 1.5rem);
+  margin-block: clamp(1rem, 1.19vw + 0.429rem, 2rem);
+  img {
+    margin-inline: 1rem;
+  }
+`;
+
+const DataCompanyImages = styled.div`
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
 `;

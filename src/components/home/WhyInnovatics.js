@@ -124,9 +124,6 @@ const Card = styled.div`
 
 const Content = styled.div`
   margin-bottom: 4rem;
-  @media ${QUERIES.phoneAndSmaller} {
-    margin-left: 2rem;
-  }
 `;
 
 const CardList = styled.div`
