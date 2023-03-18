@@ -11,7 +11,8 @@ import {
   DescriptionForm,
 } from "../../components/completeprofile";
 import { useMultistepForm } from "../../hooks/useMultistepForm";
-import { Container } from "../signIn";
+import { Container } from "../../components/GlobalStyles/authStyle";
+import AuthRoute from "../../HOC/authRoute";
 
 const INITIAL_DATA = {
   mobile: "",
@@ -57,67 +58,69 @@ const CompleteProfile = () => {
   };
 
   return (
-    <Container>
-      <FormContainer>
-        <Header>
-          <IconContainer>
-            <MdSportsHandball size={42} color={"white"} />
-          </IconContainer>
+    <AuthRoute>
+      <Container>
+        <FormContainer>
+          <Header>
+            <IconContainer>
+              <MdSportsHandball size={42} color={"white"} />
+            </IconContainer>
+            <div>
+              <Title>Complete your profile</Title>
+              <SubTitle>
+                Finish setting up your profile to customize your experience
+              </SubTitle>
+            </div>
+          </Header>
+          <Divider>
+            <Ellipse active={currentStepIndex === 0} />
+            <Ellipse active={currentStepIndex === 1} />
+            <hr />
+          </Divider>
           <div>
-            <Title>Complete your profile</Title>
-            <SubTitle>
-              Finish setting up your profile to customize your experience
-            </SubTitle>
+            <Step>
+              {currentStepIndex + 1} of {steps.length}
+            </Step>
+            {step}
           </div>
-        </Header>
-        <Divider>
-          <Ellipse active={currentStepIndex === 0} />
-          <Ellipse active={currentStepIndex === 1} />
-          <hr />
-        </Divider>
-        <div>
-          <Step>
-            {currentStepIndex + 1} of {steps.length}
-          </Step>
-          {step}
-        </div>
-        <FormActions>
-          {!isFirstStep ? (
-            <Button
-              type="button"
-              title={"Back"}
-              onClick={back}
-              variant={"outline"}
-              color="#8691A6"
-            />
-          ) : (
-            <Button
-              onClick={() => router.push("/dashboard")}
-              title={"Skip"}
-              variant={"outline"}
-              color="#8691A6"
-            />
-          )}
-          {isLastStep ? (
-            <Button
-              onClick={onSubmit}
-              type="submit"
-              title={"Finish"}
-              bgColor={"#979797"}
-              color={"rgba(13, 17, 23, 0.5);"}
-            />
-          ) : (
-            <Button
-              type="button"
-              onClick={next}
-              title={"Continue"}
-              bgColor={"#979797"}
-              color={"rgba(13, 17, 23, 0.5);"}
-            />
-          )}
-        </FormActions>
-      </FormContainer>
-    </Container>
+          <FormActions>
+            {!isFirstStep ? (
+              <Button
+                type="button"
+                title={"Back"}
+                onClick={back}
+                variant={"outline"}
+                color="#8691A6"
+              />
+            ) : (
+              <Button
+                onClick={() => router.push("/dashboard")}
+                title={"Skip"}
+                variant={"outline"}
+                color="#8691A6"
+              />
+            )}
+            {isLastStep ? (
+              <Button
+                onClick={onSubmit}
+                type="submit"
+                title={"Finish"}
+                bgColor={"#979797"}
+                color={"rgba(13, 17, 23, 0.5);"}
+              />
+            ) : (
+              <Button
+                type="button"
+                onClick={next}
+                title={"Continue"}
+                bgColor={"#979797"}
+                color={"rgba(13, 17, 23, 0.5);"}
+              />
+            )}
+          </FormActions>
+        </FormContainer>
+      </Container>
+    </AuthRoute>
   );
 };
 
