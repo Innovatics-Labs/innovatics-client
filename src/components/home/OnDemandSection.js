@@ -1,30 +1,26 @@
-import Image from "next/image";
 import styled from "styled-components";
 import { BsCollectionPlay } from "react-icons/bs";
 
 import Button from "../Button";
-import LineGradient from "../LineGradient";
-import rocket from "../../assets/images/rocket.png";
-import { QUERIES } from "../../constants";
+import { QUERIES, WEIGHTS } from "../../constants";
 import { MaxwidthContainer } from "../GlobalStyles";
+import YouTubeFrame from "../YoutubeEmbed";
+import Link from "next/link";
 
 const OnDemandSection = () => {
   return (
     <BackgroundContainer>
       <MaxwidthContainer>
         <Container>
-          <GradientContainer>
-            <Gradient>
-              <LineGradient
-                colorFrom={"#FC69AF00"}
-                colorTo={"#EC674C,#FFA28B"}
-                height={"250px"}
-              />
-            </Gradient>
-            <ImageContainer>
-              <Image src={rocket} alt="" sizes="100vw" />
-            </ImageContainer>
-          </GradientContainer>
+          <YouTubeFrame video="QRZ_l7cVzzU" width="300" height="300" />
+          <TextIntro>
+            <Title>Nail Your Next Project</Title>
+            <Subtitle>
+              Take your technical training into your own hands and stay engaged
+              with our learn-by-doing platform where you can put your skills to
+              the test with hands-on exercises, quizzes, and labs.
+            </Subtitle>
+          </TextIntro>
           <CardsContainer>
             <Card>
               <Top>
@@ -79,7 +75,12 @@ const OnDemandSection = () => {
                 learning experience that equips you with the skills and
                 knowledge necessary to succeed in your chosen field.
               </Text>
-              <Button title={"Learn More"} variant="outline" />
+              <Button
+                // as={Link}
+                // href="/services/training"
+                title={"Learn More"}
+                variant="outline"
+              />
             </Card>
           </CardsContainer>
         </Container>
@@ -98,29 +99,27 @@ const BackgroundContainer = styled.section`
 const Container = styled.div`
   padding: 3rem var(--container-padding);
   padding-bottom: 0px;
-  display: flex;
-  align-items: flex-end;
   gap: 2rem;
-
-  @media ${QUERIES.tabletAndSmaller} {
-    flex-wrap: wrap;
-  }
 `;
 
-const GradientContainer = styled.div`
-  display: flex;
-  @media ${QUERIES.tabletAndSmaller} {
-    order: 2;
-    flex: 1;
-  }
+const TextIntro = styled.div`
+  color: white;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  width: 70vw;
+  margin-inline: auto;
+  line-height: 1.2;
 `;
 
-const Gradient = styled.div`
-  align-self: flex-end;
-  margin-bottom: 1.5rem;
-  @media ${QUERIES.phoneAndSmaller} {
-    display: none;
-  }
+const Title = styled.h2`
+  font-weight: ${WEIGHTS.semiBold};
+  font-size: var(--font-size-2xl);
+  color: white;
+`;
+
+const Subtitle = styled.p`
+  color: var(--mid-grey);
+  font-size: var(--font-size-md);
 `;
 
 const CardsContainer = styled.div`
@@ -151,17 +150,6 @@ const Top = styled.div`
   display: flex;
   gap: 1.5rem;
   align-items: center;
-`;
-
-const ImageContainer = styled.div`
-  @media ${QUERIES.tabletAndSmaller} {
-    width: 100%;
-    img {
-      width: 100%;
-      height: auto;
-      /* object-fit: cover; */
-    }
-  }
 `;
 
 const Icon = styled.div`

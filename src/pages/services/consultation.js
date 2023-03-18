@@ -13,6 +13,7 @@ import arrow from "../../assets/images/group 2.png";
 import pinterest from "../../assets/images/pinterest.png";
 import mercedes from "../../assets/images/mercedes.png";
 import kpmg from "../../assets/images/kpmg-logo.png";
+import { GradientDivider } from "./career-change";
 
 const Consultation = () => {
   return (
@@ -190,15 +191,6 @@ const Description = styled.div`
 const TrainingSection = styled.section`
   display: grid;
   place-items: center;
-`;
-
-const GradientDivider = styled.div`
-  display: grid;
-  place-items: center;
-
-  div {
-    transform: translateX(-1rem);
-  }
 `;
 
 const Bottom = styled.div`

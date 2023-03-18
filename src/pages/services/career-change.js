@@ -166,7 +166,7 @@ const TrainingSection = styled.section`
   place-items: center;
 `;
 
-const GradientDivider = styled.div`
+export const GradientDivider = styled.div`
   display: grid;
   place-items: center;
 

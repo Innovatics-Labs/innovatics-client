@@ -34,7 +34,9 @@ const FeaturedSection = () => {
             rounded
           />
           <QualityText>
-            <TextWithColor color="#8B90FF">100% Live</TextWithColor>
+            <TextWithColor color="#8B90FF">
+              Watch our INNOVATICS LIVE videos
+            </TextWithColor>
           </QualityText>
           <SubQualityText>
             Join our live sessions where we discuss futuristic technologies
@@ -89,7 +91,7 @@ const TextContent = styled.div`
 
 const QualityText = styled.p`
   font-weight: 600;
-  font-size: clamp(1.5rem, 4.881vw + -0.33rem, 4.063rem);
+  font-size: clamp(1.5rem, 4.881vw + -0.33rem, 3rem);
   margin-block: 10px;
 `;
 
