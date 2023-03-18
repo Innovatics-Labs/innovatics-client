@@ -1,43 +1,17 @@
-import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import { GiFallingStar } from "react-icons/gi";
 import { FiChevronRight } from "react-icons/fi";
-
 import { QUERIES } from "../../constants";
 import Button from "../Button";
 import { MaxwidthContainer } from "../GlobalStyles";
-import GradientIcon from "../GradientIcon";
-import LineGradient from "../LineGradient";
-import heroimage from "../../assets/images/earth-gb512373bb_1280 1.png";
-import herodrone from "../../assets/images/hero-drone 1.png";
-import campaigLines from "../../assets/images/hero-campaig-lines.png";
 import Link from "next/link";
 
 const Hero = () => {
   return (
     <HeroContainer>
       <MaxwidthContainer>
-        <ImageContainer>
-          <Image src={heroimage} alt={"earth hero"} />
-        </ImageContainer>
         <HeroCampaign>
           <div>
-            <HeroDrone src={herodrone} alt={"hero drone"} />
             <HeroContentContainer>
-              <LineContainer>
-                <LineImage>
-                  <Image
-                    src={campaigLines}
-                    alt={"campaign lines"}
-                    priority
-                    sizes="100vw"
-                  />
-                </LineImage>
-                <GradientIcon
-                  IconComponent={<GiFallingStar size={40} color={"#fff"} />}
-                  bgColor="#dd7df7"
-                />
-              </LineContainer>
               <HeroDetails>
                 <Heading>Welcome to Innovatics</Heading>
                 <SubHeading>
@@ -77,31 +51,15 @@ export default Hero;
 
 const HeroContainer = styled.header`
   padding-bottom: var(--container-padding);
-  background-image: linear-gradient(
-    rgba(13, 17, 23, 0.1) 0%,
-    rgba(13, 17, 23, 0.9) 30%,
-    rgba(13, 17, 23) 45%
-  );
-`;
-
-const ImageContainer = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -1;
-  img {
-    object-fit: cover;
-    width: 100%;
-    max-width: 100%;
-    /* height: auto; */
-  }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("/herostatic3.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 const HeroCampaign = styled.section`
   padding-inline: var(--container-padding);
-  margin-top: 5rem;
   position: relative;
   padding-bottom: 10px;
 `;
@@ -119,53 +77,6 @@ const floatUpDown = keyframes`
   }
   50% {
     transform: translateY(-10px);
-  }
-`;
-
-const HeroDrone = styled(Image)`
-  position: absolute;
-  right: 0;
-  padding-right: 3rem;
-  object-fit: contain;
-  height: auto;
-  animation: ${floatUpDown} 2s ease-in-out infinite;
-
-  @media (prefers-reduced-motion) {
-    animation: dissolve 2s linear infinite both;
-  }
-
-  @media ${QUERIES.tabletAndSmaller} {
-    display: none;
-  }
-`;
-
-const LineContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
-  position: relative;
-  gap: 2rem;
-  width: 9%;
-  margin: 0 auto;
-
-  svg {
-    transform: translateX(-5px);
-  }
-`;
-
-const LineImage = styled.div`
-  margin: 0 auto;
-  align-self: flex-end;
-  transform: translateX(1rem);
-
-  @media ${QUERIES.tabletAndSmaller} {
-    width: 70vw;
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
   }
 `;
 
@@ -189,10 +100,10 @@ const Heading = styled.h1`
 
 const SubHeading = styled.p`
   font-weight: 500;
-  font-size: var(--font-size-2md);
+  font-size: var(--font-size-md);
   line-height: 1.5;
   color: #8b949e;
-  max-width: 85%;
+  max-width: 50ch;
   margin-bottom: 2.5rem;
   @media ${QUERIES.tabletAndSmaller} {
     max-width: revert;

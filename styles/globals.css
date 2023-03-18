@@ -2,6 +2,9 @@
 
 :root {
   --container-padding: 4rem;
+
+  --max-page-width: 1440px;
+
   /* 76px */
   --font-size-4xl: clamp(2.625rem, 4.048vw + 1.107rem, 4.75rem);
   /* 55px */
@@ -19,7 +22,29 @@
   /* 16px */
   --font-size-base: 1rem;
 
+  /* colors and backgrounds */
+
   --color-bg-black: #0d1117;
+  --glass-dark: linear-gradient(
+    111.02deg,
+    hsla(0, 0%, 7%, 0.7) 3.86%,
+    hsla(0, 0%, 7%, 0)
+  );
+  --glass-light-grey: linear-gradient(
+    112.2deg,
+    rgba(187, 188, 199, 0.7) -46.39%,
+    rgba(187, 188, 199, 0) 132.6%
+  );
+  --glass-light-grey-timeline: linear-gradient(
+    112.2deg,
+    rgba(187, 188, 199, 0.7) -46.39%,
+    rgba(187, 188, 199, 0) 112.38%
+  );
+
+  /* z-indices */
+  --z-navbar: 200;
+  --z-modal: 1000;
+  --navbar-height: 90px;
 }
 
 html {

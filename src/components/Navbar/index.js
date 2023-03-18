@@ -78,6 +78,13 @@ const NavContainer = styled.nav`
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       background: rgba(255, 255, 255, 0.05);
+      background-image: var(--glass-dark);
+      position: fixed;
+      width: 100%;
+      height: var(--navbar-height);
+      left: 0;
+      top: 0;
+      z-index: var(--z-navbar);
     `}
 
   @media ${QUERIES.tabletAndSmaller} {
