@@ -9,7 +9,7 @@ import ContactDetail from "../../components/ContactDetail";
 import Newsletter from "../../components/Newsletter";
 import { WEIGHTS } from "../../constants";
 import JoinDiscord from "../../components/JoinDiscord";
-import arrow from "../../assets/images/group 2.png";
+import arrow from "../../assets/images/Group 2.png";
 import pinterest from "../../assets/images/pinterest.png";
 import mercedes from "../../assets/images/mercedes.png";
 import kpmg from "../../assets/images/kpmg-logo.png";
