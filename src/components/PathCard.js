@@ -6,18 +6,20 @@ import styled from "styled-components";
 import arrow from "../assets/images/arrow.png";
 import GradientIcon from "./GradientIcon";
 
-const PathCard = ({ color, number, comingSoon, topic, id }) => {
+const PathCard = ({ color, number, comingSoon, topic, id, icon }) => {
+  const IconComponent = icon;
+
   return (
     <Card as={Link} href={`/academic-paths/${id}`}>
       <GradientContainer>
-        <GradientIcon
-          IconComponent={<BsSun size={30} color={color} />}
-          bgColor={color}
-        />
-        <Number color={color}>{number}</Number>
+        <Gradient>
+          <IconComponent size={30} color={color} />
+        </Gradient>
       </GradientContainer>
-
-      <Topic>{topic}</Topic>
+      <div>
+        <Number color={color}>{number}.</Number>
+        <Topic>{topic}</Topic>
+      </div>
       <Arrow>
         <Image src={arrow} alt={""} sizes="100vw" />
         {comingSoon && <p>Coming Soon</p>}
@@ -42,8 +44,16 @@ const Card = styled.div`
 const GradientContainer = styled.div`
   display: flex;
   gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
+`;
+
+const Gradient = styled.div`
+  background: linear-gradient(
+    136.43deg,
+    rgba(62, 63, 73, 0.7) 2.37%,
+    rgba(62, 63, 73, 0) 100%
+  );
+  border-radius: 12px;
+  padding: 0.7rem;
 `;
 
 const Topic = styled.p`
