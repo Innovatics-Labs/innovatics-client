@@ -2,52 +2,65 @@ import styled, { keyframes } from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 
-import { FiChevronRight } from "react-icons/fi";
 import { QUERIES } from "../../constants";
 import Button from "../Button";
 import { MaxwidthContainer } from "../GlobalStyles";
+// import nikolai from "../../assets/images/nikolai.png";
+// import matrix from "../../assets/images/matrix.png";
+// import neo from "../../assets/images/pexels-neo.png";
+// import labRunning from "../../assets/images/labRunning.png";
+import heroGroup from "../../assets/images/hero-group.png";
 import downarrow from "../../assets/images/Group 2.png";
 import kpmgLogo from "../../assets/images/kpmg-logo.png";
 import mercedes from "../../assets/images/mercedes.png";
 import pinterest from "../../assets/images/pinterest.png";
+import RadialGradient from "../gradients/RadialGradient";
 
 const Hero = () => {
   return (
     <HeroContainer>
       <MaxwidthContainer>
         <HeroCampaign>
-          <div>
-            <HeroContentContainer>
-              <HeroDetails>
-                <Heading>Welcome to Innovatics</Heading>
-                <SubHeading>
-                  A platform where we offer a range of services to help
-                  individuals and organizations to excel in the ever-evolving
-                  world of technology. We specialize in four key areas: data
-                  science, cloud engineering, software engineering, and
-                  networking. Whether you are looking to learn new skills,
-                  consult with experts, or find your next job, we are here to
-                  support you every step of the way.
-                </SubHeading>
-                <ButtonGroup>
-                  <Button
-                    as={Link}
-                    href="/signIn"
-                    title="Start Learning Now"
-                    hover={true}
-                  />
-                  <Button
-                    as={Link}
-                    href="/bootcamps"
-                    IconRight={<FiChevronRight size={20} />}
-                    title="Explore other services"
-                    variant={"outline"}
-                  />
-                </ButtonGroup>
-              </HeroDetails>
-            </HeroContentContainer>
-          </div>
-          <DataCompany>
+          <RadialGradient top="100px" right="100px" />
+          <RadialGradient
+            gradient=" #074BC9 17.55%, #074BC9 27.56%, rgba(7, 75, 201, 0.45) 49.89%, rgba(7, 75, 201, 0.52) 56.53%, #074BC9 65.69%"
+            top="200px"
+            right="350px"
+          />
+          <HeroContentContainer>
+            <HeroDetails>
+              <Heading>
+                Innovating robust Technical solutions for Businesses
+              </Heading>
+              <SubHeading>
+                We train and provide you opportunities in the vast competitive
+                tech space while providing innovative solutions to business that
+                needs proficient contractors.
+              </SubHeading>
+              <ButtonGroup>
+                <Button
+                  as={Link}
+                  href="/signIn"
+                  title="Get Started Now"
+                  bgColor={"white"}
+                  color="#121212"
+                  hover={true}
+                />
+                <Button
+                  as={Link}
+                  href="/bootcamps"
+                  title="Request Information"
+                  variant={"outline"}
+                />
+              </ButtonGroup>
+            </HeroDetails>
+            <HeroImages>
+              <ImagesContainer>
+                <Image src={heroGroup} alt="" sizes="100vw" />
+              </ImagesContainer>
+            </HeroImages>
+          </HeroContentContainer>
+          {/* <DataCompany>
             <JoinCompany>
               <span>Join the world leading data driven companies</span>
               <Image src={downarrow} alt="" />
@@ -57,7 +70,7 @@ const Hero = () => {
               <Image src={mercedes} alt="" sizes="100vw" />
               <Image src={pinterest} alt="" sizes="100vw" />
             </DataCompanyImages>
-          </DataCompany>
+          </DataCompany> */}
         </HeroCampaign>
       </MaxwidthContainer>
     </HeroContainer>
@@ -68,41 +81,29 @@ export default Hero;
 
 const HeroContainer = styled.header`
   padding-bottom: var(--container-padding);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("/herostatic3.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: linear-gradient(90deg, #7d37c8, #492b8c, #2d215b, #16141c);
 `;
 
 const HeroCampaign = styled.section`
   padding-inline: var(--container-padding);
-  position: relative;
   padding-bottom: 10px;
+  position: relative;
+  isolation: isolate;
 `;
 
 const HeroContentContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 10rem;
   @media ${QUERIES.tabletAndSmaller} {
-    gap: 1.5rem;
-  }
-`;
-
-const floatUpDown = keyframes`
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
+    gap: 2rem;
   }
 `;
 
 const HeroDetails = styled.div`
   flex: 1;
-  margin-top: 10rem;
-  padding-top: 2rem;
-  isolation: isolate;
 
+  padding-top: 2rem;
   @media ${QUERIES.phoneAndSmaller} {
     margin-top: 5rem;
   }
@@ -110,7 +111,7 @@ const HeroDetails = styled.div`
 
 const Heading = styled.h1`
   font-weight: 600;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-3xl);
   margin-bottom: 1rem;
   color: white;
 `;
@@ -119,8 +120,8 @@ const SubHeading = styled.p`
   font-weight: 500;
   font-size: var(--font-size-md);
   line-height: 1.5;
-  color: #8b949e;
-  max-width: 60ch;
+  color: #ffffff;
+  max-width: 50ch;
   margin-bottom: 2.5rem;
   @media ${QUERIES.tabletAndSmaller} {
     max-width: revert;
@@ -143,6 +144,15 @@ const ButtonGroup = styled.div`
       width: 100%;
       padding: 10px;
     }
+  }
+`;
+
+const HeroImages = styled.div``;
+
+const ImagesContainer = styled.div`
+  img {
+    width: 100%;
+    height: auto;
   }
 `;
 

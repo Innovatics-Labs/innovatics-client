@@ -13,10 +13,8 @@ import {
   CareerTalksSection,
   Newslettersection,
   Consulting,
-  OnDemandSection,
+  OurPlatform,
 } from "../components/home";
-import CareerChange from "../components/home/CareerChange";
-import InnovationService from "../components/home/Innovation";
 
 import JoinCohort from "../components/JoinCohort";
 import JoinDiscord from "../components/JoinDiscord";
@@ -31,12 +29,7 @@ export default function Home() {
       </Head>
       <Hero />
       <WhyInnovatics />
-      <OnDemandSection />
-      <LearningsSections />
-      <JoinCohort />
-      <PricingSection />
-      <LiveSection />
-      <Newslettersection />
+      <OurPlatform />
       <JoinDiscord />
     </div>
   );
