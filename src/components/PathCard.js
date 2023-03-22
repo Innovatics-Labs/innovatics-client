@@ -4,6 +4,7 @@ import { BsSun } from "react-icons/bs";
 import styled from "styled-components";
 
 import arrow from "../assets/images/arrow.png";
+import { QUERIES } from "../constants";
 import GradientIcon from "./GradientIcon";
 
 const PathCard = ({ color, number, comingSoon, topic, id, icon }) => {
@@ -16,14 +17,16 @@ const PathCard = ({ color, number, comingSoon, topic, id, icon }) => {
           <IconComponent size={30} color={color} />
         </Gradient>
       </GradientContainer>
-      <div>
-        <Number color={color}>{number}.</Number>
-        <Topic>{topic}</Topic>
-      </div>
-      <Arrow>
-        <Image src={arrow} alt={""} sizes="100vw" />
-        {comingSoon && <p>Coming Soon</p>}
-      </Arrow>
+      <Content>
+        <div>
+          <Number color={color}>{number}.</Number>
+          <Topic>{topic}</Topic>
+        </div>
+        <Arrow>
+          <Image src={arrow} alt={""} sizes="100vw" />
+          {comingSoon && <p>Coming Soon</p>}
+        </Arrow>
+      </Content>
     </Card>
   );
 };
@@ -31,22 +34,25 @@ const PathCard = ({ color, number, comingSoon, topic, id, icon }) => {
 export default PathCard;
 
 const Card = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  padding: 2.3rem;
-  background: linear-gradient(rgba(13, 17, 22), rgba(13, 17, 22, 0.8));
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: linear-gradient(rgba(13, 17, 22), rgba(13, 17, 22));
   border-radius: 9px;
   gap: 4rem;
   flex: 1;
-  filter: drop-shadow(0px 0px 57px rgba(62, 63, 73, 0.25));
+
+  @media ${QUERIES.tabletAndSmaller} {
+    flex-direction: row;
+    filter: drop-shadow(0px 0px 57px rgba(62, 63, 73, 0.25));
+    backdrop-filter: blur(10px);
+  }
 `;
 
-const GradientContainer = styled.div`
-  display: flex;
-  gap: 2rem;
-`;
+const GradientContainer = styled.div``;
 
 const Gradient = styled.div`
+  width: fit-content;
   background: linear-gradient(
     136.43deg,
     rgba(62, 63, 73, 0.7) 2.37%,
@@ -54,6 +60,24 @@ const Gradient = styled.div`
   );
   border-radius: 12px;
   padding: 0.7rem;
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1rem;
+  @media ${QUERIES.tabletAndSmaller} {
+    display: flex;
+    flex-direction: revert;
+    width: 100%;
+  }
+  @media ${QUERIES.phoneAndSmaller} {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const Topic = styled.p`
@@ -67,7 +91,7 @@ const Topic = styled.p`
 
 const Number = styled.p`
   font-weight: 400;
-  font-size: 24px;
+  font-size: var(--font-size-2md);
   color: ${({ color }) => color};
   margin-block: 0px;
 `;
@@ -77,4 +101,9 @@ const Arrow = styled.div`
   justify-content: space-between;
   align-items: center;
   color: #8691a6;
+  img {
+    object-fit: cover;
+    /* width: 100%;
+    height: auto; */
+  }
 `;

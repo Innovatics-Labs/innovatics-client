@@ -10,43 +10,19 @@ import platform from "../../assets/images/platform.png";
 import Link from "next/link";
 import Image from "next/image";
 import RadialGradient from "../gradients/RadialGradient";
+import AcademicPathsSection from "./AcademicPathsSection";
 
 const OurPlatform = () => {
   return (
     <BackgroundContainer>
       <MaxwidthContainer>
         <Container>
-          <RadialGradient
-            top="50px"
-            right="20px"
-            gradient="rgba(239, 16, 80, 0.7) 0%, rgba(192, 8, 61, 0.7) 27.56%, rgba(231, 15, 77, 0.315) 38%, rgba(238, 133, 163, 0.364) 75.01%, rgba(232, 14, 76, 0.7) 100%"
-          />
-          <RadialGradient
-            gradient=" #074BC9 17.55%, #074BC9 27.56%, rgba(7, 75, 201, 0.45) 49.89%, rgba(7, 75, 201, 0.52) 56.53%, #074BC9 65.69%"
-            top="200px"
-            right="172px"
-          />
-          <RadialGradient
-            top="40%"
-            left="350px"
-            gradient="rgba(239, 16, 80, 0.7) 0%, rgba(192, 8, 61, 0.7) 27.56%, rgba(231, 15, 77, 0.315) 38%, rgba(238, 133, 163, 0.364) 75.01%, rgba(232, 14, 76, 0.7) 100%"
-          />
-          <RadialGradient
-            top="50%"
-            left="200px"
-            gradient="rgba(239, 16, 80, 0.7) 0%, rgba(192, 8, 61, 0.7) 27.56%, rgba(231, 15, 77, 0.315) 38%, rgba(238, 133, 163, 0.364) 75.01%, rgba(232, 14, 76, 0.7) 100%"
-          />
-          <RadialGradient
-            top="80%"
-            right="50px"
-            gradient="rgba(239, 16, 80, 0.7) 0%, rgba(192, 8, 61, 0.7) 27.56%, rgba(231, 15, 77, 0.315) 38%, rgba(238, 133, 163, 0.364) 75.01%, rgba(232, 14, 76, 0.7) 100%"
-          />
           <Player>
-            <Image src={player} alt="" />
+            <Image src={player} alt="" sizes="100vw" />
           </Player>
           <Content>
             <ContentImage>
-              <Image src={platform} alt="" />
+              <Image src={platform} alt="" sizes="100vw" />
             </ContentImage>
             <CardSection>
               <TextIntro>
@@ -121,6 +97,9 @@ const OurPlatform = () => {
             </CardSection>
           </Content>
         </Container>
+        <PathContainer>
+          <AcademicPathsSection />
+        </PathContainer>
       </MaxwidthContainer>
     </BackgroundContainer>
   );
@@ -130,9 +109,11 @@ export default OurPlatform;
 
 const BackgroundContainer = styled.section`
   max-width: 100vw;
-  background: #0d1117;
-  background: rgba(18, 18, 18);
+  background-color: rgba(18, 18, 18);
   padding-bottom: 7rem;
+  background-image: url("/bg-grad.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const Container = styled.div`
@@ -174,15 +155,22 @@ const Subtitle = styled.p`
 `;
 
 const Content = styled.div`
-  /* display: grid;
-  grid-template-columns: 1fr 1fr; */
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 3rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 `;
 
 const ContentImage = styled.div`
   align-self: center;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const CardSection = styled.div``;
@@ -196,7 +184,6 @@ const CardsContainer = styled.div`
 
   @media ${QUERIES.tabletAndSmaller} {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    order: 1;
   }
 `;
 
@@ -233,4 +220,11 @@ const Text = styled.p`
   font-size: 18px;
   line-height: 28px;
   margin-block: 2rem;
+`;
+
+const PathContainer = styled.div`
+  transform: translateY(40%);
+  @media ${QUERIES.tabletAndSmaller} {
+    transform: translateY(30%);
+  }
 `;

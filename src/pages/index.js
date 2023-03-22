@@ -15,13 +15,22 @@ import {
   Consulting,
   OurPlatform,
 } from "../components/home";
+import AcademicPathsSection from "../components/home/AcademicPathsSection";
 
 import JoinCohort from "../components/JoinCohort";
 import JoinDiscord from "../components/JoinDiscord";
 
 export default function Home() {
   return (
-    <div>
+    <div
+    // style={{
+    //   backgroundColor: "#121212",
+    //   backgroundImage: `url(
+    //     "https://ine.com/assets/backgrounds/home-bg-desktop-dark.jpg"
+    //   )`,
+    //   backgroundSize: "cover",
+    // }}
+    >
       <Head>
         <title>Innovatics | Home</title>
         <meta name="description" content="Welcome to Innovatics" />
@@ -30,6 +39,7 @@ export default function Home() {
       <Hero />
       <WhyInnovatics />
       <OurPlatform />
+      <Consulting />
       <JoinDiscord />
     </div>
   );

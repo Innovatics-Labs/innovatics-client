@@ -89,14 +89,18 @@ const Title = styled.h2`
 
 const TagLine = styled.p`
   font-weight: 500;
-  font-size: 46px;
+  font-size: var(--font-size-2xl);
   margin-block: 10px;
   width: 60vw;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    width: 100%;
+  }
 `;
 
 const Subtitle = styled.p`
   text-align: center;
-  font-size: 24px;
+  font-size: var(--font-size-2md);
   color: #121212;
   text-align: center;
   max-width: 65ch;

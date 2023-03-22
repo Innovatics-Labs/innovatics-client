@@ -48,17 +48,22 @@ const Navbar = () => {
             <NavElements active={showNav}>
               <NavItems>
                 <li>
-                  <Link href={"/academy"}>Academy</Link>
-                </li>
-                <li>
-                  <Link href={"/resources"}>Resources</Link>
-                </li>
-                <li>
-                  <Link href={"/"}>Pricing</Link>
+                  <Link href={"/signIn"}>Sign In</Link>
                 </li>
                 <SignInButton>
-                  <Link href={"/signIn"}>Sign In</Link>
+                  <Link href={"/academy"}>Request Information</Link>
                 </SignInButton>
+                <li
+                  style={{
+                    background: "#FFFFFF",
+                    border: "1px solid #FFFFFF",
+                    borderRadius: "8px",
+                    color: "#121212",
+                    padding: "5px 13px",
+                  }}
+                >
+                  <Link href={"/resources"}>Get Started Now</Link>
+                </li>
               </NavItems>
             </NavElements>
           </>

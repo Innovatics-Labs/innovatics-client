@@ -4,11 +4,8 @@ import { BsSun } from "react-icons/bs";
 import { collection } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 
-import LineGradient from "../LineGradient";
-import GradientIcon from "../GradientIcon";
-import { TextWithColor } from "./Practicality";
 import PathCard from "../PathCard";
-import { QUERIES } from "../../constants";
+import { QUERIES, WEIGHTS } from "../../constants";
 import { db } from "../../../firebaseConfig";
 import { MaxwidthContainer } from "../GlobalStyles";
 import { Animate } from "../Animations/AnimateIn";
@@ -17,7 +14,7 @@ import Coding from "../../assets/svg/coding.svg";
 import Cyber from "../../assets/svg/cyber-security.svg";
 import Server from "../../assets/svg/server.svg";
 
-const LearningsSections = () => {
+const AcademicPathsSection = () => {
   const [paths, setPaths] = useState([]);
   const [value, loading, error] = useCollection(
     collection(db, "academic-paths"),
@@ -31,7 +28,6 @@ const LearningsSections = () => {
   useEffect(() => {
     if (value) {
       setPaths(value.docs);
-      // console.log({ paths }, { value });
     }
   }, [value, loading]);
 
@@ -40,28 +36,15 @@ const LearningsSections = () => {
       <MaxwidthContainer>
         <Container>
           <TopSection>
-            <GradientStyleContainer>
-              <GradientIcon
-                IconComponent={<BsSun size={30} color="#FFA28B" />}
-                bgColor={"#FFA28B"}
-              />
-              <LineGradient
-                colorFrom={"#FFA28B, #EC674C"}
-                colorTo={"#EA604500"}
-              />
-            </GradientStyleContainer>
             <TextContent>
-              <Animate.FadeIn>
-                <Title>Learnings</Title>
-              </Animate.FadeIn>
-              <Animate.SlideInLeft>
-                <SubTitle>
-                  <TextWithColor color="#FFA28B">
-                    Put to practice what you learn immediately.{" "}
-                  </TextWithColor>
-                  <span>We provide you suitable learning environment.</span>
-                </SubTitle>
-              </Animate.SlideInLeft>
+              <Title>Our Training</Title>
+              <Tagline>Academic Paths</Tagline>
+              <SubTitle>
+                Each field has its own unique set of skills and techniques, and
+                our training programs are designed to provide learners with the
+                knowledge and practical experience necessary to excel in their
+                chosen career paths.
+              </SubTitle>
             </TextContent>
           </TopSection>
           <BottomSection>
@@ -85,10 +68,10 @@ const LearningsSections = () => {
   );
 };
 
-export default LearningsSections;
+export default AcademicPathsSection;
 
 const BackgroundContainer = styled.section`
-  background: #fafcff;
+  background: transparent;
 `;
 
 const Container = styled.div`
@@ -96,33 +79,37 @@ const Container = styled.div`
 `;
 
 const TopSection = styled.div`
-  display: flex;
-  gap: 2.5rem;
   margin-top: 1rem;
 `;
 
-const GradientStyleContainer = styled.div`
-  /* margin-bottom: 1rem; */
-  display: grid;
-  gap: 1.5rem;
-  grid-template-rows: auto 1fr;
-`;
-
 const TextContent = styled.div`
-  font-weight: 600;
-  color: #0d1117;
+  color: black;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  margin-inline: auto;
+  color: white;
 `;
 
 const Title = styled.h4`
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-2md);
   margin: 0;
   line-height: 35px;
+  font-weight: ${WEIGHTS.semiBold};
+  color: #66c19a;
+`;
+
+const Tagline = styled.p`
+  font-weight: ${WEIGHTS.medium};
+  font-size: 46px;
+  margin-block: 10px;
 `;
 
 const SubTitle = styled.p`
-  font-size: var(--font-size-3xl);
-  margin-block: 1.5rem;
-  max-width: 80%;
+  font-size: var(--font-size-md);
+  max-width: 70%;
+  margin-inline: auto;
+  margin-block: 10px;
   @media ${QUERIES.phoneAndSmaller} {
     max-width: revert;
   }
@@ -133,7 +120,7 @@ const BottomSection = styled.div`
   display: flex;
   @media ${QUERIES.tabletAndSmaller} {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+    /* gap: 2rem; */
   }
 `;
