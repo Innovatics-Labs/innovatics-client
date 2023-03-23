@@ -61,6 +61,13 @@ export const Start = styled.p`
   justify-content: center;
   gap: 0.3rem;
   margin-top: 45px;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    flex-direction: column;
+    button {
+      width: 100%;
+    }
+  }
 `;
 
 export const BottomContent = styled.div`
