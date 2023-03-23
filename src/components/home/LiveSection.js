@@ -55,9 +55,9 @@ const TextContent = styled.div`
   justify-content: space-between;
   gap: 1.5rem;
   padding-bottom: 2rem;
-  @media ${QUERIES.phoneAndSmaller} {
+  /* @media ${QUERIES.phoneAndSmaller} {
     margin-left: 2rem;
-  }
+  } */
 `;
 
 const QualityText = styled.p`

@@ -78,13 +78,16 @@ const Title = styled.h4`
 `;
 
 const SubTitle = styled.p`
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-2md);
   margin-block: 1.5rem;
   text-align: center;
   max-width: 70%;
   margin-inline: auto;
   @media ${QUERIES.tabletAndSmaller} {
     max-width: revert;
+  }
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: var(--font-size-md);
   }
 `;
 
@@ -95,7 +98,14 @@ const Start = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.3rem;
+  gap: 0.5rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    flex-direction: column;
+    gap: 1rem;
+    button {
+      width: 100%;
+    }
+  }
 `;
 
 const PricingContainer = styled.div`
