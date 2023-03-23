@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BsSun } from "react-icons/bs";
+import { BsSun, BsArrowRight } from "react-icons/bs";
 import styled from "styled-components";
 
 import arrow from "../assets/images/arrow.png";
@@ -23,7 +23,7 @@ const PathCard = ({ color, number, comingSoon, topic, id, icon }) => {
           <Topic>{topic}</Topic>
         </div>
         <Arrow>
-          <Image src={arrow} alt={""} sizes="100vw" />
+          <BsArrowRight size={24} />
           {comingSoon && <p>Coming Soon</p>}
         </Arrow>
       </Content>
@@ -46,6 +46,9 @@ const Card = styled.div`
     flex-direction: row;
     filter: drop-shadow(0px 0px 57px rgba(62, 63, 73, 0.25));
     backdrop-filter: blur(10px);
+  }
+  @media ${QUERIES.phoneAndSmaller} {
+    gap: 2rem;
   }
 `;
 

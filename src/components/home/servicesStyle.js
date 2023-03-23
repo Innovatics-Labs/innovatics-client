@@ -21,8 +21,9 @@ export const CurveContainer = styled.div`
 `;
 
 export const Content = styled.div`
-  margin-bottom: 4rem;
+  padding: var(--container-padding);
   padding-top: 150px;
+  padding-bottom: 2rem;
 `;
 
 export const TopContent = styled.div`

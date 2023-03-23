@@ -53,7 +53,7 @@ export default Consulting;
 
 const Container = styled.section`
   background-color: var(--dusty-grey);
-  padding: 8rem var(--container-padding);
+  padding-block: 8rem;
   background-image: url("/why-ine-bg-revised 1.svg");
   background-repeat: no-repeat;
   background-size: cover;

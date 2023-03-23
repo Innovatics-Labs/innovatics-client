@@ -8,7 +8,6 @@ import PathCard from "../PathCard";
 import { QUERIES, WEIGHTS } from "../../constants";
 import { db } from "../../../firebaseConfig";
 import { MaxwidthContainer } from "../GlobalStyles";
-import { Animate } from "../Animations/AnimateIn";
 import Data from "../../assets/svg/data.svg";
 import Coding from "../../assets/svg/coding.svg";
 import Cyber from "../../assets/svg/cyber-security.svg";

@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { BsCollectionPlay } from "react-icons/bs";
+import { IoBookOutline } from "react-icons/io5";
+import { BiSupport } from "react-icons/bi";
+import { RiStackLine } from "react-icons/ri";
 
 import Button from "../Button";
 import { QUERIES, WEIGHTS } from "../../constants";
@@ -38,47 +41,6 @@ const OurPlatform = () => {
                     <Icon>
                       <BsCollectionPlay size={24} />
                     </Icon>
-                    <p>Consultation & Contracting </p>
-                  </Top>
-                  <Text>
-                    Our experienced consultants work with you to identify and
-                    analyze your business needs, and provide tailor-made
-                    solutions that meet your specific requirements.
-                  </Text>
-                  <Button title={"Learn More"} variant="outline" />
-                </Card>
-                <Card>
-                  <Top>
-                    <Icon>
-                      <BsCollectionPlay size={24} />
-                    </Icon>
-                    <p>Career Change & Job Placements</p>
-                  </Top>
-                  <Text>
-                    Our job placement program provides guidance and support to
-                    help you identify and pursue job opportunities that align
-                    with your skills and experience.
-                  </Text>
-                  <Button title={"Learn More"} variant="outline" />
-                </Card>
-                <Card>
-                  <Top>
-                    <Icon>
-                      <BsCollectionPlay size={24} />
-                    </Icon>
-                    <p>Innovation & Development</p>
-                  </Top>
-                  <Text>
-                    Our innovation and development services provide cutting-edge
-                    solutions to complex problems using advanced technologies.
-                  </Text>
-                  <Button title={"Learn More"} variant="outline" />
-                </Card>
-                <Card>
-                  <Top>
-                    <Icon>
-                      <BsCollectionPlay size={24} />
-                    </Icon>
                     <p>Training</p>
                   </Top>
                   <Text>
@@ -92,6 +54,47 @@ const OurPlatform = () => {
                     title={"Learn More"}
                     variant="outline"
                   />
+                </Card>
+                <Card>
+                  <Top>
+                    <Icon>
+                      <BiSupport size={24} />
+                    </Icon>
+                    <p>Consultation & Contracting </p>
+                  </Top>
+                  <Text>
+                    Our experienced consultants work with you to identify and
+                    analyze your business needs, and provide tailor-made
+                    solutions that meet your specific requirements.
+                  </Text>
+                  <Button title={"Learn More"} variant="outline" />
+                </Card>
+                <Card>
+                  <Top>
+                    <Icon>
+                      <IoBookOutline size={24} />
+                    </Icon>
+                    <p>Career Change & Job Placements</p>
+                  </Top>
+                  <Text>
+                    Our job placement program provides guidance and support to
+                    help you identify and pursue job opportunities that align
+                    with your skills and experience.
+                  </Text>
+                  <Button title={"Learn More"} variant="outline" />
+                </Card>
+                <Card>
+                  <Top>
+                    <Icon>
+                      <RiStackLine size={24} />
+                    </Icon>
+                    <p>Innovation & Development</p>
+                  </Top>
+                  <Text>
+                    Our innovation and development services provide cutting-edge
+                    solutions to complex problems using advanced technologies.
+                  </Text>
+                  <Button title={"Learn More"} variant="outline" />
                 </Card>
               </CardsContainer>
             </CardSection>
@@ -188,7 +191,7 @@ const CardsContainer = styled.div`
 `;
 
 const Card = styled.div`
-  padding: 2rem;
+  padding: 1.5rem;
   /* background: linear-gradient(
     -286deg,
     rgba(62, 63, 73, 0.7) 0%,
@@ -205,8 +208,10 @@ const Card = styled.div`
 
 const Top = styled.div`
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
+  font-weight: ${WEIGHTS.semiBold};
+  font-size: var(--font-size-md);
 `;
 
 const Icon = styled.div`
@@ -216,10 +221,8 @@ const Icon = styled.div`
 `;
 
 const Text = styled.p`
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  margin-block: 2rem;
+  font-size: 16px;
+  margin-block: 1.5rem;
 `;
 
 const PathContainer = styled.div`

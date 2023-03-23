@@ -5,10 +5,6 @@ import Image from "next/image";
 import { QUERIES } from "../../constants";
 import Button from "../Button";
 import { MaxwidthContainer } from "../GlobalStyles";
-// import nikolai from "../../assets/images/nikolai.png";
-// import matrix from "../../assets/images/matrix.png";
-// import neo from "../../assets/images/pexels-neo.png";
-// import labRunning from "../../assets/images/labRunning.png";
 import heroGroup from "../../assets/images/hero-group.png";
 import downarrow from "../../assets/images/Group 2.png";
 import kpmgLogo from "../../assets/images/kpmg-logo.png";
@@ -151,6 +147,7 @@ const HeroImages = styled.div``;
 
 const ImagesContainer = styled.div`
   img {
+    object-fit: cover;
     width: 100%;
     height: auto;
   }
