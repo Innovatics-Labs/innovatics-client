@@ -25,7 +25,7 @@ const OurPlatform = () => {
       <ServiceHero
         headline={"Our Platform"}
         subtitle="What we have for you on the inside"
-        bgImage={"/abstract-1392404_1920.png"}
+        bgImage={"/train-station.png"}
       />
       <DetailSection>
         <ServiceContent>

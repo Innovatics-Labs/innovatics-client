@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 import ServiceHero from "../../components/services/Hero";
 import { GradientDivider } from "../services/career-change";
 import LineGradient from "../../components/LineGradient";
 import { MaxwidthContainer } from "../../components/GlobalStyles";
 import ServiceCard from "../../components/services/ServiceCard";
-import { WEIGHTS } from "../../constants";
+import { WEIGHTS, QUERIES } from "../../constants";
 import Newsletter from "../../components/Newsletter";
 import ContactDetail from "../../components/ContactDetail";
 import JoinDiscord from "../../components/JoinDiscord";
 import { TextWithColor } from "../../components/home/Practicality";
+import InstructorCap from "../../components/InstructorCap";
 
 const Index = () => {
   return (
@@ -109,6 +111,91 @@ const Index = () => {
             </p>
           </Summary>
         </Content>
+        <InstructorSection>
+          <InstructorContent>
+            <GradientDivider>
+              <LineGradient
+                height="150px"
+                colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
+                colorTo="hsla(144, 85%, 42%, 0)"
+              />
+            </GradientDivider>
+            <h4>Instructors</h4>
+            <InstructorContainer>
+              <div>
+                <InstructorDetailContainer>
+                  <CapContainer>
+                    <InstructorCap />
+                    <p>Muhammad Medwani</p>
+                  </CapContainer>
+                  <InstructorDetail>
+                    <InstructorPost>Founder - Innovatics.ai</InstructorPost>
+                    <p>
+                      Founder of Innovatics.ai is an expert data scientist with
+                      a passion for transforming data into useful products. He
+                      has over 20 years of experience in service delivery
+                      management; Ph.D. candidate in AI, four master’s degrees
+                      in data science, IT, machine learning, and business
+                      administration; and over nine years of experience working
+                      with data science. Mo’s specialties include data science,
+                      machine learning, big data, deep learning, data analytics,
+                      application support and IT service delivery management.
+                    </p>
+                    <Social>
+                      Social Links: <FaLinkedinIn /> <FaTwitter />{" "}
+                    </Social>
+                  </InstructorDetail>
+                </InstructorDetailContainer>
+                <InstructorDetailContainer>
+                  <CapContainer>
+                    <InstructorCap />
+                    <p>Muhammad Medwani</p>
+                  </CapContainer>
+                  <InstructorDetail>
+                    <InstructorPost>Founder - Innovatics.ai</InstructorPost>
+                    <p>
+                      Founder of Innovatics.ai is an expert data scientist with
+                      a passion for transforming data into useful products. He
+                      has over 20 years of experience in service delivery
+                      management; Ph.D. candidate in AI, four master’s degrees
+                      in data science, IT, machine learning, and business
+                      administration; and over nine years of experience working
+                      with data science. Mo’s specialties include data science,
+                      machine learning, big data, deep learning, data analytics,
+                      application support and IT service delivery management.
+                    </p>
+                    <Social>
+                      Social Links: <FaLinkedinIn /> <FaTwitter />{" "}
+                    </Social>
+                  </InstructorDetail>
+                </InstructorDetailContainer>
+                <InstructorDetailContainer>
+                  <CapContainer>
+                    <InstructorCap />
+                    <p>Muhammad Medwani</p>
+                  </CapContainer>
+                  <InstructorDetail>
+                    <InstructorPost>Founder - Innovatics.ai</InstructorPost>
+                    <p>
+                      Founder of Innovatics.ai is an expert data scientist with
+                      a passion for transforming data into useful products. He
+                      has over 20 years of experience in service delivery
+                      management; Ph.D. candidate in AI, four master’s degrees
+                      in data science, IT, machine learning, and business
+                      administration; and over nine years of experience working
+                      with data science. Mo’s specialties include data science,
+                      machine learning, big data, deep learning, data analytics,
+                      application support and IT service delivery management.
+                    </p>
+                    <Social>
+                      Social Links: <FaLinkedinIn /> <FaTwitter />{" "}
+                    </Social>
+                  </InstructorDetail>
+                </InstructorDetailContainer>
+              </div>
+            </InstructorContainer>
+          </InstructorContent>
+        </InstructorSection>
         <Contactcontainer>
           <div style={{ textAlign: "center" }}>
             <h4 style={{ fontWeight: "600", fontSize: 32 }}>
@@ -163,4 +250,85 @@ const Summary = styled.div`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.5;
+`;
+
+const InstructorSection = styled.section`
+  padding: var(--container-padding);
+  background: url("/bg-grad.png"),
+    linear-gradient(var(--color-bg-black), var(--color-bg-black));
+  background-position: center;
+  color: white;
+`;
+
+const InstructorContent = styled(MaxwidthContainer)`
+  h4 {
+    font-weight: ${WEIGHTS.semiBold};
+    font-size: var(--font-size-2md);
+    text-align: center;
+  }
+`;
+
+const InstructorContainer = styled.div`
+  padding: var(--container-padding);
+`;
+
+const InstructorDetailContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+  @media ${QUERIES.tabletAndSmaller} {
+    display: revert;
+    gap: 1rem;
+  }
+`;
+
+const CapContainer = styled.div`
+  align-self: center;
+`;
+
+const InstructorDetail = styled.div`
+  line-height: 1.3;
+  font-size: 18px;
+  font-weight: ${WEIGHTS.medium};
+`;
+
+const InstructorPost = styled.h5`
+  font-weight: ${WEIGHTS.semiBold};
+  font-size: var(--font-size-md);
+  line-height: 1;
+  color: #44e986;
+`;
+
+const TextContent = styled.div`
+  font-weight: 600;
+  color: white;
+`;
+
+const Title = styled.h4`
+  font-size: var(--font-size-xl);
+  margin: 0;
+`;
+
+const SubTitle = styled.p`
+  font-size: var(--font-size-3xl);
+  margin-block: 1.5rem;
+  width: 80%;
+  @media ${QUERIES.tabletAndSmaller} {
+    width: revert;
+  }
+`;
+
+const Social = styled.p`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    background: #ffffff;
+    width: 32px;
+    height: 32px;
+    color: black;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 14px;
+  }
 `;
