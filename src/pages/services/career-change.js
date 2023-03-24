@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
-import { MaxwidthContainer } from "../../components/GlobalStyles";
 import JoinDiscord from "../../components/JoinDiscord";
 import JoinCohort from "../../components/JoinCohort";
 import LineGradient from "../../components/LineGradient";
@@ -11,6 +10,7 @@ import ServiceCard from "../../components/services/ServiceCard";
 import { QUERIES, WEIGHTS } from "../../constants";
 import circuit from "../../assets/images/circuit-board.png";
 import { MdOndemandVideo } from "react-icons/md";
+import { Description, DetailSection, ServiceContent } from "./training";
 
 const Index = () => {
   return (
@@ -21,8 +21,8 @@ const Index = () => {
         bgImage={"/data-center.png"}
       />
       <DetailSection>
-        <Content>
-          <Description>
+        <ServiceContent>
+          <DescriptionMod>
             <LineGradient
               colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
               colorTo="hsla(144, 85%, 42%, 0)"
@@ -40,7 +40,7 @@ const Index = () => {
               colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
               colorTo="hsla(144, 85%, 42%, 0)"
             />
-          </Description>
+          </DescriptionMod>
           <TrainingSection>
             <ServiceCard
               title={"Career Change"}
@@ -125,7 +125,7 @@ const Index = () => {
               </BenefitsList>
             </BenefitsSection>
           </Bottom>
-        </Content>
+        </ServiceContent>
         <JoinCohort />
         <JoinDiscord />
       </DetailSection>
@@ -135,27 +135,7 @@ const Index = () => {
 
 export default Index;
 
-const DetailSection = styled.section`
-  background: var(--color-bg-black);
-  color: white;
-`;
-
-const Content = styled(MaxwidthContainer)`
-  padding: var(--container-padding);
-`;
-
-const Description = styled.div`
-  display: grid;
-  place-items: center;
-  text-align: center;
-  grid-template-rows: 100px auto 100px;
-  gap: 1rem;
-  p {
-    line-height: 1.5;
-    max-width: 50ch;
-    font-weight: ${WEIGHTS.medium};
-    font-size: var(--font-size-md);
-  }
+export const DescriptionMod = styled(Description)`
   div {
     transform: translateX(-1rem);
   }

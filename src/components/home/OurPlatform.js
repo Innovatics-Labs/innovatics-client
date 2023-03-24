@@ -49,8 +49,8 @@ const OurPlatform = () => {
                     knowledge necessary to succeed in your chosen field.
                   </Text>
                   <Button
-                    // as={Link}
-                    // href="/services/training"
+                    as={Link}
+                    href="/services/training"
                     title={"Learn More"}
                     variant="outline"
                   />
@@ -67,7 +67,12 @@ const OurPlatform = () => {
                     analyze your business needs, and provide tailor-made
                     solutions that meet your specific requirements.
                   </Text>
-                  <Button title={"Learn More"} variant="outline" />
+                  <Button
+                    as={Link}
+                    href="/services/consultation"
+                    title={"Learn More"}
+                    variant="outline"
+                  />
                 </Card>
                 <Card>
                   <Top>
@@ -81,7 +86,12 @@ const OurPlatform = () => {
                     help you identify and pursue job opportunities that align
                     with your skills and experience.
                   </Text>
-                  <Button title={"Learn More"} variant="outline" />
+                  <Button
+                    as={Link}
+                    href="/services/career-change"
+                    title={"Learn More"}
+                    variant="outline"
+                  />
                 </Card>
                 <Card>
                   <Top>
@@ -94,7 +104,12 @@ const OurPlatform = () => {
                     Our innovation and development services provide cutting-edge
                     solutions to complex problems using advanced technologies.
                   </Text>
-                  <Button title={"Learn More"} variant="outline" />
+                  <Button
+                    as={Link}
+                    href="/services/innovation"
+                    title={"Learn More"}
+                    variant="outline"
+                  />
                 </Card>
               </CardsContainer>
             </CardSection>

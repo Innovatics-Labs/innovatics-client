@@ -69,22 +69,37 @@ const Hero = () => {
             <DataCompanyImages>
               <CompanyLogo>
                 <div>
-                  <Image src={intel} alt="" sizes="100vw" />
+                  <Image src={intel} alt="intel" sizes="100vw" />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={ibm} alt="" sizes="100vw" />
+                  <Image src={ibm} alt="ibm" sizes="100vw" />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={fiverr} alt="" sizes="100vw" />
+                  <Image src={fiverr} alt="fiverr" sizes="100vw" />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={publix} alt="" sizes="100vw" />
+                  <Image src={publix} alt="publix" sizes="100vw" />
+                </div>
+              </CompanyLogo>
+              <CompanyLogo>
+                <div>
+                  <Image src={sage} alt="sage" sizes="100vw" />
+                </div>
+              </CompanyLogo>
+              <CompanyLogo>
+                <div>
+                  <Image src={mercedes} alt="mercedes" sizes="100vw" />
+                </div>
+              </CompanyLogo>
+              <CompanyLogo>
+                <div>
+                  <Image src={pinterest} alt="pinterest" sizes="100vw" />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
@@ -94,22 +109,7 @@ const Hero = () => {
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={mercedes} alt="" sizes="100vw" />
-                </div>
-              </CompanyLogo>
-              <CompanyLogo>
-                <div>
-                  <Image src={pinterest} alt="" sizes="100vw" />
-                </div>
-              </CompanyLogo>
-              <CompanyLogo>
-                <div>
-                  <Image src={mercedes} alt="" sizes="100vw" />
-                </div>
-              </CompanyLogo>
-              <CompanyLogo>
-                <div>
-                  <Image src={pinterest} alt="" sizes="100vw" />
+                  <Image src={ibm} alt="" sizes="100vw" />
                 </div>
               </CompanyLogo>
             </DataCompanyImages>
@@ -242,6 +242,7 @@ const DataCompanyImages = styled.div`
   ::-webkit-scrollbar {
     height: 8px;
     width: 10px;
+    margin-top: 50px;
   }
 
   ::-webkit-scrollbar-track {

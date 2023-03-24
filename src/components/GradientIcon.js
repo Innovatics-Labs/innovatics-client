@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Animate } from "./Animations/AnimateIn";
 
-const GradientIcon = ({ IconComponent, bgColor }) => {
+const GradientIcon = ({ IconComponent, bgColor, style }) => {
   const Component = IconComponent;
   return (
-    <GradientIconStyle>
+    <GradientIconStyle style={style}>
       <Animate.FadeIn>
         {Component && Component}
         <Span bgColor={bgColor}></Span>
