@@ -15,7 +15,8 @@ const variantStyles = (
       color: ${color};
       transition: all 0.3s;
       :hover {
-        box-shadow: 0px 0px 40px ${bgColor};
+        filter: drop-shadow(0 4px 40px rgba(255, 255, 255, 0.4));
+        /* box-shadow: 0px 0px 40px ${bgColor}; */
       }
     `,
     outline: css`

@@ -54,6 +54,7 @@ const AcademicPathsSection = () => {
                 <PathCard
                   key={doc.id}
                   id={doc.id}
+                  index={index}
                   icon={icon[index]}
                   topic={doc.data().name}
                   color={colors[index]}

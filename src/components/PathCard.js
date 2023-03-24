@@ -6,24 +6,31 @@ import styled from "styled-components";
 import arrow from "../assets/images/arrow.png";
 import { QUERIES } from "../constants";
 import GradientIcon from "./GradientIcon";
+import Data from "../assets/svg/data.svg";
+import Coding from "../assets/svg/coding.svg";
+import Cyber from "../assets/svg/cyber-security.svg";
+import Server from "../assets/svg/server.svg";
 
-const PathCard = ({ color, number, comingSoon, topic, id, icon }) => {
-  const IconComponent = icon;
+let colors = ["#44E986", "#FFA28B", "#FAD740", "#8B90FF"];
+let icon = [Data, Coding, Cyber, Server];
+
+const PathCard = ({ number, comingSoon, topic, id, index }) => {
+  const IconComponent = icon[index];
 
   return (
     <Card as={Link} href={`/academic-paths/${id}`}>
       <GradientContainer>
         <Gradient>
-          <IconComponent size={30} color={color} />
+          <IconComponent size={30} color={colors[index]} />
         </Gradient>
       </GradientContainer>
       <Content>
         <div>
-          <Number color={color}>{number}.</Number>
+          <Number color={colors[index]}>{number}.</Number>
           <Topic>{topic}</Topic>
         </div>
         <Arrow>
-          <BsArrowRight size={24} />
+          <BsArrowRight size={35} />
           {comingSoon && <p>Coming Soon</p>}
         </Arrow>
       </Content>
@@ -41,6 +48,36 @@ const Card = styled.div`
   border-radius: 9px;
   gap: 4rem;
   flex: 1;
+
+  :nth-of-type(1) {
+    /* border-top-left-radius: 19px;
+    border-bottom-left-radius: 19px; */
+    :hover {
+      background: no-repeat url("/data-science.png");
+      background-size: cover;
+    }
+  }
+  :nth-of-type(2) {
+    :hover {
+      background: no-repeat url("/cyber-security.png");
+      background-size: cover;
+    }
+  }
+  :nth-of-type(3) {
+    :hover {
+      background: no-repeat url("/networking.png");
+      background-size: cover;
+    }
+  }
+
+  :nth-of-type(4) {
+    /* border-top-right-radius: 19px;
+    border-bottom-right-radius: 19px; */
+    :hover {
+      background: no-repeat url("/cloud.png");
+      background-size: cover;
+    }
+  }
 
   @media ${QUERIES.tabletAndSmaller} {
     flex-direction: row;
