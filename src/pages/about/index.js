@@ -237,7 +237,7 @@ const Description = styled.div`
   }
 `;
 
-const Contactcontainer = styled.div`
+export const Contactcontainer = styled.div`
   padding: var(--container-padding);
   display: grid;
   place-items: center;
@@ -296,25 +296,6 @@ const InstructorPost = styled.h5`
   font-size: var(--font-size-md);
   line-height: 1;
   color: #44e986;
-`;
-
-const TextContent = styled.div`
-  font-weight: 600;
-  color: white;
-`;
-
-const Title = styled.h4`
-  font-size: var(--font-size-xl);
-  margin: 0;
-`;
-
-const SubTitle = styled.p`
-  font-size: var(--font-size-3xl);
-  margin-block: 1.5rem;
-  width: 80%;
-  @media ${QUERIES.tabletAndSmaller} {
-    width: revert;
-  }
 `;
 
 const Social = styled.p`

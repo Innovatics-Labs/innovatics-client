@@ -51,7 +51,7 @@ const Navbar = () => {
                   <Link href={"/signIn"}>Sign In</Link>
                 </li>
                 <SignInButton>
-                  <Link href={"/academy"}>Request Information</Link>
+                  <Link href={"/faqs"}>Request Information</Link>
                 </SignInButton>
                 <li
                   style={{

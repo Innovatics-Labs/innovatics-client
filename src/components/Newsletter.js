@@ -33,6 +33,8 @@ const Newsletter = () => {
             onChange={(ev) => setSortId(ev.target.value)}
           >
             <option value="support">Support Inquiry</option>
+            <option value="support">Sales Inquiry</option>
+            <option value="support">Billing Inquiry</option>
           </Inquiry>
         </Label>
         <Label>
