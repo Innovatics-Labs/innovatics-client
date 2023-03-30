@@ -13,6 +13,9 @@ import Coding from "../../assets/svg/coding.svg";
 import Cyber from "../../assets/svg/cyber-security.svg";
 import Server from "../../assets/svg/server.svg";
 
+let colors = ["#44E986", "#FFA28B", "#FAD740", "#8B90FF"];
+let icon = [Data, Coding, Cyber, Server];
+
 const AcademicPathsSection = () => {
   const [paths, setPaths] = useState([]);
   const [value, loading, error] = useCollection(
@@ -21,8 +24,6 @@ const AcademicPathsSection = () => {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
-  let colors = ["#44E986", "#FFA28B", "#FAD740", "#8B90FF"];
-  let icon = [Data, Coding, Cyber, Server];
 
   useEffect(() => {
     if (value) {
@@ -55,10 +56,10 @@ const AcademicPathsSection = () => {
                   key={doc.id}
                   id={doc.id}
                   index={index}
-                  icon={icon[index]}
                   topic={doc.data().name}
-                  color={colors[index]}
                   number={`0${index + 1}`}
+                  // icon={icon[index]}
+                  // color={colors[index]}
                 />
               ))}
           </BottomSection>

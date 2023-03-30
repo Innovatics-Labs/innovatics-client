@@ -37,12 +37,11 @@ const Newslettersection = () => {
 export default Newslettersection;
 
 const Container = styled.section`
-  background: linear-gradient(
-      90.44deg,
-      rgba(13, 17, 23, 0.3) 0.46%,
-      #0d1117 44.88%
-    ),
-    url("galaxy.png");
+  background: #0d1117 url("/bg-grad.png");
+  padding: 6rem var(--container-padding);
+  color: white;
+  background-position: top;
+  background-size: cover;
 `;
 
 const Content = styled(MaxwidthContainer)`

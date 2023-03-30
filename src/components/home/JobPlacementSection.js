@@ -16,7 +16,7 @@ import {
 const JobPlacement = () => {
   return (
     <Container>
-      <OurProcess />
+      <OurProcess bgDark={true} />
       <Content>
         <TopContent>
           <TextContent>
@@ -66,7 +66,7 @@ const Title = styled.h4`
 `;
 
 export const Content = styled(MaxwidthContainer)`
-  padding: var(--container-padding);
+  padding: 6rem var(--container-padding);
 `;
 
 const Tagline = styled.p`

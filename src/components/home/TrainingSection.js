@@ -48,10 +48,11 @@ const BackgroundContainer = styled.section`
   background: #0d1117 url("/bg-grad.png");
   background-repeat: no-repeat;
   background-position: top;
+  background-size: cover;
 `;
 
 const Container = styled(MaxwidthContainer)`
-  padding: 2rem var(--container-padding);
+  padding: 6rem var(--container-padding);
 `;
 
 const TopContainer = styled.div`
@@ -65,7 +66,6 @@ const TopContainer = styled.div`
 const TextContent = styled.div`
   color: white;
   margin-block: 40px;
-
   img {
     margin-inline: auto;
   }
@@ -111,7 +111,7 @@ const Start = styled.div`
 const PricingContainer = styled.div`
   display: flex;
   gap: 35px;
-  margin-block: 10px;
+  margin-block: 40px;
 
   @media ${QUERIES.tabletAndSmaller} {
     flex-direction: column;

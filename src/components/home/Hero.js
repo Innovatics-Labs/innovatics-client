@@ -186,8 +186,11 @@ const ButtonGroup = styled.div`
   gap: 1rem;
   margin-block: clamp(1rem, 1.19vw + 0.429rem, 2rem);
   flex-wrap: wrap;
-  @media ${QUERIES.tabletAndSmaller} {
-    button {
+  a {
+    font-size: 1rem;
+  }
+  @media ${QUERIES.phoneAndSmaller} {
+    a {
       width: 100%;
       padding: 10px;
     }

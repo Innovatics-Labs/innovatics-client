@@ -10,10 +10,11 @@ import BlueCurve from "../../assets/images/curve-gradient-blue.png";
 import { QUERIES } from "../../constants";
 import { Animate } from "../Animations/AnimateIn";
 import { BsPlayBtn } from "react-icons/bs";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 const FeaturedSection = () => {
   return (
-    <InsetSection>
+    <Container>
       <TextContent>
         <QualityText>
           <TextWithColor color="white">
@@ -39,25 +40,29 @@ const FeaturedSection = () => {
           />
         </div>
       </TextContent>
-    </InsetSection>
+    </Container>
   );
 };
 
 export default FeaturedSection;
 
-const TextContent = styled.div`
+const Container = styled.section`
+  background: #0d1117 url("/bg-grad.png");
+  padding: 6rem var(--container-padding);
+  color: white;
+  background-position: center;
+  background-size: cover;
+`;
+
+const TextContent = styled(MaxwidthContainer)`
   display: grid;
   align-items: center;
   text-align: center;
-  padding-top: 2rem;
+  padding-block: 2rem;
   flex-wrap: wrap;
   margin-inline: auto;
   justify-content: space-between;
   gap: 1.5rem;
-  padding-bottom: 2rem;
-  /* @media ${QUERIES.phoneAndSmaller} {
-    margin-left: 2rem;
-  } */
 `;
 
 const QualityText = styled.p`
@@ -68,7 +73,9 @@ const QualityText = styled.p`
 
 const SubQualityText = styled.p`
   margin-top: 0;
-
+  line-height: 1.5;
+  width: 65%;
+  margin-inline: auto;
   @media ${QUERIES.phoneAndSmaller} {
     width: revert;
   }

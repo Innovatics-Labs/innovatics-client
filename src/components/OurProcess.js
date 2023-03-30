@@ -6,9 +6,9 @@ import { WEIGHTS, QUERIES } from "../constants";
 import Button from "./Button";
 import { MaxwidthContainer } from "./GlobalStyles";
 
-const OurProcess = () => {
+const OurProcess = ({ bgDark }) => {
   return (
-    <Container>
+    <Container bgDark={bgDark}>
       <Content>
         <TextContent>
           <Title>Get to know our promising process</Title>
@@ -52,14 +52,16 @@ const OurProcess = () => {
 export default OurProcess;
 
 const Container = styled.article`
-  padding: var(--container-padding) 6rem;
-  background: linear-gradient(
+  padding: 6rem;
+  backdrop-filter: blur(15px);
+  background: ${({ bgDark }) =>
+    bgDark
+      ? `#0d1117`
+      : `linear-gradient(
     145.35deg,
     rgba(62, 63, 73, 0.7) 4.67%,
     rgba(62, 63, 73, 0) 95.66%
-  );
-  backdrop-filter: blur(15px);
-
+  );`};
   @media ${QUERIES.phoneAndSmaller} {
     padding-inline: 2.5rem;
   }
@@ -69,8 +71,6 @@ const Content = styled(MaxwidthContainer)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   justify-content: center;
-  /* place-items:center ; */
-  /* padding-inline: auto; */
   gap: 2rem;
   color: white;
 

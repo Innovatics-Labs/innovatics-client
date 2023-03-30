@@ -86,10 +86,10 @@ const StyledButton = styled.button`
   border: 1px solid transparent;
   border-radius: ${({ rounded }) => `${rounded ? "2rem" : "10px"}`};
   width: ${({ width }) => `${width && width}`};
-  padding-block: 10px;
+  padding-block: 12px;
   font-weight: 400;
   font-size: ${({ size }) =>
-    `${size ? size : "clamp(1rem, 0.952vw + 0.643rem, 1.5rem)"}`};
+    `${size ? size : "clamp(1rem, 0.952vw + 0.643rem, 1.2rem)"}`};
   padding-inline: 2rem;
   cursor: pointer;
 

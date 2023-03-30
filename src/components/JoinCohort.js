@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import { QUERIES } from "../constants";
 import Button from "./Button";
@@ -13,6 +14,8 @@ const JoinCohort = () => {
           instructors and mentors in the upcoming Bootcamp.
         </SubTitle>
         <Button
+          as={Link}
+          href="/bootcamps"
           title={"Register Now!"}
           bgColor="white"
           color={"#0D1117"}
@@ -26,6 +29,7 @@ const JoinCohort = () => {
 export default JoinCohort;
 
 const BackgroundContainer = styled.section`
+  padding: 6rem var(--container-padding);
   background: linear-gradient(90deg, #578dff 0%, #dd56ff 100%);
 `;
 

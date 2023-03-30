@@ -1,62 +1,64 @@
 import styled from "styled-components";
 
 import { QUERIES, WEIGHTS } from "../../constants";
-import { Animate } from "../Animations/AnimateIn";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 const cardTitleColor = ["#66c19a", "#FFA28B", "#fad740", "#8B90FF"];
 
 const WhyInnovatics = () => {
   return (
     <Container>
-      <Content>
-        <TextContainer>
-          <Title>Why Innovatics?</Title>
-          <TagLine>We have the Best Solution for your Developement</TagLine>
-          <Subtitle>
-            Our mission is to help individuals and businesses achieve their
-            goals through the latest technologies and tools. Whether you are
-            looking to learn new skills, consult with experts, or find your next
-            job, we are here to support you every step of the way.
-          </Subtitle>
-        </TextContainer>
-        <CardList>
-          <Card>
-            <CardTitle color={cardTitleColor[0]}>Hands-On Training</CardTitle>
-            <Text>
-              Hands-on, interactive learning methods to ensure that you not only
-              understand the concepts but can apply them in real-world
-              scenarios.
-            </Text>
-          </Card>
-          <Card>
-            <CardTitle color={cardTitleColor[1]}>
-              Consultation & Contract
-            </CardTitle>
-            <Text>
-              Complete projects on time and on budget, with a team of skilled
-              professionals at your disposal. we provide the resources and
-              support you need.
-            </Text>
-          </Card>
-          <Card>
-            <CardTitle color={cardTitleColor[2]}>
-              Innovation & Development
-            </CardTitle>
-            <Text>
-              We work with you to develop custom solutions tailored to your
-              specific needs, whether you are looking to optimize your current
-              processes or develop new technologies.
-            </Text>
-          </Card>
-          <Card>
-            <CardTitle color={cardTitleColor[3]}>Job Placements</CardTitle>
-            <Text>
-              We offer resume building and interview preparation services, as
-              well as connections to top employers in the tech industry.
-            </Text>
-          </Card>
-        </CardList>
-      </Content>
+      <MaxwidthContainer>
+        <Content>
+          <TextContainer>
+            <Title>Why Innovatics?</Title>
+            <TagLine>We have the Best Solution for your Developement</TagLine>
+            <Subtitle>
+              Our mission is to help individuals and businesses achieve their
+              goals through the latest technologies and tools. Whether you are
+              looking to learn new skills, consult with experts, or find your
+              next job, we are here to support you every step of the way.
+            </Subtitle>
+          </TextContainer>
+          <CardList>
+            <Card>
+              <CardTitle color={cardTitleColor[0]}>Hands-On Training</CardTitle>
+              <Text>
+                Hands-on, interactive learning methods to ensure that you not
+                only understand the concepts but can apply them in real-world
+                scenarios.
+              </Text>
+            </Card>
+            <Card>
+              <CardTitle color={cardTitleColor[1]}>
+                Consultation & Contract
+              </CardTitle>
+              <Text>
+                Complete projects on time and on budget, with a team of skilled
+                professionals at your disposal. we provide the resources and
+                support you need.
+              </Text>
+            </Card>
+            <Card>
+              <CardTitle color={cardTitleColor[2]}>
+                Innovation & Development
+              </CardTitle>
+              <Text>
+                We work with you to develop custom solutions tailored to your
+                specific needs, whether you are looking to optimize your current
+                processes or develop new technologies.
+              </Text>
+            </Card>
+            <Card>
+              <CardTitle color={cardTitleColor[3]}>Job Placements</CardTitle>
+              <Text>
+                We offer resume building and interview preparation services, as
+                well as connections to top employers in the tech industry.
+              </Text>
+            </Card>
+          </CardList>
+        </Content>
+      </MaxwidthContainer>
     </Container>
   );
 };
@@ -141,7 +143,7 @@ const CardTitle = styled.h4`
 
 const Card = styled.div`
   padding: 2rem;
-  background: linear-gradient(144.05deg, #2d2e33, #202121);
+  background: linear-gradient(rgba(13, 17, 22), rgba(13, 17, 22));
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px);
   color: white;

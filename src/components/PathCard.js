@@ -1,11 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
-import { BsSun, BsArrowRight } from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";
 import styled from "styled-components";
 
-import arrow from "../assets/images/arrow.png";
 import { QUERIES } from "../constants";
-import GradientIcon from "./GradientIcon";
 import Data from "../assets/svg/data.svg";
 import Coding from "../assets/svg/coding.svg";
 import Cyber from "../assets/svg/cyber-security.svg";

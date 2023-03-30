@@ -72,10 +72,11 @@ const LearningsSections = () => {
                 <PathCard
                   key={doc.id}
                   id={doc.id}
-                  icon={icon[index]}
+                  index={index}
                   topic={doc.data().name}
-                  color={colors[index]}
                   number={`0${index + 1}`}
+                  // icon={icon[index]}
+                  // color={colors[index]}
                 />
               ))}
           </BottomSection>

@@ -100,7 +100,7 @@ const BackgroundContainer = styled.footer`
   background-color: #0d1116;
   background-image: url("/bg-grad.png");
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   background-size: cover;
 `;
 
