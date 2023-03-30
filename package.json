@@ -12,6 +12,7 @@
     "@lyrasearch/lyra": "^0.4.10",
     "@reach/accordion": "^0.18.0",
     "@reach/dialog": "^0.18.0",
+    "@reach/menu-button": "^0.18.0",
     "@svgr/webpack": "^6.5.1",
     "firebase": "^9.17.1",
     "next": "13.1.6",

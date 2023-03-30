@@ -12,6 +12,10 @@ import { QUERIES } from "../../constants";
 import { db } from "../../../firebaseConfig";
 import { MaxwidthContainer } from "../GlobalStyles";
 import { Animate } from "../Animations/AnimateIn";
+import Data from "../../assets/svg/data.svg";
+import Coding from "../../assets/svg/coding.svg";
+import Cyber from "../../assets/svg/cyber-security.svg";
+import Server from "../../assets/svg/server.svg";
 
 const LearningsSections = () => {
   const [paths, setPaths] = useState([]);
@@ -21,7 +25,8 @@ const LearningsSections = () => {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
-  let colors = ["#44E986", "#FFA28B", "#DD7DF7", "#8B90FF"];
+  let colors = ["#44E986", "#FFA28B", "#FAD740", "#8B90FF"];
+  let icon = [Data, Coding, Cyber, Server];
 
   useEffect(() => {
     if (value) {
@@ -67,9 +72,11 @@ const LearningsSections = () => {
                 <PathCard
                   key={doc.id}
                   id={doc.id}
+                  index={index}
                   topic={doc.data().name}
-                  color={colors[index]}
                   number={`0${index + 1}`}
+                  // icon={icon[index]}
+                  // color={colors[index]}
                 />
               ))}
           </BottomSection>

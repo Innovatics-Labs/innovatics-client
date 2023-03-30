@@ -560,13 +560,6 @@ const OverviewSection = styled.section`
 
 const OverViewContent = styled(MaxwidthContainer)`
   padding: 3rem var(--container-padding);
-  // display: grid;
-  // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  // gap: 2rem;
-  // width: 100%;
-  // @media ${QUERIES.phoneAndSmaller} {
-  //   padding-inline: 1rem;
-  // }
 `;
 
 const OverviewCard = styled.div`
@@ -648,7 +641,10 @@ const CurriculumList = styled.li`
 `;
 
 const InstructorSection = styled.section`
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #121212;
+  background-image: url("/bg-grad.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
 `;
 

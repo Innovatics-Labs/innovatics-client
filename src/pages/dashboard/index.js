@@ -20,8 +20,13 @@ import PathCard from "../../components/PathCard";
 import { QUERIES } from "../../constants";
 import { GrayTitle } from "../course-work";
 import { MaxwidthContainer } from "../../components/GlobalStyles";
+import Data from "../../assets/svg/data.svg";
+import Coding from "../../assets/svg/coding.svg";
+import Cyber from "../../assets/svg/cyber-security.svg";
+import Server from "../../assets/svg/server.svg";
 
-let colors = ["#44E986", "#FFA28B", "#DD7DF7", "#8B90FF"];
+let colors = ["#44E986", "#FFA28B", "#FAD740", "#8B90FF"];
+let icon = [Data, Coding, Cyber, Server];
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
@@ -42,7 +47,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     setUser(auth.currentUser);
-    console.log(auth.currentUser);
+    // console.log(auth.currentUser);
     return () => {};
   }, []);
 
@@ -162,8 +167,10 @@ const Dashboard = () => {
                       key={doc.id}
                       id={doc.id}
                       topic={doc.data().name}
-                      color={colors[index]}
                       number={`0${index + 1}`}
+                      index={index}
+                      icon={icon[index]}
+                      color={colors[index]}
                     />
                   ))}
               </TopicsContainer>

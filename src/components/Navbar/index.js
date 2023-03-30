@@ -11,7 +11,7 @@ import logo from "../../assets/images/logo 1.png";
 import { QUERIES } from "../../constants";
 import AuthNavbar from "./AuthNavbar";
 import useToggle from "../../hooks/useToggle";
-import { MdCancel } from "react-icons/md";
+import MenuButton from "../MenuButton";
 
 const Navbar = () => {
   const route = useRouter();
@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <NavContainer pathName={route.pathname} active={showNav}>
-      <Container>
+      <Container user={user}>
         <Logo>
           <Link href={`${user ? "/dashboard" : "/"}`}>
             <Image src={logo} alt="innovatics logo" sizes="100vw" />
@@ -47,18 +47,32 @@ const Navbar = () => {
             </MenuIcon>
             <NavElements active={showNav}>
               <NavItems>
-                <li>
-                  <Link href={"/academy"}>Academy</Link>
-                </li>
-                <li>
-                  <Link href={"/resources"}>Resources</Link>
-                </li>
-                <li>
-                  <Link href={"/"}>Pricing</Link>
-                </li>
-                <SignInButton>
+                <MenuButton />
+                <MenuItem>
+                  <Link href={"/bootcamps"}>Bootcamps</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link href={"/community"}>Resources</Link>
+                </MenuItem>
+              </NavItems>
+              <NavItems>
+                <MenuItem>
                   <Link href={"/signIn"}>Sign In</Link>
+                </MenuItem>
+                <SignInButton>
+                  <Link href={"/faqs"}>Request Information</Link>
                 </SignInButton>
+                <MenuItem
+                  style={{
+                    background: "#FFFFFF",
+                    border: "1px solid #FFFFFF",
+                    borderRadius: "8px",
+                    color: "#121212",
+                    padding: "8px 16px",
+                  }}
+                >
+                  <Link href={"/signUp"}>Get Started Now</Link>
+                </MenuItem>
               </NavItems>
             </NavElements>
           </>
@@ -72,6 +86,7 @@ export default Navbar;
 
 const NavContainer = styled.nav`
   background: black;
+  height: var(--navbar-height);
   ${({ pathName }) =>
     pathName === "/" &&
     css`
@@ -82,13 +97,12 @@ const NavContainer = styled.nav`
       background-image: var(--glass-dark);
       position: fixed;
       width: 100%;
-      height: var(--navbar-height);
       left: 0;
       top: 0;
       z-index: var(--z-navbar);
     `}
 
-  @media ${QUERIES.tabletAndSmaller} {
+  @media (max-width:1140px) {
     ${({ active }) => `${active && "z-index: 5"}`}
   }
 `;
@@ -96,30 +110,46 @@ const NavContainer = styled.nav`
 const Container = styled.div`
   display: flex;
   margin: 0 auto;
-  justify-content: space-between;
   padding-block: 10px;
-  max-width: 1400px;
+  max-width: var(--max-page-width);
   align-items: center;
   padding-inline: 4rem;
   gap: 1.5rem;
+  ${({ user }) => user && `justify-content: space-between;`}
   /* flex-wrap: wrap; */
+
+  @media (max-width: 1140px) {
+    justify-content: space-between;
+    height: 100%;
+  }
+
   @media ${QUERIES.tabletAndSmaller} {
     padding-inline: 2rem;
   }
 `;
 
 const NavElements = styled.div`
-  @media ${QUERIES.tabletAndSmaller} {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  @media (max-width: 1140px) {
     position: absolute;
     right: 0;
     top: 85px;
-    background-color: black;
+    background-color: #121212;
+    background-image: url("/bg-grad.png");
+    background-size: cover;
     width: 0;
-    height: calc(100vh - 85px);
+    height: calc(100vh - var(--navbar-height));
     transition: all 0.3s ease-in;
     overflow: hidden;
+    flex-direction: column;
+    justify-content: initial;
+    padding-block: 2rem;
 
-    ${({ active }) => `${active && "width: 200px"}`}
+    ${({ active }) => `${active && "width: 300px"}`}
   }
 `;
 
@@ -127,7 +157,7 @@ const MenuIcon = styled.div`
   display: none;
   color: white;
 
-  @media ${QUERIES.tabletAndSmaller} {
+  @media (max-width: 1140px) {
     display: block;
     cursor: pointer;
     margin-block: auto;
@@ -150,15 +180,24 @@ const NavItems = styled.ul`
   align-items: center;
   color: white;
   list-style: none;
-  font-size: var(--font-size-md);
-  @media ${QUERIES.tabletAndSmaller} {
+  padding-left: 0;
+  @media (max-width: 1140px) {
     flex-direction: column;
+    align-items: flex-start;
+    padding-inline: 2rem;
+  }
+`;
+
+export const MenuItem = styled.li`
+  cursor: pointer;
+  & > a {
+    text-decoration: none;
+    height: 100%;
   }
 `;
 
 const SignInButton = styled.li`
   border: 1px solid white;
   border-radius: 7px;
-  padding: 5px;
-  padding-inline: 10px;
+  padding: 8px 16px;
 `;

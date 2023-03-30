@@ -14,6 +14,7 @@ import pinterest from "../../assets/images/pinterest.png";
 import mercedes from "../../assets/images/mercedes.png";
 import kpmg from "../../assets/images/kpmg-logo.png";
 import { GradientDivider } from "./career-change";
+import { Description, DetailSection, ServiceContent } from "./training";
 
 const Consultation = () => {
   return (
@@ -24,7 +25,7 @@ const Consultation = () => {
         bgImage={"/geometry.png"}
       />
       <DetailSection>
-        <Content>
+        <ServiceContent>
           <Description>
             <LineGradient
               colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
@@ -114,7 +115,7 @@ const Consultation = () => {
               />
             </GradientDivider>
           </Bottom>
-        </Content>
+        </ServiceContent>
         <SectionWithGradient>
           <Partners>
             <p
@@ -164,29 +165,6 @@ const Consultation = () => {
 };
 
 export default Consultation;
-
-const DetailSection = styled.section`
-  background: var(--color-bg-black);
-  color: white;
-`;
-
-const Content = styled(MaxwidthContainer)`
-  padding: var(--container-padding);
-`;
-
-const Description = styled.div`
-  display: grid;
-  place-items: center;
-  text-align: center;
-  grid-template-rows: 100px auto 100px;
-  gap: 1rem;
-  p {
-    line-height: 1.5;
-    max-width: 50ch;
-    font-weight: ${WEIGHTS.medium};
-    font-size: var(--font-size-md);
-  }
-`;
 
 const TrainingSection = styled.section`
   display: grid;

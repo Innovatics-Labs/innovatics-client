@@ -22,7 +22,7 @@ const Training = () => {
         subtitle={"Our Service to serve you"}
       />
       <DetailSection>
-        <Content>
+        <ServiceContent>
           <Description>
             <LineGradient
               colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
@@ -122,7 +122,7 @@ const Training = () => {
               />
             </GradientDivider>
           </Bottom>
-        </Content>
+        </ServiceContent>
       </DetailSection>
       <PricingSection />
       <LearningsSections />
@@ -135,16 +135,16 @@ const Training = () => {
 
 export default Training;
 
-const DetailSection = styled.section`
+export const DetailSection = styled.section`
   background: var(--color-bg-black);
   color: white;
 `;
 
-const Content = styled(MaxwidthContainer)`
+export const ServiceContent = styled(MaxwidthContainer)`
   padding: var(--container-padding);
 `;
 
-const Description = styled.div`
+export const Description = styled.div`
   display: grid;
   place-items: center;
   text-align: center;

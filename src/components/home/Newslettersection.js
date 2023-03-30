@@ -16,35 +16,13 @@ const Newslettersection = () => {
     <Container>
       <Content>
         <Top>
-          <GradientContainer>
-            <LineGradient
-              colorFrom={`#EA604500 , #EA6045CF, #EA6045`}
-              colorTo={`#EA6045D2, #EA604500 `}
-            />
-            <CurveContainer>
-              <Image src={RedCurve} alt="" />
-            </CurveContainer>
-          </GradientContainer>
           <TextContent>
-            <Animate.FadeUp>
-              <Button
-                title={"Stay in Touch"}
-                variant={"outline"}
-                color={"white"}
-                borderColor={"#EA6045"}
-                size={`18px`}
-                rounded
-              />
-              <QualityText>
-                <TextWithColor color="#EA6045">
-                  Have a question? We’re here to help!
-                </TextWithColor>
-              </QualityText>
-              <SubHeading>
-                for all inquiries as regard our services. Please feel free to
-                reach out to us.
-              </SubHeading>
-            </Animate.FadeUp>
+            <Title>LET’S GET IN TOUCH</Title>
+            <QualityText>Have a question? We’re here to help!</QualityText>
+            <SubHeading>
+              Whether you’d like more information on our training materials or
+              are interested in a free demo, please contact us at any time.
+            </SubHeading>
           </TextContent>
         </Top>
         <Bottom>
@@ -59,12 +37,11 @@ const Newslettersection = () => {
 export default Newslettersection;
 
 const Container = styled.section`
-  background: linear-gradient(
-      90.44deg,
-      rgba(13, 17, 23, 0.3) 0.46%,
-      #0d1117 44.88%
-    ),
-    url("galaxy.png");
+  background: #0d1117 url("/bg-grad.png");
+  padding: 6rem var(--container-padding);
+  color: white;
+  background-position: top;
+  background-size: cover;
 `;
 
 const Content = styled(MaxwidthContainer)`
@@ -72,29 +49,24 @@ const Content = styled(MaxwidthContainer)`
 `;
 
 const Top = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
-`;
-
-const GradientContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const CurveContainer = styled.div`
-  height: 50%;
-  margin-right: -2rem;
-  img {
-    height: 100%;
-    object-fit: contain;
-  }
-  @media ${QUERIES.phoneAndSmaller} {
-    display: none;
-  }
-`;
-
-const SubHeading = styled(SubQualityText)`
+  max-width: 60%;
   color: white;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    max-width: revert;
+  }
+`;
+
+const Title = styled.p`
+  color: white;
+  font-size: 18px;
+  color: var(--mid-grey);
+`;
+
+const SubHeading = styled.p`
+  color: white;
+  font-size: 18px;
+  color: var(--mid-grey);
 `;
 
 const Bottom = styled.div`

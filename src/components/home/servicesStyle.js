@@ -4,7 +4,6 @@ import { QUERIES } from "../../constants";
 export const GradientContainer = styled.div`
   display: flex;
   align-items: center;
-  /* position: relative; */
   gap: 10px;
 `;
 
@@ -22,22 +21,19 @@ export const CurveContainer = styled.div`
 `;
 
 export const Content = styled.div`
-  margin-bottom: 4rem;
-  @media ${QUERIES.phoneAndSmaller} {
-    margin-left: 2rem;
-  }
+  padding: var(--container-padding);
+  padding-top: 150px;
+  padding-bottom: 2rem;
 `;
 
 export const TopContent = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  @media ${QUERIES.phoneAndSmaller} {
-    grid-template-columns: 1fr;
-  }
+  place-items: center;
 `;
 
-export const TextContent = styled.div``;
+export const TextContent = styled.div`
+  text-align: center;
+`;
 
 export const ImageContent = styled.div`
   img {
@@ -62,11 +58,15 @@ export const Start = styled.p`
   color: white;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.3rem;
+  margin-top: 45px;
 
-  :hover {
-    text-decoration-line: underline;
-    transition: all 0.5s;
+  @media ${QUERIES.phoneAndSmaller} {
+    flex-direction: column;
+    button {
+      width: 100%;
+    }
   }
 `;
 

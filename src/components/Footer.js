@@ -31,7 +31,7 @@ const Footer = () => {
                   <Link href="/community">Community</Link>
                 </LinkListItem>
                 <LinkListItem>
-                  <Link href="/newsroom">Newsroom</Link>
+                  <Link href="/newsroom">Live</Link>
                 </LinkListItem>
                 <LinkListItem>
                   <Link href="/blog">Blog</Link>
@@ -55,6 +55,9 @@ const Footer = () => {
                 </LinkListItem>
                 <LinkListItem>
                   <Link href="/cloud">Cloud</Link>
+                </LinkListItem>
+                <LinkListItem>
+                  <Link href="/courses">Learning Paths</Link>
                 </LinkListItem>
                 <LinkListItem>
                   <Link href="/courses">Courses</Link>
@@ -95,6 +98,10 @@ export default Footer;
 
 const BackgroundContainer = styled.footer`
   background-color: #0d1116;
+  background-image: url("/bg-grad.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
 
 const FooterContainer = styled(MaxwidthContainer)`
@@ -106,6 +113,7 @@ const FooterContainer = styled(MaxwidthContainer)`
 const FooterTopSection = styled.div`
   display: flex;
   gap: 7rem;
+  justify-content: space-evenly;
   padding-block: 2rem;
   @media ${QUERIES.tabletAndSmaller} {
     flex-wrap: wrap;
@@ -126,20 +134,18 @@ const LinksContainer = styled.div`
 `;
 
 const LinksSection = styled.div`
-  font-size: var(--font-size-md);
   @media ${QUERIES.phoneAndSmaller} {
     font-size: 14px;
   }
 `;
 
-const LinksSectionTitle = styled.h2`
+const LinksSectionTitle = styled.h4`
   margin-top: 0;
-  font-weight: 500;
   color: #8691a6;
 `;
 
 const LinkList = styled.ul`
-  line-height: 22px;
+  line-height: 1.5;
   list-style: none;
   padding-left: 0;
 `;

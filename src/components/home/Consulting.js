@@ -1,86 +1,83 @@
 import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import styled from "styled-components";
+import { WEIGHTS, QUERIES } from "../../constants";
 
 import Button from "../Button";
-import UnstyledButton from "../UnstyledButton";
-import LineGradient from "../LineGradient";
-import InsetSection from "../InsetSection";
-import { TextWithColor } from "./Practicality";
-import hands from "../../assets/images/hands.png";
-import BlueCurve from "../../assets/images/curve-gradient-blue.png";
 import {
-  GradientContainer,
-  CurveContainer,
   Content,
   TopContent,
   TextContent,
-  ImageContent,
-  Title,
+  // Title,
   Start,
-  BottomContent,
-  QualityText,
-  SubQualityText,
 } from "./servicesStyle";
-import { Animate } from "../Animations/AnimateIn";
 
 const Consulting = () => {
   return (
-    <InsetSection bgImage={"/galaxy.png"}>
-      <GradientContainer>
-        <LineGradient
-          colorFrom={`#10C75900, #8B90FFCF, #8B90FF`}
-          colorTo={`#8B90FFD2, #10C75900`}
-        />
-        <CurveContainer>
-          <Image src={BlueCurve} alt="" />
-        </CurveContainer>
-      </GradientContainer>
+    <Container>
       <Content>
         <TopContent>
           <TextContent>
-            <Title>
-              <Animate.SlideInLeft>
-                <TextWithColor color="#8B90FF">
-                  Our team of experts
-                </TextWithColor>{" "}
-                has years of experience in the tech industry, and we are here to
-                help you with any challenges you may face.
-              </Animate.SlideInLeft>
-            </Title>
+            <Title>Consultation & Contracting</Title>
+            <Tagline>A Team of skilled professionals at your disposal.</Tagline>
+            <Description>
+              Whether you need assistance with a specific project or want to
+              optimize your tech infrastructure, we can provide the guidance and
+              support you need. Our team of experts has years of experience in
+              the tech industry, and we are here to help you with any challenges
+              you may face.
+            </Description>
             <Start>
-              <UnstyledButton>Start learning</UnstyledButton>
-              <MdKeyboardArrowRight color={"#8691A6"} size={24} />
+              <Button
+                bgColor={
+                  "linear-gradient(145.35deg, rgba(62, 63, 73, 0.7) 4.67%, #3E3F49 95.66%)"
+                }
+                color={"white"}
+                title="Get Started Now"
+              />
+              <Button
+                variant={"outline"}
+                borderColor={"#8691A6"}
+                color="#121212"
+                title={"Learn More"}
+              />
             </Start>
           </TextContent>
-          <ImageContent>
-            <Animate.SlideInRight>
-              <Image src={hands} alt={""} sizes="100vw" />
-            </Animate.SlideInRight>
-          </ImageContent>
         </TopContent>
-        <BottomContent>
-          <Animate.SlideInLeft>
-            <Button
-              title={"Why Innovatics?"}
-              variant={"outline"}
-              borderColor={"#8B90FF"}
-              size={`18px`}
-              rounded
-            />
-            <QualityText>
-              <TextWithColor color="#8B90FF">
-                Consultation and Contracting
-              </TextWithColor>
-            </QualityText>
-            <SubQualityText>
-              education that makes you a Pro at what you do
-            </SubQualityText>
-          </Animate.SlideInLeft>
-        </BottomContent>
       </Content>
-    </InsetSection>
+    </Container>
   );
 };
 
 export default Consulting;
+
+const Container = styled.section`
+  background-color: var(--dusty-grey);
+  padding-block: 8rem;
+  background-image: url("/why-ine-bg-revised 1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+`;
+
+const Title = styled.h4`
+  color: #ffa28b;
+`;
+
+const Tagline = styled.p`
+  font-weight: ${WEIGHTS.medium};
+  font-size: 2.8rem;
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: 2.3rem;
+  }
+`;
+
+const Description = styled.p`
+  font-size: var(--font-size-md);
+  color: #121212;
+  width: 60vw;
+  margin-inline: auto;
+  @media ${QUERIES.phoneAndSmaller} {
+    width: revert;
+  }
+`;

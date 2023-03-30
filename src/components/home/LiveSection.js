@@ -10,39 +10,29 @@ import BlueCurve from "../../assets/images/curve-gradient-blue.png";
 import { QUERIES } from "../../constants";
 import { Animate } from "../Animations/AnimateIn";
 import { BsPlayBtn } from "react-icons/bs";
+import { MaxwidthContainer } from "../GlobalStyles";
 
 const FeaturedSection = () => {
   return (
-    <InsetSection>
-      <GradientContainer>
-        <LineGradient
-          colorFrom={`#8B90FF00 , #8B90FFCF, #8B90FF`}
-          colorTo={`#8B90FFD2, #8B90FF00 `}
-        />
-        <CurveContainer>
-          <Image src={BlueCurve} alt="" />
-        </CurveContainer>
-      </GradientContainer>
+    <Container>
       <TextContent>
-        <Animate.SlideInLeft>
-          <Button
-            title={"Live Courses"}
-            variant={"outline"}
-            color={"white"}
-            borderColor={"#8B90FF"}
-            size={`18px`}
-            rounded
-          />
-          <QualityText>
-            <TextWithColor color="#8B90FF">
-              Watch our INNOVATICS LIVE videos
-            </TextWithColor>
-          </QualityText>
-          <SubQualityText>
-            Join our live sessions where we discuss futuristic technologies
-          </SubQualityText>
-        </Animate.SlideInLeft>
-        <div>
+        <QualityText>
+          <TextWithColor color="white">
+            Watch our INNOVATICS LIVE videos
+          </TextWithColor>
+        </QualityText>
+        <SubQualityText>
+          Check out our INNOVATICS Live to see what hot topics we’re talking
+          about next! Don’t forget to follow us on social media for a heads up
+          on when we go live with breaking news events or other announcements.
+        </SubQualityText>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Button
             title={"Watch Us Live"}
             variant="outline"
@@ -50,43 +40,29 @@ const FeaturedSection = () => {
           />
         </div>
       </TextContent>
-    </InsetSection>
+    </Container>
   );
 };
 
 export default FeaturedSection;
 
-const GradientContainer = styled.div`
-  display: flex;
-  align-items: center;
-  /* gap: 10px; */
+const Container = styled.section`
+  background: #0d1117 url("/bg-grad.png");
+  padding: 6rem var(--container-padding);
+  color: white;
+  background-position: center;
+  background-size: cover;
 `;
 
-const CurveContainer = styled.div`
-  height: 50%;
-  margin-right: -2rem;
-  img {
-    height: 100%;
-    /* width: auto; */
-    object-fit: contain;
-  }
-  @media ${QUERIES.phoneAndSmaller} {
-    display: none;
-  }
-`;
-
-const TextContent = styled.div`
-  display: flex;
-  align-self: center;
+const TextContent = styled(MaxwidthContainer)`
+  display: grid;
   align-items: center;
-  padding-top: 2rem;
+  text-align: center;
+  padding-block: 2rem;
   flex-wrap: wrap;
+  margin-inline: auto;
   justify-content: space-between;
-  gap: 2rem;
-  padding-bottom: 2rem;
-  @media ${QUERIES.phoneAndSmaller} {
-    margin-left: 2rem;
-  }
+  gap: 1.5rem;
 `;
 
 const QualityText = styled.p`
@@ -96,11 +72,10 @@ const QualityText = styled.p`
 `;
 
 const SubQualityText = styled.p`
-  font-weight: 500;
-  font-size: clamp(0.875rem, 1.667vw + 0.25rem, 1.75rem);
   margin-top: 0;
-  width: 35ch;
-
+  line-height: 1.5;
+  width: 65%;
+  margin-inline: auto;
   @media ${QUERIES.phoneAndSmaller} {
     width: revert;
   }
