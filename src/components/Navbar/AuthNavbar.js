@@ -39,7 +39,7 @@ const AuthNavbar = ({ loading, auth }) => {
     <>
       <AuthNavContainer>
         <IconContainer>
-          <Link href={{ pathname: "/search", query: { name: "data" } }}>
+          <Link href={{ pathname: "/courses", query: { name: "data" } }}>
             <BiSearch />
           </Link>
         </IconContainer>

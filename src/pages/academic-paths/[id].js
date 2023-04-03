@@ -200,7 +200,6 @@ const AcademicPaths = () => {
             </PaginationActions>
           </MaxwidthContainer>
         </Pagination>
-
         <JoinDiscord />
       </Container>
     </>
@@ -301,6 +300,10 @@ export const CourseListings = styled.section`
 
   hr {
     border: 1px solid #8691a6;
+  }
+
+  @media ${QUERIES.tabletAndSmaller} {
+    padding: 2rem 0;
   }
 `;
 

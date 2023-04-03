@@ -10,7 +10,6 @@ import { auth } from "../../../firebaseConfig";
 import logo from "../../assets/images/logo 1.png";
 import { QUERIES } from "../../constants";
 import AuthNavbar from "./AuthNavbar";
-import useToggle from "../../hooks/useToggle";
 import MenuButton from "../MenuButton";
 
 const Navbar = () => {
