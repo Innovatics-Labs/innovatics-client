@@ -5,6 +5,7 @@ import { BsCollectionPlay } from "react-icons/bs";
 import { WEIGHTS, QUERIES } from "../constants";
 import Button from "./Button";
 import { MaxwidthContainer } from "./GlobalStyles";
+import Link from "next/link";
 
 const OurProcess = ({ bgDark }) => {
   return (
@@ -16,7 +17,12 @@ const OurProcess = ({ bgDark }) => {
             Our training programs are designed to equip you with the knowledge
             and skills you need to succeed in the tech industry.
           </Subtitle>
-          <Button title={"Request Information"} variant="outline" />
+          <Button
+            as={Link}
+            href="/faqs"
+            title={"Request Information"}
+            variant="outline"
+          />
         </TextContent>
         <ProcessList>
           <li>

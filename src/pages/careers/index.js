@@ -1,16 +1,15 @@
 import React from "react";
-
-import ServiceHero from "../../components/services/Hero";
 import LineGradient from "../../components/LineGradient";
+import ServiceHero from "../../components/services/Hero";
 import { GradientDivider } from "../services/career-change";
 import { DetailSection } from "../services/training";
 
-const Community = () => {
+const Careers = () => {
   return (
     <div>
       <ServiceHero
         bgImage="/digitization.png"
-        headline="Tech Community"
+        headline="Join Us"
         subtitle={
           "we are always looking for talented and motivated individuals to join our team."
         }
@@ -28,4 +27,4 @@ const Community = () => {
   );
 };
 
-export default Community;
+export default Careers;

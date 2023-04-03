@@ -45,11 +45,10 @@ const Hero = () => {
                   title="Get Started Now"
                   bgColor={"white"}
                   color="#121212"
-                  hover={true}
                 />
                 <Button
                   as={Link}
-                  href="/bootcamps"
+                  href="/faqs"
                   title="Request Information"
                   variant={"outline"}
                 />

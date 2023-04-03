@@ -30,35 +30,41 @@ const Footer = () => {
                 <LinkListItem>
                   <Link href="/community">Community</Link>
                 </LinkListItem>
-                <LinkListItem>
-                  <Link href="/newsroom">Live</Link>
+                {/* <LinkListItem>
+                  <Link href="/">Live</Link>
                 </LinkListItem>
                 <LinkListItem>
-                  <Link href="/blog">Blog</Link>
+                  <Link href="/">Blog</Link>
                 </LinkListItem>
                 <LinkListItem>
-                  <Link href="/instructors">Instructors</Link>
-                </LinkListItem>
+                  <Link href="/">Instructors</Link>
+                </LinkListItem> */}
               </LinkList>
             </LinksSection>
             <LinksSection>
               <LinksSectionTitle>Academy</LinksSectionTitle>
               <LinkList>
                 <LinkListItem>
-                  <Link href="/data-science">Data Science</Link>
+                  <Link href="/academic-paths/VA03NCArYhjCSZSBjWXu">
+                    Data Science
+                  </Link>
                 </LinkListItem>
                 <LinkListItem>
-                  <Link href="/software">Software</Link>
+                  <Link href="/academic-paths/w6oFaP8dPcYnFnxm0GsP">
+                    Software
+                  </Link>
                 </LinkListItem>
                 <LinkListItem>
-                  <Link href="/security">Security</Link>
+                  <Link href="/academic-paths/vemOyF3KyN3UMAWlGmJO">
+                    Security
+                  </Link>
                 </LinkListItem>
                 <LinkListItem>
-                  <Link href="/cloud">Cloud</Link>
+                  <Link href="/academic-paths/I1bBR542RwlLqXIfk7VZ">Cloud</Link>
                 </LinkListItem>
-                <LinkListItem>
+                {/* <LinkListItem>
                   <Link href="/courses">Learning Paths</Link>
-                </LinkListItem>
+                </LinkListItem> */}
                 <LinkListItem>
                   <Link href="/courses">Courses</Link>
                 </LinkListItem>
@@ -71,10 +77,10 @@ const Footer = () => {
               <LinksSectionTitle>Plans</LinksSectionTitle>
               <LinkList>
                 <LinkListItem>
-                  <Link href="/features">Pricing & Plans</Link>
+                  <Link href="/">Pricing & Plans</Link>
                 </LinkListItem>
                 <LinkListItem>
-                  <Link href="/careers">Enterprise Plan</Link>
+                  <Link href="/">Enterprise Plan</Link>
                 </LinkListItem>
               </LinkList>
             </LinksSection>
@@ -82,7 +88,7 @@ const Footer = () => {
               <LinksSectionTitle>Support</LinksSectionTitle>
               <LinkList>
                 <LinkListItem>
-                  <Link href="/features">Help Center</Link>
+                  <Link href="/faqs">Help Center</Link>
                 </LinkListItem>
               </LinkList>
             </LinksSection>

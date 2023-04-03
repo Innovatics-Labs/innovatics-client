@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import styled from "styled-components";
 import { WEIGHTS, QUERIES } from "../../constants";
@@ -34,12 +35,16 @@ const Consulting = () => {
                 }
                 color={"white"}
                 title="Get Started Now"
+                as={Link}
+                href="/services/consultation"
               />
               <Button
                 variant={"outline"}
                 borderColor={"#8691A6"}
                 color="#121212"
                 title={"Learn More"}
+                as={Link}
+                href="/services/consultation"
               />
             </Start>
           </TextContent>

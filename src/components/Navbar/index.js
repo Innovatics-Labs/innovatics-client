@@ -15,20 +15,18 @@ import MenuButton from "../MenuButton";
 
 const Navbar = () => {
   const route = useRouter();
-  const [showNav, setShowNav] = useToggle();
   const [user, loading, error] = useAuthState(auth);
-
-  const handleShowNavbar = useCallback(() => {
-    setShowNav();
-  }, [setShowNav]);
+  const [showNav, setShowNav] = useState(false);
+  const open = () => setShowNav(true);
+  const close = useCallback(() => setShowNav(false), [setShowNav]);
 
   useEffect(() => {
     // subscribe
-    route.events.on("routeChangeStart", handleShowNavbar);
+    route.events.on("routeChangeStart", close);
 
     // unsubscribe
-    return () => route.events.off("routeChangeStart", handleShowNavbar);
-  }, [handleShowNavbar, route.events]);
+    return () => route.events.off("routeChangeStart", close);
+  }, [close, route.events]);
 
   return (
     <NavContainer pathName={route.pathname} active={showNav}>
@@ -42,26 +40,29 @@ const Navbar = () => {
           <AuthNavbar loading={loading} auth={auth} />
         ) : (
           <>
-            <MenuIcon onClick={handleShowNavbar}>
+            <MenuIcon onClick={showNav ? close : open}>
               {showNav ? <GiCancel size={26} /> : <GiHamburgerMenu size={26} />}
             </MenuIcon>
             <NavElements active={showNav}>
               <NavItems>
                 <MenuButton />
                 <MenuItem>
-                  <Link href={"/bootcamps"}>Bootcamps</Link>
+                  <Link href={"/services/consultation"}>Consulting</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href={"/community"}>Resources</Link>
+                  <Link href={"/services/innovation"}>Placements</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link href={"/services/career-change"}>Career Change</Link>
                 </MenuItem>
               </NavItems>
               <NavItems>
                 <MenuItem>
                   <Link href={"/signIn"}>Sign In</Link>
                 </MenuItem>
-                <SignInButton>
+                {/* <SignInButton>
                   <Link href={"/faqs"}>Request Information</Link>
-                </SignInButton>
+                </SignInButton> */}
                 <MenuItem
                   style={{
                     background: "#FFFFFF",
@@ -117,6 +118,7 @@ const Container = styled.div`
   gap: 1.5rem;
   ${({ user }) => user && `justify-content: space-between;`}
   /* flex-wrap: wrap; */
+  
 
   @media (max-width: 1140px) {
     justify-content: space-between;
@@ -148,6 +150,19 @@ const NavElements = styled.div`
     flex-direction: column;
     justify-content: initial;
     padding-block: 2rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #121212 #e0e0e0;
+
+    ::-webkit-scrollbar {
+      height: 8px;
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #121212;
+      border-radius: 100px;
+    }
 
     ${({ active }) => `${active && "width: 300px"}`}
   }

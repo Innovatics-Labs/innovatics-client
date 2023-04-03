@@ -45,4 +45,5 @@ const Headline = styled.h2`
 const Subtitle = styled.p`
   font-size: var(--font-size-xl);
   margin-top: 5px;
+  text-align: center;
 `;

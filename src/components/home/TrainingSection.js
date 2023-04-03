@@ -7,6 +7,7 @@ import { QUERIES } from "../../constants";
 import { MaxwidthContainer } from "../GlobalStyles";
 import trainingIcon from "../../assets/images/mock-training-icon.png";
 import Button from "../Button";
+import Link from "next/link";
 
 const TrainingSection = () => {
   return (
@@ -22,13 +23,20 @@ const TrainingSection = () => {
             </SubTitle>
             <Start>
               <Button
+                as={Link}
+                href="/services/training"
                 bgColor={
                   "linear-gradient(145.35deg, rgba(62, 63, 73, 0.7) 4.67%, #3E3F49 95.66%)"
                 }
                 color="white"
                 title={"Get Started Now"}
               />
-              <Button title={"Learn more"} variant="outline" />
+              <Button
+                as={Link}
+                href="/services/training"
+                title={"Learn more"}
+                variant="outline"
+              />
             </Start>
           </TextContent>
         </TopContainer>

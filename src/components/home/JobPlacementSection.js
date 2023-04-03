@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import styled from "styled-components";
 import { WEIGHTS, QUERIES } from "../../constants";
@@ -30,6 +31,8 @@ const JobPlacement = () => {
             </Description>
             <Start>
               <Button
+                as={Link}
+                href="/services/career-change"
                 bgColor={
                   "linear-gradient(145.35deg, rgba(62, 63, 73, 0.7) 4.67%, #3E3F49 95.66%)"
                 }
@@ -37,6 +40,8 @@ const JobPlacement = () => {
                 title="Get Started Now"
               />
               <Button
+                as={Link}
+                href="/services/career-change"
                 variant={"outline"}
                 borderColor={"#8691A6"}
                 color="#121212"

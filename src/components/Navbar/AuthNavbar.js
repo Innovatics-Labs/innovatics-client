@@ -144,6 +144,7 @@ const NavOverlay = styled(DialogOverlay)`
   background: var(--color-backdrop);
   display: flex;
   justify-content: flex-end;
+  z-index: var(--z-modal);
 `;
 
 const NavContent = styled(DialogContent)`

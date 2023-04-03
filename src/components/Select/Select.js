@@ -4,8 +4,6 @@ import styled from "styled-components";
 
 import { WEIGHTS, COLORS } from "../../constants";
 
-// import Icon from '../Icon';
-
 const Select = ({ label, value, children, ...delegated }) => {
   const childArray = React.Children.toArray(children);
   const selectedChild = childArray.find((child) => child.props.value === value);

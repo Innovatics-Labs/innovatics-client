@@ -41,8 +41,6 @@ const Button = ({
   title,
   color,
   width,
-  bgColor,
-  borderColor,
   size,
   rounded,
   IconRight,
@@ -60,8 +58,6 @@ const Button = ({
       variant={variant}
       width={width}
       color={color}
-      bgColor={bgColor}
-      borderColor={borderColor}
       size={size}
       rounded={rounded}
       onClick={onClick}

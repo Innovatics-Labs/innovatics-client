@@ -54,19 +54,22 @@ export default function MenuButton() {
   return (
     <DropdownMenu ref={dropdownMenuRef}>
       <DropdownButton onClick={toggleMenu}>
-        Services <FiChevronDown />
+        Training <FiChevronDown />
       </DropdownButton>
       <DropdownContent isExpanded={isExpanded}>
-        <DropdownLink href="/services/training">Training</DropdownLink>
-        <DropdownLink href="/services/consultation">
-          Consulting & Contracting
+        <DropdownLink href="/academic-paths/VA03NCArYhjCSZSBjWXu">
+          Data Science
         </DropdownLink>
-        <DropdownLink href="/services/innovation">
-          Innovation & Development
+        <DropdownLink href="/academic-paths/w6oFaP8dPcYnFnxm0GsP">
+          Software
         </DropdownLink>
-        <DropdownLink href="/services/career-change">
-          Job Placement
+        <DropdownLink href="/academic-paths/vemOyF3KyN3UMAWlGmJO">
+          Security
         </DropdownLink>
+        <DropdownLink href="/academic-paths/I1bBR542RwlLqXIfk7VZ">
+          Cloud
+        </DropdownLink>
+        <DropdownLink href={"/bootcamps"}>Bootcamps</DropdownLink>
       </DropdownContent>
     </DropdownMenu>
   );
