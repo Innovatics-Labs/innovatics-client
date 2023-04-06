@@ -6,7 +6,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiSearch, BiLogOutCircle } from "react-icons/bi";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import UnstyledButton from "../UnstyledButton";
 import Button from "../Button";
@@ -111,9 +111,6 @@ const AuthNavContainer = styled.ul`
   color: white;
   padding-left: 0;
   font-size: var(--font-size-md);
-  @media ${QUERIES.phoneAndSmaller} {
-    gap: 1rem;
-  }
 `;
 
 const User = styled(Link)`
@@ -147,6 +144,14 @@ const NavOverlay = styled(DialogOverlay)`
   z-index: var(--z-modal);
 `;
 
+const slideIn = keyframes`
+from{
+  transform: translateX(100%)
+}
+to{
+  transform:translateX(0%)
+}`;
+
 const NavContent = styled(DialogContent)`
   display: flex;
   flex-direction: column;
@@ -160,6 +165,7 @@ const NavContent = styled(DialogContent)`
   box-shadow: 0px 0px 106.452px rgba(246, 249, 253, 0.25);
   border-radius: 30px 0px 0px 30px;
   font-size: 18px;
+  animation: ${slideIn} 300ms;
 
   @media ${QUERIES.tabletAndSmaller} {
     width: 300px;
