@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import styled from "styled-components";
 import { QUERIES, WEIGHTS } from "../../constants";
 import Button from "../Button";
@@ -31,7 +30,7 @@ const ServiceCard = ({
 
 export default ServiceCard;
 
-const ServiceCardContainer = styled.article`
+export const ServiceCardContainer = styled.article`
   display: flex;
   gap: 2rem;
   margin-block: 3rem;
@@ -44,11 +43,11 @@ const ServiceCardContainer = styled.article`
   }
 `;
 
-const ServiceCardContent = styled.div`
+export const ServiceCardContent = styled.div`
   flex: 1;
 `;
 
-const ImageContainer = styled.div`
+export const ImageContainer = styled.div`
   flex: 1;
   height: 100%;
   width: 100%;
@@ -67,13 +66,13 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ServiceTitle = styled.h4`
+export const ServiceTitle = styled.h4`
   font-weight: ${WEIGHTS.semiBold};
   font-size: var(--font-size-xl);
   margin-top: 0;
 `;
 
-const ServiceDescription = styled.p`
+export const ServiceDescription = styled.p`
   font-weight: ${WEIGHTS.medium};
   font-size: var(--font-size-md);
   line-height: 1.5;

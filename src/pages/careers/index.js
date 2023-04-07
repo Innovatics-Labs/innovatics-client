@@ -12,6 +12,7 @@ import Button from "../../components/Button";
 import { BsArrowRight } from "react-icons/bs";
 import { QUERIES } from "../../constants";
 import { MaxwidthContainer } from "../../components/GlobalStyles";
+import Link from "next/link";
 
 const Careers = () => {
   return (
@@ -122,54 +123,60 @@ const Careers = () => {
             </CareerCategory>
             <CategoryJobs>
               <JobListings>
-                <JobItem>
-                  <li>
-                    <p>Java Developer</p>
-                  </li>
-                  <li>
-                    <JobDetailType>Experience</JobDetailType>
-                    <p>1 Years</p>
-                  </li>
-                  <li>
-                    <JobDetailType>Deadline</JobDetailType>
-                    <p>2021-05-08</p>
-                  </li>
-                  <li>
-                    <BsArrowRight color="#D4D4D4" />
-                  </li>
-                </JobItem>
-                <JobItem>
-                  <li>
-                    <p>DevOps Engineer</p>
-                  </li>
-                  <li>
-                    <JobDetailType>Experience</JobDetailType>
-                    <p>5 Years</p>
-                  </li>
-                  <li>
-                    <JobDetailType>Deadline</JobDetailType>
-                    <p>2021-05-08</p>
-                  </li>
-                  <li>
-                    <BsArrowRight color="#D4D4D4" />
-                  </li>
-                </JobItem>
-                <JobItem>
-                  <li>
-                    <p>Data Scientist</p>
-                  </li>
-                  <li>
-                    <JobDetailType>Experience</JobDetailType>
-                    <p>2 Years</p>
-                  </li>
-                  <li>
-                    <JobDetailType>Deadline</JobDetailType>
-                    <p>2021-05-08</p>
-                  </li>
-                  <li>
-                    <BsArrowRight color="#D4D4D4" />
-                  </li>
-                </JobItem>
+                <Link href="">
+                  <JobItem>
+                    <li>
+                      <p>Java Developer</p>
+                    </li>
+                    <li>
+                      <JobDetailType>Experience</JobDetailType>
+                      <p>1 Years</p>
+                    </li>
+                    <li>
+                      <JobDetailType>Deadline</JobDetailType>
+                      <p>2021-05-08</p>
+                    </li>
+                    <li>
+                      <BsArrowRight color="#D4D4D4" />
+                    </li>
+                  </JobItem>
+                </Link>
+                <Link href="">
+                  <JobItem>
+                    <li>
+                      <p>DevOps Engineer</p>
+                    </li>
+                    <li>
+                      <JobDetailType>Experience</JobDetailType>
+                      <p>5 Years</p>
+                    </li>
+                    <li>
+                      <JobDetailType>Deadline</JobDetailType>
+                      <p>2021-05-08</p>
+                    </li>
+                    <li>
+                      <BsArrowRight color="#D4D4D4" />
+                    </li>
+                  </JobItem>
+                </Link>
+                <Link href="">
+                  <JobItem>
+                    <li>
+                      <p>Data Scientist</p>
+                    </li>
+                    <li>
+                      <JobDetailType>Experience</JobDetailType>
+                      <p>2 Years</p>
+                    </li>
+                    <li>
+                      <JobDetailType>Deadline</JobDetailType>
+                      <p>2021-05-08</p>
+                    </li>
+                    <li>
+                      <BsArrowRight color="#D4D4D4" />
+                    </li>
+                  </JobItem>
+                </Link>
               </JobListings>
             </CategoryJobs>
           </AvailableOpenings>
@@ -305,6 +312,7 @@ const CategoryItem = styled.li`
   font-size: 18px;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
+  cursor: pointer;
   ${({ active }) => active && `color: #10C759;`}
 `;
 
