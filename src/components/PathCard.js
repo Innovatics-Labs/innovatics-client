@@ -11,11 +11,19 @@ import Server from "../assets/svg/server.svg";
 let colors = ["#44E986", "#FFA28B", "#FAD740", "#8B90FF"];
 let icon = [Data, Coding, Cyber, Server];
 
-const PathCard = ({ number, comingSoon, topic, id, index }) => {
+const PathCard = ({
+  number,
+  comingSoon,
+  topic,
+  id,
+  index,
+  as = Link,
+  href,
+}) => {
   const IconComponent = icon[index];
 
   return (
-    <Card as={Link} href={`/academic-paths/${id}`}>
+    <Card as={as} href={href || `/academic-paths/${id}`}>
       <GradientContainer>
         <Gradient>
           <IconComponent size={30} color={colors[index]} />

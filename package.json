@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@lyrasearch/lyra": "^0.4.10",
     "@reach/accordion": "^0.18.0",
     "@reach/dialog": "^0.18.0",

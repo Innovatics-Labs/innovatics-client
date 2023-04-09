@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import { MdKeyboardArrowRight } from "react-icons/md";
 import styled from "styled-components";
 import { WEIGHTS, QUERIES } from "../../constants";
 
@@ -17,7 +15,18 @@ import {
 const JobPlacement = () => {
   return (
     <Container>
-      <OurProcess bgDark={true} />
+      <OurProcess
+        title={"Our job placement program includes"}
+        subtitle={
+          "Our job placement program has a proven track record of success - in fact, 90% of our graduates land a job in the data science field within six months of completing the program. We're committed to continuing to provide our graduates with the support and resources they need to achieve their career goals."
+        }
+        process1="Career coaching"
+        process2="Industry connections"
+        process3="Networking events"
+        process4="Portfolio development"
+        action={false}
+        bgDark={true}
+      />
       <Content>
         <TopContent>
           <TextContent>

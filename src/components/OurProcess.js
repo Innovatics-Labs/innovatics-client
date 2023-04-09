@@ -7,47 +7,58 @@ import Button from "./Button";
 import { MaxwidthContainer } from "./GlobalStyles";
 import Link from "next/link";
 
-const OurProcess = ({ bgDark }) => {
+const OurProcess = ({
+  title,
+  subtitle,
+  bgDark,
+  process1,
+  process2,
+  process3,
+  process4,
+  action = true,
+}) => {
   return (
     <Container bgDark={bgDark}>
       <Content>
         <TextContent>
-          <Title>Get to know our promising process</Title>
+          <Title>{title || "Get to know our promising process"}</Title>
           <Subtitle>
-            Our training programs are designed to equip you with the knowledge
-            and skills you need to succeed in the tech industry.
+            {subtitle ||
+              "Our training programs are designed to equip you with the knowledge and skills you need to succeed in the tech industry."}
           </Subtitle>
-          <Button
-            as={Link}
-            href="/faqs"
-            title={"Request Information"}
-            variant="outline"
-          />
+          {action && (
+            <Button
+              as={Link}
+              href="/faqs"
+              title={"Request Information"}
+              variant="outline"
+            />
+          )}
         </TextContent>
         <ProcessList>
           <li>
             <Icon>
               <BsCollectionPlay />
             </Icon>
-            Send us your project overview
+            {process1 || "Send us your project overview"}
           </li>
           <li>
             <Icon>
               <BsCollectionPlay />
             </Icon>
-            We will reach out for more details
+            {process2 || "We will reach out for more details"}
           </li>
           <li>
             <Icon>
               <BsCollectionPlay />
             </Icon>
-            Our experts will work with you
+            {process3 || "Our experts will work with you"}
           </li>
           <li>
             <Icon>
               <BsCollectionPlay />
             </Icon>
-            You’ll become happy at the end.
+            {process4 || "You’ll become happy at the end."}
           </li>
         </ProcessList>
       </Content>

@@ -13,6 +13,7 @@ import {
   Description,
   ServiceContent,
 } from "../services/training";
+import FaqSection from "../../components/FaqSection";
 
 const Faqs = () => {
   return (
@@ -48,17 +49,9 @@ const Faqs = () => {
               />
             </GradientDivider>
           </Description>
+
           <FaqDetail>
-            <div style={{ textAlign: "center", lineHeight: "1.5" }}>
-              <h4 style={{ fontWeight: 600, fontSize: 32 }}>FAQs</h4>
-              <p>
-                Benefits of Our Career ChangBefore reaching out to our support
-                team, you may find the answer to your question in our FAQs
-                section. Weve compiled a list of common questions and concerns
-                that our customers have had in the past, along with detailed
-                answers and solutions.e and Job Placement Service:
-              </p>
-            </div>
+            <FaqSection />
             <GradientDivider>
               <LineGradient
                 height="100px"

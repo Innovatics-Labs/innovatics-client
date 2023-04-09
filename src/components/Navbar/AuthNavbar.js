@@ -74,19 +74,19 @@ const AuthNavbar = ({ loading, auth }) => {
                 <Link href="/dashboard">Dashboard</Link>
               </NavItem>
               <NavItem>
-                <Link href="/academic-paths">Academic Paths</Link>
-              </NavItem>
-              <NavItem>
-                <Link href="/bookmarks">Bookmarks</Link>
-              </NavItem>
-              <NavItem>
-                <Link href="/certifications">Certifications</Link>
-              </NavItem>
-              <NavItem>
                 <Link href="/bootcamps">Bootcamps</Link>
               </NavItem>
               <NavItem>
                 <Link href="/courses">Courses</Link>
+              </NavItem>
+              <NavItem>
+                <Link href="/dashboard">Academic Paths</Link>
+              </NavItem>
+              <NavItem>
+                <Link href="/">Bookmarks</Link>
+              </NavItem>
+              <NavItem>
+                <Link href="/">Certifications</Link>
               </NavItem>
             </NavItems>
             <SettingsBtn
