@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FiCalendar, FiShare } from "react-icons/fi";
 import { MdAlarm } from "react-icons/md";
 import { VscCode } from "react-icons/vsc";
@@ -23,18 +23,43 @@ import { GradientContainer } from "../course-work";
 import Newsletter from "../../components/Newsletter";
 import OurProcess from "../../components/OurProcess";
 import ContactDetail from "../../components/ContactDetail";
+import Link from "next/link";
 
-const Bootcamps = () => {
+const dev = process.env.NODE_ENV !== "production";
+const server = dev ? "http://localhost:3000" : "https://innovatics.ai";
+
+const Bootcamps = ({ bootcamp }) => {
+  // const [data, setData] = useState(null);
+
+  // const getBootcampDetail = async () => {
+  //   const response = await fetch("/bootcamps.json", {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json",
+  //     },
+  //   });
+  //   const jsonData = await response.json();
+  //   setData(jsonData.bootcamps[0]);
+  //   console.log({
+  //     jsonData: jsonData.bootcamps[0],
+  //     title: jsonData.bootcamps[0].name,
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   getBootcampDetail();
+  // }, []);
+
   return (
     <div>
       <Hero>
         <HeroContent>
-          <Headline>
-            Data Science & AI from Zero to Hero Live Bootcamp 2.0
-          </Headline>
+          <Headline>{bootcamp[0].name}</Headline>
           <SubHeadline>
             <FiShare />
-            <span>Two master curriculum in one</span>
+            <Link href={`${bootcamp && bootcamp[0].courseFile}`} download>
+              Two master curriculum in one
+            </Link>
           </SubHeadline>
         </HeroContent>
       </Hero>
@@ -47,20 +72,7 @@ const Bootcamps = () => {
           <div>
             <DetailContent>
               <LeftContent>
-                <p>
-                  To maintain a competitive edge, today’s organizations must
-                  gain practical knowledge of data science, machine learning and
-                  artificial intelligence. Careers especially in engineering,
-                  data science, and technical management depend on the immense
-                  value of those advanced analytical and programming skills.
-                </p>
-                <p>
-                  In the Data Science & Machine Learning program from zero to
-                  hero program, an executive education program led by the Big
-                  Bang Data, you will dive deep into learning the applied
-                  mathematical structure of core machine learning (ML) and
-                  artificial intelligence (AI) methods.
-                </p>
+                <p>{bootcamp[0] && bootcamp[0]?.detail?.objective}</p>
                 <p>
                   The course focuses on the skills needed to work efficiently
                   with machine learning models, such classification models,
@@ -81,28 +93,32 @@ const Bootcamps = () => {
                       <FiCalendar size={30} />
                       <p>
                         <TopSub>START DATE:</TopSub>
-                        <Sub>2nd of June 2023</Sub>
+                        <Sub>{bootcamp[0] && bootcamp[0]?.detail?.date}</Sub>
                       </p>
                     </DetailSummaryList>
                     <DetailSummaryList>
                       <MdAlarm size={30} />
                       <p>
                         <TopSub>TIMING:</TopSub>
-                        <Sub>08:00am - 03:00pm EST (Sunday - Saturday)</Sub>
+                        <Sub>{bootcamp[0] && bootcamp[0]?.detail?.timing}</Sub>
                       </p>
                     </DetailSummaryList>
                     <DetailSummaryList>
                       <FiCalendar size={30} />
                       <p>
                         <TopSub>DIFFICULTY:</TopSub>
-                        <Sub>Beginner - Advance (Zero - Hero)</Sub>
+                        <Sub>
+                          {bootcamp[0] && bootcamp[0]?.detail?.difficulty}
+                        </Sub>
                       </p>
                     </DetailSummaryList>
                     <DetailSummaryList>
                       <FiCalendar size={30} />
                       <p>
                         <TopSub>DURATION:</TopSub>
-                        <Sub>6 months - 8 months</Sub>
+                        <Sub>
+                          {bootcamp[0] && bootcamp[0]?.detail?.duration}
+                        </Sub>
                       </p>
                     </DetailSummaryList>
                   </DetailSummaryLists>
@@ -110,7 +126,7 @@ const Bootcamps = () => {
               </RightContent>
             </DetailContent>
             <ActionContainer>
-              <Price>$2,990</Price>
+              <Price>{bootcamp[0] && bootcamp[0]?.detail?.price}</Price>
               <Button
                 bgColor={"white"}
                 color="hsla(216, 28%, 7%, 1)"
@@ -133,27 +149,10 @@ const Bootcamps = () => {
                   <p>What you’ll learn</p>
                 </OverviewTitle>
                 <OverviewFeatureList>
-                  <li>Provision Azure virtual networks</li>
-                  <li>Control virtual network traffic</li>
-                  <li>Manage DNS for virtual networks and public access</li>
-                  <li>
-                    Connect virtual networks to other virtual networks and
-                    external networks
-                  </li>
-                  <li>Monitor virtual network traffic</li>
-                  <li>
-                    Connect virtual networks to other virtual networks and
-                    external networks
-                  </li>
-                  <li>Monitor virtual network traffic</li>
-                  <li>Real Time projects</li>
-                  <li>Architecture</li>
-                  <li>Domain wise project</li>
-                  <li>Databases</li>
-                  <li>Negotiations skills</li>
-                  <li>Mock interview</li>
-                  <li>Interview preparation</li>
-                  <li> Resume building after every module</li>
+                  {bootcamp[0] &&
+                    bootcamp[0].detail.goals.map((goal, index) => (
+                      <li key={index}>{goal}</li>
+                    ))}
                 </OverviewFeatureList>
               </OverviewCard>
               <OverviewCard>
@@ -162,25 +161,13 @@ const Bootcamps = () => {
                     IconComponent={<VscCode size={30} color="#44E986" />}
                     bgColor={"#44E986"}
                   />
-                  <p>Course Features</p>
+                  <p>Course Audience</p>
                 </OverviewTitle>
                 <OverviewFeatureList>
-                  <li>Full stack Data Science master’s certification</li>
-                  <li>Job guarantee otherwise refund</li>
-                  <li>One year of internship Anytime</li>
-                  <li>
-                    Online Instructor-led learning: Live teaching by instructors
-                  </li>
-                  <li>56 + hands-on industry real-time projects.</li>
-                  <li>500 hours live interactive classes.</li>
-                  <li>
-                    Every week doubt clearing session after the live classes.
-                  </li>
-                  <li>Lifetime Dashboard access</li>
-                  <li>Doubt clearing one to one</li>
-                  <li>Doubt clearing through mail and skype support team</li>
-                  <li>Assignment in all the module</li>
-                  <li>A live project with real-time implementation</li>
+                  {bootcamp[0] &&
+                    bootcamp[0]?.detail?.audience.map((audience, index) => (
+                      <li key={index}>{audience}</li>
+                    ))}
                 </OverviewFeatureList>
               </OverviewCard>
               <OverviewCard>
@@ -242,7 +229,7 @@ const Bootcamps = () => {
                     </AccordionTitle>
                     <Panel>
                       <CurriculumFeatureList>
-                        <CurriculumList>Python Basic</CurriculumList>
+                        <CurriculumList>Python Ba sic</CurriculumList>
                         <CurriculumList>String, List, Indexing</CurriculumList>
                         <CurriculumList>Tuple, Set & Dict</CurriculumList>
                         <CurriculumList>String, List, Indexing</CurriculumList>
@@ -265,22 +252,10 @@ const Bootcamps = () => {
                   <p>Requirements</p>
                 </OverviewTitle>
                 <OverviewFeatureList>
-                  <li>Basic understanding of cloud concepts</li>
-                  <li>
-                    Basic understanding of networking concepts including IP
-                    addressing, DHCP, and DNS
-                  </li>
-                  <li>Familiarity with templated deployments</li>
-                  <li>
-                    Basic understanding of networking concepts including IP
-                    addressing, DHCP, and DNS
-                  </li>
-                  <li>Familiarity with templated deployments</li>
-                  <li>
-                    Basic understanding of networking concepts including IP
-                    addressing, DHCP, and DNS
-                  </li>
-                  <li>Familiarity with templated deployments</li>
+                  {bootcamp[0] &&
+                    bootcamp[0]?.detail?.requirements.map(
+                      (requirement, index) => <li key={index}>{requirement}</li>
+                    )}
                 </OverviewFeatureList>
               </OverviewCard>
             </Masonry>
@@ -304,75 +279,30 @@ const Bootcamps = () => {
           <InstructorContainer>
             <h4>Instructors</h4>
             <div>
-              <InstructorDetailContainer>
-                <CapContainer>
-                  <InstructorCap />
-                  <p>Muhammad Medwani</p>
-                </CapContainer>
-                <InstructorDetail>
-                  <h5>Founder - Innovatics.ai</h5>
-                  <p>
-                    Founder of Innovatics.ai is an expert data scientist with a
-                    passion for transforming data into useful products. He has
-                    over 20 years of experience in service delivery management;
-                    Ph.D. candidate in AI, four master’s degrees in data
-                    science, IT, machine learning, and business administration;
-                    and over nine years of experience working with data science.
-                    Mo’s specialties include data science, machine learning, big
-                    data, deep learning, data analytics, application support and
-                    IT service delivery management.
-                  </p>
-                  <Social>
-                    Social Links: <FaLinkedinIn /> <FaTwitter />{" "}
-                  </Social>
-                </InstructorDetail>
-              </InstructorDetailContainer>
-              <InstructorDetailContainer>
-                <CapContainer>
-                  <InstructorCap />
-                  <p>Muhammad Medwani</p>
-                </CapContainer>
-                <InstructorDetail>
-                  <h5>Founder - Innovatics.ai</h5>
-                  <p>
-                    Founder of Innovatics.ai is an expert data scientist with a
-                    passion for transforming data into useful products. He has
-                    over 20 years of experience in service delivery management;
-                    Ph.D. candidate in AI, four master’s degrees in data
-                    science, IT, machine learning, and business administration;
-                    and over nine years of experience working with data science.
-                    Mo’s specialties include data science, machine learning, big
-                    data, deep learning, data analytics, application support and
-                    IT service delivery management.
-                  </p>
-                  <Social>
-                    Social Links: <FaLinkedinIn /> <FaTwitter />{" "}
-                  </Social>
-                </InstructorDetail>
-              </InstructorDetailContainer>
-              <InstructorDetailContainer>
-                <CapContainer>
-                  <InstructorCap />
-                  <p>Muhammad Medwani</p>
-                </CapContainer>
-                <InstructorDetail>
-                  <h5>Founder - Innovatics.ai</h5>
-                  <p>
-                    Founder of Innovatics.ai is an expert data scientist with a
-                    passion for transforming data into useful products. He has
-                    over 20 years of experience in service delivery management;
-                    Ph.D. candidate in AI, four master’s degrees in data
-                    science, IT, machine learning, and business administration;
-                    and over nine years of experience working with data science.
-                    Mo’s specialties include data science, machine learning, big
-                    data, deep learning, data analytics, application support and
-                    IT service delivery management.
-                  </p>
-                  <Social>
-                    Social Links: <FaLinkedinIn /> <FaTwitter />{" "}
-                  </Social>
-                </InstructorDetail>
-              </InstructorDetailContainer>
+              {bootcamp[0] &&
+                bootcamp[0]?.instructors.map(
+                  ({ name, description, position, social }, index) => (
+                    <InstructorDetailContainer key={`${name + index}`}>
+                      <CapContainer>
+                        <InstructorCap />
+                        <p>{name}</p>
+                      </CapContainer>
+                      <InstructorDetail>
+                        <h5>{position}</h5>
+                        <p>{description}</p>
+                        <Social>
+                          Social Links:{" "}
+                          <Link href={social.linkedIn}>
+                            <FaLinkedinIn />
+                          </Link>
+                          <Link href={social.twitter}>
+                            <FaTwitter />
+                          </Link>
+                        </Social>
+                      </InstructorDetail>
+                    </InstructorDetailContainer>
+                  )
+                )}
             </div>
           </InstructorContainer>
         </InstructorContent>
@@ -397,6 +327,34 @@ const Bootcamps = () => {
     </div>
   );
 };
+
+export async function getStaticPaths() {
+  const res = await fetch("http://localhost:3000/api/staticdata");
+  const jsonData = await res.json();
+  const parsedData = JSON.parse(jsonData);
+  console.log({ parsedData });
+  const paths = parsedData.bootcamps.map((bootcamp) => ({
+    params: { slug: bootcamp.slug },
+  }));
+
+  // { fallback: false } means other routes should 404
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps(context) {
+  const res = await fetch("http://localhost:3000/api/staticdata");
+  const result = await res.json();
+  const parsedData = JSON.parse(result);
+  const bootcamp = parsedData.bootcamps.filter(
+    (boot) => boot.slug === context.params.slug
+  );
+  console.log({ bootcamp });
+  return {
+    props: {
+      bootcamp,
+    },
+  };
+}
 
 export default Bootcamps;
 
@@ -584,7 +542,7 @@ const OverviewTitle = styled.div`
 `;
 
 const OverviewFeatureList = styled.ul`
-  list-style-image: url("checkmark.png");
+  list-style-image: url("/checkmark.png");
   font-weight: ${WEIGHTS.medium};
 
   li {

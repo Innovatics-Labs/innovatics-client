@@ -1,13 +1,10 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import Image from "next/image";
-import { BsCollectionPlay } from "react-icons/bs";
-import { IoBookOutline } from "react-icons/io5";
-import { BiSupport } from "react-icons/bi";
-import { RiStackLine } from "react-icons/ri";
+import useSWR from "swr";
 
 import ServiceHero from "../../components/services/Hero";
-
 import { QUERIES, WEIGHTS } from "../../constants";
 import { MaxwidthContainer } from "../../components/GlobalStyles";
 import platform from "../../assets/images/platform.png";
@@ -19,42 +16,33 @@ import {
   SubTitle,
   Contact,
   TextContent,
-} from "./data-science";
+} from "./[slug]";
 import Newsletter from "../../components/Newsletter";
 import ContactDetail from "../../components/ContactDetail";
 import JobPlacement from "../../components/home/JobPlacementSection";
 import OurProcess from "../../components/OurProcess";
 import PathCard from "../../components/PathCard";
 import FaqSection from "../../components/FaqSection";
-
-const careerOutcome = [
-  {
-    title: "Data Scientist",
-    subTitle:
-      "They use their skills in data analysis, statistical modeling, and machine learning to solve complex business problems and drive decision-making.",
-    icon: <BsCollectionPlay size={24} />,
-  },
-  {
-    title: "Machine Learning Engineer",
-    subTitle:
-      "Our graduates have landed roles as machine learning engineers, where they develop and deploy machine learning models at scale.",
-    icon: <RiStackLine size={24} />,
-  },
-  {
-    title: "Data Analyst",
-    subTitle:
-      "Our bootcamp provides a solid foundation in data analysis, which prepares our graduates for roles as data analysts.",
-    icon: <BiSupport size={24} />,
-  },
-  {
-    title: "Business Analyst",
-    subTitle:
-      "They use their skills in data analysis, project management, and strategic planning to drive business growth and improve organizational efficiency.",
-    icon: <IoBookOutline size={24} />,
-  },
-];
+import { careerOutcome } from "./data";
+import { fetcher } from "../../utils";
 
 const Index = () => {
+  const [data, setData] = useState(null);
+  const {
+    data: apiData,
+    error,
+    isLoading,
+  } = useSWR("/api/staticdata", fetcher);
+
+  useEffect(() => {
+    if (apiData) {
+      setData(JSON.parse(apiData));
+    }
+  }, [apiData]);
+
+  if (error) return <div>Failed to load</div>;
+  if (isLoading) return <div>Loading...</div>;
+
   return (
     <div>
       <ServiceHero
@@ -67,34 +55,17 @@ const Index = () => {
           <MaxwidthContainer>
             <UpcomingText>UPCOMING BOOTCAMPS</UpcomingText>
             <AvailableBootcamps>
-              <PathCard
-                href="/bootcamps/data-science"
-                number="1"
-                topic="Azure Storage Services"
-                id="1"
-                index="0"
-              />
-              <PathCard
-                href="/bootcamps/data-science"
-                number="2"
-                topic="High Availability and Fault Tolerance in Azure"
-                id=""
-                index="1"
-              />
-              <PathCard
-                href="/bootcamps/data-science"
-                number="3"
-                topic="Azure Network Services"
-                id=""
-                index="2"
-              />
-              <PathCard
-                href="/bootcamps/data-science"
-                number="4"
-                topic="Azure Infrastructure as Code Bootcamp"
-                id="4"
-                index="3"
-              />
+              {data &&
+                data.bootcamps.map(({ name, slug }, index) => (
+                  <PathCard
+                    key={index + name}
+                    href={`/bootcamps/${slug}`}
+                    number={index + 1}
+                    topic={name}
+                    id={index}
+                    index={index}
+                  />
+                ))}
             </AvailableBootcamps>
           </MaxwidthContainer>
         </BootCampsSection>

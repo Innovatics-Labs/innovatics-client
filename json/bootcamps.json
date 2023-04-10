@@ -1,0 +1,160 @@
+{
+  "bootcamps": [
+    {
+      "name": "NLP - Natural Language with Python",
+      "category": "data-science",
+      "slug": "natural-language-with-python",
+      "courseFile": "/documents/NLP - Curriculum.pdf",
+      "detail": {
+        "objective": "Welcome to the Natural Language Processing course designed to be your complete online resource for learning how to use Natural Language Processing with the Python programming language.\n \n The purpose of this course is to equip a learner with Natural Language Processing to become a world class practitioner of NLP with Python. This course starts with basis topics to establish NLP foundations, then advanced topics, such as sentiment analysis of text with the NLTK library and creating semantic word vectors with the Word2Vec algorithm.",
+        "price": "$2,990",
+        "difficulty": "Beginner - Advance (Zero - Hero)",
+        "timing": "08:00am - 03:00pm EST (Sunday - Saturday)",
+        "date": "2nd of June 2023",
+        "duration": "6 months - 8 months",
+        "audience": [
+          "Students who  want to learn Python programming language",
+          "Students who want to learn more about Applied Machine Learning",
+          "Professionals who are interested in applying Machine Learning and NLP to practical problems. ",
+          "Aspiring data scientists and ML engineers interested in NLP.",
+          "Developers looking to implement NLP solutions.",
+          "Data scientist, Machine Learning Engineer, and Python Developers",
+          "Anyone willing to start a career in Data Science, Natural Language Processing, and NLP application such as Sentiment Analysis"
+        ],
+        "goals": [
+          "Learn to work with Text Files with Python",
+          "Utilize Regular Expressions for pattern searching in text.",
+          "Learn NLP pipeline (Stop-words, Whitespace, punctation & number removal, Stemming, Lemmatization)",
+          "Use Part of Speech Tagging to automatically process raw text files.",
+          "Understand Named Entity Recognition, POS and NER",
+          "Use SciKitLearn for Text Classification",
+          "Use Latent Dirichlet Allocation for Topic Modelling",
+          "Use the Word2Vec algorithm.",
+          "Use NLTK for Sentiment Analysis",
+          "Learn NLP with different libraries such as NLTK, Spacy, TextBlob, Gensim, Pattern, and Stanford CoreNLP"
+        ],
+        "curriculum": [],
+        "requirements": [
+          "No prior coding or technical knowledge is required",
+          "A computer with Internet connection.",
+          "No paid tools required for this course.",
+          "Passion and curiosity to learn."
+        ]
+      },
+      "instructors": [
+        {
+          "name": "Muhammad Medwani",
+          "description": "Founder of Innovatics.ai is an expert data scientist with a passion for transforming data into useful products. He has over 20 years of experience in service delivery management; Ph.D. candidate in AI, four master’s degrees in data science, IT, machine learning, and business administration; and over nine years of experience working with data science. Mo’s specialties include data science, machine learning, big data, deep learning, data analytics, application support and IT service delivery management.",
+          "position": "Founder - Innovatics.ai",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "Python for Data Science",
+      "category": "data-science",
+      "slug": "python-for-data-science",
+      "courseFile": "/documents/Python for Data Science - Batch 3.curriculum.docx",
+      "detail": {
+        "objective": "Businesses increasingly create, track, and rely on data.  Your ability to manipulate data with your programming skills to solve business requirements is extremely valuable.In this 14-week intensive (rigorous) program you will learn programming skills needed for your career.\n \nGain a strong knowledge and experience about Python by crafting beautiful, clean, elegant, efficient, maintainable, scalable, robust, and generalized Pythonic programs in multiple areas, such as: numerical processing, probability, statistics, linear algebra, data analysis, machine learning ecosystems, and data visualization.  We will practice incremental development as we develop algorithms in our live coding sessions. Time permitting or special optional breakouts may even investigate personal special interests and topics.Developer tools and techniques will be used throughout the course, such as: lint, unit testing, debugging, performance, profiling, execution visualization.",
+        "price": "$420",
+        "difficulty": "Beginner - Advance (Zero - Hero)",
+        "timing": "08:00am - 03:00pm EST (Sunday - Saturday)",
+        "date": "2nd of June 2023",
+        "duration": "6 months - 8 months",
+        "audience": [
+          "Want to learn how to program in Python",
+          "You are tired of Python courses that are too complicated",
+          "Professionals who are interested in applying Machine Learning and NLP to practical problems. ",
+          "Want to learn Python by doing.",
+          "Developers looking to transition into Data Science",
+          "Anyone willing to start a career in Data Science."
+        ],
+        "goals": [
+          "Fundamentals - Essentials, Data Structures and Algotithms",
+          "Coding for Big Data",
+          "SQL - also SQL with pandas (SQLite?)",
+          "XML processing",
+          "JSON processing",
+          "Web scraping - requests module, response, beautiful soup",
+          "GUI Programming",
+          "Databases",
+          "Writing idiomatic (Pythonic) code",
+          "SDLC Design:  top-down design … bottom-up coding/implementation",
+          "OOP - Classes/Objects - data structures",
+          "Regex - regular expressions",
+          "Sentiment analysis - requests, bs4-Beautiful Soup",
+          "Cryptography"
+        ],
+        "requirements": [
+          "No prior coding or technical knowledge is required",
+          "A computer with Internet connection.",
+          "No paid tools required for this course.",
+          "Passion and curiosity to learn."
+        ]
+      },
+      "instructors": [
+        {
+          "name": "Edward Bujak",
+          "description": "25 years IT experience - developer, consultant, founder, with6 years of Data Science experience, 19 years education experience: Computer Science, Mathematics, Engineering, 2 masters degrees - MS Electrical Engineering & Science, MS Education, Public speaker - frequently present at Meetup groups, clubs, conferences, on everything programming and computer science, Data Science, Machine Learning, ",
+          "position": "IT experience - developer",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "SQL for Data Science",
+      "category": "data-science",
+      "slug": "sql-for-data-science",
+      "courseFile": "/documents/NLP - Curriculum.pdf",
+      "detail": {
+        "objective": "Businesses increasingly create, track, and rely on data.  Your ability to manipulate data with your programming skills to solve business requirements is extremely valuable.In this 14-week intensive (rigorous) program you will learn programming skills needed for your career.\n \nGain a strong knowledge and experience about Python by crafting beautiful, clean, elegant, efficient, maintainable, scalable, robust, and generalized Pythonic programs in multiple areas, such as: numerical processing, probability, statistics, linear algebra, data analysis, machine learning ecosystems, and data visualization.  We will practice incremental development as we develop algorithms in our live coding sessions. Time permitting or special optional breakouts may even investigate personal special interests and topics.Developer tools and techniques will be used throughout the course, such as: lint, unit testing, debugging, performance, profiling, execution visualization.",
+        "price": "$420",
+        "difficulty": "Beginner - Advance (Zero - Hero)",
+        "timing": "08:00am - 03:00pm EST (Sunday - Saturday)",
+        "date": "2nd of June 2023",
+        "duration": "6 months - 8 months",
+        "audience": [
+          "Want to learn how to program in Python",
+          "You are tired of Python courses that are too complicated",
+          "Professionals who are interested in applying Machine Learning and NLP to practical problems. ",
+          "Want to learn Python by doing.",
+          "Developers looking to transition into Data Science",
+          "Anyone willing to start a career in Data Science."
+        ],
+        "goals": [
+          "Control virtual network traffic",
+          "Manage DNS for virtual networks and public access",
+          "Connect virtual networks to other virtual networks and external networks",
+          "Monitor virtual network traffic",
+          "Real Time projects",
+          "Architecture",
+          "Domain wise project",
+          "Databases",
+          "Negotiations skills",
+          "Mock interview",
+          "Interview preparation",
+          "Resume building after every module"
+        ],
+        "requirements": [
+          "No prior coding or technical knowledge is required",
+          "A computer with Internet connection.",
+          "No paid tools required for this course.",
+          "Passion and curiosity to learn."
+        ]
+      }
+    },
+    {
+      "name": "SQL for Data Analytics and Data Science",
+      "category": "data-science",
+      "slug": "sql-for-data-analytics-data-science",
+      "courseFile": "/documents/NLP - Curriculum.pdf"
+    }
+  ]
+}

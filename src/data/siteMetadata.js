@@ -4,12 +4,12 @@ const siteMetadata = {
   siteUrl: "https://innovatics.ai",
   siteLogo: "../assets/images/logo 1.png",
   siteLogoSquare: "https://example.com/images/logox200.png",
-  email: "innovatics@gmail.com",
+  email: "innovaticslabs@gmail.com",
   twitter: "https://twitter.com/example.page",
-  twitterHandle: "@innovaticsai",
+  twitterHandle: "@innovaticslabs",
   facebook: "",
   instagram: "",
-  linkedin: "https://www.linkedin.com/in/example.page",
+  linkedin: "https://www.linkedin.com/in/innovaticslabs",
 };
 
 export default siteMetadata;
