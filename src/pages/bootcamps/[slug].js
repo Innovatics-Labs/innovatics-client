@@ -24,37 +24,47 @@ import Newsletter from "../../components/Newsletter";
 import OurProcess from "../../components/OurProcess";
 import ContactDetail from "../../components/ContactDetail";
 import Link from "next/link";
+import useSWR from "swr";
+import { useRouter } from "next/router";
+import { fetcher } from "../../utils";
+import Spinner from "../../components/Spinner";
 
-const Bootcamps = ({ bootcamp }) => {
-  // const [data, setData] = useState(null);
+const Bootcamps = ({}) => {
+  const { query } = useRouter();
+  const [bootcamp, setBootcamp] = useState([]);
+  const {
+    data: apiData,
+    error,
+    isLoading,
+  } = useSWR("/api/staticdata", fetcher);
 
-  // const getBootcampDetail = async () => {
-  //   const response = await fetch("/bootcamps.json", {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json",
-  //     },
-  //   });
-  //   const jsonData = await response.json();
-  //   setData(jsonData.bootcamps[0]);
-  //   console.log({
-  //     jsonData: jsonData.bootcamps[0],
-  //     title: jsonData.bootcamps[0].name,
-  //   });
-  // };
+  useEffect(() => {
+    if (apiData) {
+      const filteredBootcamp = apiData.bootcamps.filter(
+        (boot) => boot.slug === query.slug
+      );
+      setBootcamp(filteredBootcamp);
+    }
+  }, [apiData, query.slug]);
 
-  // useEffect(() => {
-  //   getBootcampDetail();
-  // }, []);
+  if (error) return <div>Failed to load</div>;
+  if (isLoading)
+    return (
+      <div>
+        <Spinner />
+      </div>
+    );
+
+  // return <h1>Hello {JSON.stringify(bootcamp[0].name)}</h1>;
 
   return (
     <div>
       <Hero>
         <HeroContent>
-          <Headline>{bootcamp[0].name}</Headline>
+          <Headline>{bootcamp[0] && bootcamp[0]?.name}</Headline>
           <SubHeadline>
             <FiShare />
-            <Link href={`${bootcamp && bootcamp[0].courseFile}`} download>
+            <Link href={`${bootcamp[0] && bootcamp[0]?.courseFile}`} download>
               Get course curriculum
             </Link>
           </SubHeadline>
@@ -295,51 +305,49 @@ const Bootcamps = ({ bootcamp }) => {
   );
 };
 
-const dev = process.env.NODE_ENV !== "production";
-const server = dev ? "http://localhost:3000" : "https://innovatics.ai";
+// const dev = process.env.NODE_ENV !== "production";
+// const server = dev ? "http://localhost:3000" : "https://innovatics.ai";
 
-export async function getStaticPaths() {
-  const res = await fetch(`${server}/api/staticdata`, {
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      "User-Agent": "*",
-    },
-  });
-  const jsonData = await res.json();
-  console.log({ jsonData });
-  // const parsedData = JSON.parse(jsonData);
-  // console.log({ parsedData });
-  const paths = jsonData.bootcamps.map((bootcamp) => ({
-    params: { slug: bootcamp.slug },
-  }));
+// export async function getStaticPaths() {
+//   const res = await fetch(`${server}/api/staticdata`, {
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json",
+//     },
+//   });
+//   const jsonData = await res.json();
+//   console.log({ jsonData });
+//   // const parsedData = JSON.parse(jsonData);
+//   // console.log({ parsedData });
+//   const paths = jsonData.bootcamps.map((bootcamp) => ({
+//     params: { slug: bootcamp.slug },
+//   }));
 
-  // { fallback: false } means other routes should 404
-  return { paths, fallback: false };
-}
+//   // { fallback: false } means other routes should 404
+//   return { paths, fallback: false };
+// }
 
-export async function getStaticProps(context) {
-  const res = await fetch(`${server}/api/staticdata`, {
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      "User-Agent": "*",
-    },
-  });
+// export async function getStaticProps(context) {
+//   const res = await fetch(`${server}/api/staticdata`, {
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json",
+//     },
+//   });
 
-  const result = await res.json();
-  console.log({ result });
-  // const parsedData = JSON.parse(result);
-  const bootcamp = result.bootcamps.filter(
-    (boot) => boot.slug === context.params.slug
-  );
-  console.log({ bootcamp });
-  return {
-    props: {
-      bootcamp,
-    },
-  };
-}
+//   const result = await res.json();
+//   console.log({ result });
+//   // const parsedData = JSON.parse(result);
+//   const bootcamp = result.bootcamps.filter(
+//     (boot) => boot.slug === context.params.slug
+//   );
+//   console.log({ bootcamp });
+//   return {
+//     props: {
+//       bootcamp,
+//     },
+//   };
+// }
 
 export default Bootcamps;
 
