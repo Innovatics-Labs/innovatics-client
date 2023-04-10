@@ -67,7 +67,7 @@ export default WhyInnovatics;
 
 const Container = styled.section`
   background-color: var(--dusty-grey);
-  padding: 10rem var(--container-padding);
+  padding: 7rem var(--container-padding);
   background-image: url("/why-ine-bg-revised 1.svg");
   background-repeat: no-repeat;
   background-size: cover;

@@ -68,7 +68,6 @@ export default JobPlacement;
 
 const Container = styled.section`
   background-color: var(--dusty-grey);
-  /* padding-block: 4rem; */
   background-image: url("/why-ine-bg-revised 1.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -80,7 +79,7 @@ const Title = styled.h4`
 `;
 
 export const Content = styled(MaxwidthContainer)`
-  padding: 6rem var(--container-padding);
+  padding: var(--container-padding);
 `;
 
 const Tagline = styled.p`

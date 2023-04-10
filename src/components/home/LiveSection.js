@@ -48,7 +48,7 @@ export default FeaturedSection;
 
 const Container = styled.section`
   background: #0d1117 url("/bg-grad.png");
-  padding: 6rem var(--container-padding);
+  padding: var(--container-padding);
   color: white;
   background-position: center;
   background-size: cover;
@@ -58,7 +58,6 @@ const TextContent = styled(MaxwidthContainer)`
   display: grid;
   align-items: center;
   text-align: center;
-  padding-block: 2rem;
   flex-wrap: wrap;
   margin-inline: auto;
   justify-content: space-between;

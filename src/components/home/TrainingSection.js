@@ -60,7 +60,7 @@ const BackgroundContainer = styled.section`
 `;
 
 const Container = styled(MaxwidthContainer)`
-  padding: 6rem var(--container-padding);
+  padding: var(--container-padding);
 `;
 
 const TopContainer = styled.div`
