@@ -25,6 +25,7 @@ import PathCard from "../../components/PathCard";
 import FaqSection from "../../components/FaqSection";
 import { careerOutcome } from "./data";
 import { fetcher } from "../../utils";
+import Spinner from "../../components/Spinner";
 
 const Index = () => {
   const [data, setData] = useState(null);
@@ -41,7 +42,12 @@ const Index = () => {
   }, [apiData]);
 
   if (error) return <div>Failed to load</div>;
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <div>
+        <Spinner />
+      </div>
+    );
 
   return (
     <div>

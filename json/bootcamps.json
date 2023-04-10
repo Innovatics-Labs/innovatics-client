@@ -21,6 +21,14 @@
           "Data scientist, Machine Learning Engineer, and Python Developers",
           "Anyone willing to start a career in Data Science, Natural Language Processing, and NLP application such as Sentiment Analysis"
         ],
+        "experience": [
+          "Regular office hours, coaching sessions, and live instructor sessions ensure that you 'get it'.",
+          "Dedicated Program Support Team",
+          "Dynamic Collaboration: The Collaboration features of the platform will enable to form teams, develop effective solutions and become better team players.",
+          "Bite-Sized Learning",
+          "Peer Discussion",
+          "Graded assignments allow you to get the feedback you need to deepen your understanding of core concepts."
+        ],
         "goals": [
           "Learn to work with Text Files with Python",
           "Utilize Regular Expressions for pattern searching in text.",
@@ -33,7 +41,69 @@
           "Use NLTK for Sentiment Analysis",
           "Learn NLP with different libraries such as NLTK, Spacy, TextBlob, Gensim, Pattern, and Stanford CoreNLP"
         ],
-        "curriculum": [],
+        "curriculum": [
+          {
+            "title": "Program Orientation",
+            "topics": [
+              "Program Orientation (Agenda – Curriculum)",
+              "Innovatics Website | Canvas | Slack walk through",
+              "Jupyter Notebook - Integrated Development environment (IDE)",
+              "Python"
+            ]
+          },
+          {
+            "title": "Welcome to the Course",
+            "topics": [
+              "b.Logistics",
+              "Jupyter Notebook - Integrated Development environment (IDE)",
+              "Python"
+            ]
+          },
+          {
+            "title": "Introduction to Data Science",
+            "topics": [
+              "Data Explosion",
+              "Why Data Science?",
+              "What is Data Science?",
+              "Type of Analytics ",
+              "Data Science Portfolio",
+              "Data Science Process",
+              "Career in Data Science"
+            ]
+          },
+          {
+            "title": "Python Fundamentals - Essentials",
+            "topics": [
+              "Basic syntax",
+              "Basic data types",
+              "Containers",
+              "Variables",
+              "Nomenclature",
+              "Operators"
+            ]
+          },
+          {
+            "title": "Python Fundamentals - Intermediate",
+            "topics": [
+              "Basic syntax",
+              "Basic data types",
+              "Containers",
+              "Variables",
+              "Nomenclature",
+              "Operators"
+            ]
+          },
+          {
+            "title": "Python Fundamentals - Advanced",
+            "topics": [
+              "Python Standard Library",
+              "Modules/Packages",
+              "Classes",
+              "Exception handling",
+              "File I/O"
+            ]
+          }
+        ],
         "requirements": [
           "No prior coding or technical knowledge is required",
           "A computer with Internet connection.",
@@ -73,6 +143,14 @@
           "Developers looking to transition into Data Science",
           "Anyone willing to start a career in Data Science."
         ],
+        "experience": [
+          "Regular office hours, coaching sessions, and live instructor sessions ensure that you 'get it'.",
+          "Dedicated Program Support Team",
+          "Dynamic Collaboration: The Collaboration features of the platform will enable to form teams, develop effective solutions and become better team players.",
+          "Bite-Sized Learning",
+          "Peer Discussion",
+          "Graded assignments allow you to get the feedback you need to deepen your understanding of core concepts."
+        ],
         "goals": [
           "Fundamentals - Essentials, Data Structures and Algotithms",
           "Coding for Big Data",
@@ -89,6 +167,31 @@
           "Sentiment analysis - requests, bs4-Beautiful Soup",
           "Cryptography"
         ],
+        "curriculum": [
+          {
+            "title": "Program Orientation",
+            "topics": [
+              "Program Orientation (Agenda – Curriculum)",
+              "BBDS Website | Canvas | Slack walk through"
+            ]
+          },
+          {
+            "title": "Why should you become a Data Scientist?",
+            "topics": [
+              "Data Explosion",
+              "Why Data Science? | What is Data Science? | Type of Analytics",
+              "Data Science Portfolio | Data Science Process | Career in Data Science"
+            ]
+          },
+          {
+            "title": "Projects, Teams & Team Leads",
+            "topics": [
+              "Introduction to Data Science Project",
+              "Projects Discussion (Milestone Projects Assignment)",
+              "Projects List | Project Templates | Project Team"
+            ]
+          }
+        ],
         "requirements": [
           "No prior coding or technical knowledge is required",
           "A computer with Internet connection.",
@@ -99,7 +202,7 @@
       "instructors": [
         {
           "name": "Edward Bujak",
-          "description": "25 years IT experience - developer, consultant, founder, with6 years of Data Science experience, 19 years education experience: Computer Science, Mathematics, Engineering, 2 masters degrees - MS Electrical Engineering & Science, MS Education, Public speaker - frequently present at Meetup groups, clubs, conferences, on everything programming and computer science, Data Science, Machine Learning, ",
+          "description": "25 years IT experience - developer, consultant, founder, with 6 years of Data Science experience, 19 years education experience: Computer Science, Mathematics, Engineering, 2 masters degrees - MS Electrical Engineering & Science, MS Education, Public speaker - frequently present at Meetup groups, clubs, conferences, on everything programming and computer science, Data Science, Machine Learning, ",
           "position": "IT experience - developer",
           "social": {
             "linkedIn": "",
@@ -112,14 +215,14 @@
       "name": "SQL for Data Science",
       "category": "data-science",
       "slug": "sql-for-data-science",
-      "courseFile": "/documents/NLP - Curriculum.pdf",
+      "courseFile": "/documents/SQL For Data Science.pdf",
       "detail": {
         "objective": "Businesses increasingly create, track, and rely on data.  Your ability to manipulate data with your programming skills to solve business requirements is extremely valuable.In this 14-week intensive (rigorous) program you will learn programming skills needed for your career.\n \nGain a strong knowledge and experience about Python by crafting beautiful, clean, elegant, efficient, maintainable, scalable, robust, and generalized Pythonic programs in multiple areas, such as: numerical processing, probability, statistics, linear algebra, data analysis, machine learning ecosystems, and data visualization.  We will practice incremental development as we develop algorithms in our live coding sessions. Time permitting or special optional breakouts may even investigate personal special interests and topics.Developer tools and techniques will be used throughout the course, such as: lint, unit testing, debugging, performance, profiling, execution visualization.",
-        "price": "$420",
+        "price": "$699",
         "difficulty": "Beginner - Advance (Zero - Hero)",
         "timing": "08:00am - 03:00pm EST (Sunday - Saturday)",
         "date": "2nd of June 2023",
-        "duration": "6 months - 8 months",
+        "duration": "16 weeks",
         "audience": [
           "Want to learn how to program in Python",
           "You are tired of Python courses that are too complicated",
@@ -142,19 +245,173 @@
           "Interview preparation",
           "Resume building after every module"
         ],
+        "experience": [
+          "Regular office hours, coaching sessions, and live instructor sessions ensure that you 'get it'.",
+          "Dedicated Program Support Team",
+          "Dynamic Collaboration: The Collaboration features of the platform will enable to form teams, develop effective solutions and become better team players.",
+          "Bite-Sized Learning",
+          "Peer Discussion",
+          "Graded assignments allow you to get the feedback you need to deepen your understanding of core concepts."
+        ],
+        "curriculum": [
+          {
+            "title": "Program Orientation",
+            "topics": [
+              "Program Orientation (Agenda – Curriculum)",
+              "BBDS Website | Canvas | Slack walk through"
+            ]
+          },
+          {
+            "title": "Why should you become a Data Scientist?",
+            "topics": [
+              "Data Explosion",
+              "Why Data Science? | What is Data Science? | Type of Analytics",
+              "Data Science Portfolio | Data Science Process | Career in Data Science"
+            ]
+          },
+          {
+            "title": "Projects, Teams & Team Leads",
+            "topics": [
+              "Introduction to Data Science Project",
+              "Projects Discussion (Milestone Projects Assignment)",
+              "Projects List | Project Templates | Project Team"
+            ]
+          },
+          {
+            "title": "Tables and Constraints",
+            "topics": [
+              "Creating, and Working with Tables",
+              "Default Constraints",
+              "Cascading referential integrity"
+            ]
+          }
+        ],
         "requirements": [
           "No prior coding or technical knowledge is required",
           "A computer with Internet connection.",
           "No paid tools required for this course.",
           "Passion and curiosity to learn."
         ]
-      }
+      },
+      "instructors": [
+        {
+          "name": "Muhammad Medwani",
+          "description": "Founder of Innovatics.ai is an expert data scientist with a passion for transforming data into useful products. He has over 20 years of experience in service delivery management; Ph.D. candidate in AI, four master’s degrees in data science, IT, machine learning, and business administration; and over nine years of experience working with data science. Mo’s specialties include data science, machine learning, big data, deep learning, data analytics, application support and IT service delivery management.",
+          "position": "Founder - Innovatics.ai",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Edward Bujak",
+          "description": "Data science and Python expert with over 26 years of experience in IT and 20 years of education experience in  computer science, mathematics, and engineering. He has two master’s degrees in electrical engineering and education, respectively. Ed is a public speak in everything related to programming, data science, and machine learning",
+          "position": "IT experience - developer",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Muhammed Mjeeb",
+          "description": "Data science and Python expert with over 26 years of experience in IT and 24 years of education experience in  computer science, mathematics, and engineering. He has two master’s degrees in electrical engineering and education, respectively. Ed is a public speak in everything related to programming, data science, and machine learning",
+          "position": "MBA - Microsoft Certified",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        }
+      ]
     },
     {
       "name": "SQL for Data Analytics and Data Science",
       "category": "data-science",
       "slug": "sql-for-data-analytics-data-science",
-      "courseFile": "/documents/NLP - Curriculum.pdf"
+      "courseFile": "/documents/Data Science & AI Zero to Hero.pdf",
+      "detail": {
+        "objective": "To maintain a competitive edge, today’s organizations must gain practical knowledge of data science, machine learning and artificial intelligence. Careers especially in engineering, data science, and technical management depend on the immense value of those advanced analytical and programming skills.\n In the Data Science & Machine Learning program from zero to hero program, an executive education program led by the Big Bang Data, you will dive deep into learning the applied mathematical structure of core machine learning (ML) and artificial intelligence (AI) methods. The course focuses on the skills needed to work efficiently with machine learning models, such classification models, regression models, clustering models, and optimization. \n In this course, you will conduct your own analyses and apply the most effective methods to solve various problem types. This is what makes our program unique — we address both the how and the why of machine learning to provide you with the technical knowledge to thrive in any ML-essential field.",
+        "price": "$2,999",
+        "difficulty": "Beginner - Advance (Zero - Hero)",
+        "timing": " 5 Time a week: 09:00am - 02:00pm EST (Sunday - Saturday), 8:00pm to 11:00pm EST (Mon - Thur) ",
+        "date": "2nd of June 2023",
+        "duration": "8 months Online - 15-20 hours per week",
+        "audience": [
+          "Software engineers in IT/ITES Startup teams building ML products/services",
+          "Data Analysts/Scientists & Business Analysts: Who want to transition to or progress into data science/ analytical roles and become more efficient and effective in data-driven decision-making",
+          "Professionals who are interested in applying Machine Learning and NLP to practical problems. ",
+          "Consultants:Who are driving client projects and looking for acquiring and honing cutting edge analytical and data science skills for a career transition or progress",
+          "Product managers, Program managers, General Managers, etc. interested in improving their analytical skills and effectively managing analytics, data science and machine learning projects",
+          "Anyone willing to start a career in Data Science."
+        ],
+        "goals": [
+          "Learn from basics of Data Science, R & Python Programming to Advanced ML",
+          "Build and Apply: Develop the ability to translate business problems to analytics & ML problems and develop impactful solutions.",
+          "Reduce learning curve and be Industry Ready: The in-built Analytics and AI functions of the platform will reduce the learning curve and help to focus more on solutioning rather than just programming",
+          "Dynamic Collaboration: The Collaboration features of the platform will enable to form teams, develop effective solutions and become better team players.",
+          "Regular Hackathons: Compete & apply learnings under strict timelines and achieve tangible recognition/personal brand in the Data Science community.",
+          "Build and showcase cutting edge ML solutions using the BBDS platform, with long term access to learning content/platform",
+          "Industry standard assessment tests and long-term access to material will enable one’s Data Science journey, even after the program completion."
+        ],
+        "experience": [
+          "Regular office hours, coaching sessions, and live instructor sessions ensure that you 'get it'.",
+          "Dedicated Program Support Team",
+          "Dynamic Collaboration: The Collaboration features of the platform will enable to form teams, develop effective solutions and become better team players.",
+          "Bite-Sized Learning",
+          "Peer Discussion",
+          "Graded assignments allow you to get the feedback you need to deepen your understanding of core concepts."
+        ],
+        "curriculum": [
+          {
+            "title": "Program Orientation",
+            "topics": [
+              "Program Orientation (Agenda – Curriculum)",
+              "BBDS Website | Canvas | Slack walk through"
+            ]
+          },
+          {
+            "title": "Why should you become a Data Scientist?",
+            "topics": [
+              "Data Explosion",
+              "Why Data Science? | What is Data Science? | Type of Analytics",
+              "Data Science Portfolio | Data Science Process | Career in Data Science"
+            ]
+          },
+          {
+            "title": "Projects, Teams & Team Leads",
+            "topics": [
+              "Introduction to Data Science Project",
+              "Projects Discussion (Milestone Projects Assignment)",
+              "Projects List | Project Templates | Project Team"
+            ]
+          }
+        ],
+        "requirements": [
+          "1-6 Years of work experience",
+          "Bachelor’s /Master’s degrees.",
+          "Commitment for Hands On/Lab effort of 8-12 hours per week throughout the program.",
+          "This course requires patience, passions, dedication and commitments and we will do our job"
+        ]
+      },
+      "instructors": [
+        {
+          "name": "Muhammad Medwani",
+          "description": "Founder of Innovatics.ai is an expert data scientist with a passion for transforming data into useful products. He has over 20 years of experience in service delivery management; Ph.D. candidate in AI, four master’s degrees in data science, IT, machine learning, and business administration; and over nine years of experience working with data science. Mo’s specialties include data science, machine learning, big data, deep learning, data analytics, application support and IT service delivery management.",
+          "position": "Founder - Innovatics.ai",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Edward Bujak",
+          "description": "25 years IT experience - developer, consultant, founder, with6 years of Data Science experience, 19 years education experience: Computer Science, Mathematics, Engineering, 2 masters degrees - MS Electrical Engineering & Science, MS Education, Public speaker - frequently present at Meetup groups, clubs, conferences, on everything programming and computer science, Data Science, Machine Learning, ",
+          "position": "IT experience - developer",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        }
+      ]
     }
   ]
 }

@@ -4,13 +4,7 @@ import { WEIGHTS, QUERIES } from "../../constants";
 
 import Button from "../Button";
 import OurProcess from "../OurProcess";
-import {
-  Content,
-  TopContent,
-  TextContent,
-  // Title,
-  Start,
-} from "./servicesStyle";
+import { Content, TopContent, TextContent } from "./servicesStyle";
 import group from "../../assets/images/Group 1000004654.png";
 import { TextWithColor } from "./Practicality";
 import { MaxwidthContainer } from "../GlobalStyles";

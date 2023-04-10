@@ -25,9 +25,6 @@ import OurProcess from "../../components/OurProcess";
 import ContactDetail from "../../components/ContactDetail";
 import Link from "next/link";
 
-const dev = process.env.NODE_ENV !== "production";
-const server = dev ? "http://localhost:3000" : "https://innovatics.ai";
-
 const Bootcamps = ({ bootcamp }) => {
   // const [data, setData] = useState(null);
 
@@ -73,16 +70,6 @@ const Bootcamps = ({ bootcamp }) => {
             <DetailContent>
               <LeftContent>
                 <p>{bootcamp[0] && bootcamp[0]?.detail?.objective}</p>
-                <p>
-                  The course focuses on the skills needed to work efficiently
-                  with machine learning models, such classification models,
-                  regression models, clustering models, and optimization. In
-                  this course, you will conduct your own analyses and apply the
-                  most effective methods to solve various problem types. This is
-                  what makes our program unique — we address both the how and
-                  the why of machine learning to provide you with the technical
-                  knowledge to thrive in any ML-essential field.
-                </p>
               </LeftContent>
               <RightContent>
                 <Tag>Course Details</Tag>
@@ -176,72 +163,52 @@ const Bootcamps = ({ bootcamp }) => {
                     IconComponent={<VscCode size={30} color="#44E986" />}
                     bgColor={"#44E986"}
                   />
-                  <p>Curriculum</p>
+                  <p>Course Experience</p>
+                </OverviewTitle>
+                <OverviewFeatureList>
+                  {bootcamp[0] &&
+                    bootcamp[0]?.detail?.experience.map((experience, index) => (
+                      <li key={index}>{experience}</li>
+                    ))}
+                </OverviewFeatureList>
+              </OverviewCard>
+              <OverviewCard>
+                <OverviewTitle>
+                  <GradientIcon
+                    IconComponent={<VscCode size={30} color="#44E986" />}
+                    bgColor={"#44E986"}
+                  />
+                  <p>
+                    Curriculum <sup>*</sup>
+                  </p>
                 </OverviewTitle>
                 <Accordion multiple>
-                  <AccordItem>
-                    <AccordionTitle>
-                      <AccordionButton>
-                        Welcome to the Course <FaPlus />
-                      </AccordionButton>
-                    </AccordionTitle>
-                    <Panel>
-                      <CurriculumFeatureList>
-                        <CurriculumList>Course Overview</CurriculumList>
-                        <CurriculumList>Dashboard Introduction</CurriculumList>
-                      </CurriculumFeatureList>
-                    </Panel>
-                  </AccordItem>
-                  <AccordItem>
-                    <AccordionTitle>
-                      <AccordionButton>
-                        Advanced Python <FaPlus />
-                      </AccordionButton>
-                    </AccordionTitle>
-                    <Panel>
-                      <CurriculumFeatureList>
-                        <CurriculumList>
-                          Iterator Generator & File System
-                        </CurriculumList>
-                        <CurriculumList>
-                          Exception handling Class 1 part 1
-                        </CurriculumList>
-                        <CurriculumList>
-                          Exception handling Class 1 part 2
-                        </CurriculumList>
-                        <CurriculumList>
-                          Exception handling Class 2
-                        </CurriculumList>
-                        <CurriculumList>Module & Packages</CurriculumList>
-                        <CurriculumList>OOPS Part 1</CurriculumList>
-                        <CurriculumList>OOPS Part 2</CurriculumList>
-                        <CurriculumList>
-                          OOPs Concepts - Polymorphism
-                        </CurriculumList>
-                      </CurriculumFeatureList>
-                    </Panel>
-                  </AccordItem>
-                  <AccordItem>
-                    <AccordionTitle>
-                      <AccordionButton>
-                        Python Fundamentals <FaPlus />
-                      </AccordionButton>
-                    </AccordionTitle>
-                    <Panel>
-                      <CurriculumFeatureList>
-                        <CurriculumList>Python Ba sic</CurriculumList>
-                        <CurriculumList>String, List, Indexing</CurriculumList>
-                        <CurriculumList>Tuple, Set & Dict</CurriculumList>
-                        <CurriculumList>String, List, Indexing</CurriculumList>
-                        <CurriculumList>If, Else & For Loop</CurriculumList>
-                        <CurriculumList>For Loops & While loops</CurriculumList>
-                        <CurriculumList>
-                          Python Program Discussion in loops
-                        </CurriculumList>
-                      </CurriculumFeatureList>
-                    </Panel>
-                  </AccordItem>
+                  {bootcamp[0] &&
+                    bootcamp[0]?.detail?.curriculum.map(
+                      ({ title, topics }, index) => (
+                        <AccordItem key={index}>
+                          <AccordionTitle>
+                            <AccordionButton>
+                              {title} <FaPlus />
+                            </AccordionButton>
+                          </AccordionTitle>
+                          <Panel>
+                            <CurriculumFeatureList>
+                              {topics.map((topic, index) => (
+                                <CurriculumList key={topic + index}>
+                                  {topic}
+                                </CurriculumList>
+                              ))}
+                            </CurriculumFeatureList>
+                          </Panel>
+                        </AccordItem>
+                      )
+                    )}
                 </Accordion>
+                <p>
+                  <sup>*</sup> Download the curriculum document above for more
+                  details
+                </p>
               </OverviewCard>
               <OverviewCard>
                 <OverviewTitle>
@@ -328,8 +295,11 @@ const Bootcamps = ({ bootcamp }) => {
   );
 };
 
+const dev = process.env.NODE_ENV !== "production";
+const server = dev ? "http://localhost:3000" : "https://innovatics.ai";
+
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost:3000/api/staticdata");
+  const res = await fetch(`${server}/api/staticdata`);
   const jsonData = await res.json();
   const parsedData = JSON.parse(jsonData);
   console.log({ parsedData });
@@ -342,7 +312,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch("http://localhost:3000/api/staticdata");
+  const res = await fetch(`${server}/api/staticdata`);
   const result = await res.json();
   const parsedData = JSON.parse(result);
   const bootcamp = parsedData.bootcamps.filter(
@@ -565,11 +535,13 @@ const AccordionTitle = styled.h5`
   font-size: var(--font-size-md);
   margin: 0;
   button {
+    text-align: left;
     background: transparent;
     color: white;
     border: none;
     display: flex;
     align-items: center;
+    gap: 10px;
     justify-content: space-between;
     width: 100%;
     cursor: pointer;
@@ -626,6 +598,9 @@ const InstructorDetailContainer = styled.div`
 
 const CapContainer = styled.div`
   align-self: center;
+  p {
+    text-align: center;
+  }
 `;
 
 const InstructorDetail = styled.div`
