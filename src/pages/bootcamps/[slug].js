@@ -55,7 +55,7 @@ const Bootcamps = ({ bootcamp }) => {
           <SubHeadline>
             <FiShare />
             <Link href={`${bootcamp && bootcamp[0].courseFile}`} download>
-              Two master curriculum in one
+              Get course curriculum
             </Link>
           </SubHeadline>
         </HeroContent>
@@ -600,6 +600,12 @@ const CapContainer = styled.div`
   align-self: center;
   p {
     text-align: center;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    p {
+      text-align: revert;
+    }
   }
 `;
 
