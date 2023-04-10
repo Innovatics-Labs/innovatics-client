@@ -37,7 +37,7 @@ const Index = () => {
 
   useEffect(() => {
     if (apiData) {
-      setData(JSON.parse(apiData));
+      setData(apiData);
     }
   }, [apiData]);
 

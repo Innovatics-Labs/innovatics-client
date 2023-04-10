@@ -299,11 +299,18 @@ const dev = process.env.NODE_ENV !== "production";
 const server = dev ? "http://localhost:3000" : "https://innovatics.ai";
 
 export async function getStaticPaths() {
-  const res = await fetch(`${server}/api/staticdata`);
+  const res = await fetch(`${server}/api/staticdata`, {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "User-Agent": "*",
+    },
+  });
   const jsonData = await res.json();
-  const parsedData = JSON.parse(jsonData);
-  console.log({ parsedData });
-  const paths = parsedData.bootcamps.map((bootcamp) => ({
+  console.log({ jsonData });
+  // const parsedData = JSON.parse(jsonData);
+  // console.log({ parsedData });
+  const paths = jsonData.bootcamps.map((bootcamp) => ({
     params: { slug: bootcamp.slug },
   }));
 
@@ -312,10 +319,18 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`${server}/api/staticdata`);
+  const res = await fetch(`${server}/api/staticdata`, {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "User-Agent": "*",
+    },
+  });
+
   const result = await res.json();
-  const parsedData = JSON.parse(result);
-  const bootcamp = parsedData.bootcamps.filter(
+  console.log({ result });
+  // const parsedData = JSON.parse(result);
+  const bootcamp = result.bootcamps.filter(
     (boot) => boot.slug === context.params.slug
   );
   console.log({ bootcamp });
