@@ -23,7 +23,7 @@ import JobPlacement from "../../components/home/JobPlacementSection";
 import OurProcess from "../../components/OurProcess";
 import PathCard from "../../components/PathCard";
 import FaqSection from "../../components/FaqSection";
-import { careerOutcome } from "./data";
+import { careerOutcome } from "../../data/careerOutcome";
 import { fetcher } from "../../utils";
 import Spinner from "../../components/Spinner";
 

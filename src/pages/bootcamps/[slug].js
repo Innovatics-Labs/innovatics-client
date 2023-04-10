@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import useSWR from "swr";
+import { useRouter } from "next/router";
 import { FiCalendar, FiShare } from "react-icons/fi";
 import { MdAlarm } from "react-icons/md";
 import { VscCode } from "react-icons/vsc";
@@ -23,9 +26,6 @@ import { GradientContainer } from "../course-work";
 import Newsletter from "../../components/Newsletter";
 import OurProcess from "../../components/OurProcess";
 import ContactDetail from "../../components/ContactDetail";
-import Link from "next/link";
-import useSWR from "swr";
-import { useRouter } from "next/router";
 import { fetcher } from "../../utils";
 import Spinner from "../../components/Spinner";
 
