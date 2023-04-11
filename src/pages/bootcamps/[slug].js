@@ -648,6 +648,9 @@ const InstructorDetail = styled.div`
 export const MentorshipSection = styled.section`
   background-color: #121212;
   background-image: url("/bg-grad.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: white;
 `;
 

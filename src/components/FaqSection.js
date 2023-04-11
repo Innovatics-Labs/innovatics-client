@@ -98,6 +98,7 @@ const Container = styled.div`
      background-image: url("/bg-grad.png");`}
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   color: white;
   display: grid;
   place-items: center;

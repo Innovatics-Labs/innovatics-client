@@ -281,5 +281,6 @@ const UpcomingText = styled.h5`
 const AvailableBootcamps = styled.div`
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  margin-inline: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `;
