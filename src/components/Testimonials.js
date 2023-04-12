@@ -19,54 +19,56 @@ const Testimonials = () => {
           and we&apos;re committed to continuing to provide high-quality data
           science education to the next generation of data professionals.
         </SubHeading>
-        <Splide aria-label="Testimonials" style={{ marginTop: "2.5rem" }}>
-          <SplideSlide>
-            <TestimonialCard>
-              <Icon>
-                <GiHumanTarget size={40} />
-              </Icon>
-              <div>
+        <TestimonialCarousel>
+          <Splide aria-label="Testimonials" style={{ marginTop: "2.5rem" }}>
+            <SplideSlide>
+              <TestimonialCard>
+                <Icon>
+                  <GiHumanTarget size={40} />
+                </Icon>
                 <div>
-                  <Testimonee>Halimat Jihane</Testimonee>
-                  <TestimoneePosition>
-                    Data Analyst - Microsoft
-                  </TestimoneePosition>
+                  <div>
+                    <Testimonee>Halimat Jihane</Testimonee>
+                    <TestimoneePosition>
+                      Data Analyst - Microsoft
+                    </TestimoneePosition>
+                  </div>
+                  <TestimonialDetail>
+                    Habitasse cursus id ullamcorper amet. Tincidunt mi vulputate
+                    ut imperdiet elit justo. Blandit pretium vitae hendrerit
+                    tincidunt turpisvultricies. Dolor id pretium, vitae dictum
+                    curabitur vulputate id. Morbi nunc diam, suspendisse ut
+                    ultrices erat. Tristique pretium, rutrum ullamcorper ac
+                    feugiat id suspendisse feugiat vitae.
+                  </TestimonialDetail>
                 </div>
-                <TestimonialDetail>
-                  Habitasse cursus id ullamcorper amet. Tincidunt mi vulputate
-                  ut imperdiet elit justo. Blandit pretium vitae hendrerit
-                  tincidunt turpisvultricies. Dolor id pretium, vitae dictum
-                  curabitur vulputate id. Morbi nunc diam, suspendisse ut
-                  ultrices erat. Tristique pretium, rutrum ullamcorper ac
-                  feugiat id suspendisse feugiat vitae.
-                </TestimonialDetail>
-              </div>
-            </TestimonialCard>
-          </SplideSlide>
-          <SplideSlide>
-            <TestimonialCard>
-              <Icon>
-                <GiHumanTarget size={40} />
-              </Icon>
-              <div>
+              </TestimonialCard>
+            </SplideSlide>
+            <SplideSlide>
+              <TestimonialCard>
+                <Icon>
+                  <GiHumanTarget size={40} />
+                </Icon>
                 <div>
-                  <Testimonee>Halimat Jihane</Testimonee>
-                  <TestimoneePosition>
-                    Data Analyst - Microsoft{" "}
-                  </TestimoneePosition>
+                  <div>
+                    <Testimonee>Halimat Jihane</Testimonee>
+                    <TestimoneePosition>
+                      Data Analyst - Microsoft{" "}
+                    </TestimoneePosition>
+                  </div>
+                  <TestimonialDetail>
+                    Habitasse cursus id ullamcorper amet. Tincidunt mi vulputate
+                    ut imperdiet elit justo. Blandit pretium vitae hendrerit
+                    tincidunt turpisvultricies. Dolor id pretium, vitae dictum
+                    curabitur vulputate id. Morbi nunc diam, suspendisse ut
+                    ultrices erat. Tristique pretium, rutrum ullamcorper ac
+                    feugiat id suspendisse feugiat vitae.
+                  </TestimonialDetail>
                 </div>
-                <TestimonialDetail>
-                  Habitasse cursus id ullamcorper amet. Tincidunt mi vulputate
-                  ut imperdiet elit justo. Blandit pretium vitae hendrerit
-                  tincidunt turpisvultricies. Dolor id pretium, vitae dictum
-                  curabitur vulputate id. Morbi nunc diam, suspendisse ut
-                  ultrices erat. Tristique pretium, rutrum ullamcorper ac
-                  feugiat id suspendisse feugiat vitae.
-                </TestimonialDetail>
-              </div>
-            </TestimonialCard>
-          </SplideSlide>
-        </Splide>
+              </TestimonialCard>
+            </SplideSlide>
+          </Splide>
+        </TestimonialCarousel>
       </MaxwidthContainer>
     </Container>
   );
@@ -91,6 +93,13 @@ const SubHeading = styled.p`
   line-height: 1.5;
   text-align: center;
   color: #ffffff;
+  max-width: 70ch;
+  margin-inline: auto;
+`;
+
+const TestimonialCarousel = styled.div`
+  max-width: 70%;
+  margin-inline: auto;
 `;
 
 const TestimonialCard = styled.div`
