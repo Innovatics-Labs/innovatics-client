@@ -7,6 +7,7 @@ import {
 } from "@reach/accordion";
 import styled, { keyframes } from "styled-components";
 import { BiChevronDown } from "react-icons/bi";
+import { QUERIES } from "../constants";
 
 const FaqSection = ({ withBg }) => {
   return (
@@ -103,6 +104,10 @@ const Container = styled.div`
   display: grid;
   place-items: center;
   padding: 3rem;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    padding: 1.5rem;
+  }
 `;
 
 const AccordionRoot = styled(Accordion)`
@@ -113,6 +118,9 @@ const AccordionRoot = styled(Accordion)`
   margin-block: 3rem;
   text-align: left;
   margin-inline: auto;
+  @media ${QUERIES.phoneAndSmaller} {
+    max-width: revert;
+  }
 `;
 
 const AccordionItemStyled = styled(AccordionItem)`

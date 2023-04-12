@@ -26,6 +26,7 @@ import FaqSection from "../../components/FaqSection";
 import { careerOutcome } from "../../data/careerOutcome";
 import { fetcher } from "../../utils";
 import Spinner from "../../components/Spinner";
+import Testimonials from "../../components/Testimonial";
 
 const Index = () => {
   const [data, setData] = useState(null);
@@ -136,6 +137,7 @@ const Index = () => {
               </Content>
             </Container>
           </MaxwidthContainer>
+          <Testimonials />
         </BackgroundContainer>
         <JobPlacement />
         <FaqSection withBg={true} />
