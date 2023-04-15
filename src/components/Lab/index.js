@@ -7,10 +7,10 @@ import Logo from "../../assets/images/logo 1.png";
 import programming from "../../assets/images/programming 1.png";
 import Image from "next/image";
 import { MaxwidthContainer } from "../GlobalStyles";
-import Button from "../Button";
 import Link from "next/link";
 import { Switch, Input, Slider } from "../course/TopicResourceCard";
 import useToggle from "../../hooks/useToggle";
+import { BiShareAlt } from "react-icons/bi";
 
 const Lab = ({ title, labUrl, isOpen, onDismiss }) => {
   const [isMarkFinished, setIsMarkFinished] = useToggle();
@@ -32,12 +32,25 @@ const Lab = ({ title, labUrl, isOpen, onDismiss }) => {
             <Content>
               <LabDetails>
                 <LabTitle>{title}</LabTitle>
-                <LabDescription>
-                  In this project, you’ll be using giving some questions
-                  regarding what you have learned in the python class to
-                  ascertain your understanding of the course. Click Start lab to
-                  launch the Notebook, Wish you the best!
-                </LabDescription>
+                <div>
+                  <LabDescription>
+                    In this project, you’ll be using giving some questions
+                    regarding what you have learned in the python class to
+                    ascertain your understanding of the course. Click Start lab
+                    to launch the Notebook, Wish you the best!
+                  </LabDescription>
+                  <LabSteps>
+                    <li>
+                      Step 1: Download the below .pynb file for the practical.
+                    </li>
+                    <li> Step 2: Click the start lab button to start. </li>
+                    <li> Step 3: Upload the file in the lab to practice.</li>
+                  </LabSteps>
+                  <LabFile>
+                    <BiShareAlt /> classification regression with pandas.pynd
+                  </LabFile>
+                </div>
+
                 <ImageContainer>
                   <Image src={programming} alt="" sizes="100vw" />
                 </ImageContainer>
@@ -154,6 +167,18 @@ const LabDetails = styled.div`
   @media ${QUERIES.phoneAndSmaller} {
     padding: 1.5rem;
   }
+`;
+
+const LabSteps = styled.ol`
+  list-style: none;
+`;
+
+const LabFile = styled.p`
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration-line: underline;
+  color: #ffffff;
 `;
 
 const ImageContainer = styled.div`
