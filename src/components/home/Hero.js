@@ -24,7 +24,7 @@ const Hero = () => {
         <HeroCampaign>
           <RadialGradient top="100px" right="100px" />
           <RadialGradient
-            gradient=" #074BC9 17.55%, #074BC9 27.56%, rgba(7, 75, 201, 0.45) 49.89%, rgba(7, 75, 201, 0.52) 56.53%, #074BC9 65.69%"
+            gradient="#074BC9 17.55%, #074BC9 27.56%, rgba(7, 75, 201, 0.45) 49.89%, rgba(7, 75, 201, 0.52) 56.53%, #074BC9 65.69%"
             top="200px"
             right="350px"
           />
@@ -123,7 +123,7 @@ export default Hero;
 
 const HeroContainer = styled.header`
   padding-bottom: var(--container-padding);
-  background: linear-gradient(90deg, #7d37c8, #492b8c, #2d215b, #16141c);
+  background: linear-gradient(90deg, #3a6ed2, #4a7ed3, #2d215b, #16141c);
 `;
 
 const HeroCampaign = styled.section`
