@@ -6,9 +6,8 @@ import styled from "styled-components";
 import { auth, db } from "../../../firebaseConfig";
 import { collection } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
 
-import siteMetadata from "../../data/siteMetadata";
-import HeadSeo from "../../components/HeadSeo";
 import AuthRoute from "../../HOC/authRoute";
 import GradientIcon from "../../components/GradientIcon";
 import JoinCohort from "../../components/JoinCohort";
@@ -17,19 +16,26 @@ import LineGradient from "../../components/LineGradient";
 import Button from "../../components/Button";
 import InsetSection from "../../components/InsetSection";
 import PathCard from "../../components/PathCard";
-import { QUERIES } from "../../constants";
+import { QUERIES, WEIGHTS } from "../../constants";
 import { GrayTitle } from "../course-work";
 import { MaxwidthContainer } from "../../components/GlobalStyles";
 import Data from "../../assets/svg/data.svg";
 import Coding from "../../assets/svg/coding.svg";
 import Cyber from "../../assets/svg/cyber-security.svg";
 import Server from "../../assets/svg/server.svg";
+import { fetcher } from "../../utils";
+import useSWR from "swr";
+import Spinner from "../../components/Spinner";
+import ActivityCard from "../../components/dash-profile/ActivityCard";
+import CourseCard from "../../components/coursework-components/CourseCard";
 
 let colors = ["#44E986", "#FFA28B", "#FAD740", "#8B90FF"];
 let icon = [Data, Coding, Cyber, Server];
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
+  const [registeredBootcamps, setRegisteredBootcamps] = useState(true);
+  const [registeredCourses, setRegisteredCourses] = useState(false);
   const [value, loading, error] = useCollection(
     collection(db, "academic-paths"),
     {
@@ -37,28 +43,41 @@ const Dashboard = () => {
     }
   );
   const [paths, setPaths] = useState([]);
+  const [bootcamp, setBootcamp] = useState([]);
+  const {
+    data: apiData,
+    error: bootcampError,
+    isLoading,
+  } = useSWR("/api/staticdata", fetcher);
 
   useEffect(() => {
     if (value) {
       setPaths(value.docs);
-      // console.log({ paths }, { value });
     }
   }, [value, loading]);
 
   useEffect(() => {
     setUser(auth.currentUser);
-    // console.log(auth.currentUser);
     return () => {};
   }, []);
 
+  useEffect(() => {
+    if (apiData) {
+      let randomBootcamp =
+        apiData.bootcamps[Math.floor(Math.random() * apiData.bootcamps.length)];
+      setBootcamp(randomBootcamp);
+    }
+  }, [apiData]);
+
+  // if (isLoading)
+  //   return (
+  //     <div>
+  //       <Spinner />
+  //     </div>
+  //   );
+
   return (
     <>
-      <HeadSeo
-        title={`Dashboard | ${siteMetadata.companyName} `}
-        description={"User Dashboard"}
-        canonicalUrl={`${siteMetadata.siteUrl}/dashboard`}
-        ogType={"article"}
-      />
       <AuthRoute>
         <Container>
           <WelcomeSection>
@@ -75,58 +94,97 @@ const Dashboard = () => {
               </Start>
             </WelcomeContent>
           </WelcomeSection>
-          <CourseDetailSection>
-            <CourseDetailContent>
-              <GradientContainer>
-                <LineGradient
-                  colorFrom={"#10C75900"}
-                  colorTo={"#10C759"}
-                  height={"54px"}
-                />
-                <GradientIcon
-                  IconComponent={<FaReact size={30} color="#44E986" />}
-                  bgColor={"#44E986"}
-                />
-                <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
-              </GradientContainer>
-              <DetailContainer>
-                <Detail>
-                  <Title>Data Science</Title>
-                  <Description>
-                    Data science is an ever-evolving field, which is growing in
-                    popularity at an exponential rate. Data science includes
-                    techniques and theories extracted from the fields of
-                    statistics; computer science, and, most importantly, machine
-                    learning, databases, data visualization, and so on.
-                  </Description>
-                  <FeatureList>
-                    <li>Virtual Jupyter Notebook</li>
-                    <li>Programming Exercises</li>
-                    <li>Real World DS & ML Projects</li>
-                  </FeatureList>
-                  <Button
-                    as={Link}
-                    href="/dashboard"
-                    title={"Start Learning"}
-                    bgColor="white"
-                    color={"#0D1117"}
+          <ActivitySection>
+            <MaxwidthContainer>
+              <h4>Activities</h4>
+              <Tabs>
+                <nav>
+                  <ActivityTabs>
+                    <ActivityTab>Bootcamps</ActivityTab>
+                    <ActivityTab>Courses</ActivityTab>
+                    <ActivityTab>Completed</ActivityTab>
+                  </ActivityTabs>
+                </nav>
+                <ActivityCardContainer>
+                  <TabPanel>
+                    {registeredBootcamps ? (
+                      <ActivityCard />
+                    ) : (
+                      <p>No Registered Bootcamps Found</p>
+                    )}
+                  </TabPanel>
+                  <TabPanel>
+                    {registeredCourses ? (
+                      <CourseCard />
+                    ) : (
+                      <p>No Courses Found</p>
+                    )}
+                  </TabPanel>
+                  <TabPanel>
+                    <p>No completed Courses Found!</p>
+                  </TabPanel>
+                </ActivityCardContainer>
+              </Tabs>
+            </MaxwidthContainer>
+          </ActivitySection>
+          {bootcampError ? (
+            <div>Failed to load</div>
+          ) : (
+            <CourseDetailSection>
+              <CourseDetailContent>
+                <GradientContainer>
+                  <LineGradient
+                    colorFrom={"#10C75900"}
+                    colorTo={"#10C759"}
+                    height={"54px"}
                   />
-                </Detail>
-                <LearningPath>
-                  <Tag>Learning Path</Tag>
-                  <Content>
-                    <PathTitle>Getting Started in Data Science</PathTitle>
-                    <ul>
-                      <li>
-                        <GrayTitle>Difficulty:</GrayTitle> Beginner
-                      </li>
-                      <li>
-                        <GrayTitle>Duration:</GrayTitle> 7hrs 20min
-                      </li>
-                      <li>
-                        <GrayTitle>Sections:</GrayTitle> 1
-                      </li>
-                      <li>
+                  <GradientIcon
+                    IconComponent={<FaReact size={30} color="#44E986" />}
+                    bgColor={"#44E986"}
+                  />
+                  <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
+                </GradientContainer>
+                <DetailContainer>
+                  <Detail>
+                    <Title>
+                      {bootcamp.name} <span>(Recommendation)</span>
+                    </Title>
+                    <Description>{bootcamp.detail?.objective}</Description>
+                    <FeatureList>
+                      <li>Virtual Jupyter Notebook</li>
+                      <li>Programming Exercises</li>
+                      <li>Real World DS & ML Projects</li>
+                    </FeatureList>
+                    <Button
+                      as={Link}
+                      href={`/bootcamps/${bootcamp.slug}`}
+                      title={"Start Learning"}
+                      bgColor="white"
+                      color={"#0D1117"}
+                    />
+                  </Detail>
+                  <LearningPath>
+                    <Tag>Learning Path</Tag>
+                    <Content>
+                      <PathTitle>{bootcamp.name}</PathTitle>
+                      <ul>
+                        <li>
+                          <GrayTitle>Difficulty:</GrayTitle>
+                          {bootcamp.detail?.difficulty}
+                        </li>
+                        <li>
+                          <GrayTitle>Duration: </GrayTitle>{" "}
+                          {bootcamp.detail?.duration}
+                        </li>
+                        <li>
+                          <GrayTitle>Sections: </GrayTitle>{" "}
+                          {bootcamp.detail?.curriculum.length}+
+                        </li>
+                        <li>
+                          <GrayTitle>Timings: </GrayTitle>
+                          {bootcamp.detail?.timing}
+                        </li>
+                        {/* <li>
                         <GrayTitle>Courses:</GrayTitle> 3
                       </li>
                       <li>
@@ -137,13 +195,14 @@ const Dashboard = () => {
                       </li>
                       <li>
                         <GrayTitle>Labs:</GrayTitle> 3
-                      </li>
-                    </ul>
-                  </Content>
-                </LearningPath>
-              </DetailContainer>
-            </CourseDetailContent>
-          </CourseDetailSection>
+                      </li> */}
+                      </ul>
+                    </Content>
+                  </LearningPath>
+                </DetailContainer>
+              </CourseDetailContent>
+            </CourseDetailSection>
+          )}
           <InsetSection bgImage="/galaxy-2.png">
             <GradientStyleContainer>
               <LineGradient
@@ -232,6 +291,44 @@ const GreetingSub = styled.p`
   }
 `;
 
+const ActivitySection = styled.section`
+  background: #0d1117;
+  padding: var(--container-padding);
+  color: white;
+
+  h4 {
+    font-weight: ${WEIGHTS.semiBold};
+    margin-top: 0;
+    font-size: 28px;
+  }
+`;
+
+const ActivityTabs = styled(TabList)`
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding-left: 0;
+  align-items: center;
+`;
+
+const ActivityTab = styled(Tab)`
+  all: unset;
+  font-weight: ${WEIGHTS.medium};
+  font-size: var(--font-size-md);
+  cursor: pointer;
+
+  &[data-reach-tab][data-selected] {
+    background-color: white;
+    color: #0d1117;
+    border-radius: 100px;
+    padding: 10px 15px;
+  }
+`;
+
+const ActivityCardContainer = styled(TabPanels)`
+  margin-block: 1.5rem;
+`;
+
 const CourseDetailSection = styled.section`
   background-image: linear-gradient(
       90deg,
@@ -281,14 +378,25 @@ const Detail = styled.div`
 const Title = styled.p`
   font-weight: 600;
   font-size: clamp(1.3rem, 1.667vw + 0.5rem, 2rem);
+  span {
+    color: #8691a6;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
 `;
 
 const Description = styled.p`
   font-size: clamp(0.8rem, 1.429vw + 0.464rem, 1.12rem);
-  line-height: 1.6;
-  width: min(50ch, 100%);
+  line-height: 1.5;
+  width: min(60ch, 100%);
+
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  display: -webkit-box;
+
   /* @media ${QUERIES.tabletAndSmaller} {
-    width: revert;
+    -webkit-line-clamp: 7;
   } */
 `;
 
@@ -315,7 +423,6 @@ const LearningPath = styled.div`
   );
   border: 1px solid #ffffff;
   box-shadow: 0px 0px 106.452px rgba(62, 63, 73, 0.25);
-  /* filter: blur(0.5px); */
   border-radius: 17px;
 `;
 

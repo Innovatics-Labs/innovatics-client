@@ -8,9 +8,8 @@ import { useRouter } from "next/router";
 export default function MenuButton() {
   const route = useRouter();
   const [isExpanded, setIsExpanded] = useState(false);
-  const toggleMenu = useCallback(() => {
-    setIsExpanded(!isExpanded);
-  }, [isExpanded]);
+  const open = () => setIsExpanded(true);
+  const close = useCallback(() => setIsExpanded(false), [setIsExpanded]);
 
   const dropdownMenuRef = useRef(null);
 
@@ -19,17 +18,17 @@ export default function MenuButton() {
       dropdownMenuRef.current &&
       !dropdownMenuRef.current.contains(event.target)
     ) {
-      setIsExpanded(false);
+      close();
     }
   };
 
   useEffect(() => {
     // subscribe
-    route.events.on("routeChangeStart", toggleMenu);
+    route.events.on("routeChangeStart", close);
 
     // unsubscribe
-    return () => route.events.off("routeChangeStart", toggleMenu);
-  }, [route.events, toggleMenu]);
+    return () => route.events.off("routeChangeStart", close);
+  }, [route.events, close]);
 
   // useEffect(() => {
   //   const handleResize = () => {
@@ -53,7 +52,7 @@ export default function MenuButton() {
 
   return (
     <DropdownMenu ref={dropdownMenuRef}>
-      <DropdownButton onClick={toggleMenu}>
+      <DropdownButton onClick={isExpanded ? close : open}>
         Training <FiChevronDown />
       </DropdownButton>
       <DropdownContent isExpanded={isExpanded}>

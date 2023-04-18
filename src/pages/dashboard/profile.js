@@ -5,16 +5,19 @@ import { updateProfile } from "firebase/auth";
 import { updateDoc, doc } from "firebase/firestore";
 import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import { MdSportsHandball } from "react-icons/md";
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
 
 import profileBanner from "../../assets/images/profile-banner.png";
 import Button from "../../components/Button";
 import { auth, db } from "../../../firebaseConfig";
 import { QUERIES } from "../../constants";
 import AuthRoute from "../../HOC/authRoute";
-import Select from "../../components/Select/Select";
 import { toast } from "react-toastify";
 import { MaxwidthContainer } from "../../components/GlobalStyles";
 import { AuthContext } from "../../context/AuthContext";
+import LearningsTab from "../../components/dash-profile/LearningsTab";
+import CertificationsTab from "../../components/dash-profile/CertificationsTab";
+import PlanTab from "../../components/dash-profile/PlanTab";
 
 const Profile = () => {
   const [changeDetails, setChangeDetails] = useState(false);
@@ -108,95 +111,103 @@ const Profile = () => {
         </Header>
         <MaxwidthContainer>
           <Details>
-            <TabHeader>
-              <TabList>
-                <Tab active>My Details</Tab>
-                <Tab>Learnings</Tab>
-                <Tab>Certifications</Tab>
-                <Tab>Plan</Tab>
-                <Tab>Community</Tab>
-              </TabList>
-            </TabHeader>
-            <FormSection>
-              {user && (
-                <FormContainer>
-                  <FormField>
-                    <Label>Full Name</Label>
-                    <Input
-                      type="text"
-                      id="name"
-                      disabled={!changeDetails}
-                      value={name}
-                      onChange={onChange}
-                    />
-                  </FormField>
-                  <FormField>
-                    <Label>Email</Label>
-                    <Input
-                      type="email"
-                      id="email"
-                      disabled={true}
-                      value={email}
-                    />
-                  </FormField>
-                  <FormField>
-                    <Label>Phone</Label>
-                    <Input
-                      type="tel"
-                      id="mobile"
-                      disabled={!changeDetails}
-                      value={mobile}
-                      onChange={onChange}
-                    />
-                  </FormField>
-                  <FormField>
-                    <Label>About Me</Label>
-                    <TextArea
-                      name="about"
-                      disabled={!changeDetails}
-                      id="about"
-                      cols="30"
-                      rows="10"
-                      value={about}
-                      placeholder="About me"
-                      onChange={onChange}
-                    ></TextArea>
-                  </FormField>
-                </FormContainer>
-              )}
-              <EditActions>
-                {changeDetails && (
-                  <Button
-                    width={"100%"}
-                    onClick={() => {
-                      onCancel();
-                      setChangeDetails((prevState) => !prevState);
-                    }}
-                    title={"Cancel"}
-                    color={"#fff"}
-                    variant="outline"
-                  />
-                )}
-                <Button
-                  width={"100%"}
-                  onClick={() => {
-                    changeDetails && onSubmit();
-                    setChangeDetails((prevState) => !prevState);
-                  }}
-                  title={changeDetails ? "Save" : "Edit"}
-                  bgColor={changeDetails ? "#6E40C9" : "#fff"}
-                  color={changeDetails ? "#fff" : "#0D1117"}
-                />
-              </EditActions>
-            </FormSection>
-            {/* <Select
-          label="Sort"
-          value={sortId}
-          onChange={(ev) => setSortId(ev.target.value)}
-        >
-          <option value="newest">Newest Releases</option>
-          <option value="price">Price</option>
-        </Select> */}
+            <Tabs>
+              <TabHeader>
+                <StyledTabList>
+                  <StyledTab>My Details</StyledTab>
+                  <StyledTab>Learnings</StyledTab>
+                  <StyledTab>Certifications</StyledTab>
+                  <StyledTab>Plan</StyledTab>
+                </StyledTabList>
+              </TabHeader>
+              <TabPanels>
+                <TabPanel>
+                  <FormSection>
+                    {user && (
+                      <FormContainer>
+                        <FormField>
+                          <Label>Full Name</Label>
+                          <Input
+                            type="text"
+                            id="name"
+                            disabled={!changeDetails}
+                            value={name}
+                            onChange={onChange}
+                          />
+                        </FormField>
+                        <FormField>
+                          <Label>Email</Label>
+                          <Input
+                            type="email"
+                            id="email"
+                            disabled={true}
+                            value={email}
+                          />
+                        </FormField>
+                        <FormField>
+                          <Label>Phone</Label>
+                          <Input
+                            type="tel"
+                            id="mobile"
+                            disabled={!changeDetails}
+                            value={mobile}
+                            onChange={onChange}
+                          />
+                        </FormField>
+                        <FormField>
+                          <Label>About Me</Label>
+                          <TextArea
+                            name="about"
+                            disabled={!changeDetails}
+                            id="about"
+                            cols="30"
+                            rows="10"
+                            value={about}
+                            placeholder="About me"
+                            onChange={onChange}
+                          ></TextArea>
+                        </FormField>
+                      </FormContainer>
+                    )}
+                    <EditActions>
+                      {user && changeDetails && (
+                        <Button
+                          width={"100%"}
+                          onClick={() => {
+                            onCancel();
+                            setChangeDetails((prevState) => !prevState);
+                          }}
+                          title={"Cancel"}
+                          color={"#fff"}
+                          variant="outline"
+                        />
+                      )}
+                      {user && (
+                        <Button
+                          width={"100%"}
+                          onClick={() => {
+                            changeDetails && onSubmit();
+                            setChangeDetails((prevState) => !prevState);
+                          }}
+                          title={changeDetails ? "Save" : "Edit"}
+                          bgColor={changeDetails ? "#6E40C9" : "#fff"}
+                          color={changeDetails ? "#fff" : "#0D1117"}
+                        />
+                      )}
+                    </EditActions>
+                  </FormSection>
+                </TabPanel>
+                <TabPanel>
+                  <LearningsTab />
+                </TabPanel>
+                <TabPanel>
+                  <CertificationsTab />
+                </TabPanel>
+                <TabPanel>
+                  <PlanTab />
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
           </Details>
         </MaxwidthContainer>
       </Container>
@@ -285,27 +296,28 @@ const TabHeader = styled.div`
   border-bottom: 1px solid #8691a6;
 `;
 
-const TabList = styled.ol`
+const StyledTabList = styled(TabList)`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  padding-bottom: 1rem;
   padding-left: 0;
   align-items: center;
 `;
 
-const Tab = styled.li`
+const StyledTab = styled(Tab)`
   font-weight: 500;
   font-size: var(--font-size-md);
+  all: unset;
+  cursor: pointer;
 
-  ${({ active }) =>
-    active &&
-    css`
-      background: #fff;
-      color: #0d1117;
-      border-radius: 100px;
-      padding: 0.7rem 1.2rem;
-    `}
+  &[data-reach-tab][data-selected] {
+    background: #fff;
+    color: #0d1117;
+    border-radius: 100px;
+    padding: 0.7rem 1.2rem;
+  }
 `;
 
 const FormSection = styled.main`
