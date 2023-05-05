@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { QUERIES, WEIGHTS } from "../../constants";
-import { MaxwidthContainer } from "../GlobalStyles";
+import { QUERIES, WEIGHTS } from '../../constants';
+import { MaxwidthContainer } from '../GlobalStyles';
 
-const cardTitleColor = ["#66c19a", "#FFA28B", "#fad740", "#8B90FF"];
+const cardTitleColor = ['#66c19a', '#FFA28B', '#fad740', '#8B90FF'];
 
 const WhyInnovatics = () => {
   return (
@@ -12,7 +12,7 @@ const WhyInnovatics = () => {
         <Content>
           <TextContainer>
             <Title>Why Innovatics?</Title>
-            <TagLine>We have the Best Solution for your Developement</TagLine>
+            <TagLine>We have the Best Solution for your Development</TagLine>
             <Subtitle>
               Our mission is to help individuals and businesses achieve their
               goals through the latest technologies and tools. Whether you are
@@ -68,7 +68,7 @@ export default WhyInnovatics;
 const Container = styled.section`
   background-color: var(--dusty-grey);
   padding: 8rem var(--container-padding);
-  background-image: url("/why-ine-bg-revised 1.svg");
+  background-image: url('/why-ine-bg-revised 1.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -157,19 +157,19 @@ const Card = styled.div`
     border-top-left-radius: 19px;
     border-bottom-left-radius: 19px;
     :hover {
-      background: no-repeat url("/data-science.png");
+      background: no-repeat url('/data-science.png');
       background-size: cover;
     }
   }
   :nth-of-type(2) {
     :hover {
-      background: no-repeat url("/cyber-security.png");
+      background: no-repeat url('/cyber-security.png');
       background-size: cover;
     }
   }
   :nth-of-type(3) {
     :hover {
-      background: no-repeat url("/networking.png");
+      background: no-repeat url('/networking.png');
       background-size: cover;
     }
   }
@@ -178,7 +178,7 @@ const Card = styled.div`
     border-top-right-radius: 19px;
     border-bottom-right-radius: 19px;
     :hover {
-      background: no-repeat url("/cloud.png");
+      background: no-repeat url('/cloud.png');
       background-size: cover;
     }
   }
