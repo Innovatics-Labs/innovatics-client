@@ -6,11 +6,6 @@ on:
     branches:
       - main
 
-env:
-  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-  HOST: ${{ secrets.HOST }}
-  USER: ${{ secrets.USER }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -33,5 +28,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            echo "success" > text.txt
-
+            cd /home/innovatics/public_html/client
+            GIT_SSH_COMMAND="ssh -i ./inn_ssh" git pull origin main
+            yarn install
+            yarn build
+            pm2 delete client
+            pm2 start yarn --name "client" -- start
