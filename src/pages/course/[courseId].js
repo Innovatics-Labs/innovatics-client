@@ -1,29 +1,30 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { VscGraph } from "react-icons/vsc";
-import styled from "styled-components";
-import { useDocument } from "react-firebase-hooks/firestore";
-import { doc } from "firebase/firestore";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { VscGraph } from 'react-icons/vsc';
+import styled from 'styled-components';
+import { useDocument } from 'react-firebase-hooks/firestore';
+import { doc } from 'firebase/firestore';
 
-import { TopicCard, CourseOverview } from "../../components/course";
+import { TopicCard, CourseOverview } from '../../components/course';
 
-import siteMetadata from "../../data/siteMetadata";
-import HeadSeo from "../../components/HeadSeo";
-import GradientIcon from "../../components/GradientIcon";
-import InstructorCap from "../../components/InstructorCap";
-import JoinDiscord from "../../components/JoinDiscord";
-import LineGradient from "../../components/LineGradient";
-import Pagination from "../../components/Pagination";
-import { QUERIES } from "../../constants";
-import { GrayTitle } from "../course-work";
-import { db } from "../../../firebaseConfig";
-import { MaxwidthContainer } from "../../components/GlobalStyles";
+import siteMetadata from '../../data/siteMetadata';
+import HeadSeo from '../../components/HeadSeo';
+import GradientIcon from '../../components/GradientIcon';
+import InstructorCap from '../../components/InstructorCap';
+import JoinDiscord from '../../components/JoinDiscord';
+import LineGradient from '../../components/LineGradient';
+import Pagination from '../../components/Pagination';
+import { QUERIES } from '../../constants';
+import { GrayTitle } from '../course-work';
+import { db } from '../../../firebaseConfig';
+import { MaxwidthContainer } from '../../components/GlobalStyles';
 
 const DashboardClass = () => {
   const [courseDetail, setCourseDetail] = useState({});
+  const [susbcription, setSubscription] = useState(false);
   const router = useRouter();
   const { courseId } = router.query;
-  const [value, loading, error] = useDocument(doc(db, "courses", courseId), {
+  const [value, loading, error] = useDocument(doc(db, 'courses', courseId), {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
 
@@ -40,7 +41,7 @@ const DashboardClass = () => {
         description={courseDetail.description}
         canonicalUrl={`${siteMetadata.siteUrl}/${courseDetail.id}`}
         // ogImageUrl={courseDetail.url}
-        ogType={"article"}
+        ogType={'article'}
       />
       <Container>
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
@@ -51,20 +52,20 @@ const DashboardClass = () => {
             <CourseSection>
               <CourseSectionContent>
                 <GradientContainer>
-                  <LineGradient colorFrom={"#44E98600"} colorTo={"#44E986"} />
+                  <LineGradient colorFrom={'#44E98600'} colorTo={'#44E986'} />
                   <GradientIcon
-                    IconComponent={<VscGraph size={30} color="#44E986" />}
-                    bgColor={"#44E986"}
+                    IconComponent={<VscGraph size={30} color='#44E986' />}
+                    bgColor={'#44E986'}
                   />
                 </GradientContainer>
                 <Content>
                   <Instructordetails>
                     <CapContainer>
-                      <InstructorCap size={"140px"} iconsize={70} />
+                      <InstructorCap size={'140px'} iconsize={70} />
                     </CapContainer>
                     <CourseStats>
                       <InstructorName>
-                        <GrayTitle>INSTRUCTOR:</GrayTitle>{" "}
+                        <GrayTitle>INSTRUCTOR:</GrayTitle>{' '}
                         {courseDetail.instructor}
                       </InstructorName>
                       <Duration>
@@ -77,17 +78,23 @@ const DashboardClass = () => {
                   </Instructordetails>
                   <CourseContentWrapper>
                     <CourseTitle>{courseDetail.title}</CourseTitle>
-                    {courseDetail.topics ? (
-                      courseDetail.topics?.map((topic) => (
-                        <TopicCard
-                          key={topic.name}
-                          topicTitle={topic.name}
-                          activityCount={topic.resources.length}
-                          topicResource={topic.resources}
-                        />
-                      ))
+                    {susbcription ? (
+                      courseDetail.topics ? (
+                        courseDetail.topics?.map((topic) => (
+                          <TopicCard
+                            key={topic.name}
+                            topicTitle={topic.name}
+                            activityCount={topic.resources.length}
+                            topicResource={topic.resources}
+                          />
+                        ))
+                      ) : (
+                        <h4>Course coming soon stay tuned.....</h4>
+                      )
                     ) : (
-                      <h4>Course coming soon stay tuned.....</h4>
+                      <SubContainer>
+                        <h4>Please Subscribe to see contents.</h4>
+                      </SubContainer>
                     )}
                   </CourseContentWrapper>
                 </Content>
@@ -186,4 +193,16 @@ const CourseTitle = styled.h5`
 const PaginationContainer = styled.div`
   padding: 2rem var(--container-padding);
   background-color: #0d1117;
+`;
+
+const SubContainer = styled.div`
+  width: 100%;
+  height: 400px;
+  display: grid;
+  place-items: center;
+
+  h4 {
+    font-size: 20px;
+    font-weight: 500;
+  }
 `;
