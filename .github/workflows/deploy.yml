@@ -27,4 +27,4 @@ jobs:
           key: $SSH_PRIVATE_KEY
           port: 22
           script: |
-            echo "success" > text.txt
+            echo "successs" > text.txt
