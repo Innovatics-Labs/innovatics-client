@@ -14,6 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Debug info
+        run: |
+          echo "Host: $HOST ==== ${{ secrets.HOST }}"
+          echo "User: $USER  === ${{ secrets.USER }}"
+          echo "Key: $SSH_PRIVATE_KEY   === ${{ secrets.USER }}"
+
       - name: SSH into VPS and deploy
         uses: appleboy/ssh-action@master
         with:
