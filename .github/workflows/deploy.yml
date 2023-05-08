@@ -1,0 +1,30 @@
+name: Deploy to VPS
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+env:
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  HOST: ${{ secrets.HOST }}
+  USER: ${{ secrets.USER }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: SSH into VPS and deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: $HOST
+          username: $USER
+          key: $SSH_PRIVATE_KEY
+          port: 22
+          script: |
+            echo "success" > text.txt
