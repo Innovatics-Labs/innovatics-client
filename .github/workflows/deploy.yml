@@ -57,3 +57,4 @@ jobs:
             pm2 delete client
             pm2 start yarn --name "client" -- start
             pm2 delete client-dev || true
+
