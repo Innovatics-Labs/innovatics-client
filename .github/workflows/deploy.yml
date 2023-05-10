@@ -1,25 +1,46 @@
 name: Deploy to VPS
 
 on:
+  push:
+    branches:
+      - dev
+      -
   pull_request:
     types: [closed]
     branches:
       - main
 
 jobs:
-  deploy:
+  deploy-dev:
     runs-on: ubuntu-latest
-
+    if: github.ref == 'refs/heads/dev'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: SSH into VPS and deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /home/innovatics/public_html/dev
+            git checkout dev
+            GIT_SSH_COMMAND="ssh -i ~/.ssh/admin_inn" git pull origin dev
+            yarn install
+            yarn build
+            pm2 delete client-dev || true
+            pm2 start yarn --name "client-dev" -- start-dev
 
-      - name: Debug info
-        run: |
-          echo "Host: $HOST ==== ${{ secrets.HOST }}"
-          echo "User: $USER  === ${{ secrets.USER }}"
-          echo "Key: $SSH_PRIVATE_KEY   === ${{ secrets.USER }}"
-
+  deploy-prod:
+    runs-on: ubuntu-latest
+    if: |
+      github.ref == 'main' &&
+      github.event.pull_request.merged == true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: SSH into VPS and deploy
         uses: appleboy/ssh-action@master
         with:
@@ -29,8 +50,11 @@ jobs:
           port: 22
           script: |
             cd /home/innovatics/public_html/client
-            GIT_SSH_COMMAND="ssh -i ./inn_ssh" git pull origin main
+            git checkout main
+            GIT_SSH_COMMAND="ssh -i ~/.ssh/admin_inn" git pull origin main
             yarn install
             yarn build
             pm2 delete client
             pm2 start yarn --name "client" -- start
+            pm2 delete client-dev || true
+
