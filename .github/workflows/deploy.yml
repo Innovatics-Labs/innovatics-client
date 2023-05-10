@@ -27,7 +27,7 @@ jobs:
           script: |
             cd /home/innovatics/public_html/client
             git checkout dev
-            GIT_SSH_COMMAND="ssh -i ./inn_ssh" git pull origin dev
+            GIT_SSH_COMMAND="ssh -i ~/.ssh/admin_inn" git pull origin dev
             yarn install
             yarn build
             pm2 delete client-dev || true
@@ -50,7 +50,7 @@ jobs:
           port: 22
           script: |
             cd /home/innovatics/public_html/client
-            GIT_SSH_COMMAND="ssh -i ./inn_ssh" git pull origin main
+            GIT_SSH_COMMAND="ssh -i ~/.ssh/admin_inn" git pull origin main
             yarn install
             yarn build
             pm2 delete client
