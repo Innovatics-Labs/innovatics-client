@@ -47,7 +47,10 @@ const Navbar = () => {
                 <MenuItem>
                   <Link href={'/bootcamps'}>Live Bootcamp</Link>
                 </MenuItem>
-                <MenuButton />
+                <MenuItem>
+                  <Link href={'/services/training'}>Training</Link>
+                </MenuItem>
+                {/* <MenuButton /> */}
                 <MenuItem>
                   <Link href={'/services/consultation'}>Consulting</Link>
                 </MenuItem>
@@ -57,6 +60,7 @@ const Navbar = () => {
                 <MenuItem>
                   <Link href={'/services/career-change'}>Placement</Link>
                 </MenuItem>
+
               </NavItems>
               <NavItems>
                 {/* <MenuItem>
