@@ -1,9 +1,9 @@
-import Link from "next/link";
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import styled from "styled-components";
-import { MenuItem } from "./Navbar";
-import { FiChevronDown } from "react-icons/fi";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import styled from 'styled-components';
+import { MenuItem } from './Navbar';
+import { FiChevronDown } from 'react-icons/fi';
+import { useRouter } from 'next/router';
 
 export default function MenuButton() {
   const route = useRouter();
@@ -24,10 +24,10 @@ export default function MenuButton() {
 
   useEffect(() => {
     // subscribe
-    route.events.on("routeChangeStart", close);
+    route.events.on('routeChangeStart', close);
 
     // unsubscribe
-    return () => route.events.off("routeChangeStart", close);
+    return () => route.events.off('routeChangeStart', close);
   }, [route.events, close]);
 
   // useEffect(() => {
@@ -43,10 +43,10 @@ export default function MenuButton() {
   // }, []);
 
   useEffect(() => {
-    window.addEventListener("click", handleClickOutside);
+    window.addEventListener('click', handleClickOutside);
 
     return () => {
-      window.removeEventListener("click", handleClickOutside);
+      window.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
@@ -56,19 +56,19 @@ export default function MenuButton() {
         Training <FiChevronDown />
       </DropdownButton>
       <DropdownContent isExpanded={isExpanded}>
-        <DropdownLink href="/academic-paths/VA03NCArYhjCSZSBjWXu">
+        <DropdownLink href='/academic-paths/VA03NCArYhjCSZSBjWXu'>
           Data Science
         </DropdownLink>
-        <DropdownLink href="/academic-paths/w6oFaP8dPcYnFnxm0GsP">
+        <DropdownLink href='/academic-paths/w6oFaP8dPcYnFnxm0GsP'>
           Software
         </DropdownLink>
-        <DropdownLink href="/academic-paths/vemOyF3KyN3UMAWlGmJO">
+        <DropdownLink href='/academic-paths/vemOyF3KyN3UMAWlGmJO'>
           Security
         </DropdownLink>
-        <DropdownLink href="/academic-paths/I1bBR542RwlLqXIfk7VZ">
+        <DropdownLink href='/academic-paths/I1bBR542RwlLqXIfk7VZ'>
           Cloud
         </DropdownLink>
-        <DropdownLink href={"/bootcamps"}>Bootcamps</DropdownLink>
+        {/* <DropdownLink href={"/bootcamps"}>Bootcamps</DropdownLink> */}
       </DropdownContent>
     </DropdownMenu>
   );
@@ -107,13 +107,13 @@ const DropdownContent = styled.div`
   width: fit-content;
   min-width: 160px;
   z-index: 1;
-  background-image: url("/bg-grad.png");
+  background-image: url('/bg-grad.png');
   background: #1d1d1d;
   border-radius: 10px;
   transition: all 0.3s;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     right: 0;

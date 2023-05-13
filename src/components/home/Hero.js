@@ -1,32 +1,32 @@
-import styled, { keyframes } from "styled-components";
-import Link from "next/link";
-import Image from "next/image";
+import styled, { keyframes } from 'styled-components';
+import Link from 'next/link';
+import Image from 'next/image';
 
-import { QUERIES } from "../../constants";
-import Button from "../Button";
-import { MaxwidthContainer } from "../GlobalStyles";
-import heroGroup from "../../assets/images/hero-group.png";
-import downarrow from "../../assets/images/Group 2.png";
-import kpmgLogo from "../../assets/images/kpmg-logo.png";
-import mercedes from "../../assets/images/mercedes.png";
-import pinterest from "../../assets/images/pinterest.png";
-import intel from "../../assets/images/intel.png";
-import ibm from "../../assets/images/ibm.png";
-import fiverr from "../../assets/images/fiverr.png";
-import publix from "../../assets/images/publix.png";
-import sage from "../../assets/images/sage.png";
-import RadialGradient from "../gradients/RadialGradient";
+import { QUERIES } from '../../constants';
+import Button from '../Button';
+import { MaxwidthContainer } from '../GlobalStyles';
+import heroGroup from '../../assets/images/hero-group.png';
+import downarrow from '../../assets/images/Group 2.png';
+import kpmgLogo from '../../assets/images/kpmg-logo.png';
+import mercedes from '../../assets/images/mercedes.png';
+import pinterest from '../../assets/images/pinterest.png';
+import intel from '../../assets/images/intel.png';
+import ibm from '../../assets/images/ibm.png';
+import fiverr from '../../assets/images/fiverr.png';
+import publix from '../../assets/images/publix.png';
+import sage from '../../assets/images/sage.png';
+import RadialGradient from '../gradients/RadialGradient';
 
 const Hero = () => {
   return (
     <HeroContainer>
       <MaxwidthContainer>
         <HeroCampaign>
-          <RadialGradient top="100px" right="100px" />
+          <RadialGradient top='100px' right='100px' />
           <RadialGradient
-            gradient="#074BC9 17.55%, #074BC9 27.56%, rgba(7, 75, 201, 0.45) 49.89%, rgba(7, 75, 201, 0.52) 56.53%, #074BC9 65.69%"
-            top="200px"
-            right="350px"
+            gradient='#074BC9 17.55%, #074BC9 27.56%, rgba(7, 75, 201, 0.45) 49.89%, rgba(7, 75, 201, 0.52) 56.53%, #074BC9 65.69%'
+            top='200px'
+            right='350px'
           />
           <HeroContentContainer>
             <HeroDetails>
@@ -41,74 +41,74 @@ const Hero = () => {
               <ButtonGroup>
                 <Button
                   as={Link}
-                  href="/signIn"
-                  title="Get Started Now"
-                  bgColor={"white"}
-                  color="#121212"
+                  href='https://form.jotform.com/InnovatiCS/innovatics-18'
+                  title='Register Now'
+                  bgColor={'white'}
+                  color='#121212'
                 />
                 <Button
                   as={Link}
-                  href="/faqs"
-                  title="Request Information"
-                  variant={"outline"}
+                  href=''
+                  title='Download Curriculum'
+                  variant={'outline'}
                 />
               </ButtonGroup>
             </HeroDetails>
             <HeroImages>
               <ImagesContainer>
-                <Image src={heroGroup} alt="" sizes="100vw" />
+                <Image src={heroGroup} alt='' sizes='100vw' />
               </ImagesContainer>
             </HeroImages>
           </HeroContentContainer>
           <DataCompany>
             <JoinCompany>
               <span>Join the world leading data driven companies</span>
-              <Image src={downarrow} alt="" />
+              <Image src={downarrow} alt='' />
             </JoinCompany>
             <DataCompanyImages>
               <CompanyLogo>
                 <div>
-                  <Image src={intel} alt="intel" sizes="100vw" />
+                  <Image src={intel} alt='intel' sizes='100vw' />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={ibm} alt="ibm" sizes="100vw" />
+                  <Image src={ibm} alt='ibm' sizes='100vw' />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={fiverr} alt="fiverr" sizes="100vw" />
+                  <Image src={fiverr} alt='fiverr' sizes='100vw' />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={publix} alt="publix" sizes="100vw" />
+                  <Image src={publix} alt='publix' sizes='100vw' />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={sage} alt="sage" sizes="100vw" />
+                  <Image src={sage} alt='sage' sizes='100vw' />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={mercedes} alt="mercedes" sizes="100vw" />
+                  <Image src={mercedes} alt='mercedes' sizes='100vw' />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={pinterest} alt="pinterest" sizes="100vw" />
+                  <Image src={pinterest} alt='pinterest' sizes='100vw' />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={sage} alt="" sizes="100vw" />
+                  <Image src={sage} alt='' sizes='100vw' />
                 </div>
               </CompanyLogo>
               <CompanyLogo>
                 <div>
-                  <Image src={ibm} alt="" sizes="100vw" />
+                  <Image src={ibm} alt='' sizes='100vw' />
                 </div>
               </CompanyLogo>
             </DataCompanyImages>

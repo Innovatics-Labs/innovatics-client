@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 
 import {
   Hero,
@@ -21,6 +22,7 @@ export default function Home() {
         <meta name='description' content='Welcome to Innovatics' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <div class='elfsight-app-30d6bdde-4833-4cfe-ba79-775daceff83c'></div>
       <Hero />
       <WhyInnovatics />
       <OurPlatform />
@@ -30,6 +32,9 @@ export default function Home() {
       <TrainingSection />
       <LiveSection />
       <Newslettersection />
+      <>
+        <Script src='https://apps.elfsight.com/p/platform.js' />
+      </>
     </div>
   );
 }
