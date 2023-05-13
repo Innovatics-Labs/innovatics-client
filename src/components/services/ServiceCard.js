@@ -1,8 +1,9 @@
-import Image from "next/image";
-import styled from "styled-components";
-import { QUERIES, WEIGHTS } from "../../constants";
-import Button from "../Button";
-import circuit from "../../assets/images/circuit-board.png";
+import Image from 'next/image';
+import styled from 'styled-components';
+import { QUERIES, WEIGHTS } from '../../constants';
+import Button from '../Button';
+import circuit from '../../assets/images/circuit-board.png';
+import Link from 'next/link';
 
 const ServiceCard = ({
   img,
@@ -16,12 +17,12 @@ const ServiceCard = ({
     <>
       <ServiceCardContainer reverse={reverse}>
         <ImageContainer>
-          <Image src={img ? img : circuit} alt="" sizes="100vw" />
+          <Image src={img ? img : circuit} alt='' sizes='100vw' />
         </ImageContainer>
         <ServiceCardContent>
           <ServiceTitle>{title}</ServiceTitle>
           <ServiceDescription>{description}</ServiceDescription>
-          {action && <Button variant={"outline"} title="Learn More" />}
+          {/* {action && <Button variant={"outline"} title="Learn More" />} */}
         </ServiceCardContent>
       </ServiceCardContainer>
     </>
