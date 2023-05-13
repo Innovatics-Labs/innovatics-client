@@ -1,33 +1,33 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import useSWR from "swr";
-import { useRouter } from "next/router";
-import { FiCalendar, FiShare } from "react-icons/fi";
-import { MdAlarm } from "react-icons/md";
-import { VscCode } from "react-icons/vsc";
-import { FaLinkedinIn, FaPlus, FaReact, FaTwitter } from "react-icons/fa";
-import styled from "styled-components";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import useSWR from 'swr';
+import { useRouter } from 'next/router';
+import { FiCalendar, FiShare } from 'react-icons/fi';
+import { MdAlarm } from 'react-icons/md';
+import { VscCode } from 'react-icons/vsc';
+import { FaLinkedinIn, FaPlus, FaReact, FaTwitter } from 'react-icons/fa';
+import styled from 'styled-components';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-} from "@reach/accordion";
+} from '@reach/accordion';
 
-import Button from "../../components/Button";
-import { MaxwidthContainer } from "../../components/GlobalStyles";
-import GradientIcon from "../../components/GradientIcon";
-import InstructorCap from "../../components/InstructorCap";
-import JoinDiscord from "../../components/JoinDiscord";
-import LineGradient from "../../components/LineGradient";
-import { QUERIES, WEIGHTS } from "../../constants";
-import { GradientContainer } from "../course-work";
-import Newsletter from "../../components/Newsletter";
-import OurProcess from "../../components/OurProcess";
-import ContactDetail from "../../components/ContactDetail";
-import { fetcher } from "../../utils";
-import Spinner from "../../components/Spinner";
+import Button from '../../components/Button';
+import { MaxwidthContainer } from '../../components/GlobalStyles';
+import GradientIcon from '../../components/GradientIcon';
+import InstructorCap from '../../components/InstructorCap';
+import JoinDiscord from '../../components/JoinDiscord';
+import LineGradient from '../../components/LineGradient';
+import { QUERIES, WEIGHTS } from '../../constants';
+import { GradientContainer } from '../course-work';
+import Newsletter from '../../components/Newsletter';
+import OurProcess from '../../components/OurProcess';
+import ContactDetail from '../../components/ContactDetail';
+import { fetcher } from '../../utils';
+import Spinner from '../../components/Spinner';
 
 const Bootcamps = ({}) => {
   const { query } = useRouter();
@@ -36,7 +36,7 @@ const Bootcamps = ({}) => {
     data: apiData,
     error,
     isLoading,
-  } = useSWR("/api/staticdata", fetcher);
+  } = useSWR('/api/staticdata', fetcher);
 
   useEffect(() => {
     if (apiData) {
@@ -73,8 +73,8 @@ const Bootcamps = ({}) => {
       <DetailSection>
         <DetailContainer>
           <LineGradient
-            colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-            colorTo={"hsla(144, 85%, 42%, 0)"}
+            colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+            colorTo={'hsla(144, 85%, 42%, 0)'}
           />
           <div>
             <DetailContent>
@@ -125,9 +125,11 @@ const Bootcamps = ({}) => {
             <ActionContainer>
               <Price>{bootcamp[0] && bootcamp[0]?.detail?.price}</Price>
               <Button
-                bgColor={"white"}
-                color="hsla(216, 28%, 7%, 1)"
-                title="Register Now!"
+                as={Link}
+                href='https://form.jotform.com/InnovatiCS/innovatics-18'
+                bgColor={'white'}
+                color='hsla(216, 28%, 7%, 1)'
+                title='Register Now!'
               />
             </ActionContainer>
           </div>
@@ -136,12 +138,12 @@ const Bootcamps = ({}) => {
       <OverviewSection>
         <OverViewContent>
           <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2 }}>
-            <Masonry gutter={"2rem"}>
+            <Masonry gutter={'2rem'}>
               <OverviewCard>
                 <OverviewTitle>
                   <GradientIcon
-                    IconComponent={<VscCode size={30} color="#44E986" />}
-                    bgColor={"#44E986"}
+                    IconComponent={<VscCode size={30} color='#44E986' />}
+                    bgColor={'#44E986'}
                   />
                   <p>What you’ll learn</p>
                 </OverviewTitle>
@@ -155,8 +157,8 @@ const Bootcamps = ({}) => {
               <OverviewCard>
                 <OverviewTitle>
                   <GradientIcon
-                    IconComponent={<VscCode size={30} color="#44E986" />}
-                    bgColor={"#44E986"}
+                    IconComponent={<VscCode size={30} color='#44E986' />}
+                    bgColor={'#44E986'}
                   />
                   <p>Course Audience</p>
                 </OverviewTitle>
@@ -170,8 +172,8 @@ const Bootcamps = ({}) => {
               <OverviewCard>
                 <OverviewTitle>
                   <GradientIcon
-                    IconComponent={<VscCode size={30} color="#44E986" />}
-                    bgColor={"#44E986"}
+                    IconComponent={<VscCode size={30} color='#44E986' />}
+                    bgColor={'#44E986'}
                   />
                   <p>Course Experience</p>
                 </OverviewTitle>
@@ -185,8 +187,8 @@ const Bootcamps = ({}) => {
               <OverviewCard>
                 <OverviewTitle>
                   <GradientIcon
-                    IconComponent={<VscCode size={30} color="#44E986" />}
-                    bgColor={"#44E986"}
+                    IconComponent={<VscCode size={30} color='#44E986' />}
+                    bgColor={'#44E986'}
                   />
                   <p>
                     Curriculum <sup>*</sup>
@@ -215,16 +217,16 @@ const Bootcamps = ({}) => {
                       )
                     )}
                 </Accordion>
-                <p>
+                {/* <p>
                   <sup>*</sup> Download the curriculum document above for more
                   details
-                </p>
+                </p> */}
               </OverviewCard>
               <OverviewCard>
                 <OverviewTitle>
                   <GradientIcon
-                    IconComponent={<VscCode size={30} color="#44E986" />}
-                    bgColor={"#44E986"}
+                    IconComponent={<VscCode size={30} color='#44E986' />}
+                    bgColor={'#44E986'}
                   />
                   <p>Requirements</p>
                 </OverviewTitle>
@@ -243,15 +245,15 @@ const Bootcamps = ({}) => {
         <InstructorContent>
           <GradientContainer>
             <LineGradient
-              colorFrom={"#10C75900"}
-              colorTo={"#10C759"}
-              height={"54px"}
+              colorFrom={'#10C75900'}
+              colorTo={'#10C759'}
+              height={'54px'}
             />
             <GradientIcon
-              IconComponent={<FaReact size={30} color="#44E986" />}
-              bgColor={"#44E986"}
+              IconComponent={<FaReact size={30} color='#44E986' />}
+              bgColor={'#44E986'}
             />
-            <LineGradient colorFrom={"#10C759"} colorTo={"#10C75900"} />
+            <LineGradient colorFrom={'#10C759'} colorTo={'#10C75900'} />
           </GradientContainer>
           <InstructorContainer>
             <h4>Instructors</h4>
@@ -268,7 +270,7 @@ const Bootcamps = ({}) => {
                         <h5>{position}</h5>
                         <p>{description}</p>
                         <Social>
-                          Social Links:{" "}
+                          Social Links:{' '}
                           <Link href={social.linkedIn}>
                             <FaLinkedinIn />
                           </Link>
@@ -353,7 +355,7 @@ export default Bootcamps;
 
 const Hero = styled.div`
   padding: 4rem var(--container-padding);
-  background-image: url("/wormhole.png");
+  background-image: url('/processor.png');
   background-size: cover;
   color: white;
 `;
@@ -380,7 +382,7 @@ const SubHeadline = styled.p`
 `;
 
 const DetailSection = styled.div`
-  background-image: url("/mountain-dark.png");
+  background-image: url('/mountain-dark.png');
   color: white;
 `;
 
@@ -397,7 +399,7 @@ const DetailContainer = styled(MaxwidthContainer)`
 
 const DetailContent = styled.div`
   display: grid;
-  grid-template-columns: 1fr 350px;
+  grid-template-columns: 1fr 500px;
   gap: 2rem;
   margin-block: 2.5rem;
 
@@ -497,7 +499,7 @@ const Price = styled.p`
 
 const OverviewSection = styled.section`
   background-color: #121212;
-  background-image: url("/bg-grad.png");
+  background-image: url('/bg-grad.png');
   background-size: cover;
   color: white;
 `;
@@ -535,7 +537,7 @@ const OverviewTitle = styled.div`
 `;
 
 const OverviewFeatureList = styled.ul`
-  list-style-image: url("/checkmark.png");
+  list-style-image: url('/checkmark.png');
   font-weight: ${WEIGHTS.medium};
 
   li {
@@ -579,7 +581,7 @@ const CurriculumFeatureList = styled(OverviewFeatureList)`
 
 const CurriculumList = styled.li`
   ::marker {
-    content: "> ";
+    content: '> ';
     font-size: 20px;
     padding-left: 0;
     /* padding-right: 10px; */
@@ -588,7 +590,7 @@ const CurriculumList = styled.li`
 
 const InstructorSection = styled.section`
   background-color: #121212;
-  background-image: url("/bg-grad.png");
+  background-image: url('/bg-grad.png');
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -647,7 +649,7 @@ const InstructorDetail = styled.div`
 
 export const MentorshipSection = styled.section`
   background-color: #121212;
-  background-image: url("/bg-grad.png");
+  background-image: url('/bg-grad.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

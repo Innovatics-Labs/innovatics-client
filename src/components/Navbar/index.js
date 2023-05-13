@@ -1,16 +1,16 @@
-import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
-import styled, { css } from "styled-components";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useCallback, useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { GiHamburgerMenu, GiCancel } from 'react-icons/gi';
+import styled, { css } from 'styled-components';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
-import { auth } from "../../../firebaseConfig";
-import logo from "../../assets/images/logo 1.png";
-import { QUERIES } from "../../constants";
-import AuthNavbar from "./AuthNavbar";
-import MenuButton from "../MenuButton";
+import { auth } from '../../../firebaseConfig';
+import logo from '../../assets/images/logo 1.png';
+import { QUERIES } from '../../constants';
+import AuthNavbar from './AuthNavbar';
+import MenuButton from '../MenuButton';
 
 const Navbar = () => {
   const route = useRouter();
@@ -21,18 +21,18 @@ const Navbar = () => {
 
   useEffect(() => {
     // subscribe
-    route.events.on("routeChangeStart", close);
+    route.events.on('routeChangeStart', close);
 
     // unsubscribe
-    return () => route.events.off("routeChangeStart", close);
+    return () => route.events.off('routeChangeStart', close);
   }, [close, route.events]);
 
   return (
     <NavContainer pathName={route.pathname} active={showNav}>
       <Container user={user}>
         <Logo>
-          <Link href={`${user ? "/dashboard" : "/"}`}>
-            <Image src={logo} alt="innovatics logo" sizes="100vw" />
+          <Link href={`${user ? '/dashboard' : '/'}`}>
+            <Image src={logo} alt='innovatics logo' sizes='100vw' />
           </Link>
         </Logo>
         {!loading && user ? (
@@ -44,34 +44,41 @@ const Navbar = () => {
             </MenuIcon>
             <NavElements active={showNav}>
               <NavItems>
+                <MenuItem>
+                  <Link href={'/bootcamps'}>Live Bootcamp</Link>
+                </MenuItem>
                 <MenuButton />
                 <MenuItem>
-                  <Link href={"/services/consultation"}>Consulting</Link>
+                  <Link href={'/services/consultation'}>Consulting</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href={"/services/innovation"}>Placements</Link>
+                  <Link href={'/services/innovation'}>Development</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href={"/services/career-change"}>Career Change</Link>
+                  <Link href={'/services/career-change'}>Placement</Link>
                 </MenuItem>
               </NavItems>
               <NavItems>
-                <MenuItem>
-                  <Link href={"/signIn"}>Sign In</Link>
-                </MenuItem>
+                {/* <MenuItem>
+                  <Link href={''}>Sign In</Link>
+                </MenuItem> */}
                 {/* <SignInButton>
                   <Link href={"/faqs"}>Request Information</Link>
                 </SignInButton> */}
                 <MenuItem
                   style={{
-                    background: "#FFFFFF",
-                    border: "1px solid #FFFFFF",
-                    borderRadius: "8px",
-                    color: "#121212",
-                    padding: "8px 16px",
+                    background: '#FFFFFF',
+                    border: '1px solid #FFFFFF',
+                    borderRadius: '8px',
+                    color: '#121212',
+                    padding: '8px 16px',
                   }}
                 >
-                  <Link href={"/signUp"}>Get Started Now</Link>
+                  <Link
+                    href={'https://form.jotform.com/InnovatiCS/innovatics-18'}
+                  >
+                    Register Now
+                  </Link>
                 </MenuItem>
               </NavItems>
             </NavElements>
@@ -88,7 +95,7 @@ const NavContainer = styled.nav`
   background: black;
   height: var(--navbar-height);
   ${({ pathName }) =>
-    pathName === "/" &&
+    pathName === '/' &&
     css`
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(12px);
@@ -103,7 +110,7 @@ const NavContainer = styled.nav`
     `}
 
   @media (max-width:1140px) {
-    ${({ active }) => `${active && "z-index: 5"}`}
+    ${({ active }) => `${active && 'z-index: 5'}`}
   }
 `;
 
@@ -140,7 +147,7 @@ const NavElements = styled.div`
     right: 0;
     top: 85px;
     background-color: #121212;
-    background-image: url("/bg-grad.png");
+    background-image: url('/bg-grad.png');
     background-size: cover;
     width: 0;
     height: calc(100vh - var(--navbar-height));
@@ -163,7 +170,7 @@ const NavElements = styled.div`
       border-radius: 100px;
     }
 
-    ${({ active }) => `${active && "width: 300px"}`}
+    ${({ active }) => `${active && 'width: 300px'}`}
   }
 `;
 
