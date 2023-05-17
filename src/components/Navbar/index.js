@@ -60,6 +60,7 @@ const Navbar = () => {
                 <MenuItem>
                   <Link href={'/services/career-change'}>Placement</Link>
                 </MenuItem>
+
               </NavItems>
               <NavItems>
                 {/* <MenuItem>
