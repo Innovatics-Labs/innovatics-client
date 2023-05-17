@@ -17,7 +17,7 @@ const WhyInnovatics = () => {
               Our mission is to help individuals and businesses achieve their
               goals through the latest technologies and tools. Whether you are
               looking to learn new skills, consult with experts, or find your
-              next job, we are here to support you every step of the way.
+              next job, we are here to support you every step of the way
             </Subtitle>
           </TextContainer>
           <CardList>
