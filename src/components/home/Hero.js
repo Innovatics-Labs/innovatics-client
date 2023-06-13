@@ -48,7 +48,7 @@ const Hero = () => {
                 />
                 <Button
                   as={Link}
-                  href=''
+                  href='/bootcamps'
                   title='Download Curriculum'
                   variant={'outline'}
                 />
