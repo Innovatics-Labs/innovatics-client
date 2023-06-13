@@ -1,12 +1,12 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
 const variantStyles = (
-  variant = "primary",
-  bgColor = "#6e40c9",
-  color = "white",
+  variant = 'primary',
+  bgColor = '#6e40c9',
+  color = 'white',
   borderColor,
-  hoverbg = "white",
+  hoverbg = 'white',
   hover = false
 ) =>
   ({
@@ -22,7 +22,7 @@ const variantStyles = (
     outline: css`
       background: transparent;
       color: ${color};
-      border-color: ${borderColor ? borderColor : "white"};
+      border-color: ${borderColor ? borderColor : 'white'};
       transition: all 0.3s;
       :hover {
         background: white;
@@ -50,6 +50,7 @@ const Button = ({
   disabled,
   hoverbg,
   hover,
+  curr,
   ...delegated
 }) => {
   return (
@@ -80,12 +81,12 @@ const StyledButton = styled.button`
   justify-content: center;
   gap: 10px;
   border: 1px solid transparent;
-  border-radius: ${({ rounded }) => `${rounded ? "2rem" : "10px"}`};
+  border-radius: ${({ rounded }) => `${rounded ? '2rem' : '10px'}`};
   width: ${({ width }) => `${width && width}`};
   padding-block: 12px;
   font-weight: 400;
   font-size: ${({ size }) =>
-    `${size ? size : "clamp(1rem, 0.952vw + 0.643rem, 1.2rem)"}`};
+    `${size ? size : 'clamp(1rem, 0.952vw + 0.643rem, 1.2rem)'}`};
   padding-inline: 2rem;
   cursor: pointer;
 

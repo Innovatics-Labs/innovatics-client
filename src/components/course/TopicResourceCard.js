@@ -1,15 +1,15 @@
-import styled from "styled-components";
-import { TbVideo, TbNotes } from "react-icons/tb";
-import { BiTestTube } from "react-icons/bi";
-import Button from "../Button";
-import { FcCheckmark } from "react-icons/fc";
-import useToggle from "../../hooks/useToggle";
-import YouTubeFrame from "../YoutubeEmbed";
-import { QUERIES } from "../../constants";
-import Quiz from "../Quiz";
+import styled from 'styled-components';
+import { TbVideo, TbNotes } from 'react-icons/tb';
+import { BiTestTube } from 'react-icons/bi';
+import Button from '../Button';
+import { FcCheckmark } from 'react-icons/fc';
+import useToggle from '../../hooks/useToggle';
+import YouTubeFrame from '../YoutubeEmbed';
+import { QUERIES } from '../../constants';
+import Quiz from '../Quiz';
 // import quiz from "../../data/quiz.json";
-import { quizData2 } from "../Quiz/quizData";
-import Lab from "../Lab";
+import { quizData2 } from '../Quiz/quizData';
+import Lab from '../Lab';
 
 const TopicResourceCard = ({
   resourcetype,
@@ -25,12 +25,12 @@ const TopicResourceCard = ({
 
   const getIconName = (type) => {
     switch (type) {
-      case "video":
-        return <TbVideo color="#8691A6" size={25} />;
-      case "quiz":
-        return <TbNotes color="#8691A6" size={25} />;
-      case "lab":
-        return <BiTestTube color="#8691A6" size={25} />;
+      case 'video':
+        return <TbVideo color='#8691A6' size={25} />;
+      case 'quiz':
+        return <TbNotes color='#8691A6' size={25} />;
+      case 'lab':
+        return <BiTestTube color='#8691A6' size={25} />;
     }
   };
 
@@ -39,9 +39,9 @@ const TopicResourceCard = ({
       <TopicResource>
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "auto 1fr",
-            gap: ".5rem",
+            display: 'grid',
+            gridTemplateColumns: 'auto 1fr',
+            gap: '.5rem',
           }}
         >
           <FcCheckmark size={24} />
@@ -55,53 +55,53 @@ const TopicResourceCard = ({
           </div>
         </div>
         <ResourceAction>
-          {resourcetype === "video" ? (
+          {resourcetype === 'video' ? (
             <Button
               onClick={setIsShowVideo}
-              variant={"outline"}
-              title={"Play video"}
+              variant={'outline'}
+              title={'Play video'}
             />
-          ) : resourcetype === "quiz" ? (
+          ) : resourcetype === 'quiz' ? (
             <Button
               onClick={setIsShowQuiz}
-              variant={"outline"}
-              title={"Start Quiz"}
+              variant={'outline'}
+              title={'Start Quiz'}
             />
           ) : (
-            resourcetype === "lab" && (
+            resourcetype === 'lab' && (
               <Button
                 onClick={setShowLab}
-                variant={"outline"}
-                title={"Start Lab"}
+                variant={'outline'}
+                title={'Start Lab'}
               />
             )
           )}
         </ResourceAction>
       </TopicResource>
-      {isShowVideo && resourcetype === "video" && (
+      {isShowVideo && resourcetype === 'video' && (
         <VideoShow showVideo={isShowVideo}>
           <Finished onClick={setIsMarkFinished}>
             <p>MARK FINISHED</p>
-            <Switch className="switch">
+            <Switch className='switch'>
               <Input
-                type="checkbox"
+                type='checkbox'
                 checked={isMarkFinished}
                 onClick={setIsMarkFinished}
               />
-              <Slider className="slider round"></Slider>
+              <Slider className='slider round'></Slider>
             </Switch>
           </Finished>
           <YouTubeFrame video={videoUrl} />
         </VideoShow>
       )}
-      {isShowQuiz && resourcetype === "quiz" && (
+      {isShowQuiz && resourcetype === 'quiz' && (
         <Quiz
           quizData={quizData2}
           isOpen={isShowQuiz}
           onDismiss={setIsShowQuiz}
         />
       )}
-      {showLab && resourcetype === "lab" && (
+      {showLab && resourcetype === 'lab' && (
         <Lab
           title={resourceTitle}
           labUrl={labUrl}
@@ -194,7 +194,7 @@ export const Switch = styled.div`
   display: inline-block;
   width: 44px;
   height: 28px;
-  /* border-radius: ${({ rounded }) => `${rounded ? "2rem" : "10px"}`}; */
+  /* border-radius: ${({ rounded }) => `${rounded ? '2rem' : '10px'}`}; */
 
   .round {
     border-radius: 34px;
@@ -218,7 +218,7 @@ export const Slider = styled.span`
 
   :before {
     position: absolute;
-    content: "";
+    content: '';
     height: 20px;
     width: 20px;
     left: 4px;

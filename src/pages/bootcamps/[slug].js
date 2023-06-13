@@ -29,9 +29,14 @@ import ContactDetail from '../../components/ContactDetail';
 import { fetcher } from '../../utils';
 import Spinner from '../../components/Spinner';
 
+import useToggle from '../../hooks/useToggle';
+import DownloadCurriculum from '../../components/DownloadCurriculum';
+
 const Bootcamps = ({}) => {
   const { query } = useRouter();
   const [bootcamp, setBootcamp] = useState([]);
+  const [showCurr, setShowCurr] = useToggle();
+
   const {
     data: apiData,
     error,
@@ -46,6 +51,7 @@ const Bootcamps = ({}) => {
       setBootcamp(filteredBootcamp);
     }
   }, [apiData, query.slug]);
+  const currUrl = bootcamp[0]?.courseFile;
 
   if (error) return <div>Failed to load</div>;
   if (isLoading)
@@ -63,10 +69,16 @@ const Bootcamps = ({}) => {
         <HeroContent>
           <Headline>{bootcamp[0] && bootcamp[0]?.name}</Headline>
           <SubHeadline>
-            <FiShare />
-            <Link href={`${bootcamp[0] && bootcamp[0]?.courseFile}`} download>
+            {/* <FiShare /> */}
+            {/* <Link href={`${bootcamp[0] && bootcamp[0]?.courseFile}`} download>
               Get course curriculum
-            </Link>
+            </Link> */}
+            <Button
+              onClick={setShowCurr}
+              variant={'outline'}
+              title={'Get course curriculum'}
+            />
+            {/* <Link onclick={setShowCurr}>Get course curriculum</Link> */}
           </SubHeadline>
         </HeroContent>
       </Hero>
@@ -303,6 +315,13 @@ const Bootcamps = ({}) => {
         <OurProcess />
       </MentorshipSection>
       <JoinDiscord />
+      {showCurr && (
+        <DownloadCurriculum
+          currUrl={currUrl}
+          isOpen={showCurr}
+          onDismiss={setShowCurr}
+        />
+      )}
     </div>
   );
 };
@@ -377,8 +396,8 @@ const Headline = styled.h3`
 const SubHeadline = styled.p`
   font-size: var(--font-size-md);
   display: flex;
-  gap: 10px;
-  text-decoration-line: underline;
+  // gap: 10px;
+  // text-decoration-line: underline;
 `;
 
 const DetailSection = styled.div`
