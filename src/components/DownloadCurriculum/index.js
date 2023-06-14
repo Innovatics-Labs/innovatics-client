@@ -38,8 +38,7 @@ const DownloadCurriculum = ({ title, currUrl, isOpen, onDismiss }) => {
           if (result.text === 'OK') {
             formRef.current.reset();
             toast.success(`${result.text}:Message Sent`);
-            tempParams.userEmail = '';
-            tempParams.userPhone = '';
+            onDismiss();
           }
         },
         (error) => {
@@ -71,7 +70,7 @@ const DownloadCurriculum = ({ title, currUrl, isOpen, onDismiss }) => {
                     <p>EMAIL</p>
                     <Input
                       type='email'
-                      placeholder='sample@gmail.com'
+                      placeholder='sample@email.com'
                       name='userEmail'
                       required
                       onChange={handleChange}
@@ -117,6 +116,7 @@ const LabOverlay = styled(DialogOverlay)`
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   overflow-y: none;
+  z-index: 10000;
   @media ${QUERIES.phoneAndSmaller} {
     background-color: rgba(0, 0, 0);
   }
@@ -183,6 +183,7 @@ const FormContainer = styled.div`
   width: min(500px, 100%);
   background-color: #000;
   padding: 2rem;
+  border-radius: 12px;
 `;
 
 const Label = styled.label`

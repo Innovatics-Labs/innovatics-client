@@ -17,7 +17,12 @@ import publix from '../../assets/images/publix.png';
 import sage from '../../assets/images/sage.png';
 import RadialGradient from '../gradients/RadialGradient';
 
+import useToggle from '../../hooks/useToggle';
+import DownloadCurriculum from '../DownloadCurriculum';
+
 const Hero = () => {
+  const [showCurr, setShowCurr] = useToggle();
+
   return (
     <HeroContainer>
       <MaxwidthContainer>
@@ -47,10 +52,10 @@ const Hero = () => {
                   color='#121212'
                 />
                 <Button
-                  as={Link}
-                  href='/bootcamps'
+                  onClick={setShowCurr}
+                  variant='outline'
                   title='Download Curriculum'
-                  variant={'outline'}
+                  size='16px'
                 />
               </ButtonGroup>
             </HeroDetails>
@@ -115,6 +120,9 @@ const Hero = () => {
           </DataCompany>
         </HeroCampaign>
       </MaxwidthContainer>
+      {showCurr && (
+        <DownloadCurriculum isOpen={showCurr} onDismiss={setShowCurr} />
+      )}
     </HeroContainer>
   );
 };
