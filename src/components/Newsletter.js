@@ -1,12 +1,12 @@
-import React, { useRef, useState } from "react";
-import styled from "styled-components";
-import Button from "./Button";
-import Select from "./Select";
-import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
+import React, { useRef, useState } from 'react';
+import styled from 'styled-components';
+import Button from './Button';
+import Select from './Select';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 const Newsletter = () => {
-  const [sortId, setSortId] = useState("support");
+  const [sortId, setSortId] = useState('support');
   const formRef = useRef();
 
   const sendEmail = (e) => {
@@ -14,22 +14,22 @@ const Newsletter = () => {
 
     emailjs
       .sendForm(
-        "service_16ca93j",
-        "template_kyz9jqu",
+        'service_16ca93j',
+        'template_kyz9jqu',
         formRef.current,
-        "M4uZtU2Eize04iEE6"
+        'M4uZtU2Eize04iEE6'
       )
       .then(
         (result) => {
           console.log(result.text);
-          if (result.text === "OK") {
+          if (result.text === 'OK') {
             formRef.current.reset();
             toast.success(`${result.text}:Message Sent`);
           }
         },
         (error) => {
           console.log(error.text);
-          toast.error("Bad User Credentials");
+          toast.error('Bad User Credentials');
         }
       );
   };
@@ -37,62 +37,63 @@ const Newsletter = () => {
   return (
     <Container>
       <form ref={formRef} onSubmit={sendEmail}>
-        <Label htmlFor="">
+        <Label htmlFor=''>
           <p>FIRST NAME</p>
           <Input
-            type="text"
-            placeholder="AbdullLah"
-            name="firstName"
+            type='text'
+            placeholder='First Name'
+            name='firstName'
             required
           />
         </Label>
-        <Label htmlFor="">
+        <Label htmlFor=''>
           <p>LAST NAME</p>
-          <Input type="text" placeholder="Umar" name="lastName" required />
+          <Input type='text' placeholder='Last Name' name='lastName' required />
         </Label>
-        <Label htmlFor="">
+        <Label htmlFor=''>
           <p>EMAIL</p>
           <Input
-            type="email"
-            placeholder="abdullahumar@gmail.com"
-            name="userEmail"
+            type='email'
+            placeholder='sample@email.com'
+            name='userEmail'
             required
           />
         </Label>
-        <Label htmlFor="">
+        <Label htmlFor=''>
           <p>PHONE NUMBER</p>
-          <Input type="tel" placeholder="000 000 0000" name="userPhone" />
+          <Input type='tel' placeholder='000 000 0000' name='userPhone' />
         </Label>
         <Label>
           <p>TYPE OF INQUIRY</p>
           <Inquiry
-            name="queryType"
-            label=""
+            name='queryType'
+            label=''
             value={sortId}
             onChange={(ev) => setSortId(ev.target.value)}
           >
-            <option value="support" name="support">
+            <option value='support' name='support'>
               Support Inquiry
             </option>
-            <option value="sales" name="sales">
+            <option value='sales' name='sales'>
               Sales Inquiry
             </option>
-            <option value="billing" name="billing">
+            <option value='billing' name='billing'>
               Billing Inquiry
             </option>
           </Inquiry>
         </Label>
         <Label>
           <p>MESSAGE</p>
-          <Message name="message" required id="" cols="30" rows="10" />
+          <Message name='message' required id='' cols='30' rows='10' />
         </Label>
         <Button
-          type="submit"
-          value="Send"
-          title={"Send"}
-          variant="outline"
-          borderColor={"#8691A6"}
-          color="#8691A6"
+          type='submit'
+          value='Send'
+          title={'Send'}
+          variant='outline'
+          borderColor={'#8691A6'}
+          color='#8691A6'
+          width='100%'
         />
       </form>
     </Container>
