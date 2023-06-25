@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
   --container-padding: 4rem;
@@ -140,6 +140,10 @@ h6 {
   overflow-wrap: break-word;
 }
 
+.input {
+  border: 23px solid red;
+}
+
 #__next {
   /* FIXME: // the grid is the cause of the overflow */
   display: grid;
@@ -156,7 +160,7 @@ a {
 
 * {
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
