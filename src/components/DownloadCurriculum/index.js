@@ -8,17 +8,18 @@ import Image from 'next/image';
 import Button from '../Button';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const DownloadCurriculum = ({ title, currUrl, isOpen, onDismiss }) => {
   const formRef = useRef();
-  const [tempParams, setTempParams] = useState({
-    userEmail: '',
-    userPhone: '',
-    currUrl: currUrl,
-  });
 
-  const handleChange = (e) => {
-    setTempParams({ ...tempParams, [e.target.name]: e.target.value });
+  // Add the phone value state and change handler
+  const [phoneValue, setPhoneValue] = useState('');
+
+  // Add the phone change handler function
+  const handlePhoneChange = (value) => {
+    setPhoneValue(value);
   };
 
   const sendEmail = (e) => {
@@ -29,8 +30,7 @@ const DownloadCurriculum = ({ title, currUrl, isOpen, onDismiss }) => {
         'service_16ca93j',
         'template_eubl1oc',
         formRef.current,
-        'M4uZtU2Eize04iEE6',
-        tempParams
+        'M4uZtU2Eize04iEE6'
       )
       .then(
         (result) => {
@@ -73,17 +73,45 @@ const DownloadCurriculum = ({ title, currUrl, isOpen, onDismiss }) => {
                       placeholder='sample@email.com'
                       name='userEmail'
                       required
-                      onChange={handleChange}
+                      // onChange={handleChange}
                     />
                   </Label>
                   <Label htmlFor=''>
                     <p>PHONE NUMBER</p>
-                    <Input
-                      type='tel'
-                      placeholder='000 000 0000'
-                      name='userPhone'
+                    <PhoneInput
+                      international
+                      country='us' // Set the default country
+                      placeholder='Enter phone number'
+                      value={phoneValue} // Add the phone value state variable
+                      onChange={handlePhoneChange} // Add the phone change handler
+                      inputProps={{
+                        name: 'userPhone',
+                        required: true,
+                        autoFocus: true,
+                      }}
+                      inputStyle={{
+                        border: 'none',
+                        backgroundColor: 'transparent',
+                        padding: '0.5rem',
+                        color: 'white',
+                        fontSize: '16px',
+                        marginLeft: '2.5rem',
+                      }}
+                      buttonStyle={{
+                        border: 'none',
+                        backgroundColor: 'transparent',
+                      }}
+                      style={{
+                        border: 'none',
+                        borderBottom: '1px solid #8691a6',
+                        backgroundColor: 'transparent',
+                        width: '100%',
+                        padding: '0.5rem',
+                        color: 'white',
+                        marginBottom: '2rem',
+                      }}
+                      limitMaxLength
                       required
-                      onChange={handleChange}
                     />
                   </Label>
 
@@ -116,7 +144,7 @@ const LabOverlay = styled(DialogOverlay)`
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   overflow-y: none;
-  z-index: 10000;
+  z-index: 200;
   @media ${QUERIES.phoneAndSmaller} {
     background-color: rgba(0, 0, 0);
   }
@@ -197,6 +225,19 @@ const Label = styled.label`
   }
 `;
 
+const PhoneInputBox = styled.div`
+  border: none;
+  border-bottom: 1px solid #8691a6;
+  background-color: transparent;
+  width: 100%;
+  // padding: 0.5rem;
+  color: white;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Input = styled.input`
   border: none;
   border-bottom: 1px solid #8691a6;
@@ -205,6 +246,21 @@ const Input = styled.input`
   padding: 0.5rem;
   color: white;
   margin-bottom: 2rem;
+`;
+
+const StyledPhoneInput = styled(PhoneInput)`
+  width: 20%;
+  // padding: 0.75rem 1rem;
+  // font-size: 16px;
+  // border: 1px solid #8691a6;
+  // border-radius: 4px;
+  // color: #fff;
+  // ::placeholder {
+  //   color: #8691a6;
+  // }
+  // :focus {
+  //   outline-color: #8691a6;
+  // }
 `;
 
 const Title = styled.h3`
