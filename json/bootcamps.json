@@ -42,23 +42,229 @@
             "title": "Program Orientation",
             "topics": [
               "Program Orientation (Agenda – Curriculum)",
-              "BBDS Website | Canvas | Slack walk through"
+              "Why should you become a Data Scientist?",
+              "Introduction to Data Science | CAP Certificate",
+              "Projects, Teams & Team Leads",
+              "Program Tools & Installation 2"
             ]
           },
           {
-            "title": "Why should you become a Data Scientist?",
+            "title": "Business Understanding (Strategy | Literacy | Problem Framing)",
             "topics": [
-              "Data Explosion",
-              "Why Data Science? | What is Data Science? | Type of Analytics",
-              "Data Science Portfolio | Data Science Process | Career in Data Science"
+              "Introduction to Data Literacy and Data Strategy",
+              "Introduction to Artificial Intelligence (ML & DL)",
+              "Introduction to Big Data",
+              "Introduction to CRISP-DM",
+              "Decisions Management & Problem Framing"
             ]
           },
           {
-            "title": "Projects, Teams & Team Leads",
+            "title": "Data Science Foundations (Python Programming | GitHub)",
             "topics": [
-              "Introduction to Data Science Project",
-              "Projects Discussion (Milestone Projects Assignment)",
-              "Projects List | Project Templates | Project Team"
+              "Basic Python Programming 1",
+              "Basic Python Programming 2",
+              "Intermediate Python Programming",
+              "Advanced Python Programming",
+              "Introduction - Git and GitHub"
+            ]
+          },
+          {
+            "title": "Data Science Foundations (Statistics - Probability - SQL)",
+            "topics": [
+              "Introduction to Statistics",
+              "Advanced Statistics / Probability & Information Theory",
+              "Crash Course in SQL (Tables and Constraints)",
+              "SQL Statements Group by Clause",
+              "Team Projects 1st Presentation (Framing Business Problem)"
+            ]
+          },
+          {
+            "title": "Data Science Foundations (Visual Data Sensemaking)",
+            "topics": [
+              "Building a framework for Visual Data Sensemaking",
+              "Data fitness, Variation and Relationships (Categorical Variables)",
+              "Data fitness, Variation and Relationships (Quantitative Variables)",
+              "Data fitness, Variation and Relationships (Multiple Variables)",
+              "Interactive Dashboards (Power BI)"
+            ]
+          },
+          {
+            "title": "Data Understanding | EDA & Statistical Analysis",
+            "topics": [
+              "Data Loading & Manipulation",
+              "Data Types- Measure of Shape - Position - Dispersion",
+              "Data Visualization (Numerical Data & Graphical Descriptive Statistics)",
+              "NumPy Array | The Shape and Reshaping of NumPy Array",
+              "EDA with RapidMiner | Excel"
+            ]
+          },
+          {
+            "title": "Data Preparation & Preprocessing",
+            "topics": [
+              "Data Preparation & Processing (Categorical Attributes)",
+              "Data Preparation & Processing (Numeric Attributes & Transformation)",
+              "Data Preparation & Processing (Missing Values | Outliers | Duplicates)",
+              "Expanding, Squeezing, Indexing and Slicing of NumPy Array",
+              "Data Prep with RapidMiner | Excel"
+            ]
+          },
+          {
+            "title": "Factor Analysis & Dimensionality Reduction",
+            "topics": [
+              "Principal Component Analysis",
+              "Singular Value Decomposition & Linear Discriminant Analysis",
+              "ISOMAP | Locally Linear | Modified Locally Linear Embedding",
+              "Data Prep with RapidMiner | Excel",
+              "Capstone Projects 2nd Presentation (Data Understanding & Data Viz)"
+            ]
+          },
+          {
+            "title": "Supervised Learning - Classification",
+            "topics": [
+              "Decision Tree & Rule-Based Classification",
+              "Naïve Bayes & Logistic Regression",
+              "Support Vector Machine SVM & KSVM",
+              "Neighbor Classifiers (KNN)",
+              "Pandas Fundamentals"
+            ]
+          },
+          {
+            "title": "Supervised Learning - Regression",
+            "topics": [
+              "Simple Linear Regression & Polynomial Regression",
+              "Multiple Linear Regression",
+              "Least Square/Lasso/Ridge/Elastic Net Regression",
+              "Decision Tree Regression & Support Vector Machine SVR",
+              "Using Pandas for Data Analysis & Data Wrangling 1"
+            ]
+          },
+          {
+            "title": "Ensemble Methods (Bagging & Boosting & Stacking)",
+            "topics": [
+              "Random Forest Voting & Averaging",
+              "Bagging | Boosting | Gradient Boosting | Ada-Boost | Stacking",
+              "Class Imbalanced Problem",
+              "Using Pandas for Data Analysis & Data Wrangling 1",
+              "ML with RapidMiner | Excel"
+            ]
+          },
+          {
+            "title": "Model Evaluation & Optimization",
+            "topics": [
+              "Model generalization: Assessing Predictive Accuracy for New Data",
+              "Evaluation of Classification Models & Regression Models",
+              "Model Optimization through Parameter Tuning | XGBoost",
+              "Data Wrangling & Visualizing with Pandas",
+              "Team Projects 3rd Presentation (Data Preparation)"
+            ]
+          },
+          {
+            "title": "Unsupervised Learning - Clustering Analysis",
+            "topics": [
+              "K-Mean Clustering",
+              "Agglomerative Hierarchical Clustering",
+              "DBSCAN | Mean Shift | Gaussian Mixed Models | Fuzzy C Means",
+              "Python Regular Expression",
+              "ML with RapidMiner | Excel"
+            ]
+          },
+          {
+            "title": "Anomalies Detection & A/B Testing",
+            "topics": [
+              "Classification Based Algorithms - KNN",
+              "Nearest-Neighbor Based algorithms",
+              "Clustering Based algorithms",
+              "A/B Testing",
+              "Python: BeautifulSoup Library"
+            ]
+          },
+          {
+            "title": "Association Rules | Recommender Systems",
+            "topics": [
+              "Association Rules - Apriori",
+              "Association Rules - Eclat",
+              "Recommender Systems: First Generation",
+              "Recommender Systems: Second Generation",
+              "Recommender Systems: Third Generation"
+            ]
+          },
+          {
+            "title": "Time Series Analysis",
+            "topics": [
+              "AR - MA & EST Models",
+              "ARMA & ARIMA Models",
+              "SARIMAX Model",
+              "Python: Matplotlib Library",
+              "Team Projects 4th Presentation (Analytical Approach Implementation)"
+            ]
+          },
+          {
+            "title": "Text Analysis & Natural Language Processing (NLP)",
+            "topics": [
+              "Introduction to Natural Language Processing",
+              "Essentials of Natural Language Processing",
+              "NLP Feature Extractions",
+              "NLP with TextBlob & spaCy",
+              "Python: SciPy Library"
+            ]
+          },
+          {
+            "title": "Advanced Natural Language Processing (NLP)",
+            "topics": [
+              "Text Classification",
+              "Text Summarization",
+              "Topic Modeling",
+              "Sentiment Analysis",
+              "Large Language Models (LLMs) - ChatGPT, GPT4, BERT"
+            ]
+          },
+          {
+            "title": "Deep Learning: ANN | CNN | Object Detection",
+            "topics": [
+              "Introduction to Deep Learning",
+              "Artificial Neural Network (ANN)",
+              "Convolutional Neural Network (CNN)",
+              "Real Time Object Detection using YOLO V4",
+              "Python: Torch Library 1"
+            ]
+          },
+          {
+            "title": "Self-Organizing Maps | Boltzmann Machines | Autoencoders",
+            "topics": [
+              "Introduction to SOMs, BMN & AutoEncoders",
+              "Self-Organizing Maps",
+              "Boltzmann Machines",
+              "AutoEncoders",
+              "Team Projects Final Presentation (Insights & Action Plan)"
+            ]
+          },
+          {
+            "title": "Sequence Learning & GANs",
+            "topics": [
+              "Recurrent Neural Networks (RNN)",
+              "RNN vs LSTM with Google Stock Price",
+              "Sentiment Analysis with LSTM",
+              "GANS: Generative Adversarial Networks",
+              "Python: Torch Library 2"
+            ]
+          },
+          {
+            "title": "General Deployment Considerations & MLOps",
+            "topics": [
+              "Avoiding False Discoveries | MLOps Introduction",
+              "Introduction to ML and MLOps stages",
+              "MLOps Architectures",
+              "Introduction to CI/CD",
+              "Python: TensorFlow & Keras Library 1"
+            ]
+          },
+          {
+            "title": "Individual Capstone Project (1 Month)",
+            "topics": [
+              "Resume Preparation",
+              "Interview Preparation",
+              "Employment Assistance",
+              "Certificate Analytics Professional Training"
             ]
           }
         ],
