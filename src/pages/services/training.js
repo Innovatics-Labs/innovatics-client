@@ -7,7 +7,7 @@ import ServiceHero from "../../components/services/Hero";
 import ServiceCard from "../../components/services/ServiceCard";
 import JoinCohort from "../../components/JoinCohort";
 import JoinDiscord from "../../components/JoinDiscord";
-import InnovaticsLogo from "../../assets/images/innovatics.jpeg";
+
 import {
   CoursesSection,
   PricingSection,
