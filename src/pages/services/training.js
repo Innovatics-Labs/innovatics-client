@@ -7,6 +7,7 @@ import ServiceHero from "../../components/services/Hero";
 import ServiceCard from "../../components/services/ServiceCard";
 import JoinCohort from "../../components/JoinCohort";
 import JoinDiscord from "../../components/JoinDiscord";
+import InnovaticsLogo from "../../assets/images/innovatics.jpeg";
 import {
   CoursesSection,
   PricingSection,
@@ -114,6 +115,7 @@ const Training = () => {
               comprehensive learning experience that sets our learners up for
               success.
             </p>
+	    <Image src="/innovatics.jpeg" alt="Innovatics Logo" />
             <GradientDivider>
               <LineGradient
                 height="150px"
@@ -181,4 +183,8 @@ const Bottom = styled.div`
     font-size: var(--font-size-md);
     margin-inline: auto;
   }
+`;
+
+const Image = styled.img`
+  display: block;
 `;
