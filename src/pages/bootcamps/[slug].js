@@ -272,15 +272,19 @@ const Bootcamps = ({}) => {
             <div>
               {bootcamp[0] &&
                 bootcamp[0]?.instructors.map(
-                  ({ name, description, position, social }, index) => (
+                  ({ name, image, description, position, social }, index) => (
                     <InstructorDetailContainer key={`${name + index}`}>
                       <CapContainer>
-                        <InstructorCap />
+                        <InstructorCap image={image} />
                         <p>{name}</p>
                       </CapContainer>
                       <InstructorDetail>
                         <h5>{position}</h5>
-                        <p>{description}</p>
+                        {/* <p>{description}</p> */}
+                        {description &&
+                          description.map((descr, index) => (
+                            <li key={index}>{descr}</li>
+                          ))}
                         <Social>
                           Social Links:{' '}
                           <Link href={social.linkedIn}>
@@ -643,7 +647,8 @@ const InstructorDetailContainer = styled.div`
 const CapContainer = styled.div`
   align-self: center;
   p {
-    text-align: center;
+    text-align: left;
+    width: 120px;
   }
 
   @media ${QUERIES.phoneAndSmaller} {
