@@ -277,8 +277,19 @@
       },
       "instructors": [
         {
-          "name": "Muhammad Medwani",
-          "description": "Founder of Innovatics.ai is an expert data scientist with a passion for transforming data into useful products. He has over 20 years of experience in service delivery management; Ph.D. candidate in AI, four master’s degrees in data science, IT, machine learning, and business administration; and over nine years of experience working with data science. Mo’s specialties include data science, machine learning, big data, deep learning, data analytics, application support and IT service delivery management.",
+          "name": "Dr. Muhammad Medwani",
+          "image": "/med.jpeg",
+          "description": [
+            "Ph.D. in AI",
+            "19+ Years of experience in IT (Data Science/Data Analytics/SDM)",
+            "Big Bang Data Science Solutions (BBDS) founder",
+            "7+ Years of experience in Data Analytics",
+            "6+ Years of experience in Data Science & related technologies",
+            "MBA & Master of Science in IT (Kennesaw State University)",
+            "Master of Science in Analytics (Maryland University)",
+            "Master of Science in Data Science & Machine Learning (Columbia University)",
+            "Training Individuals & Corporations in Data Science & Advanced Analytics since Dec 2016"
+          ],
           "position": "Founder - Innovatics.ai",
           "social": {
             "linkedIn": "",
@@ -286,9 +297,37 @@
           }
         },
         {
-          "name": "Edward Bujak",
-          "description": "25 years IT experience - developer, consultant, founder, with6 years of Data Science experience, 19 years education experience: Computer Science, Mathematics, Engineering, 2 masters degrees - MS Electrical Engineering & Science, MS Education, Public speaker - frequently present at Meetup groups, clubs, conferences, on everything programming and computer science, Data Science, Machine Learning, ",
-          "position": "IT experience - developer",
+          "name": "Prof. Edward Bujak",
+          "image": "/edward.jpeg",
+          "description": [
+            "25 years of IT experience",
+            "10 years of Data Science & Machine Learning-related experience",
+            "22+ years of education experience: Computer Science, Mathematics, Engineering",
+            "MS Electrical Engineering & Computer Science (Villanova University)",
+            "MS Education (University of Pennsylvania)",
+            "Public speaker - frequently speaks at Meetup groups, clubs, conferences, on everything programming, Data Science, Machine Learning"
+          ],
+          "position": "IT experience",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Mohammed Mojeeb",
+          "image": "/mojeeb.jpeg",
+          "description": [
+            "Bachelor's degree in Computer science and a Master of Business Administration (MBA)",
+            "Microsoft Certified: Technology Specialist in SQL Server Implementation and Maintenance",
+            "Microsoft Certified: Azure cloud Fundamentals",
+            "Certified: Computer Programming and Database Development",
+            "Over 24 years of experience in Software Development, Database Development, and Cyber Security,",
+            "A strong background in all varieties of Application",
+            "Development and Application Security",
+            "10 years of training experience",
+            "Currently working as Manager, Security Business Intelligence at LexisNexis"
+          ],
+          "position": "IT experience",
           "social": {
             "linkedIn": "",
             "twitter": ""
@@ -409,9 +448,57 @@
       },
       "instructors": [
         {
-          "name": "Muhammad Medwani",
-          "description": "Founder of Innovatics.ai is an expert data scientist with a passion for transforming data into useful products. He has over 20 years of experience in service delivery management; Ph.D. candidate in AI, four master’s degrees in data science, IT, machine learning, and business administration; and over nine years of experience working with data science. Mo’s specialties include data science, machine learning, big data, deep learning, data analytics, application support and IT service delivery management.",
+          "name": "Dr. Muhammad Medwani",
+          "image": "/med.jpeg",
+          "description": [
+            "Ph.D. in AI",
+            "19+ Years of experience in IT (Data Science/Data Analytics/SDM)",
+            "Big Bang Data Science Solutions (BBDS) founder",
+            "7+ Years of experience in Data Analytics",
+            "6+ Years of experience in Data Science & related technologies",
+            "MBA & Master of Science in IT (Kennesaw State University)",
+            "Master of Science in Analytics (Maryland University)",
+            "Master of Science in Data Science & Machine Learning (Columbia University)",
+            "Training Individuals & Corporations in Data Science & Advanced Analytics since Dec 2016"
+          ],
           "position": "Founder - Innovatics.ai",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Prof. Edward Bujak",
+          "image": "/edward.jpeg",
+          "description": [
+            "25 years of IT experience",
+            "10 years of Data Science & Machine Learning-related experience",
+            "22+ years of education experience: Computer Science, Mathematics, Engineering",
+            "MS Electrical Engineering & Computer Science (Villanova University)",
+            "MS Education (University of Pennsylvania)",
+            "Public speaker - frequently speaks at Meetup groups, clubs, conferences, on everything programming, Data Science, Machine Learning"
+          ],
+          "position": "IT experience",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Mohammed Mojeeb",
+          "image": "/mojeeb.jpeg",
+          "description": [
+            "Bachelor's degree in Computer science and a Master of Business Administration (MBA)",
+            "Microsoft Certified: Technology Specialist in SQL Server Implementation and Maintenance",
+            "Microsoft Certified: Azure cloud Fundamentals",
+            "Certified: Computer Programming and Database Development",
+            "Over 24 years of experience in Software Development, Database Development, and Cyber Security,",
+            "A strong background in all varieties of Application",
+            "Development and Application Security",
+            "10 years of training experience",
+            "Currently working as Manager, Security Business Intelligence at LexisNexis"
+          ],
+          "position": "IT experience",
           "social": {
             "linkedIn": "",
             "twitter": ""
@@ -497,9 +584,57 @@
       },
       "instructors": [
         {
-          "name": "Edward Bujak",
-          "description": "25 years IT experience - developer, consultant, founder, with 6 years of Data Science experience, 19 years education experience: Computer Science, Mathematics, Engineering, 2 masters degrees - MS Electrical Engineering & Science, MS Education, Public speaker - frequently present at Meetup groups, clubs, conferences, on everything programming and computer science, Data Science, Machine Learning, ",
-          "position": "IT experience - developer",
+          "name": "Dr. Muhammad Medwani",
+          "image": "/med.jpeg",
+          "description": [
+            "Ph.D. in AI",
+            "19+ Years of experience in IT (Data Science/Data Analytics/SDM)",
+            "Big Bang Data Science Solutions (BBDS) founder",
+            "7+ Years of experience in Data Analytics",
+            "6+ Years of experience in Data Science & related technologies",
+            "MBA & Master of Science in IT (Kennesaw State University)",
+            "Master of Science in Analytics (Maryland University)",
+            "Master of Science in Data Science & Machine Learning (Columbia University)",
+            "Training Individuals & Corporations in Data Science & Advanced Analytics since Dec 2016"
+          ],
+          "position": "Founder - Innovatics.ai",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Prof. Edward Bujak",
+          "image": "/edward.jpeg",
+          "description": [
+            "25 years of IT experience",
+            "10 years of Data Science & Machine Learning-related experience",
+            "22+ years of education experience: Computer Science, Mathematics, Engineering",
+            "MS Electrical Engineering & Computer Science (Villanova University)",
+            "MS Education (University of Pennsylvania)",
+            "Public speaker - frequently speaks at Meetup groups, clubs, conferences, on everything programming, Data Science, Machine Learning"
+          ],
+          "position": "IT experience",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Mohammed Mojeeb",
+          "image": "/mojeeb.jpeg",
+          "description": [
+            "Bachelor's degree in Computer science and a Master of Business Administration (MBA)",
+            "Microsoft Certified: Technology Specialist in SQL Server Implementation and Maintenance",
+            "Microsoft Certified: Azure cloud Fundamentals",
+            "Certified: Computer Programming and Database Development",
+            "Over 24 years of experience in Software Development, Database Development, and Cyber Security,",
+            "A strong background in all varieties of Application",
+            "Development and Application Security",
+            "10 years of training experience",
+            "Currently working as Manager, Security Business Intelligence at LexisNexis"
+          ],
+          "position": "IT experience",
           "social": {
             "linkedIn": "",
             "twitter": ""
@@ -591,8 +726,19 @@
       },
       "instructors": [
         {
-          "name": "Muhammad Medwani",
-          "description": "Founder of Innovatics.ai is an expert data scientist with a passion for transforming data into useful products. He has over 20 years of experience in service delivery management; Ph.D. candidate in AI, four master’s degrees in data science, IT, machine learning, and business administration; and over nine years of experience working with data science. Mo’s specialties include data science, machine learning, big data, deep learning, data analytics, application support and IT service delivery management.",
+          "name": "Dr. Muhammad Medwani",
+          "image": "/med.jpeg",
+          "description": [
+            "Ph.D. in AI",
+            "19+ Years of experience in IT (Data Science/Data Analytics/SDM)",
+            "Big Bang Data Science Solutions (BBDS) founder",
+            "7+ Years of experience in Data Analytics",
+            "6+ Years of experience in Data Science & related technologies",
+            "MBA & Master of Science in IT (Kennesaw State University)",
+            "Master of Science in Analytics (Maryland University)",
+            "Master of Science in Data Science & Machine Learning (Columbia University)",
+            "Training Individuals & Corporations in Data Science & Advanced Analytics since Dec 2016"
+          ],
           "position": "Founder - Innovatics.ai",
           "social": {
             "linkedIn": "",
@@ -600,18 +746,37 @@
           }
         },
         {
-          "name": "Edward Bujak",
-          "description": "Data science and Python expert with over 26 years of experience in IT and 20 years of education experience in  computer science, mathematics, and engineering. He has two master’s degrees in electrical engineering and education, respectively. Ed is a public speak in everything related to programming, data science, and machine learning",
-          "position": "IT experience - developer",
+          "name": "Prof. Edward Bujak",
+          "image": "/edward.jpeg",
+          "description": [
+            "25 years of IT experience",
+            "10 years of Data Science & Machine Learning-related experience",
+            "22+ years of education experience: Computer Science, Mathematics, Engineering",
+            "MS Electrical Engineering & Computer Science (Villanova University)",
+            "MS Education (University of Pennsylvania)",
+            "Public speaker - frequently speaks at Meetup groups, clubs, conferences, on everything programming, Data Science, Machine Learning"
+          ],
+          "position": "IT experience",
           "social": {
             "linkedIn": "",
             "twitter": ""
           }
         },
         {
-          "name": "Muhammed Mjeeb",
-          "description": "Data science and Python expert with over 26 years of experience in IT and 24 years of education experience in  computer science, mathematics, and engineering. He has two master’s degrees in electrical engineering and education, respectively. Ed is a public speak in everything related to programming, data science, and machine learning",
-          "position": "MBA - Microsoft Certified",
+          "name": "Mohammed Mojeeb",
+          "image": "/mojeeb.jpeg",
+          "description": [
+            "Bachelor's degree in Computer science and a Master of Business Administration (MBA)",
+            "Microsoft Certified: Technology Specialist in SQL Server Implementation and Maintenance",
+            "Microsoft Certified: Azure cloud Fundamentals",
+            "Certified: Computer Programming and Database Development",
+            "Over 24 years of experience in Software Development, Database Development, and Cyber Security,",
+            "A strong background in all varieties of Application",
+            "Development and Application Security",
+            "10 years of training experience",
+            "Currently working as Manager, Security Business Intelligence at LexisNexis"
+          ],
+          "position": "IT experience",
           "social": {
             "linkedIn": "",
             "twitter": ""
