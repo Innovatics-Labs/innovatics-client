@@ -37,8 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     if: |
       github.ref == 'main' &&
-      github.event.pull_request.merged == true &&
-      github.ref == 'refs/heads/main'
+      github.event.pull_request.merged == true     
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
