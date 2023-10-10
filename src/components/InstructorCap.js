@@ -24,8 +24,9 @@ const Cap = styled.div`
 `;
 
 const InstructorImage = styled.img`
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
   border-radius: 50%;
+  border: 4px solid #f6f6f6;
 `;

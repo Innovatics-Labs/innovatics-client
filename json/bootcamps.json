@@ -783,6 +783,356 @@
           }
         }
       ]
+    },
+    {
+      "name": "Cyber Security Masterclass",
+      "category": "data-science",
+      "slug": "cyber-security",
+      "courseFile": "/documents/InnovatiCS Cybersecurity Program  B1.pdf",
+      "detail": {
+        "objective": "Accelerate your career with this Program in Cyber Security. This program features a mix of theory, case studies, and extensive hands-on practice to prepare you for an exciting career in Cybersecurity. You will master CompTIA Security+, CEH, and CISSP, and learn how to protect your infrastructure by securing data and information, running risk analysis, architecting cloudbased security, and achieving compliance. This Program in Cyber Security equip you with the skills needed to become an expert in this rapidly growing domain. This program also helps to develop a 360-degree view of the Cybersecurity domain that now comprises a wide array of security components and technologies",
+        "price": "$699",
+        "difficulty": "Beginner - Advance (Zero - Hero)",
+        "timing": "08:00am - 03:00pm EST (Sunday - Saturday)",
+        "date": "December 2023",
+        "duration": "16 weeks",
+        "audience": [
+          "All levels of IT auditor/penetration tester.",
+          "Security consultants/managers.",
+          "IT directors/managers/consultants.",
+          "Security auditors/architects.",
+          "Security systems engineers",
+          "Chief information security officers (CISOs).",
+          "Chief compliance/privacy/risk officers",
+          "Network specialists, analysts, managers, architects, consultants or administrators",
+          "Technical support engineers",
+          "Systems analysts or administrator"
+        ],
+        "goals": [
+          "Deploy key infrastructure and network components for organizational security.",
+          "Design a secure IT security framework.",
+          "Master advanced hacking for efficient information security.",
+          "Manage cloud data storage and analyze risks.",
+          "Secure data movement, disaster recovery, and client databases.",
+          "Implement tools for data and information security.",
+          "Adhere to ethical security practices.",
+          "Understand cloud computing security.",
+          "Comprehend legal requirements and privacy in the cloud.",
+          "Focus on IT compliance for a secure enterprise framework."
+        ],
+        "experience": [
+          "Regular office hours, coaching sessions, and live instructor sessions ensure that you 'get it'.",
+          "Dedicated Program Support Team",
+          "Dynamic Collaboration: The Collaboration features of the platform will enable to form teams, develop effective solutions and become better team players.",
+          "Bite-Sized Learning",
+          "Peer Discussion",
+          "Graded assignments allow you to get the feedback you need to deepen your understanding of core concepts."
+        ],
+        "curriculum": [
+          {
+            "title": "Program Orientation",
+            "topics": [
+              "Program Orientation (Agenda – Curriculum)",
+              "Why should you become a Security Engineer/Analyst?"
+            ]
+          },
+          {
+            "title": "SECURITY RISK MANAGEMENT",
+            "topics": [
+              "Cryptography Types, Attacks, Implementation",
+              "Physical Security"
+            ]
+          },
+          {
+            "title": "NETWORK SECURITY",
+            "topics": [
+              "Network Design, Securing Network Devices and Protocols",
+              "Securing Network Communication"
+            ]
+          },
+          {
+            "title": "IDENTITY AND ACCESS MANAGEMENT",
+            "topics": [
+              "Authentication Methods, Access Control",
+              "Access Control Modules"
+            ]
+          },
+          {
+            "title": "SECURITY ASSESSMENT AND SECURITY TESTING",
+            "topics": ["Access Controls", "Security Testing"]
+          },
+          {
+            "title": "SOFTWARE DEVELOPMENT SECURITY",
+            "topics": [
+              "Programming Concepts, Software Development Methods",
+              "Relational Database Management systems, Object Oriented Programming"
+            ]
+          },
+          {
+            "title": "OWASP TOP 10 VULNERABILITIES",
+            "topics": [
+              "Security Administration, Incident Response, Asset Management, Prevention & Detection Controls",
+              "Backup and Availability, Testing Training and Awareness"
+            ]
+          },
+          {
+            "title": "SECURITY OPERATIONS PART 2",
+            "topics": [
+              "Business Continuity and Disaster Recovery Planning (BCP) and (DRP)",
+              "Backup and Availability, Testing Training and Awareness"
+            ]
+          },
+          {
+            "title": "SECURITY TOOLS",
+            "topics": [
+              "Dynamic Application Security Testing (DAST)",
+              "Statics Application Security Testing (SAST)"
+            ]
+          },
+          {
+            "title": "REVIEW ALL THE MODULES AND TYPES OF CYBER SECURITY",
+            "topics": [
+              "Software Composition Analysis (SCA)",
+              "Network Scanning Tools"
+            ]
+          },
+          {
+            "title": "REVIEW ALL THE MODULES AND TYPES OF CYBER SECURITY",
+            "topics": [
+              "Review all the Modules covered and Types of Security Jobs"
+            ]
+          }
+        ],
+        "requirements": [
+          "No prior coding or technical knowledge is required",
+          "A computer with Internet connection.",
+          "No paid tools required for this course.",
+          "Passion and curiosity to learn."
+        ]
+      },
+      "instructors": [
+        {
+          "name": "Dr. Muhammad Medwani",
+          "image": "/med.jpeg",
+          "description": [
+            "Ph.D. in AI",
+            "19+ Years of experience in IT (Data Science/Data Analytics/SDM)",
+            "Big Bang Data Science Solutions (BBDS) founder",
+            "7+ Years of experience in Data Analytics",
+            "6+ Years of experience in Data Science & related technologies",
+            "MBA & Master of Science in IT (Kennesaw State University)",
+            "Master of Science in Analytics (Maryland University)",
+            "Master of Science in Data Science & Machine Learning (Columbia University)",
+            "Training Individuals & Corporations in Data Science & Advanced Analytics since Dec 2016"
+          ],
+          "position": "Founder - Innovatics.ai",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Mohammed Mojeeb",
+          "image": "/mojeeb.jpeg",
+          "description": [
+            "Bachelor's degree in Computer science and a Master of Business Administration (MBA)",
+            "Microsoft Certified: Technology Specialist in SQL Server Implementation and Maintenance",
+            "Microsoft Certified: Azure cloud Fundamentals",
+            "Certified: Computer Programming and Database Development",
+            "Over 24 years of experience in Software Development, Database Development, and Cyber Security,",
+            "A strong background in all varieties of Application",
+            "Development and Application Security",
+            "10 years of training experience",
+            "Currently working as Manager, Security Business Intelligence at LexisNexis"
+          ],
+          "position": "IT experience",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cloud Computing Full Course",
+      "category": "data-science",
+      "slug": "cloud-computing",
+      "courseFile": "/documents/InnovatiCS Cloud Computing B1.pdf",
+      "detail": {
+        "objective": "This Cloud Computing Masterclass is designed to provide a comprehensive understanding of cloud technologies and their practical applications. You will learn to harness the power of cloud platforms for scalable, reliable, and cost-effective solutions. Whether you're a beginner or an experienced IT professional, this course will equip you with the skills to excel in the world of cloud computing.",
+        "price": "$3,499",
+        "difficulty": "Beginner - Advanced",
+        "timing": "09:00am - 04:00pm EST (Monday - Friday)",
+        "date": "October 2023",
+        "duration": "4 months - 6 months",
+        "audience": [
+          "IT professionals looking to expand their cloud computing skills",
+          "Developers interested in cloud-native application development",
+          "Managers and decision-makers evaluating cloud migration strategies",
+          "Students and recent graduates aspiring to work in cloud technology",
+          "Entrepreneurs seeking to leverage the cloud for their startups"
+        ],
+        "experience": [
+          "Live instructor-led sessions with industry experts",
+          "Hands-on labs and real-world projects",
+          "Collaborative learning through discussion forums",
+          "Certification preparation and exam guidance",
+          "Networking opportunities with fellow participants",
+          "Lifetime access to course materials and updates"
+        ],
+        "goals": [
+          "Understanding the fundamentals of cloud computing",
+          "Setting up and configuring cloud environments on major platforms",
+          "Deploying and managing virtual machines and containers",
+          "Implementing scalable and resilient cloud solutions",
+          "Designing serverless applications",
+          "Ensuring cloud security and compliance",
+          "Optimizing cloud infrastructure for cost-efficiency",
+          "Exploring advanced cloud services like AI and Big Data",
+          "Preparing for cloud certification exams"
+        ],
+        "curriculum": [
+          {
+            "title": "Cloud Computing Basics",
+            "topics": [
+              "Introduction to Cloud Computing",
+              "Cloud Service Models (IaaS, PaaS, SaaS)",
+              "Cloud Deployment Models (Public, Private, Hybrid)"
+            ]
+          },
+          {
+            "title": "Cloud Service Providers",
+            "topics": [
+              "Leading Cloud Providers (e.g., AWS, Azure, GCP)",
+              "Setting Up on a Cloud Platform"
+            ]
+          },
+          {
+            "title": "Virtualization and Containers",
+            "topics": [
+              "Virtualization Fundamentals",
+              "Introduction to Containerization (Docker, Kubernetes)"
+            ]
+          },
+          {
+            "title": "Cloud Networking and Security",
+            "topics": [
+              "Cloud Networking Essentials",
+              "Identity and Access Management",
+              "Security Best Practices"
+            ]
+          },
+          {
+            "title": "Cloud Deployment and Scaling",
+            "topics": [
+              "Deploying Web Apps in the Cloud",
+              "Scalability Strategies",
+              "Introduction to Serverless Computing"
+            ]
+          },
+          {
+            "title": "Cloud Databases",
+            "topics": [
+              "Relational and NoSQL Databases in the Cloud",
+              "Data Warehousing and Migration"
+            ]
+          },
+          {
+            "title": "Cloud Monitoring and Management",
+            "topics": [
+              "Monitoring Tools and Best Practices",
+              "Cost Optimization Strategies",
+              "Troubleshooting and Performance Tuning"
+            ]
+          },
+          {
+            "title": "Cloud DevOps",
+            "topics": [
+              "DevOps Principles in the Cloud",
+              "Infrastructure as Code (IaC)",
+              "Continuous Integration and Continuous Deployment (CI/CD)"
+            ]
+          },
+          {
+            "title": "Advanced Cloud Topics",
+            "topics": [
+              "Serverless Computing",
+              "AI and Machine Learning in the Cloud",
+              "Big Data Analytics in the Cloud"
+            ]
+          },
+          {
+            "title": "Capstone Project",
+            "topics": ["Apply Your Knowledge to a Real-World Project"]
+          },
+          {
+            "title": "Certifications and Career Paths",
+            "topics": [
+              "Cloud Certification Options",
+              "Exploring Cloud Career Opportunities"
+            ]
+          },
+          {
+            "title": "Emerging Trends",
+            "topics": ["Latest Innovations in Cloud Computing"]
+          },
+          {
+            "title": "Final Review and Graduation",
+            "topics": [
+              "Course Review and Feedback",
+              "Course Completion and Graduation"
+            ]
+          }
+        ],
+        "requirements": [
+          "No prior coding or technical knowledge is required",
+          "A computer with Internet connection.",
+          "No paid tools required for this course.",
+          "Passion and curiosity to learn."
+        ]
+      },
+      "instructors": [
+        {
+          "name": "Dr. Muhammad Medwani",
+          "image": "/med.jpeg",
+          "description": [
+            "Ph.D. in AI",
+            "19+ Years of experience in IT (Data Science/Data Analytics/SDM)",
+            "Big Bang Data Science Solutions (BBDS) founder",
+            "7+ Years of experience in Data Analytics",
+            "6+ Years of experience in Data Science & related technologies",
+            "MBA & Master of Science in IT (Kennesaw State University)",
+            "Master of Science in Analytics (Maryland University)",
+            "Master of Science in Data Science & Machine Learning (Columbia University)",
+            "Training Individuals & Corporations in Data Science & Advanced Analytics since Dec 2016"
+          ],
+          "position": "Founder - Innovatics.ai",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Mohammed Mojeeb",
+          "image": "/mojeeb.jpeg",
+          "description": [
+            "Bachelor's degree in Computer science and a Master of Business Administration (MBA)",
+            "Microsoft Certified: Technology Specialist in SQL Server Implementation and Maintenance",
+            "Microsoft Certified: Azure cloud Fundamentals",
+            "Certified: Computer Programming and Database Development",
+            "Over 24 years of experience in Software Development, Database Development, and Cyber Security,",
+            "A strong background in all varieties of Application",
+            "Development and Application Security",
+            "10 years of training experience",
+            "Currently working as Manager, Security Business Intelligence at LexisNexis"
+          ],
+          "position": "IT experience",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        }
+      ]
     }
   ]
 }

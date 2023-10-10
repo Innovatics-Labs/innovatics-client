@@ -1,15 +1,15 @@
-import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
-import styled from "styled-components";
+import Link from 'next/link';
+import { BsArrowRight } from 'react-icons/bs';
+import styled from 'styled-components';
 
-import { QUERIES } from "../constants";
-import Data from "../assets/svg/data.svg";
-import Coding from "../assets/svg/coding.svg";
-import Cyber from "../assets/svg/cyber-security.svg";
-import Server from "../assets/svg/server.svg";
+import { QUERIES } from '../constants';
+import Data from '../assets/svg/data.svg';
+import Coding from '../assets/svg/coding.svg';
+import Cyber from '../assets/svg/cyber-security.svg';
+import Server from '../assets/svg/server.svg';
 
-let colors = ["#44E986", "#FFA28B", "#FAD740", "#8B90FF"];
-let icon = [Data, Coding, Cyber, Server];
+let colors = ['#44E986', '#FFA28B', '#FAD740', '#8B90FF', '#FFA28B', '#44E986'];
+let icon = [Data, Coding, Cyber, Server, Coding, Data];
 
 const PathCard = ({
   number,
@@ -58,19 +58,19 @@ const Card = styled.div`
     /* border-top-left-radius: 19px;
     border-bottom-left-radius: 19px; */
     :hover {
-      background: no-repeat url("/data-science.png");
+      background: no-repeat url('/data-science.png');
       background-size: cover;
     }
   }
   :nth-of-type(2) {
     :hover {
-      background: no-repeat url("/cyber-security.png");
+      background: no-repeat url('/cyber-security.png');
       background-size: cover;
     }
   }
   :nth-of-type(3) {
     :hover {
-      background: no-repeat url("/networking.png");
+      background: no-repeat url('/networking.png');
       background-size: cover;
     }
   }
@@ -79,7 +79,23 @@ const Card = styled.div`
     /* border-top-right-radius: 19px;
     border-bottom-right-radius: 19px; */
     :hover {
-      background: no-repeat url("/cloud.png");
+      background: no-repeat url('/cloud.png');
+      background-size: cover;
+    }
+  }
+
+  :nth-of-type(5) {
+    :hover {
+      background: no-repeat url('/cyber-security.png');
+      background-size: cover;
+    }
+  }
+
+  :nth-of-type(6) {
+    /* border-top-left-radius: 19px;
+    border-bottom-left-radius: 19px; */
+    :hover {
+      background: no-repeat url('/data-science.png');
       background-size: cover;
     }
   }
