@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import styled from "styled-components";
-import Image from "next/image";
-import useSWR from "swr";
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import Image from 'next/image';
+import useSWR from 'swr';
 
-import ServiceHero from "../../components/services/Hero";
-import { QUERIES, WEIGHTS } from "../../constants";
-import { MaxwidthContainer } from "../../components/GlobalStyles";
-import platform from "../../assets/images/platform.png";
-import JoinDiscord from "../../components/JoinDiscord";
+import ServiceHero from '../../components/services/Hero';
+import { QUERIES, WEIGHTS } from '../../constants';
+import { MaxwidthContainer } from '../../components/GlobalStyles';
+import platform from '../../assets/images/platform.png';
+import JoinDiscord from '../../components/JoinDiscord';
 import {
   MentorshipContent,
   MentorshipSection,
@@ -16,17 +16,17 @@ import {
   SubTitle,
   Contact,
   TextContent,
-} from "./[slug]";
-import Newsletter from "../../components/Newsletter";
-import ContactDetail from "../../components/ContactDetail";
-import JobPlacement from "../../components/home/JobPlacementSection";
-import OurProcess from "../../components/OurProcess";
-import PathCard from "../../components/PathCard";
-import FaqSection from "../../components/FaqSection";
-import { careerOutcome } from "../../data/careerOutcome";
-import { fetcher } from "../../utils";
-import Spinner from "../../components/Spinner";
-import Testimonials from "../../components/Testimonials";
+} from './[slug]';
+import Newsletter from '../../components/Newsletter';
+import ContactDetail from '../../components/ContactDetail';
+import JobPlacement from '../../components/home/JobPlacementSection';
+import OurProcess from '../../components/OurProcess';
+import PathCard from '../../components/PathCard';
+import FaqSection from '../../components/FaqSection';
+import { careerOutcome } from '../../data/careerOutcome';
+import { fetcher } from '../../utils';
+import Spinner from '../../components/Spinner';
+import Testimonials from '../../components/Testimonials';
 
 const Index = () => {
   const [data, setData] = useState(null);
@@ -34,7 +34,7 @@ const Index = () => {
     data: apiData,
     error,
     isLoading,
-  } = useSWR("/api/staticdata", fetcher);
+  } = useSWR('/api/staticdata', fetcher);
 
   useEffect(() => {
     if (apiData) {
@@ -53,9 +53,9 @@ const Index = () => {
   return (
     <div>
       <ServiceHero
-        bgImage={"/processor.png"}
-        headline="Bootcamp"
-        subtitle={"Start your career with the field experts"}
+        bgImage={'/processor.png'}
+        headline='Bootcamp'
+        subtitle={'Start your career with the field experts'}
       />
       <div>
         <BootCampsSection>
@@ -94,21 +94,21 @@ const Index = () => {
         </Contact>
         <BackgroundContainer>
           <OurProcess
-            title={"Get to know our enrollment process"}
+            title={'Get to know our enrollment process'}
             subtitle={
-              "By following these steps, you can successfully enroll in our Data Science Bootcamp and begin your journey towards a rewarding career in data science. If you have any questions about the enrollment process, please consult our FAQ section or contact us directly"
+              'By following these steps, you can successfully enroll in our Data Science Bootcamp and begin your journey towards a rewarding career in data science. If you have any questions about the enrollment process, please consult our FAQ section or contact us directly'
             }
-            process1="Submit Your Application"
-            process2="Application Review"
-            process3="Enrollment Confirmation"
-            process4="Prepare for the Bootcamp"
+            process1='Submit Your Application'
+            process2='Application Review'
+            process3='Enrollment Confirmation'
+            process4='Prepare for the Bootcamp'
             action={false}
           />
           <MaxwidthContainer>
             <Container>
               <Content>
                 <ContentImage>
-                  <Image src={platform} alt="" sizes="100vw" />
+                  <Image src={platform} alt='' sizes='100vw' />
                 </ContentImage>
                 <CardSection>
                   <TextIntro>
@@ -169,7 +169,7 @@ const BackgroundContainer = styled.section`
   max-width: 100vw;
   background-color: rgba(18, 18, 18);
   padding-bottom: 7rem;
-  background-image: url("/bg-grad.png");
+  background-image: url('/bg-grad.png');
   background-repeat: no-repeat;
   background-size: cover;
 `;
@@ -269,12 +269,12 @@ const Text = styled.p`
 `;
 
 const BootCampsSection = styled.div`
-  background-color: #121212;
+  background-color: #fff;
   padding: var(--container-padding);
 `;
 
 const UpcomingText = styled.h5`
-  color: white;
+  color: #222;
   text-align: center;
   text-transform: uppercase;
   font-size: var(--font-size-xl);
@@ -285,4 +285,5 @@ const AvailableBootcamps = styled.div`
   gap: 2rem;
   margin-inline: auto;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 `;
