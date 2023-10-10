@@ -23,6 +23,7 @@ const Cap = styled.div`
   align-items: center;
 `;
 
+
 const InstructorImage = styled.img`
   height: 100px;
   width: 100px;
