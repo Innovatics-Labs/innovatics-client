@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - dev
-      -
+      - 
   pull_request:
     types: [closed]
     branches:
@@ -36,7 +36,7 @@ jobs:
   deploy-prod:
     runs-on: ubuntu-latest
     if: |
-      github.ref == 'main' &&
+      github.ref == 'main' ||
       github.event.pull_request.merged == true     
     steps:
       - name: Checkout code
