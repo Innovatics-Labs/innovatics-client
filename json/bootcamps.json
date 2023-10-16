@@ -1133,6 +1133,341 @@
           }
         }
       ]
+    },
+    {
+      "name": "Post-Graduate in Data Science & Artificial Intelligence",
+      "category": "data-science",
+      "slug": "sql-for-data-analytics-data-science",
+      "courseFile": "/documents/Data Science & AI Zero to Hero.pdf",
+      "detail": {
+        "objective": "To maintain a competitive edge, today’s organizations must gain practical knowledge of data science, machine learning and artificial intelligence. Careers especially in engineering, data science, and technical management depend on the immense value of those advanced analytical and programming skills.\n In the Data Science & Machine Learning program from zero to hero program, an executive education program led by the Big Bang Data, you will dive deep into learning the applied mathematical structure of core machine learning (ML) and artificial intelligence (AI) methods. The course focuses on the skills needed to work efficiently with machine learning models, such classification models, regression models, clustering models, and optimization. \n In this course, you will conduct your own analyses and apply the most effective methods to solve various problem types. This is what makes our program unique — we address both the how and the why of machine learning to provide you with the technical knowledge to thrive in any ML-essential field.",
+        "price": "$2,999",
+        "difficulty": "Beginner - Advance (Zero - Hero)",
+        "timing": " 5 Time a week: 09:00am - 02:00pm EST (Sunday - Saturday), 8:00pm to 11:00pm EST (Mon - Thur) ",
+        "date": "August 2023",
+        "duration": "8 months Online - 15-20 hours per week",
+        "audience": [
+          "Software engineers in IT/ITES Startup teams building ML products/services",
+          "Data Analysts/Scientists & Business Analysts: Who want to transition to or progress into data science/ analytical roles and become more efficient and effective in data-driven decision-making",
+          "Professionals who are interested in applying Machine Learning and NLP to practical problems. ",
+          "Consultants:Who are driving client projects and looking for acquiring and honing cutting edge analytical and data science skills for a career transition or progress",
+          "Product managers, Program managers, General Managers, etc. interested in improving their analytical skills and effectively managing analytics, data science and machine learning projects",
+          "Anyone willing to start a career in Data Science."
+        ],
+        "goals": [
+          "Learn from basics of Data Science, R & Python Programming to Advanced ML",
+          "Build and Apply: Develop the ability to translate business problems to analytics & ML problems and develop impactful solutions.",
+          "Reduce learning curve and be Industry Ready: The in-built Analytics and AI functions of the platform will reduce the learning curve and help to focus more on solutioning rather than just programming",
+          "Dynamic Collaboration: The Collaboration features of the platform will enable to form teams, develop effective solutions and become better team players.",
+          "Regular Hackathons: Compete & apply learnings under strict timelines and achieve tangible recognition/personal brand in the Data Science community.",
+          "Build and showcase cutting edge ML solutions using the BBDS platform, with long term access to learning content/platform",
+          "Industry standard assessment tests and long-term access to material will enable one’s Data Science journey, even after the program completion."
+        ],
+        "experience": [
+          "Regular office hours, coaching sessions, and live instructor sessions ensure that you 'get it'.",
+          "Dedicated Program Support Team",
+          "Dynamic Collaboration: The Collaboration features of the platform will enable to form teams, develop effective solutions and become better team players.",
+          "Bite-Sized Learning",
+          "Peer Discussion",
+          "Graded assignments allow you to get the feedback you need to deepen your understanding of core concepts."
+        ],
+        "curriculum": [
+          {
+            "title": "Program Orientation",
+            "topics": [
+              "Program Orientation (Agenda – Curriculum)",
+              "Why should you become a Data Scientist?",
+              "Introduction to Data Science | CAP Certificate",
+              "Projects, Teams & Team Leads",
+              "Program Tools & Installation 2"
+            ]
+          },
+          {
+            "title": "Business Understanding (Strategy | Literacy | Problem Framing)",
+            "topics": [
+              "Introduction to Data Literacy and Data Strategy",
+              "Introduction to Artificial Intelligence (ML & DL)",
+              "Introduction to Big Data",
+              "Introduction to CRISP-DM",
+              "Decisions Management & Problem Framing"
+            ]
+          },
+          {
+            "title": "Data Science Foundations (Python Programming | GitHub)",
+            "topics": [
+              "Basic Python Programming 1",
+              "Basic Python Programming 2",
+              "Intermediate Python Programming",
+              "Advanced Python Programming",
+              "Introduction - Git and GitHub"
+            ]
+          },
+          {
+            "title": "Data Science Foundations (Statistics - Probability - SQL)",
+            "topics": [
+              "Introduction to Statistics",
+              "Advanced Statistics / Probability & Information Theory",
+              "Crash Course in SQL (Tables and Constraints)",
+              "SQL Statements Group by Clause",
+              "Team Projects 1st Presentation (Framing Business Problem)"
+            ]
+          },
+          {
+            "title": "Data Science Foundations (Visual Data Sensemaking)",
+            "topics": [
+              "Building a framework for Visual Data Sensemaking",
+              "Data fitness, Variation and Relationships (Categorical Variables)",
+              "Data fitness, Variation and Relationships (Quantitative Variables)",
+              "Data fitness, Variation and Relationships (Multiple Variables)",
+              "Interactive Dashboards (Power BI)"
+            ]
+          },
+          {
+            "title": "Data Understanding | EDA & Statistical Analysis",
+            "topics": [
+              "Data Loading & Manipulation",
+              "Data Types- Measure of Shape - Position - Dispersion",
+              "Data Visualization (Numerical Data & Graphical Descriptive Statistics)",
+              "NumPy Array | The Shape and Reshaping of NumPy Array",
+              "EDA with RapidMiner | Excel"
+            ]
+          },
+          {
+            "title": "Data Preparation & Preprocessing",
+            "topics": [
+              "Data Preparation & Processing (Categorical Attributes)",
+              "Data Preparation & Processing (Numeric Attributes & Transformation)",
+              "Data Preparation & Processing (Missing Values | Outliers | Duplicates)",
+              "Expanding, Squeezing, Indexing and Slicing of NumPy Array",
+              "Data Prep with RapidMiner | Excel"
+            ]
+          },
+          {
+            "title": "Factor Analysis & Dimensionality Reduction",
+            "topics": [
+              "Principal Component Analysis",
+              "Singular Value Decomposition & Linear Discriminant Analysis",
+              "ISOMAP | Locally Linear | Modified Locally Linear Embedding",
+              "Data Prep with RapidMiner | Excel",
+              "Capstone Projects 2nd Presentation (Data Understanding & Data Viz)"
+            ]
+          },
+          {
+            "title": "Supervised Learning - Classification",
+            "topics": [
+              "Decision Tree & Rule-Based Classification",
+              "Naïve Bayes & Logistic Regression",
+              "Support Vector Machine SVM & KSVM",
+              "Neighbor Classifiers (KNN)",
+              "Pandas Fundamentals"
+            ]
+          },
+          {
+            "title": "Supervised Learning - Regression",
+            "topics": [
+              "Simple Linear Regression & Polynomial Regression",
+              "Multiple Linear Regression",
+              "Least Square/Lasso/Ridge/Elastic Net Regression",
+              "Decision Tree Regression & Support Vector Machine SVR",
+              "Using Pandas for Data Analysis & Data Wrangling 1"
+            ]
+          },
+          {
+            "title": "Ensemble Methods (Bagging & Boosting & Stacking)",
+            "topics": [
+              "Random Forest Voting & Averaging",
+              "Bagging | Boosting | Gradient Boosting | Ada-Boost | Stacking",
+              "Class Imbalanced Problem",
+              "Using Pandas for Data Analysis & Data Wrangling 1",
+              "ML with RapidMiner | Excel"
+            ]
+          },
+          {
+            "title": "Model Evaluation & Optimization",
+            "topics": [
+              "Model generalization: Assessing Predictive Accuracy for New Data",
+              "Evaluation of Classification Models & Regression Models",
+              "Model Optimization through Parameter Tuning | XGBoost",
+              "Data Wrangling & Visualizing with Pandas",
+              "Team Projects 3rd Presentation (Data Preparation)"
+            ]
+          },
+          {
+            "title": "Unsupervised Learning - Clustering Analysis",
+            "topics": [
+              "K-Mean Clustering",
+              "Agglomerative Hierarchical Clustering",
+              "DBSCAN | Mean Shift | Gaussian Mixed Models | Fuzzy C Means",
+              "Python Regular Expression",
+              "ML with RapidMiner | Excel"
+            ]
+          },
+          {
+            "title": "Anomalies Detection & A/B Testing",
+            "topics": [
+              "Classification Based Algorithms - KNN",
+              "Nearest-Neighbor Based algorithms",
+              "Clustering Based algorithms",
+              "A/B Testing",
+              "Python: BeautifulSoup Library"
+            ]
+          },
+          {
+            "title": "Association Rules | Recommender Systems",
+            "topics": [
+              "Association Rules - Apriori",
+              "Association Rules - Eclat",
+              "Recommender Systems: First Generation",
+              "Recommender Systems: Second Generation",
+              "Recommender Systems: Third Generation"
+            ]
+          },
+          {
+            "title": "Time Series Analysis",
+            "topics": [
+              "AR - MA & EST Models",
+              "ARMA & ARIMA Models",
+              "SARIMAX Model",
+              "Python: Matplotlib Library",
+              "Team Projects 4th Presentation (Analytical Approach Implementation)"
+            ]
+          },
+          {
+            "title": "Text Analysis & Natural Language Processing (NLP)",
+            "topics": [
+              "Introduction to Natural Language Processing",
+              "Essentials of Natural Language Processing",
+              "NLP Feature Extractions",
+              "NLP with TextBlob & spaCy",
+              "Python: SciPy Library"
+            ]
+          },
+          {
+            "title": "Advanced Natural Language Processing (NLP)",
+            "topics": [
+              "Text Classification",
+              "Text Summarization",
+              "Topic Modeling",
+              "Sentiment Analysis",
+              "Large Language Models (LLMs) - ChatGPT, GPT4, BERT"
+            ]
+          },
+          {
+            "title": "Deep Learning: ANN | CNN | Object Detection",
+            "topics": [
+              "Introduction to Deep Learning",
+              "Artificial Neural Network (ANN)",
+              "Convolutional Neural Network (CNN)",
+              "Real Time Object Detection using YOLO V4",
+              "Python: Torch Library 1"
+            ]
+          },
+          {
+            "title": "Self-Organizing Maps | Boltzmann Machines | Autoencoders",
+            "topics": [
+              "Introduction to SOMs, BMN & AutoEncoders",
+              "Self-Organizing Maps",
+              "Boltzmann Machines",
+              "AutoEncoders",
+              "Team Projects Final Presentation (Insights & Action Plan)"
+            ]
+          },
+          {
+            "title": "Sequence Learning & GANs",
+            "topics": [
+              "Recurrent Neural Networks (RNN)",
+              "RNN vs LSTM with Google Stock Price",
+              "Sentiment Analysis with LSTM",
+              "GANS: Generative Adversarial Networks",
+              "Python: Torch Library 2"
+            ]
+          },
+          {
+            "title": "General Deployment Considerations & MLOps",
+            "topics": [
+              "Avoiding False Discoveries | MLOps Introduction",
+              "Introduction to ML and MLOps stages",
+              "MLOps Architectures",
+              "Introduction to CI/CD",
+              "Python: TensorFlow & Keras Library 1"
+            ]
+          },
+          {
+            "title": "Individual Capstone Project (1 Month)",
+            "topics": [
+              "Resume Preparation",
+              "Interview Preparation",
+              "Employment Assistance",
+              "Certificate Analytics Professional Training"
+            ]
+          }
+        ],
+        "requirements": [
+          "1-6 Years of work experience",
+          "Bachelor’s /Master’s degrees.",
+          "Commitment for Hands On/Lab effort of 8-12 hours per week throughout the program.",
+          "This course requires patience, passions, dedication and commitments and we will do our job"
+        ]
+      },
+      "instructors": [
+        {
+          "name": "Dr. Muhammad Medwani",
+          "image": "/med.jpeg",
+          "description": [
+            "Ph.D. in AI",
+            "19+ Years of experience in IT (Data Science/Data Analytics/SDM)",
+            "Big Bang Data Science Solutions (BBDS) founder",
+            "7+ Years of experience in Data Analytics",
+            "6+ Years of experience in Data Science & related technologies",
+            "MBA & Master of Science in IT (Kennesaw State University)",
+            "Master of Science in Analytics (Maryland University)",
+            "Master of Science in Data Science & Machine Learning (Columbia University)",
+            "Training Individuals & Corporations in Data Science & Advanced Analytics since Dec 2016"
+          ],
+          "position": "Founder - Innovatics.ai",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Prof. Edward Bujak",
+          "image": "/edward.jpeg",
+          "description": [
+            "25 years of IT experience",
+            "10 years of Data Science & Machine Learning-related experience",
+            "22+ years of education experience: Computer Science, Mathematics, Engineering",
+            "MS Electrical Engineering & Computer Science (Villanova University)",
+            "MS Education (University of Pennsylvania)",
+            "Public speaker - frequently speaks at Meetup groups, clubs, conferences, on everything programming, Data Science, Machine Learning"
+          ],
+          "position": "IT experience",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        },
+        {
+          "name": "Mohammed Mojeeb",
+          "image": "/mojeeb.jpeg",
+          "description": [
+            "Bachelor's degree in Computer science and a Master of Business Administration (MBA)",
+            "Microsoft Certified: Technology Specialist in SQL Server Implementation and Maintenance",
+            "Microsoft Certified: Azure cloud Fundamentals",
+            "Certified: Computer Programming and Database Development",
+            "Over 24 years of experience in Software Development, Database Development, and Cyber Security,",
+            "A strong background in all varieties of Application",
+            "Development and Application Security",
+            "10 years of training experience",
+            "Currently working as Manager, Security Business Intelligence at LexisNexis"
+          ],
+          "position": "IT experience",
+          "social": {
+            "linkedIn": "",
+            "twitter": ""
+          }
+        }
+      ]
     }
   ]
 }

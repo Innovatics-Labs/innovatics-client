@@ -8,8 +8,16 @@ import Coding from '../assets/svg/coding.svg';
 import Cyber from '../assets/svg/cyber-security.svg';
 import Server from '../assets/svg/server.svg';
 
-let colors = ['#44E986', '#FFA28B', '#FAD740', '#8B90FF', '#FFA28B', '#44E986'];
-let icon = [Data, Coding, Cyber, Server, Coding, Data];
+let colors = [
+  '#44E986',
+  '#FFA28B',
+  '#FAD740',
+  '#8B90FF',
+  '#FFA28B',
+  '#44E986',
+  '#FAD740',
+];
+let icon = [Data, Coding, Cyber, Server, Coding, Data, Cyber];
 
 const PathCard = ({
   number,
