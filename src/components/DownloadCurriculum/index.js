@@ -11,7 +11,14 @@ import { toast } from 'react-toastify';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-const DownloadCurriculum = ({ title, currUrl, isOpen, onDismiss }) => {
+const DownloadCurriculum = ({
+  title,
+  currUrl,
+  isOpen,
+  onDismiss,
+  isSuccess,
+  setIsSuccess,
+}) => {
   const formRef = useRef();
 
   // Add the phone value state and change handler
@@ -38,6 +45,7 @@ const DownloadCurriculum = ({ title, currUrl, isOpen, onDismiss }) => {
           if (result.text === 'OK') {
             formRef.current.reset();
             toast.success(`${result.text}:Message Sent`);
+            setIsSuccess();
             onDismiss();
           }
         },

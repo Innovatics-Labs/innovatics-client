@@ -36,6 +36,7 @@ const Bootcamps = ({}) => {
   const { query } = useRouter();
   const [bootcamp, setBootcamp] = useState([]);
   const [showCurr, setShowCurr] = useToggle();
+  const [isSuccess, setIsSuccess] = useToggle();
 
   const {
     data: apiData,
@@ -69,10 +70,25 @@ const Bootcamps = ({}) => {
         <HeroContent>
           <Headline>{bootcamp[0] && bootcamp[0]?.name}</Headline>
           <SubHeadline>
-            {/* <FiShare /> */}
-            {/* <Link href={`${bootcamp[0] && bootcamp[0]?.courseFile}`} download>
-              Get course curriculum
-            </Link> */}
+            {isSuccess && (
+              <>
+                {/* <FiShare /> */}
+                <Link
+                  href={`${bootcamp[0] && bootcamp[0]?.courseFile}`}
+                  download
+                  target='_blank'
+                  style={{
+                    textDecoration: 'underline',
+                    color: 'red',
+                    backgroundColor: 'white',
+                    padding: '10px 20px',
+                    borderRadius: '.3em',
+                  }}
+                >
+                  Download here
+                </Link>
+              </>
+            )}
             <Button
               onClick={setShowCurr}
               variant={'outline'}
@@ -324,6 +340,8 @@ const Bootcamps = ({}) => {
           currUrl={currUrl}
           isOpen={showCurr}
           onDismiss={setShowCurr}
+          isSuccess={isSuccess}
+          setIsSuccess={setIsSuccess}
         />
       )}
     </div>
@@ -400,7 +418,8 @@ const Headline = styled.h3`
 const SubHeadline = styled.p`
   font-size: var(--font-size-md);
   display: flex;
-  // gap: 10px;
+  flex-direction: column;
+  gap: 10px;
   // text-decoration-line: underline;
 `;
 
