@@ -1,33 +1,37 @@
-import React from "react";
-import styled from "styled-components";
-import { MaxwidthContainer } from "../../components/GlobalStyles";
-import LineGradient from "../../components/LineGradient";
-import { WEIGHTS } from "../../constants";
-import ServiceHero from "../../components/services/Hero";
-import ServiceCard from "../../components/services/ServiceCard";
-import JoinCohort from "../../components/JoinCohort";
-import JoinDiscord from "../../components/JoinDiscord";
+import React from 'react';
+import styled from 'styled-components';
+import { MaxwidthContainer } from '../../components/GlobalStyles';
+import LineGradient from '../../components/LineGradient';
+import { WEIGHTS } from '../../constants';
+import ServiceHero from '../../components/services/Hero';
+import ServiceCard from '../../components/services/ServiceCard';
+import JoinCohort from '../../components/JoinCohort';
+import JoinDiscord from '../../components/JoinDiscord';
+import dataImg from '../../assets/images/data-luke-chesse-unsplash.png';
+import cyberImg from '../../assets/images/cyber-fly-d-unsplash.png';
+import softImg from '../../assets/images/software-david-pupaza-unsplash.png';
+import cloudImg from '../../assets/images/cloud-freepik-svstudioart.png';
 
 import {
   CoursesSection,
   PricingSection,
   LearningsSections,
-} from "../../components/home";
+} from '../../components/home';
 
 const Training = () => {
   return (
     <div>
       <ServiceHero
-        bgImage={"/processor.png"}
-        headline="Training"
-        subtitle={"Our Service to serve you"}
+        bgImage={'/processor.png'}
+        headline='Training'
+        subtitle={'Our Service to serve you'}
       />
       <DetailSection>
         <ServiceContent>
           <Description>
             <LineGradient
-              colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-              colorTo="hsla(144, 85%, 42%, 0)"
+              colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+              colorTo='hsla(144, 85%, 42%, 0)'
             />
             <p>
               Our training service offers comprehensive courses in four fields
@@ -39,70 +43,74 @@ const Training = () => {
               chosen career paths.
             </p>
             <LineGradient
-              colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-              colorTo="hsla(144, 85%, 42%, 0)"
+              colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+              colorTo='hsla(144, 85%, 42%, 0)'
             />
           </Description>
           <TrainingSection>
             <ServiceCard
-              title={"Data Science"}
-              description=" Data science is a rapidly growing field that involves the use
+              title={'Data Science'}
+              img={dataImg}
+              description=' Data science is a rapidly growing field that involves the use
                   of statistical and computational methods to extract insights
                   from data. Our data science training program covers a wide
                   range of topics, including data analysis, machine learning,
                   and statistical modeling. Learners will gain hands-on
                   experience working with popular data science tools and
-                  technologies, including Python, R, SQL, and Hadoop."
+                  technologies, including Python, R, SQL, and Hadoop.'
             />
             <GradientDivider>
               <LineGradient
-                height="100px"
-                colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-                colorTo="hsla(144, 85%, 42%, 0)"
+                height='100px'
+                colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+                colorTo='hsla(144, 85%, 42%, 0)'
               />
             </GradientDivider>
             <ServiceCard
               reverse
-              title={"Cloud Engineering"}
-              description="As businesses continue to move their operations to the
+              title={'Cloud Engineering'}
+              img={cloudImg}
+              description='As businesses continue to move their operations to the
                     cloud, the demand for cloud engineers has grown
                     significantly. Our cloud engineering training program covers
                     key concepts and skills related to cloud infrastructure,
                     deployment, and management. Learners will gain practical
                     experience working with cloud platforms such as Amazon Web
                     Services (AWS), Microsoft Azure, and Google Cloud Platform
-                    (GCP)."
+                    (GCP).'
             />
             <GradientDivider>
               <LineGradient
-                height="100px"
-                colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-                colorTo="hsla(144, 85%, 42%, 0)"
+                height='100px'
+                colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+                colorTo='hsla(144, 85%, 42%, 0)'
               />
             </GradientDivider>
             <ServiceCard
-              title={"Software Engineering"}
-              description="Software engineering is a field that involves the development of software applications and systems. Our software engineering training program covers a range of programming languages and tools, including Java, Python, C++, and Git. Learners will also gain experience in software development methodologies such as Agile and DevOps."
+              title={'Software Engineering'}
+              img={softImg}
+              description='Software engineering is a field that involves the development of software applications and systems. Our software engineering training program covers a range of programming languages and tools, including Java, Python, C++, and Git. Learners will also gain experience in software development methodologies such as Agile and DevOps.'
             />
             <GradientDivider>
               <LineGradient
-                height="100px"
-                colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-                colorTo="hsla(144, 85%, 42%, 0)"
+                height='100px'
+                colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+                colorTo='hsla(144, 85%, 42%, 0)'
               />
             </GradientDivider>
             <ServiceCard
               reverse
-              title={"Cyber Security"}
-              description="As the threat of cyber attacks continues to grow, the need for skilled cyber security professionals has become increasingly important. Our cyber security training program covers key topics such as network security, vulnerability assessment, and incident response. Learners will gain hands-on experience using industry-standard tools and techniques, including penetration testing and security analysis."
+              title={'Cyber Security'}
+              img={cyberImg}
+              description='As the threat of cyber attacks continues to grow, the need for skilled cyber security professionals has become increasingly important. Our cyber security training program covers key topics such as network security, vulnerability assessment, and incident response. Learners will gain hands-on experience using industry-standard tools and techniques, including penetration testing and security analysis.'
             />
           </TrainingSection>
           <Bottom>
             <GradientDivider>
               <LineGradient
-                height="150px"
-                colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-                colorTo="hsla(144, 85%, 42%, 0)"
+                height='150px'
+                colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+                colorTo='hsla(144, 85%, 42%, 0)'
               />
             </GradientDivider>
             <p>
@@ -115,12 +123,12 @@ const Training = () => {
               comprehensive learning experience that sets our learners up for
               success.
             </p>
-	    <Image src="/innovatics.jpeg" alt="Innovatics Logo" />
+            <Image src='/innovatics.jpeg' alt='Innovatics Logo' />
             <GradientDivider>
               <LineGradient
-                height="150px"
-                colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-                colorTo="hsla(144, 85%, 42%, 0)"
+                height='150px'
+                colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+                colorTo='hsla(144, 85%, 42%, 0)'
               />
             </GradientDivider>
           </Bottom>
