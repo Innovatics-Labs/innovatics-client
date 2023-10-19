@@ -123,7 +123,11 @@ const Training = () => {
               comprehensive learning experience that sets our learners up for
               success.
             </p>
-            <Image src='/innovatics.jpeg' alt='Innovatics Logo' />
+            <Image
+              src='/innovatics.jpeg'
+              alt='Innovatics Logo'
+              style={{ display: 'none'}}
+            />
             <GradientDivider>
               <LineGradient
                 height='150px'

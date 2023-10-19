@@ -1,31 +1,35 @@
-import Image from "next/image";
-import React from "react";
-import styled from "styled-components";
+import Image from 'next/image';
+import React from 'react';
+import styled from 'styled-components';
 
-import JoinDiscord from "../../components/JoinDiscord";
-import JoinCohort from "../../components/JoinCohort";
-import LineGradient from "../../components/LineGradient";
-import ServiceHero from "../../components/services/Hero";
-import ServiceCard from "../../components/services/ServiceCard";
-import { QUERIES, WEIGHTS } from "../../constants";
-import circuit from "../../assets/images/circuit-board.png";
-import { MdOndemandVideo } from "react-icons/md";
-import { Description, DetailSection, ServiceContent } from "./training";
+import JoinDiscord from '../../components/JoinDiscord';
+import JoinCohort from '../../components/JoinCohort';
+import LineGradient from '../../components/LineGradient';
+import ServiceHero from '../../components/services/Hero';
+import ServiceCard from '../../components/services/ServiceCard';
+import { QUERIES, WEIGHTS } from '../../constants';
+import circuit from '../../assets/images/circuit-board.png';
+import { MdOndemandVideo } from 'react-icons/md';
+import { Description, DetailSection, ServiceContent } from './training';
+
+import careerImg from '../../assets/images/career-saulo-mohana-unsplash.png';
+import jobImg from '../../assets/images/job-hunters-race-unsplash.png';
+import frameImg from '../../assets/images/career-frame.png';
 
 const Index = () => {
   return (
     <>
       <ServiceHero
-        headline={"Career change & Job placement"}
-        subtitle="Our Service to serve you"
-        bgImage={"/data-center.png"}
+        headline={'Career change & Job placement'}
+        subtitle='Our Service to serve you'
+        bgImage={'/data-center.png'}
       />
       <DetailSection>
         <ServiceContent>
           <DescriptionMod>
             <LineGradient
-              colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-              colorTo="hsla(144, 85%, 42%, 0)"
+              colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+              colorTo='hsla(144, 85%, 42%, 0)'
             />
             <p>
               Our career change and job placement service is designed to help
@@ -37,36 +41,38 @@ const Index = () => {
               specialists are here to help.
             </p>
             <LineGradient
-              colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-              colorTo="hsla(144, 85%, 42%, 0)"
+              colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+              colorTo='hsla(144, 85%, 42%, 0)'
             />
           </DescriptionMod>
           <TrainingSection>
             <ServiceCard
-              title={"Career Change"}
-              description="Our career change service provides individuals with access to expert guidance and support in making a successful transition into the fields of data science, cloud engineering, networking, and software engineering. Our team of career advisors can provide guidance and support in areas such as career assessment, skills assessment, job market research, and career planning. We work closely with each individual to understand their unique skills and goals, and develop customized solutions to help them achieve success in their new career."
+              title={'Career Change'}
+              img={careerImg}
+              description='Our career change service provides individuals with access to expert guidance and support in making a successful transition into the fields of data science, cloud engineering, networking, and software engineering. Our team of career advisors can provide guidance and support in areas such as career assessment, skills assessment, job market research, and career planning. We work closely with each individual to understand their unique skills and goals, and develop customized solutions to help them achieve success in their new career.'
               action={false}
             />
             <GradientDivider>
               <LineGradient
-                height="100px"
-                colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-                colorTo="hsla(144, 85%, 42%, 0)"
+                height='100px'
+                colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+                colorTo='hsla(144, 85%, 42%, 0)'
               />
             </GradientDivider>
             <ServiceCard
               reverse
-              title={"Job Placement"}
-              description="Our job placement service provides individuals with access to a wide range of job opportunities in the fields of data science, cloud engineering, networking, and software engineering. Our team of job placement specialists work closely with top employers in these fields to identify job opportunities that match the skills and qualifications of our candidates. We provide our candidates with resume review, interview coaching, and job search support to help them secure the job they want."
+              title={'Job Placement'}
+              img={jobImg}
+              description='Our job placement service provides individuals with access to a wide range of job opportunities in the fields of data science, cloud engineering, networking, and software engineering. Our team of job placement specialists work closely with top employers in these fields to identify job opportunities that match the skills and qualifications of our candidates. We provide our candidates with resume review, interview coaching, and job search support to help them secure the job they want.'
               action={false}
             />
           </TrainingSection>
           <Bottom>
             <GradientDivider>
               <LineGradient
-                height="150px"
-                colorFrom={"hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)"}
-                colorTo="hsla(144, 85%, 42%, 0)"
+                height='150px'
+                colorFrom={'hsla(144, 85%, 42%, 0),hsla(144, 85%, 42%, 1)'}
+                colorTo='hsla(144, 85%, 42%, 0)'
               />
             </GradientDivider>
             <BenefitsSection>
@@ -74,7 +80,7 @@ const Index = () => {
               <BenefitDesc>
                 Benefits of Our Career Change and Job Placement Service:
               </BenefitDesc>
-              <Image src={circuit} alt="" />
+              <Image src={frameImg} alt='' />
               <BenefitsList>
                 <BenefitCard>
                   <h5>
