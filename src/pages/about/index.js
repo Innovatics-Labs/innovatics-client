@@ -143,12 +143,13 @@ const Index = () => {
                       Founder of Innovatics.ai is an expert data scientist with
                       a passion for transforming data into useful products. He
                       has over 20 years of experience in service delivery
-                      management; Ph.D. candidate in AI, four master’s degrees
-                      in data science, IT, machine learning, and business
-                      administration; and over nine years of experience working
-                      with data science. Mo’s specialties include data science,
-                      machine learning, big data, deep learning, data analytics,
-                      application support and IT service delivery management.
+                      management; Ph.D. candidate in AI, four master&apos;s
+                      degrees in data science, IT, machine learning, and
+                      business administration; and over nine years of experience
+                      working with data science. Mo&apos;s specialties include
+                      data science, machine learning, big data, deep learning,
+                      data analytics, application support and IT service
+                      delivery management.
                     </p>
                     <Social>
                       Social Links: <FaLinkedinIn /> <FaTwitter />{' '}
@@ -167,7 +168,7 @@ const Index = () => {
                       years of IT experience and a decade dedicated to Data
                       Science and Machine Learning. His extensive 22+ years in
                       education span Computer Science, Mathematics, and
-                      Engineering. With master's degrees from Villanova
+                      Engineering. With master&apos;s degrees from Villanova
                       University and the University of Pennsylvania, he is a
                       sought-after public speaker on programming, Data Science,
                       and Machine Learning.
@@ -186,13 +187,13 @@ const Index = () => {
                     <InstructorPost>Instructor - Innovatics.ai</InstructorPost>
                     <p>
                       Meet Mohammed Mojeeb, a highly skilled IT professional
-                      with a Bachelor's degree in Computer Science, an MBA, and
-                      certifications in SQL Server and Azure cloud. With over 24
-                      years of experience in Software Development, Database
-                      Development, and Cyber Security, Mohammed excels in
-                      Application Development and Security. He also has a decade
-                      of training experience and currently serves as the Manager
-                      of Security Business Intelligence at LexisNexis.
+                      with a Bachelor&apos;s degree in Computer Science, an MBA,
+                      and certifications in SQL Server and Azure cloud. With
+                      over 24 years of experience in Software Development,
+                      Database Development, and Cyber Security, Mohammed excels
+                      in Application Development and Security. He also has a
+                      decade of training experience and currently serves as the
+                      Manager of Security Business Intelligence at LexisNexis.
                     </p>
                     <Social>
                       Social Links: <FaLinkedinIn /> <FaTwitter />{' '}
