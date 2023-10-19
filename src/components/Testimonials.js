@@ -41,11 +41,11 @@ const Testimonials = () => {
                     </TestimoneePosition>
                   </div>
                   <TestimonialDetail>
-                    I have attended the previous batch and this program is
-                    terrific. Dedication of the instructors is unmatched in the
-                    industry. Course fees is unbelievably cheap.. just $2999/-.
-                    And, you can repeat the program as many times till you are
-                    proficient at it. This is just insane!
+                    I have attended the previous batch. Dedication of the
+                    instructors is unmatched in the industry. Course fees is
+                    unbelievably cheap.. just $2999/-. And, you can repeat the
+                    program as many times till you are proficient at it. This is
+                    just insane!
                   </TestimonialDetail>
                 </div>
               </TestimonialCard>
@@ -181,11 +181,11 @@ const Testimonials = () => {
                     quality and mastery of this field by our Bro Mo Medwani -
                     Ph.D. without forgetting Mr Edward Bujak. invert on yourself
                     and gain confidence to understand the science of the future:
-                    Data Science & AI. we don't only have 40 weeks of program,
-                    but we can repeat the program when we can, just with
-                    one-time payment. you have the possibility to follow this
-                    program for free for 2 weeks and then you decide. good luck
-                    for all
+                    Data Science & AI. we don&apos;t only have 40 weeks of
+                    program, but we can repeat the program when we can, just
+                    with one-time payment. you have the possibility to follow
+                    this program for free for 2 weeks and then you decide. good
+                    luck for all
                   </TestimonialDetail>
                 </div>
               </TestimonialCard>
@@ -208,9 +208,9 @@ const Testimonials = () => {
                     </TestimoneePosition>
                   </div>
                   <TestimonialDetail>
-                    I attended this session by Dr. Medwani. As I hadn't known
-                    anything about data science beforehand, this was a very
-                    informative and beneficial session. I now have a broad
+                    I attended this session by Dr. Medwani. As I hadn&apos;t
+                    known anything about data science beforehand, this was a
+                    very informative and beneficial session. I now have a broad
                     understanding of what data science is, and this class
                     motivated me to learn more about the field, and study it in
                     college. Dr. Medwani is also a fun and engaging professor
@@ -264,20 +264,21 @@ const Testimonials = () => {
                     </TestimoneePosition>
                   </div>
                   <TestimonialDetail>
-                    I attended Dr. Medwani's eye-opening AI session at ISNS,
-                    where he highlighted the profound impact of AI on our lives,
-                    including its potential to rapidly reshape job
+                    I attended Dr. Medwani&apos;s eye-opening AI session at
+                    ISNS, where he highlighted the profound impact of AI on our
+                    lives, including its potential to rapidly reshape job
                     opportunities. He provided a clear roadmap for skill
                     development in AI, making it accessible for both IT and
                     non-IT backgrounds. The session served as an introduction to
-                    a broader program, designed to pique participants' interest
-                    in the field. Despite logistical challenges necessitating
-                    remote delivery over eight hours, Dr. Medwani's engaging
-                    style of presenting complex ideas kept us hooked. What's
-                    intriguing is that my son, who is learning Python, machine
-                    learning, and deep learning, found the session even more
-                    captivating than I did and is eager to learn more from Dr.
-                    Medwani. &apos;Paraphrased&apos;
+                    a broader program, designed to pique participants&apos;
+                    interest in the field. Despite logistical challenges
+                    necessitating remote delivery over eight hours, Dr.
+                    Medwani&apos;s engaging style of presenting complex ideas
+                    kept us hooked. What&apos;s intriguing is that my son, who
+                    is learning Python, machine learning, and deep learning,
+                    found the session even more captivating than I did and is
+                    eager to learn more from Dr. Medwani.
+                    &apos;Paraphrased&apos;
                   </TestimonialDetail>
                 </div>
               </TestimonialCard>
