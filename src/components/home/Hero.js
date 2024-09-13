@@ -36,7 +36,7 @@ const Hero = () => {
           <HeroContentContainer>
             <HeroDetails>
               <Heading>
-                Innovating robust Technical solutions for Businesses
+                Innovating robust Technical solutions for Businesses.
               </Heading>
               <SubHeading>
                 We train and provide you opportunities in the vast competitive
