@@ -36,7 +36,7 @@ const Hero = () => {
           <HeroContentContainer>
             <HeroDetails>
               <Heading>
-                Innovating robust Technical solutions for Businesses
+                Innovating robust Technical solutions for Businesses.
               </Heading>
               <SubHeading>
                 We train and provide you opportunities in the vast competitive
@@ -46,7 +46,7 @@ const Hero = () => {
               <ButtonGroup>
                 <Button
                   as={Link}
-                  href='https://form.jotform.com/InnovatiCS/innovatics-18'
+                  href='https://form.jotform.com/InnovatiCS/DS-AI-Batch22'
                   title='Register Now'
                   bgColor={'white'}
                   color='#121212'

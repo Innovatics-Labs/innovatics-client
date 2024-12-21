@@ -79,7 +79,7 @@ const Navbar = () => {
                   }}
                 >
                   <Link
-                    href={'https://form.jotform.com/InnovatiCS/innovatics-18'}
+                    href={'https://form.jotform.com/InnovatiCS/DS-AI-Batch22'}
                   >
                     Register Now
                   </Link>
