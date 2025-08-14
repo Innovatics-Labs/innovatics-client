@@ -154,7 +154,7 @@ const Bootcamps = ({}) => {
               <Price>{bootcamp[0] && bootcamp[0]?.detail?.price}</Price>
               <Button
                 as={Link}
-                href='https://form.jotform.com/InnovatiCS/innovatics-18'
+                href='https://form.jotform.com/InnovatiCS/B23'
                 bgColor={'white'}
                 color='hsla(216, 28%, 7%, 1)'
                 title='Register Now!'
